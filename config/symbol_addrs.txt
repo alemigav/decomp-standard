@@ -1,4 +1,0 @@
-entrypoint = 0x80000480; // type:func  -- rom 0x1000, first bytes set sp=0x803FFFF0
-main = 0x80000520; // type:func  -- rom 0x10a0, prologue, jal target from rom 0x1060
-pi_dma_programmer = 0x80007C20; // type:func  -- rom 0x87a0, writes PI_DRAM_ADDR then PI_CART_ADDR, 3 in-bank callers
-pi_dma_raw_path = 0x8000C870; // type:func  -- rom 0xd3f0, 1 caller 0x80000610, masks arg with 0x0FFFFFFF
