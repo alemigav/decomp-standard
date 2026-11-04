@@ -87,12 +87,23 @@ re-runnable here. To re-run it, use the upstream repository.
 
 ## Licence
 
+Copyright (c) 2026 alemigav.
+
 The documentation in this repository is licensed under
 **[Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE)**. You may share and adapt it, including
 commercially, provided you give appropriate credit, link to the licence, and indicate any changes.
 
-The licence covers this documentation only. It does not extend to the reference implementation or to any
-third-party work the documentation describes; that project's own licence and provenance are separate, and
-`decomp-standard/REFERENCE_IMPLEMENTATION.md` records the evidential status of every figure quoted from it.
+The attribution notice to retain, if you reuse this material:
 
-If you reuse this material, the attribution notice to retain is in the [`LICENSE`](LICENSE) file.
+```
+DECOMP-STANDARD, by alemigav, licensed under CC BY 4.0.
+Source:  https://github.com/alemigav/decomp-stardard
+Licence: https://creativecommons.org/licenses/by/4.0/
+```
+
+[`LICENSE`](LICENSE) holds the verbatim CC BY 4.0 legal code, unmodified, so that licence detection works; it
+carries no preamble of its own, which is why the copyright and attribution notices are stated here.
+
+**Scope.** The licence covers this documentation only. It does not extend to the reference implementation or to
+any third-party work the documentation describes — that project's licence and derivative-work status are separate,
+and `decomp-standard/REFERENCE_IMPLEMENTATION.md` records the evidential status of every figure quoted from it.
