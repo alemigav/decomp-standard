@@ -1,0 +1,447 @@
+{
+ "arrays": [
+  {
+   "at_8k": 1,
+   "base": "0x80115440",
+   "entries": 13,
+   "first_clip": 61,
+   "head": [
+    32829,
+    62,
+    63,
+    64,
+    65,
+    66
+   ],
+   "length": 14,
+   "length_source": "pointer distance",
+   "max_clip": 73,
+   "rate_mismatches": 0,
+   "skips": 1,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 0,
+   "base": "0x8011545c",
+   "entries": 30,
+   "first_clip": 74,
+   "head": [
+    74,
+    75,
+    76,
+    77,
+    78,
+    79
+   ],
+   "length": 30,
+   "length_source": "pointer distance",
+   "max_clip": 102,
+   "rate_mismatches": 0,
+   "skips": 0,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 0,
+   "base": "0x80115498",
+   "entries": 33,
+   "first_clip": 62,
+   "head": [
+    62,
+    103,
+    104,
+    105,
+    106,
+    62
+   ],
+   "length": 34,
+   "length_source": "pointer distance",
+   "max_clip": 131,
+   "rate_mismatches": 0,
+   "skips": 1,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 4,
+   "base": "0x801154dc",
+   "entries": 72,
+   "first_clip": 132,
+   "head": [
+    132,
+    133,
+    134,
+    135,
+    136,
+    62
+   ],
+   "length": 72,
+   "length_source": "pointer distance",
+   "max_clip": 201,
+   "rate_mismatches": 0,
+   "skips": 0,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 1,
+   "base": "0x8011556c",
+   "entries": 42,
+   "first_clip": 62,
+   "head": [
+    62,
+    202,
+    203,
+    204,
+    205,
+    206
+   ],
+   "length": 42,
+   "length_source": "pointer distance",
+   "max_clip": 239,
+   "rate_mismatches": 0,
+   "skips": 0,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 2,
+   "base": "0x801155c0",
+   "entries": 21,
+   "first_clip": 240,
+   "head": [
+    240,
+    241,
+    242,
+    243,
+    244,
+    245
+   ],
+   "length": 22,
+   "length_source": "pointer distance",
+   "max_clip": 259,
+   "rate_mismatches": 0,
+   "skips": 1,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 3,
+   "base": "0x801155ec",
+   "entries": 66,
+   "first_clip": 260,
+   "head": [
+    260,
+    261,
+    262,
+    263,
+    264,
+    265
+   ],
+   "length": 66,
+   "length_source": "pointer distance",
+   "max_clip": 318,
+   "rate_mismatches": 0,
+   "skips": 0,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 7,
+   "base": "0x80115670",
+   "entries": 16,
+   "first_clip": 320,
+   "head": [
+    320,
+    321,
+    322,
+    33091,
+    260,
+    324
+   ],
+   "length": 16,
+   "length_source": "pointer distance",
+   "max_clip": 334,
+   "rate_mismatches": 0,
+   "skips": 0,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 1,
+   "base": "0x80115690",
+   "entries": 15,
+   "first_clip": 61,
+   "head": [
+    32829,
+    62,
+    63,
+    64,
+    65,
+    66
+   ],
+   "length": 16,
+   "length_source": "pointer distance",
+   "max_clip": 341,
+   "rate_mismatches": 0,
+   "skips": 1,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 0,
+   "base": "0x801156b0",
+   "entries": 51,
+   "first_clip": 74,
+   "head": [
+    74,
+    75,
+    342,
+    343,
+    344,
+    79
+   ],
+   "length": 52,
+   "length_source": "pointer distance",
+   "max_clip": 368,
+   "rate_mismatches": 0,
+   "skips": 1,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 0,
+   "base": "0x80115718",
+   "entries": 45,
+   "first_clip": 105,
+   "head": [
+    105,
+    369,
+    370,
+    371,
+    372,
+    373
+   ],
+   "length": 46,
+   "length_source": "pointer distance",
+   "max_clip": 409,
+   "rate_mismatches": 0,
+   "skips": 1,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 7,
+   "base": "0x80115774",
+   "entries": 52,
+   "first_clip": 410,
+   "head": [
+    410,
+    411,
+    412,
+    413,
+    414,
+    415
+   ],
+   "length": 52,
+   "length_source": "pointer distance",
+   "max_clip": 456,
+   "rate_mismatches": 0,
+   "skips": 0,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 0,
+   "base": "0x801157dc",
+   "entries": 53,
+   "first_clip": 457,
+   "head": [
+    457,
+    458,
+    459,
+    460,
+    461,
+    462
+   ],
+   "length": 54,
+   "length_source": "pointer distance",
+   "max_clip": 509,
+   "rate_mismatches": 0,
+   "skips": 1,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 2,
+   "base": "0x80115848",
+   "entries": 22,
+   "first_clip": 510,
+   "head": [
+    510,
+    511,
+    512,
+    513,
+    514,
+    515
+   ],
+   "length": 22,
+   "length_source": "pointer distance",
+   "max_clip": 529,
+   "rate_mismatches": 0,
+   "skips": 0,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 4,
+   "base": "0x80115874",
+   "entries": 60,
+   "first_clip": 260,
+   "head": [
+    260,
+    530,
+    531,
+    532,
+    533,
+    534
+   ],
+   "length": 60,
+   "length_source": "pointer distance",
+   "max_clip": 581,
+   "rate_mismatches": 0,
+   "skips": 0,
+   "unresolved": 0
+  },
+  {
+   "at_8k": 6,
+   "base": "0x801158ec",
+   "entries": 83,
+   "first_clip": 320,
+   "head": [
+    320,
+    582,
+    583,
+    33091,
+    260,
+    324
+   ],
+   "length": 84,
+   "length_source": "sentinel 0xffff",
+   "max_clip": 587,
+   "rate_mismatches": 1,
+   "skips": 1,
+   "unresolved": 0
+  }
+ ],
+ "chain": {
+  "blocks": 194,
+  "clip": 61,
+  "entry": 32829,
+  "index": 0,
+  "list": "0x80115440",
+  "peak": 32768,
+  "rate_flag_says": 8000,
+  "record_rate": 8000,
+  "samples": 31040
+ },
+ "distinct_arrays": 16,
+ "exceptions": [
+  {
+   "array": "0x801158ec",
+   "clip": 61,
+   "entry": 61,
+   "flag_says": 16000,
+   "record_blocks": 194,
+   "record_says": 8000
+  }
+ ],
+ "forty_eight": {
+  "arrays_of_48": [],
+  "lengths": [
+   14,
+   84
+  ]
+ },
+ "inputs": {
+  "bank": "cartridge id 1979, 588 MORT records, rates from u16@+6 (M194)",
+  "image": "assets/unpacked/00000_0014420_1172240.bin",
+  "rule": "entry 0 is a skipped slot; bit 15 selects 8 kHz, bit 14:0 are the clip index",
+  "tables": "(&PTR_PTR_80119e20)[0] = 0x80119de0, [1] = 0x80119e00, selected by `FUN_800762b0` with the sign bit of 0x800e110c and the array with DAT_800e8ca8 + 1"
+ },
+ "last_array_rule": {
+  "base": "0x801158ec",
+  "flagged": 6,
+  "flagged_pointing_at_8k_records": 6,
+  "unflagged_pointing_at_8k_records": 1
+ },
+ "length_histogram": {
+  "14": 1,
+  "16": 2,
+  "22": 2,
+  "30": 1,
+  "34": 1,
+  "42": 1,
+  "46": 1,
+  "52": 2,
+  "54": 1,
+  "60": 1,
+  "66": 1,
+  "72": 1,
+  "84": 1
+ },
+ "mixed_clips": {
+  "61": [
+   2,
+   1
+  ]
+ },
+ "not_claimed": [
+  "which scene uses which list: the selection is `DAT_800e8ca8 + 1` into the chosen bank, and what writes that index is a run-time value (0, 2 and 0x1c appear in the corpus) this project has not tied to a room number",
+  "that a 'scene' is a room, or that the two banks are two scenarios",
+  "what a clip sounds like, or which event triggers a given list entry",
+  "that bit 15 is the *only* rate source: it agrees with the record on 673 of 674 entries and disagrees on one, so the loader may prefer the record",
+  "that the absent 48 means nobody ever had 48 entries: the lengths are 14..72 with 22, 52 and 60 repeated, and 48 is simply not among them"
+ ],
+ "rate_cross": {
+  "expected_if_unrelated": 61.4,
+  "flag_clear_record_16k": 635,
+  "flag_clear_record_8k": 1,
+  "flag_set_record_16k": 0,
+  "flag_set_record_8k": 38
+ },
+ "reading": "the per-scene voice lists are **in the image**: **16** distinct u16 arrays of **14..84** entries behind two pointer tables of [16, 8], and the entries are clip indices whose bit 15 predicts the target record's own rate on **674 of 674** (1 mismatch) \u2014 38 at 8 kHz, the rest at 16 kHz, and the exception is clip 61 in the last array, which lacks the flag while its own record declares 8 kHz. So `0x59 XaOn` -> list[bank][idx] -> clip -> MORT -> PCM is closed, and the byte the command also passes stays dead.",
+ "schema": "voice-lists/1",
+ "tables": {
+  "0x80119de0": {
+   "name": "bank 0",
+   "pointers": [
+    2148619328,
+    2148619356,
+    2148619416,
+    2148619484,
+    2148619628,
+    2148619712,
+    2148619756,
+    2148619888,
+    2148619920,
+    2148619952,
+    2148620056,
+    2148620148,
+    2148620252,
+    2148620360,
+    2148620404,
+    2148620524
+   ]
+  },
+  "0x80119e00": {
+   "name": "bank 1",
+   "pointers": [
+    2148619920,
+    2148619952,
+    2148620056,
+    2148620148,
+    2148620252,
+    2148620360,
+    2148620404,
+    2148620524
+   ]
+  }
+ },
+ "tool": "voice_lists.py",
+ "totals": {
+  "at_8k": 38,
+  "clips": 588,
+  "entries": 674,
+  "rate_mismatches": 1,
+  "skips": 8,
+  "unresolved": 0
+ }
+}

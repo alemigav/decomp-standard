@@ -1,0 +1,813 @@
+{
+ "cart_sha256": "71f3f779613bf1f0e2050bfa600425385d2c257a647d2e40f63be1a7986e9aac",
+ "command_stream": {
+  "count": 1315,
+  "count_detail": {
+   "count_census": {
+    "11": 2,
+    "13": 1,
+    "2": 3,
+    "3": 174,
+    "4": 56,
+    "5": 41,
+    "6": 32,
+    "7": 14,
+    "8": 3,
+    "9": 1
+   },
+   "live_elements": 981,
+   "sentinel_elements": 334,
+   "streams": 327
+  },
+  "distinct_opcodes": 4,
+  "element_size": 12,
+  "evidence": "the count-prefixed 12-byte array is read by FUN_800a64c8, which the dispatcher FUN_800a6820 hands tag-2 keys to: `stride == 12 + 12*count` on 327/327 records, the runner strides six ushorts, tests each element's key against 0xffff, and starts one voice per live element. `distinct_opcodes` counts the tag vocabulary, not a byte in the array: the elements themselves carry one request",
+  "found": true,
+  "monotone": "three orders measured, and only one is regular: live keys strictly ascend in 197/327 arrays and windows are non-decreasing in 308/327, while the array keys ascend across the section in 289/326. The regular order is in the 8-byte table slots, where the s8 delta falls by exactly 1 per consecutive index step on 10/11 such steps \u2014 a ramp across the slot index, not noise",
+  "operand_pattern": "repeats: every live row is {u16 key, u8 window floor, u8 window ceiling, s8 selector delta, u8 volume scale, s16 channel delta, u8 pan offset, u16 flag/pad}; floor <= ceiling on 981/981 live rows, so the rows are selector windows rather than a byte stream",
+  "sentinels_last": 327,
+  "terminator": "none in the byte sense: the loop bound is the u32 count at record+8 (2..13), and 0xffff marks a skipped slot \u2014 the last element of 327/327 arrays, and the first element of none",
+  "where": "SND_POOL section at 0x24004 (tag 2, the class-2 records): the array at record + 12, count at record + 8"
+ },
+ "commands": [
+  {
+   "confidence": "established (that a voice is requested on this record); the payload's field meanings are unresolved",
+   "element_size": 8,
+   "elements_per_record": [
+    3,
+    16
+   ],
+   "evidence": [
+    {
+     "claim": "tag 0 is the branch that falls through to the voice allocator",
+     "file": "src/stage2/FUN_800a6820.c",
+     "witness": "if (uVar3 != 0) {"
+    },
+    {
+     "claim": "FUN_800b185c is called with the key in bits 16..31 of the packed word",
+     "file": "src/stage2/FUN_800a6820.c",
+     "witness": "iVar6 = FUN_800b185c(uVar8,uVar9,param_2,param_3,param_4 & 0xff,"
+    },
+    {
+     "claim": "the voice allocator looks the key up in the sample cache",
+     "file": "src/stage2/FUN_800b185c.c",
+     "witness": "iVar1 = FUN_800ad998(param_1 >> 0x10);"
+    },
+    {
+     "claim": "and stores payload + index*8, which fixes the element size at 8",
+     "file": "src/stage2/FUN_800b185c.c",
+     "witness": "*(uint *)(iVar3 + -0x7febbbb4) = iVar1 + (uint)param_8 * 8;"
+    },
+    {
+     "claim": "the sample cache is binary-searched at stride 8 and returns the record payload pointer the cache was built with",
+     "file": "src/stage2/FUN_800ad998.c",
+     "witness": "FUN_800ab43c(0x8014e0e8,_DAT_8014e0e0 * 8 + -0x7feac1f0,"
+    }
+   ],
+   "mask": "0xc000",
+   "opcode": "0x0000",
+   "operands": [
+    {
+     "evidence": "FUN_800b185c stores the record payload pointer and the expression `iVar1 + (uint)param_8 * 8`, so the payload is an array of 8-byte elements addressed by an index it is handed; the element's own fields are not read at a named offset anywhere in the corpus and are unresolved here",
+     "name": "sample element, indexed by the eighth argument of the voice allocator",
+     "offset": 0,
+     "size": 8
+    }
+   ],
+   "payload": "class-0 record: the whole member's largest section, one record per sample",
+   "payload_bytes": [
+    24,
+    128
+   ],
+   "records": 2026,
+   "requests": "one voice, on the class-0 record this key names",
+   "section": 0,
+   "tag": 0
+  },
+  {
+   "confidence": "established",
+   "element_size": 8,
+   "elements_per_record": [
+    128,
+    128
+   ],
+   "evidence": [
+    {
+     "claim": "tag 1 is its own branch: the only one that reads a table",
+     "file": "src/stage2/FUN_800a6820.c",
+     "witness": "if (uVar3 == 0x4000) {"
+    },
+    {
+     "claim": "the branch looks up the class-1 payload for this key",
+     "file": "src/stage2/FUN_800a6820.c",
+     "witness": "iVar6 = FUN_800adf54(uVar9);"
+    },
+    {
+     "claim": "and indexes it at stride 8 by `param_2 & 0x7f`",
+     "file": "src/stage2/FUN_800a6820.c",
+     "witness": "psVar5 = (short *)(uVar3 * 8 + iVar6);"
+    },
+    {
+     "claim": "a non-class-0 substituted key goes to the sequence runner rather than straight to a voice",
+     "file": "src/stage2/FUN_800a6820.c",
+     "witness": "if ((uVar1 & 0xc000) != 0) {"
+    },
+    {
+     "claim": "the cache this reads is the 8-byte-stride one FUN_800acbc0 fills, whose payload pointer is the pool record's +8 (FUN_800a86a0 passes `piVar5 + 2`)",
+     "file": "src/stage2/FUN_800adf54.c",
+     "witness": "FUN_800ab43c(0x8014e138,0x801521f0,_DAT_801521e0,8,&LAB_800ae164);"
+    }
+   ],
+   "live_elements": 17,
+   "mask": "0xc000",
+   "opcode": "0x4000",
+   "operands": [
+    {
+     "census": {
+      "distinct": 16,
+      "offset": 0,
+      "range": [
+       26,
+       259
+      ],
+      "size": 2,
+      "type": "u16"
+     },
+     "evidence": "`uVar1 = *(ushort *)(uVar3 * 8 + iVar6)` is the key the slot yields; `0xffff` at +0 makes FUN_800a6820's caller path return -1, and 17/17 live slots hold a class-0 key",
+     "name": "key",
+     "offset": 0,
+     "size": 2,
+     "type": "u16"
+    },
+    {
+     "census": {
+      "distinct": 9,
+      "offset": 2,
+      "range": [
+       -7,
+       6
+      ],
+      "size": 1,
+      "type": "s8"
+     },
+     "evidence": "`uVar8 = (param_2 & 0x7f) + (int)*(char *)(uVar3 * 8 + iVar6 + 2)` then clamped to 0..0x7f",
+     "name": "selector_delta",
+     "offset": 2,
+     "size": 1,
+     "type": "s8"
+    },
+    {
+     "census": {
+      "constant": 64,
+      "distinct": 1,
+      "offset": 3,
+      "range": [
+       64,
+       64
+      ],
+      "size": 1,
+      "type": "u8"
+     },
+     "evidence": "`if ((*(byte *)((int)psVar5 + 3) & 0x80) == 0)` takes `(slot[+3] - 0x40) + param_4`, else leaves the pan at the 0x80 sentinel; 0x40 is the no-change centre and is what all 17 live slots hold",
+     "name": "pan_offset_or_flag",
+     "offset": 3,
+     "size": 1,
+     "type": "u8"
+    },
+    {
+     "census": {
+      "constant": 0,
+      "distinct": 1,
+      "offset": 4,
+      "range": [
+       0,
+       0
+      ],
+      "size": 2,
+      "type": "s16"
+     },
+     "evidence": "`iVar7 = iVar7 + *(short *)(uVar3 * 8 + iVar6 + 4)` then clamped 0..0xff",
+     "name": "channel_delta",
+     "offset": 4,
+     "size": 2,
+     "type": "s16"
+    },
+    {
+     "census": {
+      "constant": 0,
+      "distinct": 1,
+      "offset": 6,
+      "range": [
+       0,
+       0
+      ],
+      "size": 2,
+      "type": "u16"
+     },
+     "evidence": "constant zero on every live slot; nothing in the corpus reads it",
+     "name": "zero",
+     "offset": 6,
+     "size": 2,
+     "type": "u16"
+    }
+   ],
+   "payload": "128 fixed 8-byte slots; the payload is 1024 B on every record",
+   "records": 4,
+   "requests": "replace the key with the one at slot[selector & 0x7f], offset the selector and the channel, and re-enter the dispatcher (FUN_800a64c8) when the substituted key is not a sample",
+   "section": 2,
+   "tag": 1
+  },
+  {
+   "confidence": "established",
+   "element_size": 12,
+   "elements": 1315,
+   "evidence": [
+    {
+     "claim": "tag 2 is accepted here and 0xc000 is not \u2014 the refusal is in this test",
+     "file": "src/stage2/FUN_800a6820.c",
+     "witness": "if (uVar3 != 0x8000) {"
+    },
+    {
+     "claim": "the sequence runner is entered with the key in bits 16..31",
+     "file": "src/stage2/FUN_800a6820.c",
+     "witness": "iVar6 = FUN_800a64c8(uVar8,uVar9,"
+    },
+    {
+     "claim": "the runner asks for the payload pointer and the element count",
+     "file": "src/stage2/FUN_800a64c8.c",
+     "witness": "puVar1 = (ushort *)FUN_800adfb4(param_1 >> 0x10,&local_48);"
+    },
+    {
+     "claim": "the count is the cache entry's own u16, handed to the runner",
+     "file": "src/stage2/FUN_800adfb4.c",
+     "witness": "*param_2 = *(undefined2 *)((int)_DAT_8014e15c + 6);"
+    },
+    {
+     "claim": "the cache is the 12-byte-stride one FUN_800ace1c fills, whose payload pointer is the pool record's +12 (FUN_800a86a0 passes `piVar5 + 3`)",
+     "file": "src/stage2/FUN_800adfb4.c",
+     "witness": "FUN_800ab43c(0x8014e150,0x80152a00,_DAT_801529f0,0xc,&LAB_800ae174);"
+    },
+    {
+     "claim": "0xffff is skipped by the body, not used to end the loop",
+     "file": "src/stage2/FUN_800a64c8.c",
+     "witness": "if (((*puVar1 != 0xffff) && (*(byte *)(puVar1 + 1) <= param_3)) &&"
+    },
+    {
+     "claim": "the stride is six ushorts, i.e. 12 bytes",
+     "file": "src/stage2/FUN_800a64c8.c",
+     "witness": "puVar1 = puVar1 + 6;"
+    },
+    {
+     "claim": "and the loop bound is the count, so the array is count-prefixed",
+     "file": "src/stage2/FUN_800a64c8.c",
+     "witness": "iVar9 < (int)(uint)local_48"
+    },
+    {
+     "claim": "the cache is filled while walking the pool chain: +12 is the payload and +10 is the low half of the u32 count",
+     "file": "src/stage2/FUN_800a86a0.c",
+     "witness": "FUN_800ace1c(*psVar6,piVar5 + 3,*(undefined2 *)((int)piVar5 + 10));"
+    }
+   ],
+   "key_tag_census": {
+    "0": 981,
+    "3": 334
+   },
+   "live_elements": 981,
+   "mask": "0xc000",
+   "opcode": "0x8000",
+   "operands": [
+    {
+     "census": {
+      "distinct": 834,
+      "offset": 0,
+      "range": [
+       1,
+       1229
+      ],
+      "size": 2,
+      "type": "u16"
+     },
+     "evidence": "`if ((*puVar1 & 0xc000) == 0)` gates the voice on the key's tag, and 981/981 live rows carry a class-0 key; `*puVar1 != 0xffff` is the skip test \u2014 the 334 rows whose key is 0xffff are the only rows with tag 3",
+     "name": "key",
+     "offset": 0,
+     "size": 2,
+     "type": "u16"
+    },
+    {
+     "census": {
+      "distinct": 53,
+      "offset": 2,
+      "range": [
+       0,
+       95
+      ],
+      "size": 1,
+      "type": "u8"
+     },
+     "evidence": "`*(byte *)(puVar1 + 1) <= param_3` \u2014 the row applies only at or above this selector value",
+     "name": "window_floor",
+     "offset": 2,
+     "size": 1,
+     "type": "u8"
+    },
+    {
+     "census": {
+      "distinct": 54,
+      "offset": 3,
+      "range": [
+       23,
+       127
+      ],
+      "size": 1,
+      "type": "u8"
+     },
+     "evidence": "`param_3 <= *(byte *)((int)puVar1 + 3)` \u2014 and at or below this one; floor <= ceiling on all 981 live rows",
+     "name": "window_ceiling",
+     "offset": 3,
+     "size": 1,
+     "type": "u8"
+    },
+    {
+     "census": {
+      "distinct": 54,
+      "offset": 4,
+      "range": [
+       -37,
+       36
+      ],
+      "size": 1,
+      "type": "s8"
+     },
+     "evidence": "`uVar8 = param_3 + (int)*(char *)(puVar1 + 2)` then clamped to 0..0x7f",
+     "name": "selector_delta",
+     "offset": 4,
+     "size": 1,
+     "type": "s8"
+    },
+    {
+     "census": {
+      "distinct": 27,
+      "offset": 5,
+      "range": [
+       30,
+       127
+      ],
+      "size": 1,
+      "type": "u8"
+     },
+     "evidence": "`local_30 * *(byte *)((int)puVar1 + 5)` scaled by the magic constant `0x81020409 >> 0x26`, i.e. divided by 127 \u2014 a 0..127 multiplier on the caller's own 0..0xff argument",
+     "name": "volume_scale",
+     "offset": 5,
+     "size": 1,
+     "type": "u8"
+    },
+    {
+     "census": {
+      "distinct": 2,
+      "offset": 6,
+      "range": [
+       0,
+       1
+      ],
+      "size": 2,
+      "type": "s16"
+     },
+     "evidence": "`iVar5 = (param_1 >> 8 & 0xff) + (int)(short)puVar1[3]` then clamped 0..0xff",
+     "name": "channel_delta",
+     "offset": 6,
+     "size": 2,
+     "type": "s16"
+    },
+    {
+     "census": {
+      "distinct": 24,
+      "offset": 8,
+      "range": [
+       0,
+       32512
+      ],
+      "size": 2,
+      "type": "u16"
+     },
+     "evidence": "`if ((puVar1[4] & 0x8000) == 0)` then `(*(byte *)(puVar1 + 4) - 0x40) + local_38`, clamped to 0..0x7f \u2014 read through a big-endian `ushort *`, bit 15 is bit 7 of the byte at +8, so the test is `pan < 0x80`; when it fails the pan stays at the 0x80 sentinel. The byte is 0x40-centred and 0..0x7f on all 981 live rows, so the sentinel branch is unexercised by this data",
+     "name": "pan_offset",
+     "offset": 8,
+     "size": 2,
+     "type": "u16"
+    },
+    {
+     "census": {
+      "constant": 0,
+      "distinct": 1,
+      "offset": 10,
+      "range": [
+       0,
+       0
+      ],
+      "size": 2,
+      "type": "u16"
+     },
+     "evidence": "with +9 this is the last three bytes, zero on 1315/1315 rows; the reader stops at +8 (it strides six ushorts), so nothing reads them",
+     "name": "zero",
+     "offset": 10,
+     "size": 2,
+     "type": "u16"
+    }
+   ],
+   "payload": "{u32 count at record+8} then count 12-byte rows at record+12; stride == 12 + 12*count",
+   "records": 327,
+   "requests": "run the rows in order; for each live row whose window contains the selector, start one voice with the row's offsets applied \u2014 one voice per live row, and the caller links the voices it got back",
+   "rows_with_zero_tail": 1315,
+   "section": 3,
+   "sentinels": 334,
+   "tag": 2
+  },
+  {
+   "confidence": "partial: the length and the target level are established; which field selects the curve table is unresolved",
+   "element_size": 8,
+   "elements_per_record": [
+    1,
+    1
+   ],
+   "evidence": [
+    {
+     "claim": "tag 3 takes the > 0x4000 path",
+     "file": "src/stage2/FUN_800a6820.c",
+     "witness": "if (0x4000 < uVar3) {"
+    },
+    {
+     "claim": "and that path rejects everything except 0x8000, so 0xc000 can never start a voice through the dispatcher",
+     "file": "src/stage2/FUN_800a6820.c",
+     "witness": "return -1;"
+    },
+    {
+     "claim": "a class-3 payload is consumed as a voice parameter set",
+     "file": "src/stage2/FUN_800afbfc.c",
+     "witness": "*(uint *)(param_1 + 0xb4) = (uint)*(ushort *)(param_2 + 1);"
+    },
+    {
+     "claim": "the stored value is a per-tick delta from the current level to the target",
+     "file": "src/stage2/FUN_800afbfc.c",
+     "witness": "*(int *)(param_1 + 0x84) = (int)(uVar5 - param_3) / iVar1;"
+    },
+    {
+     "claim": "an optional interpolation table is fetched \u2014 with the argument dropped by the decompiler, which is why its field is unresolved",
+     "file": "src/stage2/FUN_800afbfc.c",
+     "witness": "iVar2 = FUN_800adef4();"
+    }
+   ],
+   "mask": "0xc000",
+   "opcode": "0xc000",
+   "operands": [
+    {
+     "census": {
+      "distinct": 50,
+      "offset": 0,
+      "range": [
+       0,
+       14000
+      ],
+      "size": 2,
+      "type": "le16"
+     },
+     "evidence": "read only as `*param_2 >> 0x18 != 0`, a non-zero test on its high byte",
+     "name": "unresolved_0",
+     "offset": 0,
+     "size": 2,
+     "type": "le16"
+    },
+    {
+     "census": {
+      "distinct": 46,
+      "offset": 2,
+      "range": [
+       100,
+       22000
+      ],
+      "size": 2,
+      "type": "le16"
+     },
+     "evidence": "`(*(int *)(param_1 + 0x30) * *(byte *)((int)param_2 + 2) >> 7) + *(byte *)((int)param_2 + 1) * 0x10000`, clamped to 0x7f0000 \u2014 a level in 8.8 fixed point",
+     "name": "target_level",
+     "offset": 2,
+     "size": 2,
+     "type": "le16"
+    },
+    {
+     "census": {
+      "distinct": 33,
+      "offset": 4,
+      "range": [
+       0,
+       4096
+      ],
+      "size": 2,
+      "type": "le16"
+     },
+     "evidence": "`*(uint *)(param_1 + 0xb4) = (uint)*(ushort *)(param_2 + 1)` then `(uVar5 - param_3) / iVar1`: the per-tick step divides by it, so it is the ramp's length (a 0 becomes 1)",
+     "name": "length",
+     "offset": 4,
+     "size": 2,
+     "type": "le16"
+    },
+    {
+     "census": {
+      "distinct": 17,
+      "offset": 6,
+      "range": [
+       0,
+       5000
+      ],
+      "size": 2,
+      "type": "le16"
+     },
+     "evidence": "read only as `*(char *)((int)param_2 + 7) != 0`, a non-zero test on its high byte, gating an interpolation-table blend",
+     "name": "unresolved_6",
+     "offset": 6,
+     "size": 2,
+     "type": "le16"
+    }
+   ],
+   "payload": "8 bytes: four little-endian u16 at record+8",
+   "records": 242,
+   "requests": "set a level ramp on a voice that already exists: a target level, a length, and optionally an interpolated curve \u2014 NOT a note",
+   "section": 1,
+   "tag": 3
+  }
+ ],
+ "inputs": [
+  {
+   "cart_offset": 11973152,
+   "codec": "zlib",
+   "id": 1981,
+   "member_bytes": 167168,
+   "name": "SND_POOL",
+   "stored_size": 23329
+  },
+  {
+   "cart_offset": 11940102,
+   "codec": "zlib",
+   "id": 1980,
+   "member_bytes": 102148,
+   "name": "SND_PROJ",
+   "stored_size": 33042
+  }
+ ],
+ "project_lists": [
+  {
+   "bijection": true,
+   "distinct": 2026,
+   "evidence": "all 2026 distinct values carry tag 0 and 2026 of them name a record in section 0 (2026 records); 0 value(s) name no record",
+   "index": 0,
+   "opcode": "0x0000",
+   "pool_records": 2026,
+   "tag": 0,
+   "unresolved": 0,
+   "values": 3468
+  },
+  {
+   "bijection": false,
+   "distinct": 1192,
+   "evidence": "all 1192 distinct values carry tag 0 and 1192 of them name a record in section 0 (2026 records); 0 value(s) name no record",
+   "index": 1,
+   "opcode": "0x0000",
+   "pool_records": 2026,
+   "tag": 0,
+   "unresolved": 0,
+   "values": 3316
+  },
+  {
+   "bijection": true,
+   "distinct": 242,
+   "evidence": "all 242 distinct values carry tag 3 and 242 of them name a record in section 1 (242 records); 0 value(s) name no record",
+   "index": 2,
+   "opcode": "0xc000",
+   "pool_records": 242,
+   "tag": 3,
+   "unresolved": 0,
+   "values": 261
+  },
+  {
+   "bijection": true,
+   "distinct": 4,
+   "evidence": "all 4 distinct values carry tag 1 and 4 of them name a record in section 2 (4 records); 0 value(s) name no record",
+   "index": 3,
+   "opcode": "0x4000",
+   "pool_records": 4,
+   "tag": 1,
+   "unresolved": 0,
+   "values": 4
+  },
+  {
+   "bijection": true,
+   "distinct": 327,
+   "evidence": "all 327 distinct values carry tag 2 and 327 of them name a record in section 3 (327 records); 0 value(s) name no record",
+   "index": 4,
+   "opcode": "0x8000",
+   "pool_records": 327,
+   "tag": 2,
+   "unresolved": 0,
+   "values": 339
+  }
+ ],
+ "schema": "snd_macros/1",
+ "section_base_check": [
+  {
+   "gap_bytes": 112,
+   "index": 0,
+   "keys_the_late_walk_skips": [
+    531
+   ],
+   "record_at_section_offset": 1,
+   "record_at_start_key": 531,
+   "records_if_started_one_stride_late": 2025
+  },
+  {
+   "gap_bytes": 16,
+   "index": 1,
+   "keys_the_late_walk_skips": [
+    49285
+   ],
+   "record_at_section_offset": 1,
+   "record_at_start_key": 49285,
+   "records_if_started_one_stride_late": 241
+  },
+  {
+   "gap_bytes": 1032,
+   "index": 2,
+   "keys_the_late_walk_skips": [
+    16385
+   ],
+   "record_at_section_offset": 1,
+   "record_at_start_key": 16385,
+   "records_if_started_one_stride_late": 3
+  },
+  {
+   "gap_bytes": 60,
+   "index": 3,
+   "keys_the_late_walk_skips": [
+    32920
+   ],
+   "record_at_section_offset": 1,
+   "record_at_start_key": 32920,
+   "records_if_started_one_stride_late": 326
+  }
+ ],
+ "sections": [
+  {
+   "end": 139452,
+   "first_record": {
+    "evidence": "the record starts AT the section offset: its stride at +0 chains to 0x80 and the chain closes on the -1 at 0x220b8, four bytes before the next section (tiles on True). A walk begun one stride late drops record 0x10 and leaves its 112 bytes unparsed; that record's key is 0x213, which is one of the four values WP1 published as unresolved.",
+    "key": 531,
+    "offset": 16,
+    "stride": 112
+   },
+   "index": 0,
+   "key_range": [
+    1,
+    2026
+   ],
+   "keys_distinct": 2026,
+   "offset": 16,
+   "opcode": "0x0000",
+   "records": 2026,
+   "tag": 0,
+   "terminator_offset": 139448,
+   "tiles_section": true
+  },
+  {
+   "end": 143328,
+   "first_record": {
+    "evidence": "the record starts AT the section offset: its stride at +0 chains to 0x220cc and the chain closes on the -1 at 0x22fdc, four bytes before the next section (tiles on True). A walk begun one stride late drops record 0x220bc and leaves its 16 bytes unparsed; that record's key is 0xc085, which is one of the four values WP1 published as unresolved.",
+    "key": 49285,
+    "offset": 139452,
+    "stride": 16
+   },
+   "index": 1,
+   "key_range": [
+    49153,
+    49404
+   ],
+   "keys_distinct": 242,
+   "offset": 139452,
+   "opcode": "0xc000",
+   "records": 242,
+   "tag": 3,
+   "terminator_offset": 143324,
+   "tiles_section": true
+  },
+  {
+   "end": 147460,
+   "first_record": {
+    "evidence": "the record starts AT the section offset: its stride at +0 chains to 0x233e8 and the chain closes on the -1 at 0x24000, four bytes before the next section (tiles on True). A walk begun one stride late drops record 0x22fe0 and leaves its 1032 bytes unparsed; that record's key is 0x4001, which is one of the four values WP1 published as unresolved.",
+    "key": 16385,
+    "offset": 143328,
+    "stride": 1032
+   },
+   "index": 2,
+   "key_range": [
+    16385,
+    16388
+   ],
+   "keys_distinct": 4,
+   "offset": 143328,
+   "opcode": "0x4000",
+   "records": 4,
+   "tag": 1,
+   "terminator_offset": 147456,
+   "tiles_section": true
+  },
+  {
+   "end": 167168,
+   "first_record": {
+    "evidence": "the record starts AT the section offset: its stride at +0 chains to 0x24040 and the chain closes on the -1 at 0x28cfc, four bytes before the next section (tiles on True). A walk begun one stride late drops record 0x24004 and leaves its 60 bytes unparsed; that record's key is 0x8098, which is one of the four values WP1 published as unresolved.",
+    "key": 32920,
+    "offset": 147460,
+    "stride": 60
+   },
+   "index": 3,
+   "key_range": [
+    32770,
+    33096
+   ],
+   "keys_distinct": 327,
+   "offset": 147460,
+   "opcode": "0x8000",
+   "records": 327,
+   "tag": 2,
+   "terminator_offset": 167164,
+   "tiles_section": true
+  }
+ ],
+ "tool": "tools/snd_macros.py",
+ "totals": {
+  "command_streams": 1,
+  "opcodes": 4,
+  "opcodes_that_start_a_voice": 3,
+  "pool_keys": 2599,
+  "project_list_unresolved": 0,
+  "project_list_values": 7388,
+  "ramps": 242,
+  "records": 2599,
+  "records_by_tag": {
+   "0": 2026,
+   "1": 4,
+   "2": 327,
+   "3": 242
+  },
+  "samples": 2026,
+  "sections": 4,
+  "sequence_bytes": 15780,
+  "sequence_elements": 1315,
+  "sequence_interior_sentinels": 7,
+  "sequence_live_elements": 981,
+  "sequence_sentinels": 334,
+  "sequences": 327,
+  "table_live_slots": 17,
+  "table_slots": 512,
+  "tables": 4,
+  "unresolved": 6
+ },
+ "unresolved": [
+  {
+   "kind": "field",
+   "offset": 0,
+   "opcode": "0x0000",
+   "reason": "the class-0 payload's interior: FUN_800b185c stores the pointer and adds `param_8 * 8`, which fixes the element size and index but says nothing about the eight bytes. No function in the corpus reads them at a named offset, so no field is tabulated. The payload is 24..128 bytes = 3..16 elements on 2026/2026 records.",
+   "size": 8
+  },
+  {
+   "kind": "field",
+   "offset": 0,
+   "opcode": "0xc000",
+   "reason": "read only through `*param_2 >> 0x18`, a non-zero test; whether it is a flag, a high byte of a value, or part of the curve selector is not established",
+   "size": 2
+  },
+  {
+   "kind": "field",
+   "offset": 6,
+   "opcode": "0xc000",
+   "reason": "read only through `*(char *)((int)param_2 + 7) != 0`, a non-zero test gating the curve blend; `FUN_800adef4` is called with its argument dropped by the decompiler, so which field names the interpolation table is open",
+   "size": 2
+  },
+  {
+   "kind": "field",
+   "offset": 8,
+   "opcode": "0x8000",
+   "reason": "bit 15 of this u16 is the reader's leave-the-pan-alone flag and is clear on every one of the 981 live rows, so the branch is unexercised by this data: the flag's meaning is read from the code and confirmed by no measurement",
+   "size": 2
+  },
+  {
+   "kind": "field",
+   "offset": 9,
+   "opcode": "0x8000",
+   "reason": "the last three bytes of a 12-byte row are zero on 1315/1315 rows and the reader stops at +8; they are called padding, and what they are for is not established",
+   "size": 3
+  },
+  {
+   "kind": "opcode-space",
+   "opcode": null,
+   "reason": "no unclaimed opcode: the tag is two bits, so the vocabulary is exactly four and all four are branched on in FUN_800a6820. What is left open is not a missing opcode but the fields above, plus the possibility that other keys reach a voice without this dispatcher (FUN_8009feb8 and FUN_800a83b4 are its only callers in the corpus, and the paths into the voice allocator that bypass it are not enumerated here)"
+  }
+ ]
+}

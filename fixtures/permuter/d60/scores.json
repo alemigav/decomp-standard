@@ -1,0 +1,79 @@
+{
+ "what": "decomp-permuter on osCreateThread (0x80006d60, boot image, 52 words) with the image as the objective",
+ "date": "2026-11-04",
+ "run": {
+  "iterations": 167244,
+  "compile_errors": 134669,
+  "better_score_events": 38,
+  "permuter_score_base": 1065,
+  "permuter_best_score": 860,
+  "new_candidate_dirs": 52,
+  "settings": {
+   "file": "settings.toml",
+   "compiler_type": "gcc",
+   "threads": 8,
+   "objective": "target.o built by make_target.py from the boot image's 52 words"
+  }
+ },
+ "byte_metric": {
+  "addr": "0x80006d60",
+  "words": 52,
+  "image": "boot (rom@0x1000)",
+  "base_control": {
+   "off": 23,
+   "same": 41,
+   "hunks": 9,
+   "got": 52,
+   "n": 52,
+   "first_diff": null
+  },
+  "scored": 52,
+  "perfect": 0,
+  "better_than_base": 2,
+  "best": [
+   {
+    "dir": "output-765-1",
+    "off": 26,
+    "same": 39,
+    "hunks": 10,
+    "compiled_words": 56
+   },
+   {
+    "dir": "output-965-2",
+    "off": 25,
+    "same": 38,
+    "hunks": 11,
+    "compiled_words": 56
+   },
+   {
+    "dir": "output-1045-1",
+    "off": 23,
+    "same": 41,
+    "hunks": 8,
+    "compiled_words": 52
+   },
+   {
+    "dir": "output-1055-3",
+    "off": 23,
+    "same": 41,
+    "hunks": 9,
+    "compiled_words": 52
+   },
+   {
+    "dir": "output-1060-1",
+    "off": 23,
+    "same": 41,
+    "hunks": 9,
+    "compiled_words": 52
+   },
+   {
+    "dir": "output-1015-1",
+    "off": 23,
+    "same": 40,
+    "hunks": 8,
+    "compiled_words": 52
+   }
+  ]
+ },
+ "verdict": "NEGATIVE, and the boundary is the finding. Nothing reaches 52. The two candidates that beat the base by words (26/52, 25/52) emit 56 instructions -- four too many -- and are WORSE content-aligned (39, 38 against the base's 41), so no candidate is a real improvement. Unlike p6, whose residue was a statement order the randomiser can reach, this residue is parameter-load scheduling and register allocation, which the permuter's move set does not touch. The permuter is a SHAPE search; allocation is still hand work."
+}

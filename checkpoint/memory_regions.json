@@ -1,0 +1,27 @@
+{
+ "cartridge": {
+  "base": "0xb0000000",
+  "sha256": "71f3f779613bf1f0e2050bfa600425385d2c257a647d2e40f63be1a7986e9aac",
+  "size": 67108864
+ },
+ "hardware_window": {
+  "behaviour": "reads as zero, writes ignored",
+  "range": "0xa0000000-0xc0000000"
+ },
+ "images": {
+  "boot": {
+   "rom": "0x1000..0x14600",
+   "vram": "0x80000480"
+  },
+  "stage2": {
+   "length": 1172240,
+   "sha256": "daabf1d4dac248cf697ab7ed60aa1a6e0a555a26a56a154747fbd46b234c6673",
+   "vram": "0x80018a80"
+  }
+ },
+ "ram": {
+  "base": "0x80000000",
+  "sha256": "31067cf4827ea356601d58ca03764f675ea24b81ee29d9bc98eb4c897e8fb332",
+  "size": 4194304
+ }
+}

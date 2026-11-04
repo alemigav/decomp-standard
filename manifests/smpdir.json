@@ -1,0 +1,135 @@
+{
+ "block": {
+  "bytes": 256,
+  "stored_length_minus_block_divisible_by_40": 1192,
+  "stored_length_mod_40": {
+   "16": 1192
+  },
+  "why_16_looked_like_the_prefix": "256 = 6*40 + 16"
+ },
+ "block_is_not_audio": {
+  "best_correlation_with_decoded_head": 0.419,
+  "best_correlation_with_decoded_tail": 0.465,
+  "clips_compared": 50,
+  "decoded_audio_peak_max": 32768,
+  "decoded_audio_peak_median": 32768,
+  "fraction_over_4096": 0.0681,
+  "magnitude_max": 17696,
+  "magnitude_median": 397,
+  "magnitude_p99": 9069
+ },
+ "block_refutations": {
+  "copy_trials": 63,
+  "literal_copy_of_previous_sample": 0,
+  "seed_for_frame0": 2,
+  "seed_trials": 1191
+ },
+ "frame_index_legality": {
+  "0": {
+   "fraction": 0.4828,
+   "illegal": 1151,
+   "runs": 2384
+  },
+  "1": {
+   "fraction": 0.5155,
+   "illegal": 1229,
+   "runs": 2384
+  },
+  "10": {
+   "fraction": 0.0,
+   "illegal": 0,
+   "runs": 2370
+  },
+  "2": {
+   "fraction": 0.4224,
+   "illegal": 1007,
+   "runs": 2384
+  },
+  "3": {
+   "fraction": 0.5478,
+   "illegal": 1306,
+   "runs": 2384
+  },
+  "4": {
+   "fraction": 0.3926,
+   "illegal": 936,
+   "runs": 2384
+  },
+  "5": {
+   "fraction": 0.4908,
+   "illegal": 1170,
+   "runs": 2384
+  },
+  "6": {
+   "fraction": 0.0,
+   "illegal": 0,
+   "runs": 2384
+  },
+  "7": {
+   "fraction": 0.0,
+   "illegal": 0,
+   "runs": 2384
+  },
+  "8": {
+   "fraction": 0.0,
+   "illegal": 0,
+   "runs": 2382
+  },
+  "9": {
+   "fraction": 0.0,
+   "illegal": 0,
+   "runs": 2378
+  }
+ },
+ "grid": {
+  "declared_count_fits_below_grid": 1192,
+  "frames": [
+   2,
+   1994
+  ],
+  "samples_available_minus_declared": [
+   72,
+   135
+  ],
+  "slack_median": 104
+ },
+ "inputs": {
+  "directory": "cartridge id 1982 (SND_SMPDIR), 1192 x 28 B + terminator",
+  "rule": "a record is `u16 index, u16 0, u32 offset, u32 0, u16 15360, u16 rate, u8 3, u24 count, u32 f1, u32 f2`; a sample is a 256-byte block followed by 40-byte nibble frames, and the declared count is a sample count",
+  "sample_data": "cartridge id 1983, 9022912 B"
+ },
+ "loop_candidates": {
+  "distinct_pairs": 188,
+  "f1_below_count": 1192,
+  "f1_ge_f2": 64,
+  "f1_lt_f2": 123,
+  "f2_below_or_equal_count": 1192,
+  "f2_positive": 187,
+  "pair_(2,0)_records": 1005
+ },
+ "not_claimed": [
+  "what the 256-byte block holds: it is not audio, not the clip's head or tail, not a seed for frame 0's history (2 of 1191) and not a copy of the previous sample (0 of 63) -- four refutations and no positive reading",
+  "that f1/f2 are loop start and end: 64 of the 187 records with f2 > 0 have f1 >= f2, and no ordering convention repairs all of them",
+  "that the trailing slack (72..135 samples beyond the declared count) is padding rather than an unused final frame",
+  "anything about how the samples sound"
+ ],
+ "reading": "the record is decoded and two fields are constant on all **1192** records (15360 and the codec byte 3). A sample is a **256-byte block** followed by 40-byte nibble frames: legality by frame index steps from **39-55 %** illegal at frames 0-5 to **0 of 2384** from frame 6 on, and the declared count sits **72..135** below the grid on 1192 of 1192. The block is **not audio** (median magnitude 397, max 17696, against a decoded peak of 32768) and is not the clip's head or tail, so `sound_decode.py`'s 256-byte skip is correct.",
+ "record_fields": {
+  "codec_values": {
+   "3": 1192
+  },
+  "const12_values": {
+   "15360": 1192
+  },
+  "count_range": [
+   43,
+   127487
+  ],
+  "index_sequential": true,
+  "rates": 15,
+  "zero2_all": true,
+  "zero8_all": true
+ },
+ "schema": "smpdir/1",
+ "tool": "smpdir.py"
+}

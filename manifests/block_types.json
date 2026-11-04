@@ -1,0 +1,59 @@
+{
+ "note": "Recovered by tools/scan_headers.py; see docs/format_notes.md. Blocks are payload-then-trailer: u32 type, u32 payload_size, with one pad byte when the size is odd.",
+ "trailer_types": [
+  {
+   "value": 65536,
+   "name": "media_payload_0x00010000"
+  },
+  {
+   "value": 4096,
+   "name": "type_00001000"
+  },
+  {
+   "value": 1048576,
+   "name": "type_00100000"
+  }
+ ],
+ "max_block_span": 4194304,
+ "verified": "mjpeg_frame 1227/1227 and mpeg1_video 271/271 resolve exactly; region_r3 and region_r4 resolve 0/0 - different container",
+ "kinds": [
+  {
+   "name": "mjpeg_frame",
+   "region": [
+    "0x2bdefa9",
+    "0x3af17fe"
+   ],
+   "payload_magic": "ffd8ff",
+   "out": "fmv",
+   "ext": "jpg"
+  },
+  {
+   "name": "mpeg1_video",
+   "region": [
+    "0x1440f30",
+    "0x2b7d8ea"
+   ],
+   "payload_magic": "000001b3",
+   "out": "video",
+   "ext": "m2v"
+  },
+  {
+   "name": "region_r3",
+   "region": [
+    "0x0b73fb3",
+    "0x140ed84"
+   ],
+   "out": "unknown",
+   "ext": "bin"
+  },
+  {
+   "name": "region_r4",
+   "region": [
+    "0x0338fe1",
+    "0x0b63106"
+   ],
+   "out": "unknown",
+   "ext": "bin"
+  }
+ ]
+}

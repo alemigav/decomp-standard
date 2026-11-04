@@ -1,0 +1,4567 @@
+{
+ "inputs": {
+  "base": "0x80018a80",
+  "grid": "range endpoints are last *bytes*, so every scan starts at the next word boundary; a scan beginning at `end + 1` walks off the grid and silently finds nothing",
+  "handlers": "manifests/handler_region.json (M212's classification, consumed rather than re-derived: 59 function_body, 76 fragment, 3 unresolved)",
+  "heads": "manifests/dispatch_heads.json (M228: 86 bounds-checked dispatch heads, consumed so a swallowed start is named a head rather than 'a leaf the walk sailed past')",
+  "image": "assets/unpacked/00000_0014420_1172240.bin",
+  "jal_targets": 1993,
+  "queue": "manifests/extent_corrections.json (M212's 21 queued corrections)",
+  "ranges": "fixtures/decomp/ranges.json (the corpus's own extents)"
+ },
+ "not_claimed": [
+  "the corrected extents themselves: applying them needs a Ghidra run, and this tool reads the queue rather than changing it",
+  "whether a `dispatch_arm` merge is the *best* reading: it is defensible because the piece is reachable only through a table, and it is not the same as proving one function owns it",
+  "anything about the unreferenced piece at 0x8007188c beyond the fact that this image contains no `jal` and no pointer to it"
+ ],
+ "queue": {
+  "all_used": true,
+  "by_shape": {
+   "extension": 16,
+   "merge": 5
+  },
+  "entries": [
+   {
+    "corrected_end": "0x8006db97",
+    "current_end": 2147932927,
+    "entry": "0x8006da14",
+    "handlers_brought_inside": [
+     "0x00",
+     "0x01",
+     "0x02",
+     "0x1c",
+     "0x1e",
+     "0x1f",
+     "0x20"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x00",
+     "0x01",
+     "0x02",
+     "0x1c",
+     "0x1e",
+     "0x1f",
+     "0x20"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x8006dfe3",
+    "current_end": 2147933171,
+    "entry": "0x8006dbc0",
+    "handlers_brought_inside": [
+     "0x05",
+     "0x06",
+     "0x07",
+     "0x08",
+     "0x09",
+     "0x0a",
+     "0x0b",
+     "0x0c",
+     "0x0d",
+     "0x0e",
+     "0x1b"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x05",
+     "0x06",
+     "0x07",
+     "0x08",
+     "0x09",
+     "0x0a",
+     "0x0b",
+     "0x0c",
+     "0x0d",
+     "0x0e",
+     "0x1b"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x8006e137",
+    "current_end": 2147934363,
+    "entry": "0x8006dfe4",
+    "handlers_brought_inside": [
+     "0x10",
+     "0x11"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x10",
+     "0x11"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x8006e533",
+    "current_end": 2147934831,
+    "entry": "0x8006e1bc",
+    "handlers_brought_inside": [
+     "0x13",
+     "0x14",
+     "0x15",
+     "0x16",
+     "0x17",
+     "0x18",
+     "0x19",
+     "0x1a",
+     "0x1d"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x13",
+     "0x14",
+     "0x15",
+     "0x16",
+     "0x17",
+     "0x18",
+     "0x19",
+     "0x1a",
+     "0x1d"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x8006e79b",
+    "current_end": 2147935603,
+    "entry": "0x8006e534",
+    "handlers_brought_inside": [
+     "0x21",
+     "0x22",
+     "0x23",
+     "0x24",
+     "0x25"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x21",
+     "0x22",
+     "0x24",
+     "0x25"
+    ],
+    "shape": "merge",
+    "swallowed": [
+     {
+      "end": 2147935979,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147935968
+     },
+     {
+      "end": 2147935987,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147935980
+     },
+     {
+      "end": 2147935999,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147935988
+     },
+     {
+      "end": 2147936007,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147936000
+     },
+     {
+      "end": 2147936019,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147936008
+     },
+     {
+      "end": 2147936031,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147936020
+     },
+     {
+      "end": 2147936047,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147936032
+     }
+    ],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 7,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x8006ecbf",
+    "current_end": 2147937367,
+    "entry": "0x8006ebec",
+    "handlers_brought_inside": [
+     "0x3c"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x3c"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x8006ee23",
+    "current_end": 2147937711,
+    "entry": "0x8006ecc0",
+    "handlers_brought_inside": [
+     "0x61"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x61"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x8006f03f",
+    "current_end": 2147937935,
+    "entry": "0x8006ee24",
+    "handlers_brought_inside": [
+     "0x2c",
+     "0x3b",
+     "0x67",
+     "0x68"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x2c",
+     "0x3b",
+     "0x67",
+     "0x68"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x8006f3b3",
+    "current_end": 2147939115,
+    "entry": "0x8006f1b0",
+    "handlers_brought_inside": [
+     "0x46"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x46"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x8006f8af",
+    "current_end": 2147940159,
+    "entry": "0x8006f448",
+    "handlers_brought_inside": [
+     "0x48"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x48"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x8006fb47",
+    "current_end": 2147941107,
+    "entry": "0x8006f8b0",
+    "handlers_brought_inside": [
+     "0x49"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x49"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x8006fea3",
+    "current_end": 2147941679,
+    "entry": "0x8006fc5c",
+    "handlers_brought_inside": [
+     "0x2f",
+     "0x30",
+     "0x31",
+     "0x32",
+     "0x33"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x2f",
+     "0x30",
+     "0x31",
+     "0x32",
+     "0x33"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x8007133f",
+    "current_end": 2147946955,
+    "entry": "0x80071180",
+    "handlers_brought_inside": [
+     "0x37"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x37"
+    ],
+    "shape": "merge",
+    "swallowed": [
+     {
+      "end": 2147946971,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147946956
+     },
+     {
+      "end": 2147947003,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147946972
+     },
+     {
+      "end": 2147947035,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147947004
+     },
+     {
+      "end": 2147947083,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147947036
+     },
+     {
+      "end": 2147947239,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147947084
+     }
+    ],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 5,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x80071b3b",
+    "current_end": 2147948447,
+    "entry": "0x80071744",
+    "handlers_brought_inside": [
+     "0x3f",
+     "0x40",
+     "0x4a"
+    ],
+    "must_stop_before": 2147948448,
+    "opcodes": [
+     "0x3f",
+     "0x4a"
+    ],
+    "shape": "merge",
+    "swallowed": [
+     {
+      "end": 2147948507,
+      "head_table": 2148243704,
+      "jal_sites": 7,
+      "kind": "dispatch_head",
+      "start": 2147948448
+     },
+     {
+      "end": 2147948519,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147948508
+     },
+     {
+      "end": 2147948551,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147948520
+     },
+     {
+      "end": 2147948583,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147948552
+     },
+     {
+      "end": 2147948631,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147948584
+     },
+     {
+      "end": 2147948683,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "table_arm",
+      "start": 2147948632
+     },
+     {
+      "end": 2147948879,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "branch_target",
+      "start": 2147948684
+     }
+    ],
+    "swallowed_counts": {
+     "branch_target": 1,
+     "dispatch_head": 1,
+     "handler": 0,
+     "table_arm": 5,
+     "unreferenced": 0
+    },
+    "verdict": "drop: no valid extension \u2014 the function already ends where the next called head begins"
+   },
+   {
+    "corrected_end": "0x80071e13",
+    "current_end": 2147949459,
+    "entry": "0x80071b3c",
+    "handlers_brought_inside": [
+     "0x41",
+     "0x42",
+     "0x43",
+     "0x58",
+     "0x5b",
+     "0x66"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x42",
+     "0x43",
+     "0x58",
+     "0x5b",
+     "0x66"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x80072353",
+    "current_end": 2147951307,
+    "entry": "0x80071e14",
+    "handlers_brought_inside": [
+     "0x4f",
+     "0x50"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x4f",
+     "0x50"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x800725db",
+    "current_end": 2147952043,
+    "entry": "0x80072548",
+    "handlers_brought_inside": [
+     "0x5f"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x5f"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x8007277b",
+    "current_end": 2147952427,
+    "entry": "0x80072670",
+    "handlers_brought_inside": [
+     "0x5d",
+     "0x77",
+     "0x78",
+     "0x79"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x5d",
+     "0x77",
+     "0x78",
+     "0x79"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x80073017",
+    "current_end": 2147953723,
+    "entry": "0x80072acc",
+    "handlers_brought_inside": [
+     "0x38",
+     "0x6a",
+     "0x6b",
+     "0x6d",
+     "0x7c",
+     "0x7d",
+     "0x7e",
+     "0x7f"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x38",
+     "0x6a",
+     "0x6d",
+     "0x7d",
+     "0x7e",
+     "0x7f"
+    ],
+    "shape": "merge",
+    "swallowed": [
+     {
+      "end": 2147954019,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "handler",
+      "start": 2147953924
+     },
+     {
+      "end": 2147954139,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "handler",
+      "start": 2147954020
+     }
+    ],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 2,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x800734af",
+    "current_end": 2147954775,
+    "entry": "0x80073018",
+    "handlers_brought_inside": [
+     "0x45",
+     "0x70",
+     "0x71",
+     "0x73",
+     "0x7a",
+     "0x7b",
+     "0x83",
+     "0x84",
+     "0x89"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x45",
+     "0x70",
+     "0x73",
+     "0x7a",
+     "0x7b",
+     "0x83",
+     "0x84",
+     "0x89"
+    ],
+    "shape": "merge",
+    "swallowed": [
+     {
+      "end": 2147955055,
+      "head_table": null,
+      "jal_sites": 0,
+      "kind": "handler",
+      "start": 2147954944
+     }
+    ],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 1,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   },
+   {
+    "corrected_end": "0x8007358f",
+    "current_end": 2147956067,
+    "entry": "0x800734b0",
+    "handlers_brought_inside": [
+     "0x86"
+    ],
+    "must_stop_before": null,
+    "opcodes": [
+     "0x86"
+    ],
+    "shape": "extension",
+    "swallowed": [],
+    "swallowed_counts": {
+     "branch_target": 0,
+     "dispatch_head": 0,
+     "handler": 0,
+     "table_arm": 0,
+     "unreferenced": 0
+    },
+    "verdict": "safe: every function it merges is reachable only through a table or is another handler"
+   }
+  ],
+  "reading": "a correction is not an extension: to reach its `last_end` it swallows every corpus function start in between, so each swallowed start is classified by how it can be reached. 20 entries may be applied as they stand, 0 needs a decision first.",
+  "swallowed_total": 22,
+  "verdicts": {
+   "drop": 1,
+   "safe": 20
+  }
+ },
+ "schema": "extent-audit/1",
+ "store_placement": {
+  "by_kind": {
+   "none": 1,
+   "own_extent": 132,
+   "store_in_arm": 2,
+   "via_correction": 3
+  },
+  "handlers": [
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147933079,
+     "start": 2147932692
+    },
+    "handler": "0x8006db00",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x1c"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147932947,
+     "start": 2147932928
+    },
+    "region_entry": "0x8006da14",
+    "stores": [
+     {
+      "at": 2147932936,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147933079,
+     "start": 2147932692
+    },
+    "handler": "0x8006db14",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x00",
+     "0x1e",
+     "0x1f",
+     "0x20"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147932967,
+     "start": 2147932948
+    },
+    "region_entry": "0x8006da14",
+    "stores": [
+     {
+      "at": 2147932956,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147933079,
+     "start": 2147932692
+    },
+    "handler": "0x8006db28",
+    "kind": "via_correction",
+    "opcodes": [
+     "0x01"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147932995,
+     "start": 2147932968
+    },
+    "region_entry": "0x8006da14",
+    "stores": [
+     {
+      "at": 2147933048,
+      "body": null,
+      "where": "via_correction"
+     },
+     {
+      "at": 2147933068,
+      "body": null,
+      "where": "via_correction"
+     }
+    ],
+    "why": "the store is outside the handler's own extent and only the queued correction's extent reaches it"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147933079,
+     "start": 2147932692
+    },
+    "handler": "0x8006db84",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x02"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147933079,
+     "start": 2147933060
+    },
+    "region_entry": "0x8006da14",
+    "stores": [
+     {
+      "at": 2147933068,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8006db98",
+    "kind": "none",
+    "opcodes": [
+     "0x03"
+    ],
+    "own_body": {
+     "end": 2147933119,
+     "start": 2147933080
+    },
+    "own_extent": {
+     "end": 2147933119,
+     "start": 2147933080
+    },
+    "region_entry": null,
+    "stores": [],
+    "why": "no ctx+0x1c store inside the code the corpus and the queue claim for this handler"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147934179,
+     "start": 2147933120
+    },
+    "handler": "0x8006dbc0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x04"
+    ],
+    "own_body": {
+     "end": 2147933171,
+     "start": 2147933120
+    },
+    "own_extent": {
+     "end": 2147933171,
+     "start": 2147933120
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147933144,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147934179,
+     "start": 2147933120
+    },
+    "handler": "0x8006dbf4",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x05"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147933235,
+     "start": 2147933172
+    },
+    "region_entry": "0x8006dbc0",
+    "stores": [
+     {
+      "at": 2147933224,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147934179,
+     "start": 2147933120
+    },
+    "handler": "0x8006dc34",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x06"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147933299,
+     "start": 2147933236
+    },
+    "region_entry": "0x8006dbc0",
+    "stores": [
+     {
+      "at": 2147933252,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147934179,
+     "start": 2147933120
+    },
+    "handler": "0x8006dc74",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x07"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147933355,
+     "start": 2147933300
+    },
+    "region_entry": "0x8006dbc0",
+    "stores": [
+     {
+      "at": 2147933328,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147934179,
+     "start": 2147933120
+    },
+    "handler": "0x8006dcac",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x08"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147933407,
+     "start": 2147933356
+    },
+    "region_entry": "0x8006dbc0",
+    "stores": [
+     {
+      "at": 2147933380,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147934179,
+     "start": 2147933120
+    },
+    "handler": "0x8006dce0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x09"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147933479,
+     "start": 2147933408
+    },
+    "region_entry": "0x8006dbc0",
+    "stores": [
+     {
+      "at": 2147933428,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147934179,
+     "start": 2147933120
+    },
+    "handler": "0x8006dd28",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x0a"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147933563,
+     "start": 2147933480
+    },
+    "region_entry": "0x8006dbc0",
+    "stores": [
+     {
+      "at": 2147933540,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147934179,
+     "start": 2147933120
+    },
+    "handler": "0x8006dd7c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x0b"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147933603,
+     "start": 2147933564
+    },
+    "region_entry": "0x8006dbc0",
+    "stores": [
+     {
+      "at": 2147933592,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147934179,
+     "start": 2147933120
+    },
+    "handler": "0x8006dda4",
+    "kind": "via_correction",
+    "opcodes": [
+     "0x0c"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147933647,
+     "start": 2147933604
+    },
+    "region_entry": "0x8006dbc0",
+    "stores": [
+     {
+      "at": 2147933696,
+      "body": null,
+      "where": "via_correction"
+     },
+     {
+      "at": 2147933824,
+      "body": null,
+      "where": "via_correction"
+     },
+     {
+      "at": 2147933872,
+      "body": null,
+      "where": "via_correction"
+     },
+     {
+      "at": 2147934012,
+      "body": null,
+      "where": "via_correction"
+     },
+     {
+      "at": 2147934060,
+      "body": null,
+      "where": "via_correction"
+     },
+     {
+      "at": 2147934144,
+      "body": null,
+      "where": "via_correction"
+     },
+     {
+      "at": 2147934156,
+      "body": null,
+      "where": "via_correction"
+     }
+    ],
+    "why": "the store is outside the handler's own extent and only the queued correction's extent reaches it"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147934179,
+     "start": 2147933120
+    },
+    "handler": "0x8006de20",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x0d"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147933883,
+     "start": 2147933728
+    },
+    "region_entry": "0x8006dbc0",
+    "stores": [
+     {
+      "at": 2147933824,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147933872,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147934179,
+     "start": 2147933120
+    },
+    "handler": "0x8006debc",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x1b"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147934071,
+     "start": 2147933884
+    },
+    "region_entry": "0x8006dbc0",
+    "stores": [
+     {
+      "at": 2147934012,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147934060,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147934179,
+     "start": 2147933120
+    },
+    "handler": "0x8006df78",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x0e"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147934179,
+     "start": 2147934072
+    },
+    "region_entry": "0x8006dbc0",
+    "stores": [
+     {
+      "at": 2147934144,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147934156,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147934519,
+     "start": 2147934180
+    },
+    "handler": "0x8006dfe4",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x0f"
+    ],
+    "own_body": {
+     "end": 2147934363,
+     "start": 2147934180
+    },
+    "own_extent": {
+     "end": 2147934363,
+     "start": 2147934180
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147934192,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147934272,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147934320,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147934519,
+     "start": 2147934180
+    },
+    "handler": "0x8006e09c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x10"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147934419,
+     "start": 2147934364
+    },
+    "region_entry": "0x8006dfe4",
+    "stores": [
+     {
+      "at": 2147934396,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147934519,
+     "start": 2147934180
+    },
+    "handler": "0x8006e0d4",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x11"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147934519,
+     "start": 2147934420
+    },
+    "region_entry": "0x8006dfe4",
+    "stores": [
+     {
+      "at": 2147934484,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8006e138",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x12"
+    ],
+    "own_body": {
+     "end": 2147934651,
+     "start": 2147934520
+    },
+    "own_extent": {
+     "end": 2147934651,
+     "start": 2147934520
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147934548,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147934628,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147935539,
+     "start": 2147934652
+    },
+    "handler": "0x8006e270",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x13"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147935031,
+     "start": 2147934832
+    },
+    "region_entry": "0x8006e1bc",
+    "stores": [
+     {
+      "at": 2147935020,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147935539,
+     "start": 2147934652
+    },
+    "handler": "0x8006e338",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x14"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147935051,
+     "start": 2147935032
+    },
+    "region_entry": "0x8006e1bc",
+    "stores": [
+     {
+      "at": 2147935040,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147935539,
+     "start": 2147934652
+    },
+    "handler": "0x8006e34c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x15"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147935071,
+     "start": 2147935052
+    },
+    "region_entry": "0x8006e1bc",
+    "stores": [
+     {
+      "at": 2147935060,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147935539,
+     "start": 2147934652
+    },
+    "handler": "0x8006e360",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x16"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147935111,
+     "start": 2147935072
+    },
+    "region_entry": "0x8006e1bc",
+    "stores": [
+     {
+      "at": 2147935100,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147935539,
+     "start": 2147934652
+    },
+    "handler": "0x8006e388",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x17"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147935187,
+     "start": 2147935112
+    },
+    "region_entry": "0x8006e1bc",
+    "stores": [
+     {
+      "at": 2147935184,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147935539,
+     "start": 2147934652
+    },
+    "handler": "0x8006e3d4",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x18"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147935291,
+     "start": 2147935188
+    },
+    "region_entry": "0x8006e1bc",
+    "stores": [
+     {
+      "at": 2147935280,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147935539,
+     "start": 2147934652
+    },
+    "handler": "0x8006e43c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x19"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147935371,
+     "start": 2147935292
+    },
+    "region_entry": "0x8006e1bc",
+    "stores": [
+     {
+      "at": 2147935324,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147935539,
+     "start": 2147934652
+    },
+    "handler": "0x8006e48c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x1a"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147935443,
+     "start": 2147935372
+    },
+    "region_entry": "0x8006e1bc",
+    "stores": [
+     {
+      "at": 2147935412,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147935539,
+     "start": 2147934652
+    },
+    "handler": "0x8006e4d4",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x1d"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147935539,
+     "start": 2147935444
+    },
+    "region_entry": "0x8006e1bc",
+    "stores": [
+     {
+      "at": 2147935468,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147936155,
+     "start": 2147935540
+    },
+    "handler": "0x8006e534",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x6c"
+    ],
+    "own_body": {
+     "end": 2147935603,
+     "start": 2147935540
+    },
+    "own_extent": {
+     "end": 2147935603,
+     "start": 2147935540
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147935580,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147936155,
+     "start": 2147935540
+    },
+    "handler": "0x8006e574",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x21"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147935695,
+     "start": 2147935604
+    },
+    "region_entry": "0x8006e534",
+    "stores": [
+     {
+      "at": 2147935624,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147936155,
+     "start": 2147935540
+    },
+    "handler": "0x8006e5d0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x22"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147935835,
+     "start": 2147935696
+    },
+    "region_entry": "0x8006e534",
+    "stores": [
+     {
+      "at": 2147935716,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "dispatch_head",
+    "corrected_extent": null,
+    "handler": "0x8006e68c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x23"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147935967,
+     "start": 2147935884
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147935900,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147936155,
+     "start": 2147935540
+    },
+    "handler": "0x8006e730",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x24"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147936095,
+     "start": 2147936048
+    },
+    "region_entry": "0x8006e534",
+    "stores": [
+     {
+      "at": 2147936064,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147936155,
+     "start": 2147935540
+    },
+    "handler": "0x8006e760",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x25"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147936155,
+     "start": 2147936096
+    },
+    "region_entry": "0x8006e534",
+    "stores": [
+     {
+      "at": 2147936112,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8006e79c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x26"
+    ],
+    "own_body": {
+     "end": 2147936227,
+     "start": 2147936156
+    },
+    "own_extent": {
+     "end": 2147936227,
+     "start": 2147936156
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147936192,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8006e7e4",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x27"
+    ],
+    "own_body": {
+     "end": 2147936311,
+     "start": 2147936228
+    },
+    "own_extent": {
+     "end": 2147936311,
+     "start": 2147936228
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147936292,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8006eae0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x28"
+    ],
+    "own_body": {
+     "end": 2147937031,
+     "start": 2147936992
+    },
+    "own_extent": {
+     "end": 2147937031,
+     "start": 2147936992
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147937012,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8006eb08",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x29"
+    ],
+    "own_body": {
+     "end": 2147937151,
+     "start": 2147937032
+    },
+    "own_extent": {
+     "end": 2147937151,
+     "start": 2147937032
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147937124,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8006eb80",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x2a"
+    ],
+    "own_body": {
+     "end": 2147937259,
+     "start": 2147937152
+    },
+    "own_extent": {
+     "end": 2147937259,
+     "start": 2147937152
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147937236,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147937471,
+     "start": 2147937260
+    },
+    "handler": "0x8006ec58",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x3c"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147937471,
+     "start": 2147937368
+    },
+    "region_entry": "0x8006ebec",
+    "stores": [
+     {
+      "at": 2147937460,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147937827,
+     "start": 2147937472
+    },
+    "handler": "0x8006ecc0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x4b"
+    ],
+    "own_body": {
+     "end": 2147937711,
+     "start": 2147937472
+    },
+    "own_extent": {
+     "end": 2147937711,
+     "start": 2147937472
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147937688,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147937827,
+     "start": 2147937472
+    },
+    "handler": "0x8006edb0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x61"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147937827,
+     "start": 2147937712
+    },
+    "region_entry": "0x8006ecc0",
+    "stores": [
+     {
+      "at": 2147937816,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147938367,
+     "start": 2147937828
+    },
+    "handler": "0x8006ee24",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x2b"
+    ],
+    "own_body": {
+     "end": 2147937935,
+     "start": 2147937828
+    },
+    "own_extent": {
+     "end": 2147937935,
+     "start": 2147937828
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147937860,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147938367,
+     "start": 2147937828
+    },
+    "handler": "0x8006ee90",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x2c"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147938035,
+     "start": 2147937936
+    },
+    "region_entry": "0x8006ee24",
+    "stores": [
+     {
+      "at": 2147938024,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147938367,
+     "start": 2147937828
+    },
+    "handler": "0x8006eef4",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x67"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147938151,
+     "start": 2147938036
+    },
+    "region_entry": "0x8006ee24",
+    "stores": [
+     {
+      "at": 2147938140,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147938367,
+     "start": 2147937828
+    },
+    "handler": "0x8006ef68",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x3b"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147938251,
+     "start": 2147938152
+    },
+    "region_entry": "0x8006ee24",
+    "stores": [
+     {
+      "at": 2147938240,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147938367,
+     "start": 2147937828
+    },
+    "handler": "0x8006efcc",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x68"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147938367,
+     "start": 2147938252
+    },
+    "region_entry": "0x8006ee24",
+    "stores": [
+     {
+      "at": 2147938356,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8006f040",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x4e"
+    ],
+    "own_body": {
+     "end": 2147938735,
+     "start": 2147938368
+    },
+    "own_extent": {
+     "end": 2147938735,
+     "start": 2147938368
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147938388,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147938416,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147939251,
+     "start": 2147938736
+    },
+    "handler": "0x8006f1b0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x69"
+    ],
+    "own_body": {
+     "end": 2147939115,
+     "start": 2147938736
+    },
+    "own_extent": {
+     "end": 2147939115,
+     "start": 2147938736
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147938756,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147938796,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147939251,
+     "start": 2147938736
+    },
+    "handler": "0x8006f32c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x46"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147939251,
+     "start": 2147939116
+    },
+    "region_entry": "0x8006f1b0",
+    "stores": [
+     {
+      "at": 2147939240,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8006f3b4",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x47"
+    ],
+    "own_body": {
+     "end": 2147939399,
+     "start": 2147939252
+    },
+    "own_extent": {
+     "end": 2147939399,
+     "start": 2147939252
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147939376,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147940527,
+     "start": 2147939400
+    },
+    "handler": "0x8006f448",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x2d"
+    ],
+    "own_body": {
+     "end": 2147940159,
+     "start": 2147939400
+    },
+    "own_extent": {
+     "end": 2147940159,
+     "start": 2147939400
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147939404,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147940124,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147940527,
+     "start": 2147939400
+    },
+    "handler": "0x8006f740",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x48"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147940527,
+     "start": 2147940160
+    },
+    "region_entry": "0x8006f448",
+    "stores": [
+     {
+      "at": 2147940516,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147941191,
+     "start": 2147940528
+    },
+    "handler": "0x8006f8b0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x72"
+    ],
+    "own_body": {
+     "end": 2147941107,
+     "start": 2147940528
+    },
+    "own_extent": {
+     "end": 2147941107,
+     "start": 2147940528
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147941068,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147941191,
+     "start": 2147940528
+    },
+    "handler": "0x8006faf4",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x49"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147941191,
+     "start": 2147941108
+    },
+    "region_entry": "0x8006f8b0",
+    "stores": [
+     {
+      "at": 2147941188,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "dispatch_head",
+    "corrected_extent": null,
+    "handler": "0x8006fb48",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x2e"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147941283,
+     "start": 2147941192
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147941240,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147942051,
+     "start": 2147941468
+    },
+    "handler": "0x8006fc5c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x6e"
+    ],
+    "own_body": {
+     "end": 2147941679,
+     "start": 2147941468
+    },
+    "own_extent": {
+     "end": 2147941679,
+     "start": 2147941468
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147941652,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147942051,
+     "start": 2147941468
+    },
+    "handler": "0x8006fd30",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x2f"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147941719,
+     "start": 2147941680
+    },
+    "region_entry": "0x8006fc5c",
+    "stores": [
+     {
+      "at": 2147941696,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147942051,
+     "start": 2147941468
+    },
+    "handler": "0x8006fd58",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x30"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147941839,
+     "start": 2147941720
+    },
+    "region_entry": "0x8006fc5c",
+    "stores": [
+     {
+      "at": 2147941828,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147942051,
+     "start": 2147941468
+    },
+    "handler": "0x8006fdd0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x31"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147941955,
+     "start": 2147941840
+    },
+    "region_entry": "0x8006fc5c",
+    "stores": [
+     {
+      "at": 2147941952,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147942051,
+     "start": 2147941468
+    },
+    "handler": "0x8006fe44",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x32"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147942003,
+     "start": 2147941956
+    },
+    "region_entry": "0x8006fc5c",
+    "stores": [
+     {
+      "at": 2147941992,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147942051,
+     "start": 2147941468
+    },
+    "handler": "0x8006fe74",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x33"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147942051,
+     "start": 2147942004
+    },
+    "region_entry": "0x8006fc5c",
+    "stores": [
+     {
+      "at": 2147942040,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8006fea4",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x34"
+    ],
+    "own_body": {
+     "end": 2147942123,
+     "start": 2147942052
+    },
+    "own_extent": {
+     "end": 2147942123,
+     "start": 2147942052
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147942100,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8006feec",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x35"
+    ],
+    "own_body": {
+     "end": 2147942215,
+     "start": 2147942124
+    },
+    "own_extent": {
+     "end": 2147942215,
+     "start": 2147942124
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147942192,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x800700d0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x3d"
+    ],
+    "own_body": {
+     "end": 2147942687,
+     "start": 2147942608
+    },
+    "own_extent": {
+     "end": 2147942687,
+     "start": 2147942608
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147942636,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x80070120",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x3e"
+    ],
+    "own_body": {
+     "end": 2147942779,
+     "start": 2147942688
+    },
+    "own_extent": {
+     "end": 2147942779,
+     "start": 2147942688
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147942720,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8007040c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x55"
+    ],
+    "own_body": {
+     "end": 2147943539,
+     "start": 2147943436
+    },
+    "own_extent": {
+     "end": 2147943539,
+     "start": 2147943436
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147943448,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147943508,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x80070474",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x56"
+    ],
+    "own_body": {
+     "end": 2147943647,
+     "start": 2147943540
+    },
+    "own_extent": {
+     "end": 2147943647,
+     "start": 2147943540
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147943624,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x800706cc",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x39"
+    ],
+    "own_body": {
+     "end": 2147944199,
+     "start": 2147944140
+    },
+    "own_extent": {
+     "end": 2147944199,
+     "start": 2147944140
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147944156,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147947327,
+     "start": 2147946880
+    },
+    "handler": "0x80071180",
+    "kind": "via_correction",
+    "opcodes": [
+     "0x36"
+    ],
+    "own_body": {
+     "end": 2147946955,
+     "start": 2147946880
+    },
+    "own_extent": {
+     "end": 2147946955,
+     "start": 2147946880
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147947212,
+      "body": {
+       "end": 2147947239,
+       "start": 2147947084
+      },
+      "where": "via_correction"
+     },
+     {
+      "at": 2147947324,
+      "body": null,
+      "where": "via_correction"
+     }
+    ],
+    "why": "the store is outside the handler's own extent and only the queued correction's extent reaches it"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147947327,
+     "start": 2147946880
+    },
+    "handler": "0x800712e8",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x37"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147947327,
+     "start": 2147947240
+    },
+    "region_entry": "0x80071180",
+    "stores": [
+     {
+      "at": 2147947324,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x80071340",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x3a"
+    ],
+    "own_body": {
+     "end": 2147947487,
+     "start": 2147947328
+    },
+    "own_extent": {
+     "end": 2147947487,
+     "start": 2147947328
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147947344,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147947456,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x800713e0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x64"
+    ],
+    "own_body": {
+     "end": 2147947659,
+     "start": 2147947488
+    },
+    "own_extent": {
+     "end": 2147947659,
+     "start": 2147947488
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147947504,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147947628,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8007148c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x54"
+    ],
+    "own_body": {
+     "end": 2147947851,
+     "start": 2147947660
+    },
+    "own_extent": {
+     "end": 2147947851,
+     "start": 2147947660
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147947820,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8007154c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x75"
+    ],
+    "own_body": {
+     "end": 2147948055,
+     "start": 2147947852
+    },
+    "own_extent": {
+     "end": 2147948055,
+     "start": 2147947852
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147948024,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x80071618",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x4c"
+    ],
+    "own_body": {
+     "end": 2147948143,
+     "start": 2147948056
+    },
+    "own_extent": {
+     "end": 2147948143,
+     "start": 2147948056
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147948120,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x80071670",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x65"
+    ],
+    "own_body": {
+     "end": 2147948207,
+     "start": 2147948144
+    },
+    "own_extent": {
+     "end": 2147948207,
+     "start": 2147948144
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147948184,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x800716b0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x82"
+    ],
+    "own_body": {
+     "end": 2147948355,
+     "start": 2147948208
+    },
+    "own_extent": {
+     "end": 2147948355,
+     "start": 2147948208
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147948332,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147949371,
+     "start": 2147948356
+    },
+    "handler": "0x80071744",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x52"
+    ],
+    "own_body": {
+     "end": 2147948447,
+     "start": 2147948356
+    },
+    "own_extent": {
+     "end": 2147948447,
+     "start": 2147948356
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147948420,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147949371,
+     "start": 2147948356
+    },
+    "handler": "0x80071950",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x3f"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147948955,
+     "start": 2147948880
+    },
+    "region_entry": "0x80071744",
+    "stores": [
+     {
+      "at": 2147948944,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "dispatch_head",
+    "corrected_extent": null,
+    "handler": "0x8007199c",
+    "kind": "store_in_arm",
+    "opcodes": [
+     "0x40"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147949059,
+     "start": 2147948956
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "arm": 2147949060,
+      "at": 2147949304,
+      "body": null,
+      "reachable_words": 22,
+      "table": 2148243728,
+      "where": "store_in_arm"
+     }
+    ],
+    "why": "the handler is a dispatch head and the store is in one of its table's arms, which the corpus records as a separate function"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147949371,
+     "start": 2147948356
+    },
+    "handler": "0x80071b04",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x4a"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147949371,
+     "start": 2147949316
+    },
+    "region_entry": "0x80071744",
+    "stores": [
+     {
+      "at": 2147949360,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147950099,
+     "start": 2147949372
+    },
+    "handler": "0x80071b3c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x63"
+    ],
+    "own_body": {
+     "end": 2147949459,
+     "start": 2147949372
+    },
+    "own_extent": {
+     "end": 2147949459,
+     "start": 2147949372
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147949444,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "dispatch_head",
+    "corrected_extent": null,
+    "handler": "0x80071b94",
+    "kind": "store_in_arm",
+    "opcodes": [
+     "0x41"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147949543,
+     "start": 2147949460
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "arm": 2147949544,
+      "at": 2147949716,
+      "body": null,
+      "reachable_words": 27,
+      "table": 2148243856,
+      "where": "store_in_arm"
+     }
+    ],
+    "why": "the handler is a dispatch head and the store is in one of its table's arms, which the corpus records as a separate function"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147950099,
+     "start": 2147949372
+    },
+    "handler": "0x80071ca0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x42"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147949799,
+     "start": 2147949728
+    },
+    "region_entry": "0x80071b3c",
+    "stores": [
+     {
+      "at": 2147949788,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147950099,
+     "start": 2147949372
+    },
+    "handler": "0x80071ce8",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x66"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147949863,
+     "start": 2147949800
+    },
+    "region_entry": "0x80071b3c",
+    "stores": [
+     {
+      "at": 2147949852,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147950099,
+     "start": 2147949372
+    },
+    "handler": "0x80071d28",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x43"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147949979,
+     "start": 2147949864
+    },
+    "region_entry": "0x80071b3c",
+    "stores": [
+     {
+      "at": 2147949968,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147950099,
+     "start": 2147949372
+    },
+    "handler": "0x80071d9c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x58"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147950063,
+     "start": 2147949980
+    },
+    "region_entry": "0x80071b3c",
+    "stores": [
+     {
+      "at": 2147950052,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147950099,
+     "start": 2147949372
+    },
+    "handler": "0x80071df0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x5b"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147950099,
+     "start": 2147950064
+    },
+    "region_entry": "0x80071b3c",
+    "stores": [
+     {
+      "at": 2147950088,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147951443,
+     "start": 2147950100
+    },
+    "handler": "0x80071e14",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x44"
+    ],
+    "own_body": {
+     "end": 2147951307,
+     "start": 2147950100
+    },
+    "own_extent": {
+     "end": 2147951307,
+     "start": 2147950100
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147950140,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147951264,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147951443,
+     "start": 2147950100
+    },
+    "handler": "0x800722cc",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x4f"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147951371,
+     "start": 2147951308
+    },
+    "region_entry": "0x80071e14",
+    "stores": [
+     {
+      "at": 2147951332,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147951443,
+     "start": 2147950100
+    },
+    "handler": "0x80072314",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x50"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147951443,
+     "start": 2147951380
+    },
+    "region_entry": "0x80071e14",
+    "stores": [
+     {
+      "at": 2147951404,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8007235c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x51"
+    ],
+    "own_body": {
+     "end": 2147951563,
+     "start": 2147951452
+    },
+    "own_extent": {
+     "end": 2147951563,
+     "start": 2147951452
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147951536,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x800723cc",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x57"
+    ],
+    "own_body": {
+     "end": 2147951643,
+     "start": 2147951564
+    },
+    "own_extent": {
+     "end": 2147951643,
+     "start": 2147951564
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147951620,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8007241c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x53"
+    ],
+    "own_body": {
+     "end": 2147951867,
+     "start": 2147951644
+    },
+    "own_extent": {
+     "end": 2147951867,
+     "start": 2147951644
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147951668,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147951828,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x800724fc",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x74"
+    ],
+    "own_body": {
+     "end": 2147951943,
+     "start": 2147951868
+    },
+    "own_extent": {
+     "end": 2147951943,
+     "start": 2147951868
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147951916,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147952091,
+     "start": 2147951944
+    },
+    "handler": "0x80072548",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x59"
+    ],
+    "own_body": {
+     "end": 2147952043,
+     "start": 2147951944
+    },
+    "own_extent": {
+     "end": 2147952043,
+     "start": 2147951944
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147952020,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147952091,
+     "start": 2147951944
+    },
+    "handler": "0x800725ac",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x5f"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147952091,
+     "start": 2147952044
+    },
+    "region_entry": "0x80072548",
+    "stores": [
+     {
+      "at": 2147952080,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x800725dc",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x80"
+    ],
+    "own_body": {
+     "end": 2147952239,
+     "start": 2147952092
+    },
+    "own_extent": {
+     "end": 2147952239,
+     "start": 2147952092
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147952112,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147952216,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147952507,
+     "start": 2147952240
+    },
+    "handler": "0x80072670",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x5c"
+    ],
+    "own_body": {
+     "end": 2147952427,
+     "start": 2147952240
+    },
+    "own_extent": {
+     "end": 2147952427,
+     "start": 2147952240
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147952336,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147952404,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147952507,
+     "start": 2147952240
+    },
+    "handler": "0x8007272c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x77"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147952447,
+     "start": 2147952428
+    },
+    "region_entry": "0x80072670",
+    "stores": [
+     {
+      "at": 2147952436,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147952507,
+     "start": 2147952240
+    },
+    "handler": "0x80072740",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x78"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147952467,
+     "start": 2147952448
+    },
+    "region_entry": "0x80072670",
+    "stores": [
+     {
+      "at": 2147952456,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147952507,
+     "start": 2147952240
+    },
+    "handler": "0x80072754",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x79"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147952487,
+     "start": 2147952468
+    },
+    "region_entry": "0x80072670",
+    "stores": [
+     {
+      "at": 2147952476,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147952507,
+     "start": 2147952240
+    },
+    "handler": "0x80072768",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x5d"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147952507,
+     "start": 2147952488
+    },
+    "region_entry": "0x80072670",
+    "stores": [
+     {
+      "at": 2147952496,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8007277c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x5e"
+    ],
+    "own_body": {
+     "end": 2147952559,
+     "start": 2147952508
+    },
+    "own_extent": {
+     "end": 2147952559,
+     "start": 2147952508
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147952528,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "dispatch_head",
+    "corrected_extent": null,
+    "handler": "0x800727b0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x81"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147952675,
+     "start": 2147952560
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147952628,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x80072878",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x62"
+    ],
+    "own_body": {
+     "end": 2147952875,
+     "start": 2147952760
+    },
+    "own_extent": {
+     "end": 2147952875,
+     "start": 2147952760
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147952852,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x800728ec",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x88"
+    ],
+    "own_body": {
+     "end": 2147953015,
+     "start": 2147952876
+    },
+    "own_extent": {
+     "end": 2147953015,
+     "start": 2147952876
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147952896,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x80072978",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x5a"
+    ],
+    "own_body": {
+     "end": 2147953187,
+     "start": 2147953016
+    },
+    "own_extent": {
+     "end": 2147953187,
+     "start": 2147953016
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147953040,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147953156,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x80072a24",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x76"
+    ],
+    "own_body": {
+     "end": 2147953355,
+     "start": 2147953188
+    },
+    "own_extent": {
+     "end": 2147953355,
+     "start": 2147953188
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147953236,
+      "body": null,
+      "where": "own_extent"
+     },
+     {
+      "at": 2147953324,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147954711,
+     "start": 2147953356
+    },
+    "handler": "0x80072acc",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x60"
+    ],
+    "own_body": {
+     "end": 2147953723,
+     "start": 2147953356
+    },
+    "own_extent": {
+     "end": 2147953723,
+     "start": 2147953356
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147953696,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147954711,
+     "start": 2147953356
+    },
+    "handler": "0x80072c3c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x6a"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147953923,
+     "start": 2147953724
+    },
+    "region_entry": "0x80072acc",
+    "stores": [
+     {
+      "at": 2147953912,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x80072d04",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x6b"
+    ],
+    "own_body": {
+     "end": 2147954019,
+     "start": 2147953924
+    },
+    "own_extent": {
+     "end": 2147954019,
+     "start": 2147953924
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147954016,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x80072d64",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x7c"
+    ],
+    "own_body": {
+     "end": 2147954139,
+     "start": 2147954020
+    },
+    "own_extent": {
+     "end": 2147954139,
+     "start": 2147954020
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147954136,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147954711,
+     "start": 2147953356
+    },
+    "handler": "0x80072ddc",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x7d"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147954331,
+     "start": 2147954140
+    },
+    "region_entry": "0x80072acc",
+    "stores": [
+     {
+      "at": 2147954320,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147954711,
+     "start": 2147953356
+    },
+    "handler": "0x80072e9c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x7e"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147954419,
+     "start": 2147954332
+    },
+    "region_entry": "0x80072acc",
+    "stores": [
+     {
+      "at": 2147954416,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147954711,
+     "start": 2147953356
+    },
+    "handler": "0x80072ef4",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x7f"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147954531,
+     "start": 2147954420
+    },
+    "region_entry": "0x80072acc",
+    "stores": [
+     {
+      "at": 2147954528,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147954711,
+     "start": 2147953356
+    },
+    "handler": "0x80072f64",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x6d"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147954579,
+     "start": 2147954532
+    },
+    "region_entry": "0x80072acc",
+    "stores": [
+     {
+      "at": 2147954568,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147954711,
+     "start": 2147953356
+    },
+    "handler": "0x80072f94",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x38"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147954711,
+     "start": 2147954580
+    },
+    "region_entry": "0x80072acc",
+    "stores": [
+     {
+      "at": 2147954700,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147955887,
+     "start": 2147954712
+    },
+    "handler": "0x80073018",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x6f"
+    ],
+    "own_body": {
+     "end": 2147954775,
+     "start": 2147954712
+    },
+    "own_extent": {
+     "end": 2147954775,
+     "start": 2147954712
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147954752,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147955887,
+     "start": 2147954712
+    },
+    "handler": "0x80073058",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x70"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147954943,
+     "start": 2147954776
+    },
+    "region_entry": "0x80073018",
+    "stores": [
+     {
+      "at": 2147954932,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x80073100",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x71"
+    ],
+    "own_body": {
+     "end": 2147955055,
+     "start": 2147954944
+    },
+    "own_extent": {
+     "end": 2147955055,
+     "start": 2147954944
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147955044,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147955887,
+     "start": 2147954712
+    },
+    "handler": "0x80073170",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x89"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147955131,
+     "start": 2147955056
+    },
+    "region_entry": "0x80073018",
+    "stores": [
+     {
+      "at": 2147955120,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147955887,
+     "start": 2147954712
+    },
+    "handler": "0x800731bc",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x73"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147955235,
+     "start": 2147955132
+    },
+    "region_entry": "0x80073018",
+    "stores": [
+     {
+      "at": 2147955224,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147955887,
+     "start": 2147954712
+    },
+    "handler": "0x80073224",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x7a"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147955415,
+     "start": 2147955236
+    },
+    "region_entry": "0x80073018",
+    "stores": [
+     {
+      "at": 2147955404,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147955887,
+     "start": 2147954712
+    },
+    "handler": "0x800732d8",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x7b"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147955579,
+     "start": 2147955416
+    },
+    "region_entry": "0x80073018",
+    "stores": [
+     {
+      "at": 2147955568,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147955887,
+     "start": 2147954712
+    },
+    "handler": "0x8007337c",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x45"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147955727,
+     "start": 2147955580
+    },
+    "region_entry": "0x80073018",
+    "stores": [
+     {
+      "at": 2147955724,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147955887,
+     "start": 2147954712
+    },
+    "handler": "0x80073410",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x83"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147955783,
+     "start": 2147955728
+    },
+    "region_entry": "0x80073018",
+    "stores": [
+     {
+      "at": 2147955744,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147955887,
+     "start": 2147954712
+    },
+    "handler": "0x80073448",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x84"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147955887,
+     "start": 2147955784
+    },
+    "region_entry": "0x80073018",
+    "stores": [
+     {
+      "at": 2147955876,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": {
+     "end": 2147956111,
+     "start": 2147955888
+    },
+    "handler": "0x800734b0",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x85"
+    ],
+    "own_body": {
+     "end": 2147956067,
+     "start": 2147955888
+    },
+    "own_extent": {
+     "end": 2147956067,
+     "start": 2147955888
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147956032,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "fragment",
+    "corrected_extent": {
+     "end": 2147956111,
+     "start": 2147955888
+    },
+    "handler": "0x80073564",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x86"
+    ],
+    "own_body": null,
+    "own_extent": {
+     "end": 2147956111,
+     "start": 2147956068
+    },
+    "region_entry": "0x800734b0",
+    "stores": [
+     {
+      "at": 2147956084,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x80073590",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x87"
+    ],
+    "own_body": {
+     "end": 2147956171,
+     "start": 2147956112
+    },
+    "own_extent": {
+     "end": 2147956171,
+     "start": 2147956112
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147956140,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x800735cc",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x8a"
+    ],
+    "own_body": {
+     "end": 2147956239,
+     "start": 2147956172
+    },
+    "own_extent": {
+     "end": 2147956239,
+     "start": 2147956172
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147956216,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x80073610",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x8b"
+    ],
+    "own_body": {
+     "end": 2147956311,
+     "start": 2147956240
+    },
+    "own_extent": {
+     "end": 2147956311,
+     "start": 2147956240
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147956288,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x80073658",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x8c"
+    ],
+    "own_body": {
+     "end": 2147956387,
+     "start": 2147956312
+    },
+    "own_extent": {
+     "end": 2147956387,
+     "start": 2147956312
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2147956364,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   },
+   {
+    "classification": "function_body",
+    "corrected_extent": null,
+    "handler": "0x8009bd84",
+    "kind": "own_extent",
+    "opcodes": [
+     "0x4d"
+    ],
+    "own_body": {
+     "end": 2148122231,
+     "start": 2148121988
+    },
+    "own_extent": {
+     "end": 2148122231,
+     "start": 2148121988
+    },
+    "region_entry": null,
+    "stores": [
+     {
+      "at": 2148122200,
+      "body": null,
+      "where": "own_extent"
+     }
+    ],
+    "why": "the store is inside the handler's own code extent"
+   }
+  ],
+  "reading": "0 handlers write their advance inside their own body, 0 inside a body that belongs to one of their own dispatch arms, 0 only inside a queued extent and 1 not at all. The zero in the third column is the useful one: the queue is not what makes any advance findable, so it cannot be justified by the advances.",
+  "rule": "for each of the 138 handlers, every `sw rt,0x1c(rb)` inside its own body, inside the body of its region entry, and inside its queued extent"
+ },
+ "the_0x36_case": {
+  "handler": "0x80071180",
+  "stores": [
+   {
+    "at": 2147947212,
+    "body": {
+     "end": 2147947239,
+     "start": 2147947084
+    },
+    "where": "via_correction"
+   },
+   {
+    "at": 2147947324,
+    "body": null,
+    "where": "via_correction"
+   }
+  ],
+  "why": "opcode 0x36 writes its advance at 0x800712cc, which is inside 0x8007124c..0x800712e7 \u2014 a corpus *function* that is really one of the five arms of 0x36's own dispatch table. The scan misses it for a structural reason, not an extent one: the arms are reached by `jr` through a table at 0x800b98e0, and the callee attribution in the registry only follows `jal`. M226 measured the advance from the arms directly (tools/callback_table.py), which is why the queued correction was never needed for it."
+ },
+ "tool": "extent_audit.py"
+}

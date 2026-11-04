@@ -1,0 +1,5274 @@
+{
+ "tool": "find_bank_writers.py",
+ "banks": {
+  "bankB": [
+   "0x80161cf0",
+   "0x80171cf0"
+  ],
+  "bankC": [
+   "0x8016e880",
+   "0x8017e880"
+  ]
+ },
+ "images": [
+  {
+   "name": "boot",
+   "stores": [],
+   "calls": [
+    {
+     "pc": "0x80000610",
+     "target": "0x8000c870",
+     "primitive": "pi_dma_raw",
+     "args": {},
+     "destination_in_bank": false
+    },
+    {
+     "pc": "0x80000638",
+     "target": "0x80004550",
+     "primitive": "inflate_init",
+     "args": {
+      "a0": "0x803fff88"
+     },
+     "destination_in_bank": false
+    },
+    {
+     "pc": "0x8000064c",
+     "target": "0x800045dc",
+     "primitive": "inflate",
+     "args": {
+      "a0": "0x803fff88"
+     },
+     "destination_in_bank": false
+    },
+    {
+     "pc": "0x80004e8c",
+     "target": "0x800045dc",
+     "primitive": "inflate",
+     "args": {},
+     "destination_in_bank": false
+    },
+    {
+     "pc": "0x80007804",
+     "target": "0x80007c20",
+     "primitive": "pi_dma_programmer",
+     "args": {
+      "a1": "0x1",
+      "a2": "0xa4600010"
+     },
+     "destination_in_bank": false
+    },
+    {
+     "pc": "0x8000799c",
+     "target": "0x80007c20",
+     "primitive": "pi_dma_programmer",
+     "args": {
+      "a1": "0x100401",
+      "a2": "0x5000400"
+     },
+     "destination_in_bank": false
+    },
+    {
+     "pc": "0x80007a54",
+     "target": "0x80007c20",
+     "primitive": "pi_dma_programmer",
+     "args": {},
+     "destination_in_bank": false
+    }
+   ]
+  },
+  {
+   "name": "stage2",
+   "stores": [
+    {
+     "pc": "0x800b4094",
+     "bank": "bankB",
+     "addr": "0x80166d85",
+     "op": "sb",
+     "source": "zero"
+    }
+   ],
+   "calls": [
+    {
+     "pc": "0x80032824",
+     "target": "0x80004550",
+     "primitive": "inflate_init",
+     "args": {
+      "a0": "0x8016e880"
+     },
+     "destination_in_bank": true
+    },
+    {
+     "pc": "0x80032838",
+     "target": "0x800045dc",
+     "primitive": "inflate",
+     "args": {},
+     "destination_in_bank": false
+    },
+    {
+     "pc": "0x8004cc1c",
+     "target": "0x80004550",
+     "primitive": "inflate_init",
+     "args": {
+      "a0": "0x80139b30",
+      "a2": "0x1"
+     },
+     "destination_in_bank": false
+    },
+    {
+     "pc": "0x8004cc30",
+     "target": "0x800045dc",
+     "primitive": "inflate",
+     "args": {},
+     "destination_in_bank": false
+    }
+   ]
+  },
+  {
+   "name": "ovl_007688e",
+   "stores": [
+    {
+     "pc": "0x8015b2e8",
+     "bank": "bankB",
+     "addr": "0x801629ac",
+     "op": "sw",
+     "source": "constructed 0x800c0000"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_007af7a",
+   "stores": [
+    {
+     "pc": "0x8017b428",
+     "bank": "bankC",
+     "addr": "0x8017e512",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b42c",
+     "bank": "bankC",
+     "addr": "0x8017e486",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b430",
+     "bank": "bankC",
+     "addr": "0x8017e3fa",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b434",
+     "bank": "bankC",
+     "addr": "0x8017e36e",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b438",
+     "bank": "bankC",
+     "addr": "0x8017e526",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b43c",
+     "bank": "bankC",
+     "addr": "0x8017e49a",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b440",
+     "bank": "bankC",
+     "addr": "0x8017e40e",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b444",
+     "bank": "bankC",
+     "addr": "0x8017e382",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b45c",
+     "bank": "bankC",
+     "addr": "0x8017e4ae",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b460",
+     "bank": "bankC",
+     "addr": "0x8017e422",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b464",
+     "bank": "bankC",
+     "addr": "0x8017e396",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b468",
+     "bank": "bankC",
+     "addr": "0x8017e30a",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b46c",
+     "bank": "bankC",
+     "addr": "0x8017e4fe",
+     "op": "sh",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x8017b470",
+     "bank": "bankC",
+     "addr": "0x8017e472",
+     "op": "sh",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x8017b474",
+     "bank": "bankC",
+     "addr": "0x8017e3e6",
+     "op": "sh",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x8017b47c",
+     "bank": "bankC",
+     "addr": "0x8017e35a",
+     "op": "sh",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x8017b480",
+     "bank": "bankC",
+     "addr": "0x8017e4ae",
+     "op": "sh",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x8017b484",
+     "bank": "bankC",
+     "addr": "0x8017e422",
+     "op": "sh",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x8017b488",
+     "bank": "bankC",
+     "addr": "0x8017e396",
+     "op": "sh",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x8017b48c",
+     "bank": "bankC",
+     "addr": "0x8017e30a",
+     "op": "sh",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x8017b490",
+     "bank": "bankC",
+     "addr": "0x8017e4fe",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b494",
+     "bank": "bankC",
+     "addr": "0x8017e472",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b498",
+     "bank": "bankC",
+     "addr": "0x8017e3e6",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b4a0",
+     "bank": "bankC",
+     "addr": "0x8017e35a",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b510",
+     "bank": "bankC",
+     "addr": "0x8017e5d8",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b5b0",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b5bc",
+     "bank": "bankC",
+     "addr": "0x8017e5bf",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b690",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b698",
+     "bank": "bankC",
+     "addr": "0x8017e5c2",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b6a0",
+     "bank": "bankC",
+     "addr": "0x8017e5c2",
+     "op": "sb",
+     "source": "constructed 0x00000003"
+    },
+    {
+     "pc": "0x8017b7a4",
+     "bank": "bankC",
+     "addr": "0x8017e5bf",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b7c8",
+     "bank": "bankC",
+     "addr": "0x8017e5bc",
+     "op": "sb",
+     "source": "constructed 0x00000001"
+    },
+    {
+     "pc": "0x8017b7dc",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "constructed 0x00000005"
+    },
+    {
+     "pc": "0x8017b7fc",
+     "bank": "bankC",
+     "addr": "0x8017e5bf",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b858",
+     "bank": "bankC",
+     "addr": "0x8017e5cc",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b888",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "constructed 0x80180000"
+    },
+    {
+     "pc": "0x8017b8c4",
+     "bank": "bankC",
+     "addr": "0x8017e5be",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b8e8",
+     "bank": "bankC",
+     "addr": "0x8017e5b8",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b8f8",
+     "bank": "bankC",
+     "addr": "0x8017e5b4",
+     "op": "sw",
+     "source": "constructed 0x80180000"
+    },
+    {
+     "pc": "0x8017b978",
+     "bank": "bankC",
+     "addr": "0x8017e5cb",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b998",
+     "bank": "bankC",
+     "addr": "0x8017e5ce",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b9a4",
+     "bank": "bankC",
+     "addr": "0x8017e5d4",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b9cc",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b9d4",
+     "bank": "bankC",
+     "addr": "0x8017e5ca",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b9dc",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017b9e4",
+     "bank": "bankC",
+     "addr": "0x8017e5bf",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b9ec",
+     "bank": "bankC",
+     "addr": "0x8017e5bc",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b9f4",
+     "bank": "bankC",
+     "addr": "0x8017e5bd",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b9fc",
+     "bank": "bankC",
+     "addr": "0x8017e5cd",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017ba04",
+     "bank": "bankC",
+     "addr": "0x8017e5cc",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017ba0c",
+     "bank": "bankC",
+     "addr": "0x8017e5c4",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017ba18",
+     "bank": "bankC",
+     "addr": "0x8017e5c6",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017ba1c",
+     "bank": "bankC",
+     "addr": "0x8017e5c7",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017ba20",
+     "bank": "bankC",
+     "addr": "0x8017e5c8",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017ba28",
+     "bank": "bankC",
+     "addr": "0x8017cb86",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017ba30",
+     "bank": "bankC",
+     "addr": "0x8017e5c0",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017ba64",
+     "bank": "bankC",
+     "addr": "0x8017e5b0",
+     "op": "sw",
+     "source": "constructed 0x80180000"
+    },
+    {
+     "pc": "0x8017bbe8",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "constructed 0x00000002"
+    },
+    {
+     "pc": "0x8017bc68",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "constructed 0x800df6b0"
+    },
+    {
+     "pc": "0x8017bc74",
+     "bank": "bankC",
+     "addr": "0x8017e5bf",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bcbc",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bcc8",
+     "bank": "bankC",
+     "addr": "0x8017e5bf",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bce0",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "constructed 0x00000002"
+    },
+    {
+     "pc": "0x8017bcec",
+     "bank": "bankC",
+     "addr": "0x8017e5bf",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bd1c",
+     "bank": "bankC",
+     "addr": "0x8017e5cd",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bd6c",
+     "bank": "bankC",
+     "addr": "0x8017e5bd",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bd8c",
+     "bank": "bankC",
+     "addr": "0x8017e5c1",
+     "op": "sb",
+     "source": "constructed 0x80120000"
+    },
+    {
+     "pc": "0x8017bd98",
+     "bank": "bankC",
+     "addr": "0x8017e5c3",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017be40",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017befc",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017c06c",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c07c",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017c08c",
+     "bank": "bankC",
+     "addr": "0x8017e5cd",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017c098",
+     "bank": "bankC",
+     "addr": "0x8017e5bf",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c124",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c134",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017c140",
+     "bank": "bankC",
+     "addr": "0x8017e5cd",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017c154",
+     "bank": "bankC",
+     "addr": "0x8017e5bf",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c1c8",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017c244",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017c2e0",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017c2f4",
+     "bank": "bankC",
+     "addr": "0x8017e5bd",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c304",
+     "bank": "bankC",
+     "addr": "0x8017e5bd",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c378",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017c388",
+     "bank": "bankC",
+     "addr": "0x8017e5bd",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c394",
+     "bank": "bankC",
+     "addr": "0x8017e5bd",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017c3f4",
+     "bank": "bankC",
+     "addr": "0x8017e512",
+     "op": "sh",
+     "source": "constructed 0x00000004"
+    },
+    {
+     "pc": "0x8017c3f8",
+     "bank": "bankC",
+     "addr": "0x8017e486",
+     "op": "sh",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x8017c3fc",
+     "bank": "bankC",
+     "addr": "0x8017e3fa",
+     "op": "sh",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x8017c400",
+     "bank": "bankC",
+     "addr": "0x8017e36e",
+     "op": "sh",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x8017c450",
+     "bank": "bankC",
+     "addr": "0x8017e526",
+     "op": "sh",
+     "source": "constructed 0x00000004"
+    },
+    {
+     "pc": "0x8017c454",
+     "bank": "bankC",
+     "addr": "0x8017e49a",
+     "op": "sh",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x8017c458",
+     "bank": "bankC",
+     "addr": "0x8017e40e",
+     "op": "sh",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x8017c45c",
+     "bank": "bankC",
+     "addr": "0x8017e382",
+     "op": "sh",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x8017c518",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "constructed 0x00000003"
+    },
+    {
+     "pc": "0x8017c528",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017c538",
+     "bank": "bankC",
+     "addr": "0x8017e5cd",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017c544",
+     "bank": "bankC",
+     "addr": "0x8017e5bf",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c578",
+     "bank": "bankC",
+     "addr": "0x8017e5c3",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c584",
+     "bank": "bankC",
+     "addr": "0x8017e5c1",
+     "op": "sb",
+     "source": "constructed 0x0000000a"
+    },
+    {
+     "pc": "0x8017c590",
+     "bank": "bankC",
+     "addr": "0x8017e5c1",
+     "op": "sb",
+     "source": "constructed 0x80180000"
+    },
+    {
+     "pc": "0x8017c598",
+     "bank": "bankC",
+     "addr": "0x8017e5c3",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017c5e0",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017c6a0",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017c7c4",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017c894",
+     "bank": "bankC",
+     "addr": "0x8017e5c3",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c97c",
+     "bank": "bankC",
+     "addr": "0x8017e5c3",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017ca7c",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017cb48",
+     "bank": "bankC",
+     "addr": "0x8017e5c3",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017cc34",
+     "bank": "bankC",
+     "addr": "0x8017e5c3",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d01c",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d02c",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017d040",
+     "bank": "bankC",
+     "addr": "0x8017e5cd",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017d050",
+     "bank": "bankC",
+     "addr": "0x8017e5bf",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d0c8",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d0d8",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017d0e8",
+     "bank": "bankC",
+     "addr": "0x8017e5cd",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017d0f4",
+     "bank": "bankC",
+     "addr": "0x8017e5bf",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d148",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d154",
+     "bank": "bankC",
+     "addr": "0x8017e5bf",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d164",
+     "bank": "bankC",
+     "addr": "0x8017e5c9",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d174",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x80188080"
+    },
+    {
+     "pc": "0x8017d184",
+     "bank": "bankC",
+     "addr": "0x8017e5cd",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017d190",
+     "bank": "bankC",
+     "addr": "0x8017e5bf",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d1c0",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017d27c",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017d348",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017d3e0",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "constructed 0x2c808080"
+    },
+    {
+     "pc": "0x8017d4d8",
+     "bank": "bankC",
+     "addr": "0x8017df80",
+     "op": "sb",
+     "source": "constructed 0x00000040"
+    },
+    {
+     "pc": "0x8017d4dc",
+     "bank": "bankC",
+     "addr": "0x8017df88",
+     "op": "sb",
+     "source": "constructed 0x00000040"
+    },
+    {
+     "pc": "0x8017d4e0",
+     "bank": "bankC",
+     "addr": "0x8017df90",
+     "op": "sb",
+     "source": "constructed 0x00000040"
+    },
+    {
+     "pc": "0x8017d4e4",
+     "bank": "bankC",
+     "addr": "0x8017df98",
+     "op": "sb",
+     "source": "constructed 0x00000040"
+    },
+    {
+     "pc": "0x8017d4fc",
+     "bank": "bankC",
+     "addr": "0x8017dfa0",
+     "op": "sb",
+     "source": "constructed 0x00000040"
+    },
+    {
+     "pc": "0x8017d500",
+     "bank": "bankC",
+     "addr": "0x8017dfa8",
+     "op": "sb",
+     "source": "constructed 0x00000040"
+    },
+    {
+     "pc": "0x8017d630",
+     "bank": "bankC",
+     "addr": "0x8017e5d0",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d650",
+     "bank": "bankC",
+     "addr": "0x8017e5ca",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d75c",
+     "bank": "bankC",
+     "addr": "0x8017e20c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d774",
+     "bank": "bankC",
+     "addr": "0x8017e20c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d790",
+     "bank": "bankC",
+     "addr": "0x8017e20c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d7a8",
+     "bank": "bankC",
+     "addr": "0x8017e20c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017db60",
+     "bank": "bankC",
+     "addr": "0x8017e5d8",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017dc28",
+     "bank": "bankC",
+     "addr": "0x8017e5be",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017e2b8",
+     "bank": "bankC",
+     "addr": "0x8017dd0c",
+     "op": "sd",
+     "source": "from memory or unknown"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_007c552",
+   "stores": [
+    {
+     "pc": "0x8016e994",
+     "bank": "bankC",
+     "addr": "0x80171dda",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016ea50",
+     "bank": "bankC",
+     "addr": "0x80171dd4",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016ea54",
+     "bank": "bankC",
+     "addr": "0x80171db8",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016ea5c",
+     "bank": "bankC",
+     "addr": "0x80171d9c",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016ea6c",
+     "bank": "bankB",
+     "addr": "0x80170006",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016ea6c",
+     "bank": "bankC",
+     "addr": "0x80170006",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016ea74",
+     "bank": "bankC",
+     "addr": "0x80171e00",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016eaa8",
+     "bank": "bankC",
+     "addr": "0x80171ddb",
+     "op": "sb",
+     "source": "constructed 0x00000011"
+    },
+    {
+     "pc": "0x8016ead0",
+     "bank": "bankC",
+     "addr": "0x80171de8",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016ead8",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "constructed 0x80170000"
+    },
+    {
+     "pc": "0x8016eaf4",
+     "bank": "bankC",
+     "addr": "0x80171e80",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016eaf8",
+     "bank": "bankC",
+     "addr": "0x80171e84",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016eafc",
+     "bank": "bankC",
+     "addr": "0x80171e88",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016eb00",
+     "bank": "bankC",
+     "addr": "0x80171e8c",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016eb14",
+     "bank": "bankC",
+     "addr": "0x80171ddc",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016eb1c",
+     "bank": "bankC",
+     "addr": "0x80171dde",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016eb24",
+     "bank": "bankC",
+     "addr": "0x80171ddf",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016eb38",
+     "bank": "bankC",
+     "addr": "0x80171e90",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016eb3c",
+     "bank": "bankC",
+     "addr": "0x80171e94",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016eb40",
+     "bank": "bankC",
+     "addr": "0x80171e98",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016eb48",
+     "bank": "bankC",
+     "addr": "0x80171de0",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016ec08",
+     "bank": "bankC",
+     "addr": "0x80171dd9",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016ec14",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016ec3c",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016ec60",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016ec98",
+     "bank": "bankC",
+     "addr": "0x80171dec",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016eca0",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016ecf8",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016ed04",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016ed10",
+     "bank": "bankC",
+     "addr": "0x80171dd9",
+     "op": "sb",
+     "source": "constructed 0x00000003"
+    },
+    {
+     "pc": "0x8016ed24",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016ed30",
+     "bank": "bankC",
+     "addr": "0x80171dd9",
+     "op": "sb",
+     "source": "constructed 0x00000001"
+    },
+    {
+     "pc": "0x8016ed50",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016ed98",
+     "bank": "bankC",
+     "addr": "0x80171dd9",
+     "op": "sb",
+     "source": "constructed 0x00000200"
+    },
+    {
+     "pc": "0x8016eda0",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016ef04",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016ef14",
+     "bank": "bankC",
+     "addr": "0x80171ddb",
+     "op": "sb",
+     "source": "constructed 0x00000004"
+    },
+    {
+     "pc": "0x8016efb8",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016effc",
+     "bank": "bankC",
+     "addr": "0x80171ddb",
+     "op": "sb",
+     "source": "constructed 0x80119ee4"
+    },
+    {
+     "pc": "0x8016f010",
+     "bank": "bankC",
+     "addr": "0x80171dd8",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016f06c",
+     "bank": "bankC",
+     "addr": "0x80171de8",
+     "op": "sw",
+     "source": "constructed 0x00000001"
+    },
+    {
+     "pc": "0x8016f080",
+     "bank": "bankC",
+     "addr": "0x80171de8",
+     "op": "sw",
+     "source": "constructed 0x80170000"
+    },
+    {
+     "pc": "0x8016f100",
+     "bank": "bankB",
+     "addr": "0x80171b30",
+     "op": "sb",
+     "source": "constructed 0x00000005"
+    },
+    {
+     "pc": "0x8016f100",
+     "bank": "bankC",
+     "addr": "0x80171b30",
+     "op": "sb",
+     "source": "constructed 0x00000005"
+    },
+    {
+     "pc": "0x8016f108",
+     "bank": "bankB",
+     "addr": "0x80171b3c",
+     "op": "sb",
+     "source": "constructed 0x00000005"
+    },
+    {
+     "pc": "0x8016f108",
+     "bank": "bankC",
+     "addr": "0x80171b3c",
+     "op": "sb",
+     "source": "constructed 0x00000005"
+    },
+    {
+     "pc": "0x8016f110",
+     "bank": "bankB",
+     "addr": "0x80171b18",
+     "op": "sb",
+     "source": "constructed 0x00000005"
+    },
+    {
+     "pc": "0x8016f110",
+     "bank": "bankC",
+     "addr": "0x80171b18",
+     "op": "sb",
+     "source": "constructed 0x00000005"
+    },
+    {
+     "pc": "0x8016f114",
+     "bank": "bankB",
+     "addr": "0x80171b24",
+     "op": "sb",
+     "source": "constructed 0x00000005"
+    },
+    {
+     "pc": "0x8016f114",
+     "bank": "bankC",
+     "addr": "0x80171b24",
+     "op": "sb",
+     "source": "constructed 0x00000005"
+    },
+    {
+     "pc": "0x8016f144",
+     "bank": "bankC",
+     "addr": "0x80171dd8",
+     "op": "sb",
+     "source": "constructed 0x80170000"
+    },
+    {
+     "pc": "0x8016f17c",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f184",
+     "bank": "bankC",
+     "addr": "0x80171dec",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f194",
+     "bank": "bankC",
+     "addr": "0x80171ddb",
+     "op": "sb",
+     "source": "constructed 0x00000006"
+    },
+    {
+     "pc": "0x8016f1b0",
+     "bank": "bankC",
+     "addr": "0x80171ddb",
+     "op": "sb",
+     "source": "constructed 0x000000b4"
+    },
+    {
+     "pc": "0x8016f1b8",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f204",
+     "bank": "bankC",
+     "addr": "0x80171de8",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f238",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f454",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f4c0",
+     "bank": "bankC",
+     "addr": "0x80171de8",
+     "op": "sw",
+     "source": "constructed 0x80170000"
+    },
+    {
+     "pc": "0x8016f4fc",
+     "bank": "bankC",
+     "addr": "0x80171dd8",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f534",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f604",
+     "bank": "bankC",
+     "addr": "0x80171ddb",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f658",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f6c0",
+     "bank": "bankC",
+     "addr": "0x80171de8",
+     "op": "sw",
+     "source": "constructed 0x00000001"
+    },
+    {
+     "pc": "0x8016f6fc",
+     "bank": "bankC",
+     "addr": "0x80171dd8",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f700",
+     "bank": "bankC",
+     "addr": "0x80171de8",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016f738",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f808",
+     "bank": "bankC",
+     "addr": "0x80171ddb",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f86c",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f880",
+     "bank": "bankC",
+     "addr": "0x80171ddb",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f88c",
+     "bank": "bankC",
+     "addr": "0x80171de8",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016f898",
+     "bank": "bankC",
+     "addr": "0x80171dd8",
+     "op": "sb",
+     "source": "constructed 0x00000001"
+    },
+    {
+     "pc": "0x8016f968",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f974",
+     "bank": "bankC",
+     "addr": "0x80171ddb",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016f97c",
+     "bank": "bankC",
+     "addr": "0x80171de8",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016fa14",
+     "bank": "bankC",
+     "addr": "0x80171ddb",
+     "op": "sb",
+     "source": "constructed 0x80170000"
+    },
+    {
+     "pc": "0x8016fa20",
+     "bank": "bankC",
+     "addr": "0x80171de8",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016fa94",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016fb00",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016fb48",
+     "bank": "bankC",
+     "addr": "0x80171de8",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016fbb8",
+     "bank": "bankB",
+     "addr": "0x80171aac",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016fbb8",
+     "bank": "bankC",
+     "addr": "0x80171aac",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016fc28",
+     "bank": "bankB",
+     "addr": "0x80171ab4",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016fc28",
+     "bank": "bankC",
+     "addr": "0x80171ab4",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016fc2c",
+     "bank": "bankB",
+     "addr": "0x80171aac",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016fc2c",
+     "bank": "bankC",
+     "addr": "0x80171aac",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016fc30",
+     "bank": "bankB",
+     "addr": "0x80171ab4",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016fc30",
+     "bank": "bankC",
+     "addr": "0x80171ab4",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016fc64",
+     "bank": "bankB",
+     "addr": "0x80171ab4",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016fc64",
+     "bank": "bankC",
+     "addr": "0x80171ab4",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016fc7c",
+     "bank": "bankB",
+     "addr": "0x80171aac",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016fc7c",
+     "bank": "bankC",
+     "addr": "0x80171aac",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016fc80",
+     "bank": "bankB",
+     "addr": "0x80171ab4",
+     "op": "sw",
+     "source": "constructed 0x80808000"
+    },
+    {
+     "pc": "0x8016fc80",
+     "bank": "bankC",
+     "addr": "0x80171ab4",
+     "op": "sw",
+     "source": "constructed 0x80808000"
+    },
+    {
+     "pc": "0x801700d0",
+     "bank": "bankB",
+     "addr": "0x80171aac",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801700d0",
+     "bank": "bankC",
+     "addr": "0x80171aac",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801700d8",
+     "bank": "bankB",
+     "addr": "0x80171aac",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801700d8",
+     "bank": "bankC",
+     "addr": "0x80171aac",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801700e8",
+     "bank": "bankB",
+     "addr": "0x80171aac",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801700e8",
+     "bank": "bankC",
+     "addr": "0x80171aac",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80170190",
+     "bank": "bankC",
+     "addr": "0x80171de1",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801701d0",
+     "bank": "bankC",
+     "addr": "0x8017236c",
+     "op": "sb",
+     "source": "constructed 0xcccccccd"
+    },
+    {
+     "pc": "0x801701f0",
+     "bank": "bankC",
+     "addr": "0x8017236d",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801701fc",
+     "bank": "bankC",
+     "addr": "0x8017236c",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80170204",
+     "bank": "bankB",
+     "addr": "0x80170001",
+     "op": "sb",
+     "source": "constructed 0x00000017"
+    },
+    {
+     "pc": "0x80170204",
+     "bank": "bankC",
+     "addr": "0x80170001",
+     "op": "sb",
+     "source": "constructed 0x00000017"
+    },
+    {
+     "pc": "0x80170234",
+     "bank": "bankC",
+     "addr": "0x8017236e",
+     "op": "sb",
+     "source": "constructed 0x00000024"
+    },
+    {
+     "pc": "0x80170238",
+     "bank": "bankC",
+     "addr": "0x80172371",
+     "op": "sb",
+     "source": "constructed 0x00000024"
+    },
+    {
+     "pc": "0x80170298",
+     "bank": "bankC",
+     "addr": "0x80171de2",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801702c0",
+     "bank": "bankC",
+     "addr": "0x80171de4",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801702d4",
+     "bank": "bankC",
+     "addr": "0x80171de3",
+     "op": "sb",
+     "source": "constructed 0x80170000"
+    },
+    {
+     "pc": "0x801702e4",
+     "bank": "bankC",
+     "addr": "0x8017236f",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80170304",
+     "bank": "bankC",
+     "addr": "0x80172370",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80170314",
+     "bank": "bankC",
+     "addr": "0x80172372",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80170330",
+     "bank": "bankC",
+     "addr": "0x80172373",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80170338",
+     "bank": "bankC",
+     "addr": "0x80172374",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80170340",
+     "bank": "bankC",
+     "addr": "0x80172375",
+     "op": "sb",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x80170360",
+     "bank": "bankC",
+     "addr": "0x80172374",
+     "op": "sb",
+     "source": "constructed 0x00000020"
+    },
+    {
+     "pc": "0x80170378",
+     "bank": "bankC",
+     "addr": "0x80172375",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801703e0",
+     "bank": "bankC",
+     "addr": "0x80171dde",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801703ec",
+     "bank": "bankC",
+     "addr": "0x80171ddf",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80170404",
+     "bank": "bankC",
+     "addr": "0x80171ddf",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80170428",
+     "bank": "bankC",
+     "addr": "0x80171de0",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80170440",
+     "bank": "bankC",
+     "addr": "0x80171de0",
+     "op": "sb",
+     "source": "constructed 0x00000064"
+    },
+    {
+     "pc": "0x8017048c",
+     "bank": "bankC",
+     "addr": "0x80171ddc",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80170498",
+     "bank": "bankC",
+     "addr": "0x80171ddc",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801704a0",
+     "bank": "bankC",
+     "addr": "0x80171ddc",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80170558",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017057c",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801705f8",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017061c",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80170674",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80170698",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017071c",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80170758",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017077c",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801707a0",
+     "bank": "bankC",
+     "addr": "0x80171df4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80171280",
+     "bank": "bankC",
+     "addr": "0x80171dda",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017142c",
+     "bank": "bankC",
+     "addr": "0x8017237c",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80171440",
+     "bank": "bankC",
+     "addr": "0x80172378",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80171580",
+     "bank": "bankC",
+     "addr": "0x80172378",
+     "op": "sw",
+     "source": "constructed 0x0000ffff"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_007e132",
+   "stores": [
+    {
+     "pc": "0x8017b43c",
+     "bank": "bankC",
+     "addr": "0x8017e704",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b48c",
+     "bank": "bankC",
+     "addr": "0x8017e758",
+     "op": "sb",
+     "source": "constructed 0x0000000e"
+    },
+    {
+     "pc": "0x8017b564",
+     "bank": "bankC",
+     "addr": "0x8017e706",
+     "op": "sh",
+     "source": "constructed 0x800c76b0"
+    },
+    {
+     "pc": "0x8017b568",
+     "bank": "bankC",
+     "addr": "0x8017e700",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b56c",
+     "bank": "bankC",
+     "addr": "0x8017e704",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b570",
+     "bank": "bankC",
+     "addr": "0x8017e734",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b574",
+     "bank": "bankC",
+     "addr": "0x8017e736",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b580",
+     "bank": "bankC",
+     "addr": "0x8017e735",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b6fc",
+     "bank": "bankC",
+     "addr": "0x8017e702",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b720",
+     "bank": "bankC",
+     "addr": "0x8017e738",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b738",
+     "bank": "bankC",
+     "addr": "0x8017e702",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b794",
+     "bank": "bankC",
+     "addr": "0x8017e704",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b7a4",
+     "bank": "bankC",
+     "addr": "0x8017e700",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b7b8",
+     "bank": "bankC",
+     "addr": "0x8017e734",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b840",
+     "bank": "bankC",
+     "addr": "0x8017e706",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b878",
+     "bank": "bankC",
+     "addr": "0x8017e706",
+     "op": "sh",
+     "source": "constructed 0x00007fff"
+    },
+    {
+     "pc": "0x8017b89c",
+     "bank": "bankC",
+     "addr": "0x8017e704",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017b8a4",
+     "bank": "bankC",
+     "addr": "0x8017e700",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017b8ac",
+     "bank": "bankC",
+     "addr": "0x8017e706",
+     "op": "sh",
+     "source": "constructed 0x00007ffe"
+    },
+    {
+     "pc": "0x8017ba8c",
+     "bank": "bankC",
+     "addr": "0x8017e704",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017bb58",
+     "bank": "bankC",
+     "addr": "0x8017e72e",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017bc0c",
+     "bank": "bankC",
+     "addr": "0x8017e73c",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bc18",
+     "bank": "bankC",
+     "addr": "0x8017e728",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bc28",
+     "bank": "bankC",
+     "addr": "0x8017e730",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bc30",
+     "bank": "bankC",
+     "addr": "0x8017e72c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bc58",
+     "bank": "bankC",
+     "addr": "0x8017e72c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bc64",
+     "bank": "bankC",
+     "addr": "0x8017e72e",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bc74",
+     "bank": "bankC",
+     "addr": "0x8017e72c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bc7c",
+     "bank": "bankC",
+     "addr": "0x8017e72e",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bd50",
+     "bank": "bankC",
+     "addr": "0x8017e710",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bd58",
+     "bank": "bankC",
+     "addr": "0x8017e736",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017bd5c",
+     "bank": "bankC",
+     "addr": "0x8017e700",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bd64",
+     "bank": "bankC",
+     "addr": "0x8017e718",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bd6c",
+     "bank": "bankC",
+     "addr": "0x8017e720",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bd7c",
+     "bank": "bankC",
+     "addr": "0x8017e71c",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017bdcc",
+     "bank": "bankC",
+     "addr": "0x8017e728",
+     "op": "sw",
+     "source": "constructed 0x00000bb8"
+    },
+    {
+     "pc": "0x8017bdd4",
+     "bank": "bankC",
+     "addr": "0x8017e704",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017bdd8",
+     "bank": "bankC",
+     "addr": "0x8017e730",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017bddc",
+     "bank": "bankC",
+     "addr": "0x8017e700",
+     "op": "sh",
+     "source": "constructed 0x00000008"
+    },
+    {
+     "pc": "0x8017bde4",
+     "bank": "bankC",
+     "addr": "0x8017e736",
+     "op": "sh",
+     "source": "constructed 0x00000008"
+    },
+    {
+     "pc": "0x8017bdec",
+     "bank": "bankC",
+     "addr": "0x8017e72e",
+     "op": "sh",
+     "source": "constructed 0x00000001"
+    },
+    {
+     "pc": "0x8017be0c",
+     "bank": "bankC",
+     "addr": "0x8017e73c",
+     "op": "sw",
+     "source": "constructed 0x80180000"
+    },
+    {
+     "pc": "0x8017be14",
+     "bank": "bankC",
+     "addr": "0x8017e72c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017be24",
+     "bank": "bankC",
+     "addr": "0x8017e710",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017be2c",
+     "bank": "bankC",
+     "addr": "0x8017e718",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017be34",
+     "bank": "bankC",
+     "addr": "0x8017e720",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017be44",
+     "bank": "bankC",
+     "addr": "0x8017e71c",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c2b8",
+     "bank": "bankC",
+     "addr": "0x8017e735",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c2d0",
+     "bank": "bankC",
+     "addr": "0x8017e704",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c2f0",
+     "bank": "bankC",
+     "addr": "0x8017e730",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017c2f4",
+     "bank": "bankC",
+     "addr": "0x8017e72e",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017c2f8",
+     "bank": "bankC",
+     "addr": "0x8017e700",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017c2fc",
+     "bank": "bankC",
+     "addr": "0x8017e704",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017c304",
+     "bank": "bankC",
+     "addr": "0x8017e702",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c430",
+     "bank": "bankC",
+     "addr": "0x8017e735",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c478",
+     "bank": "bankC",
+     "addr": "0x8017e704",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c490",
+     "bank": "bankC",
+     "addr": "0x8017e700",
+     "op": "sh",
+     "source": "constructed 0x80180000"
+    },
+    {
+     "pc": "0x8017c49c",
+     "bank": "bankC",
+     "addr": "0x8017e736",
+     "op": "sh",
+     "source": "constructed 0x0000000a"
+    },
+    {
+     "pc": "0x8017c4a4",
+     "bank": "bankC",
+     "addr": "0x8017e72e",
+     "op": "sh",
+     "source": "constructed 0x00000002"
+    },
+    {
+     "pc": "0x8017c4a8",
+     "bank": "bankC",
+     "addr": "0x8017e704",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017c4b0",
+     "bank": "bankC",
+     "addr": "0x8017e702",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c558",
+     "bank": "bankC",
+     "addr": "0x8017e704",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c594",
+     "bank": "bankC",
+     "addr": "0x8017e702",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c620",
+     "bank": "bankC",
+     "addr": "0x8017e702",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8017c690",
+     "bank": "bankC",
+     "addr": "0x8017e728",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c768",
+     "bank": "bankC",
+     "addr": "0x8017e710",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c770",
+     "bank": "bankC",
+     "addr": "0x8017e700",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c794",
+     "bank": "bankC",
+     "addr": "0x8017e70c",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c7b8",
+     "bank": "bankC",
+     "addr": "0x8017e72c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c7c8",
+     "bank": "bankC",
+     "addr": "0x8017e714",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c7f8",
+     "bank": "bankC",
+     "addr": "0x8017e718",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c830",
+     "bank": "bankC",
+     "addr": "0x8017e720",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c85c",
+     "bank": "bankC",
+     "addr": "0x8017e71c",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c920",
+     "bank": "bankC",
+     "addr": "0x8017e754",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017c9b4",
+     "bank": "bankC",
+     "addr": "0x8017e754",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d280",
+     "bank": "bankC",
+     "addr": "0x8017e754",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d590",
+     "bank": "bankC",
+     "addr": "0x8017e754",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017d8e0",
+     "bank": "bankC",
+     "addr": "0x8017e754",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8017e0ac",
+     "bank": "bankC",
+     "addr": "0x8017e754",
+     "op": "sw",
+     "source": "constructed 0x000000b5"
+    },
+    {
+     "pc": "0x8017e1b0",
+     "bank": "bankC",
+     "addr": "0x8017e734",
+     "op": "sb",
+     "source": "constructed 0x00000003"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_007fc12",
+   "stores": [
+    {
+     "pc": "0x8016c234",
+     "bank": "bankB",
+     "addr": "0x8016e870",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016c23c",
+     "bank": "bankB",
+     "addr": "0x80170001",
+     "op": "sb",
+     "source": "constructed 0x000000ff"
+    },
+    {
+     "pc": "0x8016c23c",
+     "bank": "bankC",
+     "addr": "0x80170001",
+     "op": "sb",
+     "source": "constructed 0x000000ff"
+    },
+    {
+     "pc": "0x8016c240",
+     "bank": "bankB",
+     "addr": "0x8016e872",
+     "op": "sb",
+     "source": "constructed 0x000000ff"
+    },
+    {
+     "pc": "0x8016c244",
+     "bank": "bankB",
+     "addr": "0x8016e873",
+     "op": "sb",
+     "source": "constructed 0x000000ff"
+    },
+    {
+     "pc": "0x8016c250",
+     "bank": "bankB",
+     "addr": "0x8016e874",
+     "op": "sb",
+     "source": "zero"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_008900e",
+   "stores": [
+    {
+     "pc": "0x80162180",
+     "bank": "bankB",
+     "addr": "0x80170002",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80162180",
+     "bank": "bankC",
+     "addr": "0x80170002",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801621a0",
+     "bank": "bankB",
+     "addr": "0x80168d5c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016255c",
+     "bank": "bankB",
+     "addr": "0x80168d60",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162d40",
+     "bank": "bankB",
+     "addr": "0x80168d50",
+     "op": "sw",
+     "source": "constructed 0x80170000"
+    },
+    {
+     "pc": "0x80162dd0",
+     "bank": "bankB",
+     "addr": "0x80168d50",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163a6c",
+     "bank": "bankB",
+     "addr": "0x80168d60",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801646f4",
+     "bank": "bankB",
+     "addr": "0x80168d58",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801646f8",
+     "bank": "bankB",
+     "addr": "0x80168d5c",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80164a64",
+     "bank": "bankB",
+     "addr": "0x80168d60",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80164bec",
+     "bank": "bankB",
+     "addr": "0x80168d5a",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80164bf0",
+     "bank": "bankB",
+     "addr": "0x80168d58",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80164c34",
+     "bank": "bankB",
+     "addr": "0x80168d5c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80164c64",
+     "bank": "bankB",
+     "addr": "0x80168d5c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80164c7c",
+     "bank": "bankB",
+     "addr": "0x80168d58",
+     "op": "sh",
+     "source": "constructed 0x00000002"
+    },
+    {
+     "pc": "0x80164c94",
+     "bank": "bankB",
+     "addr": "0x80168d58",
+     "op": "sh",
+     "source": "constructed 0x00000003"
+    },
+    {
+     "pc": "0x80164cc0",
+     "bank": "bankB",
+     "addr": "0x80168d58",
+     "op": "sh",
+     "source": "constructed 0x80170000"
+    },
+    {
+     "pc": "0x80164cc8",
+     "bank": "bankB",
+     "addr": "0x80170002",
+     "op": "sh",
+     "source": "constructed 0x00000800"
+    },
+    {
+     "pc": "0x80164cc8",
+     "bank": "bankC",
+     "addr": "0x80170002",
+     "op": "sh",
+     "source": "constructed 0x00000800"
+    },
+    {
+     "pc": "0x801652ec",
+     "bank": "bankB",
+     "addr": "0x80168d5a",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80165310",
+     "bank": "bankB",
+     "addr": "0x80168d5a",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801653fc",
+     "bank": "bankB",
+     "addr": "0x80168d5a",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80166a90",
+     "bank": "bankB",
+     "addr": "0x80168d60",
+     "op": "sw",
+     "source": "zero"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_008bef8",
+   "stores": [
+    {
+     "pc": "0x80163d64",
+     "bank": "bankB",
+     "addr": "0x80166350",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163e34",
+     "bank": "bankB",
+     "addr": "0x80166354",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163f60",
+     "bank": "bankB",
+     "addr": "0x80166354",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801650a0",
+     "bank": "bankB",
+     "addr": "0x80166356",
+     "op": "sh",
+     "source": "constructed 0x800e9028"
+    },
+    {
+     "pc": "0x801650ac",
+     "bank": "bankB",
+     "addr": "0x80166358",
+     "op": "sh",
+     "source": "constructed 0x0000fd44"
+    },
+    {
+     "pc": "0x801650b8",
+     "bank": "bankB",
+     "addr": "0x8016635a",
+     "op": "sh",
+     "source": "constructed 0x0000fe0c"
+    },
+    {
+     "pc": "0x801650c4",
+     "bank": "bankB",
+     "addr": "0x8016635c",
+     "op": "sh",
+     "source": "constructed 0x00000046"
+    },
+    {
+     "pc": "0x801650d0",
+     "bank": "bankB",
+     "addr": "0x8016635e",
+     "op": "sh",
+     "source": "constructed 0x0000ff2e"
+    },
+    {
+     "pc": "0x80165180",
+     "bank": "bankB",
+     "addr": "0x80166358",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801651ac",
+     "bank": "bankB",
+     "addr": "0x8016635c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801651bc",
+     "bank": "bankB",
+     "addr": "0x8016635c",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801651c0",
+     "bank": "bankB",
+     "addr": "0x8016635e",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80165624",
+     "bank": "bankB",
+     "addr": "0x80166364",
+     "op": "sw",
+     "source": "constructed 0x00000004"
+    },
+    {
+     "pc": "0x80165bdc",
+     "bank": "bankB",
+     "addr": "0x80166368",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80165cf4",
+     "bank": "bankB",
+     "addr": "0x8016636c",
+     "op": "sw",
+     "source": "constructed 0x80160000"
+    },
+    {
+     "pc": "0x80165d84",
+     "bank": "bankB",
+     "addr": "0x8016636c",
+     "op": "sw",
+     "source": "from memory or unknown"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_008e046",
+   "stores": [
+    {
+     "pc": "0x801621a0",
+     "bank": "bankB",
+     "addr": "0x8016753c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016255c",
+     "bank": "bankB",
+     "addr": "0x80167540",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162d40",
+     "bank": "bankB",
+     "addr": "0x80167530",
+     "op": "sw",
+     "source": "constructed 0x80160000"
+    },
+    {
+     "pc": "0x80162dd0",
+     "bank": "bankB",
+     "addr": "0x80167530",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801639e0",
+     "bank": "bankB",
+     "addr": "0x80167540",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80164668",
+     "bank": "bankB",
+     "addr": "0x80167538",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016466c",
+     "bank": "bankB",
+     "addr": "0x8016753c",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80164b6c",
+     "bank": "bankB",
+     "addr": "0x8016753a",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80164b70",
+     "bank": "bankB",
+     "addr": "0x80167538",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80164bb4",
+     "bank": "bankB",
+     "addr": "0x8016753c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80164be4",
+     "bank": "bankB",
+     "addr": "0x8016753c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80164bfc",
+     "bank": "bankB",
+     "addr": "0x80167538",
+     "op": "sh",
+     "source": "constructed 0x00000002"
+    },
+    {
+     "pc": "0x80164c14",
+     "bank": "bankB",
+     "addr": "0x80167538",
+     "op": "sh",
+     "source": "constructed 0x00000003"
+    },
+    {
+     "pc": "0x80164c40",
+     "bank": "bankB",
+     "addr": "0x80167538",
+     "op": "sh",
+     "source": "constructed 0x80160000"
+    },
+    {
+     "pc": "0x801658f8",
+     "bank": "bankB",
+     "addr": "0x80167540",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80166b30",
+     "bank": "bankB",
+     "addr": "0x80167540",
+     "op": "sw",
+     "source": "zero"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_0095446",
+   "stores": [
+    {
+     "pc": "0x80161e1c",
+     "bank": "bankB",
+     "addr": "0x80167fca",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80161e58",
+     "bank": "bankB",
+     "addr": "0x80167fcb",
+     "op": "sb",
+     "source": "constructed 0x00000007"
+    },
+    {
+     "pc": "0x801621f0",
+     "bank": "bankB",
+     "addr": "0x80167fc0",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801621f8",
+     "bank": "bankB",
+     "addr": "0x80167fc1",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162200",
+     "bank": "bankB",
+     "addr": "0x80167fc2",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162208",
+     "bank": "bankB",
+     "addr": "0x80167fc4",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162210",
+     "bank": "bankB",
+     "addr": "0x80167fc6",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162218",
+     "bank": "bankB",
+     "addr": "0x80167fc8",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162220",
+     "bank": "bankB",
+     "addr": "0x80167fca",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162228",
+     "bank": "bankB",
+     "addr": "0x80167fcb",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801635d0",
+     "bank": "bankB",
+     "addr": "0x80167fca",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163608",
+     "bank": "bankB",
+     "addr": "0x80167fcb",
+     "op": "sb",
+     "source": "constructed 0x0000000f"
+    },
+    {
+     "pc": "0x80163a4c",
+     "bank": "bankB",
+     "addr": "0x80167fca",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80163a58",
+     "bank": "bankB",
+     "addr": "0x80167fcb",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80163b28",
+     "bank": "bankB",
+     "addr": "0x80167fca",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163b64",
+     "bank": "bankB",
+     "addr": "0x80167fcb",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163b8c",
+     "bank": "bankB",
+     "addr": "0x80167fcb",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801659c8",
+     "bank": "bankB",
+     "addr": "0x80167fca",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80165a00",
+     "bank": "bankB",
+     "addr": "0x80167fcb",
+     "op": "sb",
+     "source": "constructed 0x0000000f"
+    },
+    {
+     "pc": "0x801661c4",
+     "bank": "bankB",
+     "addr": "0x80167fca",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801661fc",
+     "bank": "bankB",
+     "addr": "0x80167fcb",
+     "op": "sb",
+     "source": "constructed 0x0000000f"
+    },
+    {
+     "pc": "0x80166b18",
+     "bank": "bankB",
+     "addr": "0x80167fca",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80166b50",
+     "bank": "bankB",
+     "addr": "0x80167fcb",
+     "op": "sb",
+     "source": "constructed 0x0000000f"
+    },
+    {
+     "pc": "0x80166e04",
+     "bank": "bankB",
+     "addr": "0x80167fca",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80166e3c",
+     "bank": "bankB",
+     "addr": "0x80167fcb",
+     "op": "sb",
+     "source": "constructed 0x0000000f"
+    },
+    {
+     "pc": "0x80167190",
+     "bank": "bankB",
+     "addr": "0x80167fca",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801671c8",
+     "bank": "bankB",
+     "addr": "0x80167fcb",
+     "op": "sb",
+     "source": "constructed 0x0000000f"
+    },
+    {
+     "pc": "0x801675b4",
+     "bank": "bankB",
+     "addr": "0x80167fca",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801675f0",
+     "bank": "bankB",
+     "addr": "0x80167fcb",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801676ec",
+     "bank": "bankB",
+     "addr": "0x80167fcb",
+     "op": "sb",
+     "source": "constructed 0x80160000"
+    },
+    {
+     "pc": "0x80167be8",
+     "bank": "bankB",
+     "addr": "0x80167fc6",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167bf8",
+     "bank": "bankB",
+     "addr": "0x80167fc6",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167c18",
+     "bank": "bankB",
+     "addr": "0x80167fc8",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167c28",
+     "bank": "bankB",
+     "addr": "0x80167fc8",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167c64",
+     "bank": "bankB",
+     "addr": "0x80167fc2",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167ca0",
+     "bank": "bankB",
+     "addr": "0x80167fc4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167cc8",
+     "bank": "bankB",
+     "addr": "0x80167fc0",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167ccc",
+     "bank": "bankB",
+     "addr": "0x80167fc6",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80167cd0",
+     "bank": "bankB",
+     "addr": "0x80167fc2",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80167d08",
+     "bank": "bankB",
+     "addr": "0x80167fc1",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167d0c",
+     "bank": "bankB",
+     "addr": "0x80167fc8",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80167d10",
+     "bank": "bankB",
+     "addr": "0x80167fc4",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80167d58",
+     "bank": "bankB",
+     "addr": "0x80167fc4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167d64",
+     "bank": "bankB",
+     "addr": "0x80167fc2",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167d7c",
+     "bank": "bankB",
+     "addr": "0x80167fc0",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167d90",
+     "bank": "bankB",
+     "addr": "0x80167fc1",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167d98",
+     "bank": "bankB",
+     "addr": "0x80167fc0",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167dac",
+     "bank": "bankB",
+     "addr": "0x80167fc0",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167dc4",
+     "bank": "bankB",
+     "addr": "0x80167fc1",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167dd8",
+     "bank": "bankB",
+     "addr": "0x80167fc1",
+     "op": "sb",
+     "source": "from memory or unknown"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_0097e42",
+   "stores": [
+    {
+     "pc": "0x80161d90",
+     "bank": "bankB",
+     "addr": "0x801638e0",
+     "op": "sw",
+     "source": "constructed 0x000000be"
+    },
+    {
+     "pc": "0x80161de0",
+     "bank": "bankB",
+     "addr": "0x801638e0",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80161dec",
+     "bank": "bankB",
+     "addr": "0x80163b10",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80162050",
+     "bank": "bankB",
+     "addr": "0x80163b00",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162058",
+     "bank": "bankB",
+     "addr": "0x80163b04",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162060",
+     "bank": "bankB",
+     "addr": "0x80163b0c",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162068",
+     "bank": "bankB",
+     "addr": "0x80163b08",
+     "op": "sw",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801627b0",
+     "bank": "bankB",
+     "addr": "0x80163b00",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801629b8",
+     "bank": "bankB",
+     "addr": "0x80163b04",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80162a18",
+     "bank": "bankB",
+     "addr": "0x80163b08",
+     "op": "sw",
+     "source": "constructed 0x00000080"
+    },
+    {
+     "pc": "0x80162ce8",
+     "bank": "bankB",
+     "addr": "0x80163b04",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80162d30",
+     "bank": "bankB",
+     "addr": "0x80163b0c",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80162ff4",
+     "bank": "bankB",
+     "addr": "0x80163b00",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801635d4",
+     "bank": "bankB",
+     "addr": "0x80163b00",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163608",
+     "bank": "bankB",
+     "addr": "0x80163b00",
+     "op": "sw",
+     "source": "from memory or unknown"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_0098ee0",
+   "stores": [
+    {
+     "pc": "0x8016276c",
+     "bank": "bankB",
+     "addr": "0x80166900",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801629f8",
+     "bank": "bankB",
+     "addr": "0x80166908",
+     "op": "sw",
+     "source": "constructed 0x80160000"
+    },
+    {
+     "pc": "0x80162a88",
+     "bank": "bankB",
+     "addr": "0x80166908",
+     "op": "sw",
+     "source": "from memory or unknown"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_009aed0",
+   "stores": [
+    {
+     "pc": "0x80161d70",
+     "bank": "bankB",
+     "addr": "0x801662e2",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80161d94",
+     "bank": "bankB",
+     "addr": "0x801662e4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80161dac",
+     "bank": "bankB",
+     "addr": "0x801662e8",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80161dc8",
+     "bank": "bankB",
+     "addr": "0x801662ec",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80161dcc",
+     "bank": "bankB",
+     "addr": "0x801662ee",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80161df8",
+     "bank": "bankB",
+     "addr": "0x801662f0",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80161dfc",
+     "bank": "bankB",
+     "addr": "0x801662ea",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80161ec4",
+     "bank": "bankB",
+     "addr": "0x801662ea",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80161efc",
+     "bank": "bankB",
+     "addr": "0x801662e8",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80161f5c",
+     "bank": "bankB",
+     "addr": "0x801662e4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80161f70",
+     "bank": "bankB",
+     "addr": "0x801662e8",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80161f78",
+     "bank": "bankB",
+     "addr": "0x801662ea",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80161f9c",
+     "bank": "bankB",
+     "addr": "0x801662ee",
+     "op": "sh",
+     "source": "constructed 0x0000000a"
+    },
+    {
+     "pc": "0x80161fb8",
+     "bank": "bankB",
+     "addr": "0x801662ee",
+     "op": "sh",
+     "source": "constructed 0x0000000a"
+    },
+    {
+     "pc": "0x80161fbc",
+     "bank": "bankB",
+     "addr": "0x801662ee",
+     "op": "sh",
+     "source": "constructed 0x0000fff6"
+    },
+    {
+     "pc": "0x80161fdc",
+     "bank": "bankB",
+     "addr": "0x801662ec",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016202c",
+     "bank": "bankB",
+     "addr": "0x801662ec",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80162030",
+     "bank": "bankB",
+     "addr": "0x801662f0",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016205c",
+     "bank": "bankB",
+     "addr": "0x801662ec",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162060",
+     "bank": "bankB",
+     "addr": "0x801662ee",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016208c",
+     "bank": "bankB",
+     "addr": "0x801662ec",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162090",
+     "bank": "bankB",
+     "addr": "0x801662ee",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016210c",
+     "bank": "bankB",
+     "addr": "0x801662e4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80162760",
+     "bank": "bankB",
+     "addr": "0x80166650",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801627f8",
+     "bank": "bankB",
+     "addr": "0x80166650",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016281c",
+     "bank": "bankB",
+     "addr": "0x80166650",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80162c40",
+     "bank": "bankB",
+     "addr": "0x80166654",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80162e0c",
+     "bank": "bankB",
+     "addr": "0x8016665c",
+     "op": "sw",
+     "source": "constructed 0x80160000"
+    },
+    {
+     "pc": "0x80162e9c",
+     "bank": "bankB",
+     "addr": "0x8016665c",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163d08",
+     "bank": "bankB",
+     "addr": "0x80166670",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163d10",
+     "bank": "bankB",
+     "addr": "0x80166674",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163e08",
+     "bank": "bankB",
+     "addr": "0x80166668",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163e18",
+     "bank": "bankB",
+     "addr": "0x8016666c",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163e24",
+     "bank": "bankB",
+     "addr": "0x80166660",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163e48",
+     "bank": "bankB",
+     "addr": "0x80166664",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80164264",
+     "bank": "bankB",
+     "addr": "0x80166688",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80164f58",
+     "bank": "bankB",
+     "addr": "0x801666a2",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80164f60",
+     "bank": "bankB",
+     "addr": "0x801666a4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80164f80",
+     "bank": "bankB",
+     "addr": "0x801666a6",
+     "op": "sh",
+     "source": "from memory or unknown"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_009d3ba",
+   "stores": [
+    {
+     "pc": "0x80161d7c",
+     "bank": "bankB",
+     "addr": "0x80163130",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801622e4",
+     "bank": "bankB",
+     "addr": "0x80163130",
+     "op": "sb",
+     "source": "constructed 0x0000003c"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_00a0344",
+   "stores": [
+    {
+     "pc": "0x80163510",
+     "bank": "bankB",
+     "addr": "0x80163d50",
+     "op": "sw",
+     "source": "from memory or unknown"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_00a1414",
+   "stores": [
+    {
+     "pc": "0x801620cc",
+     "bank": "bankB",
+     "addr": "0x80168f44",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620d4",
+     "bank": "bankB",
+     "addr": "0x80168f45",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620dc",
+     "bank": "bankB",
+     "addr": "0x80168f46",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620e4",
+     "bank": "bankB",
+     "addr": "0x80168f48",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620ec",
+     "bank": "bankB",
+     "addr": "0x80168f4a",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620f4",
+     "bank": "bankB",
+     "addr": "0x80168f4c",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620fc",
+     "bank": "bankB",
+     "addr": "0x80168f4e",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162104",
+     "bank": "bankB",
+     "addr": "0x80168f4f",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80164d78",
+     "bank": "bankB",
+     "addr": "0x80168f4f",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80164ed4",
+     "bank": "bankB",
+     "addr": "0x80168f4e",
+     "op": "sb",
+     "source": "constructed 0x0000000a"
+    },
+    {
+     "pc": "0x80164ee0",
+     "bank": "bankB",
+     "addr": "0x80168f4f",
+     "op": "sb",
+     "source": "constructed 0x0000fff6"
+    },
+    {
+     "pc": "0x80164ef8",
+     "bank": "bankB",
+     "addr": "0x80168f4e",
+     "op": "sb",
+     "source": "constructed 0x0000000a"
+    },
+    {
+     "pc": "0x80164f08",
+     "bank": "bankB",
+     "addr": "0x80168f4f",
+     "op": "sb",
+     "source": "constructed 0x0000fff2"
+    },
+    {
+     "pc": "0x80165778",
+     "bank": "bankB",
+     "addr": "0x80168f4e",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80165784",
+     "bank": "bankB",
+     "addr": "0x80168f4f",
+     "op": "sb",
+     "source": "constructed 0x0000fff6"
+    },
+    {
+     "pc": "0x8016579c",
+     "bank": "bankB",
+     "addr": "0x80168f4e",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801657a8",
+     "bank": "bankB",
+     "addr": "0x80168f4f",
+     "op": "sb",
+     "source": "constructed 0x0000fff6"
+    },
+    {
+     "pc": "0x801657c4",
+     "bank": "bankB",
+     "addr": "0x80168f4f",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801660ec",
+     "bank": "bankB",
+     "addr": "0x80168f4e",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801660f8",
+     "bank": "bankB",
+     "addr": "0x80168f4f",
+     "op": "sb",
+     "source": "constructed 0x0000fff6"
+    },
+    {
+     "pc": "0x80166110",
+     "bank": "bankB",
+     "addr": "0x80168f4e",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016611c",
+     "bank": "bankB",
+     "addr": "0x80168f4f",
+     "op": "sb",
+     "source": "constructed 0x0000fff6"
+    },
+    {
+     "pc": "0x80166138",
+     "bank": "bankB",
+     "addr": "0x80168f4f",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801684dc",
+     "bank": "bankB",
+     "addr": "0x80168f4a",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801684ec",
+     "bank": "bankB",
+     "addr": "0x80168f4a",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016850c",
+     "bank": "bankB",
+     "addr": "0x80168f4c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016851c",
+     "bank": "bankB",
+     "addr": "0x80168f4c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80168558",
+     "bank": "bankB",
+     "addr": "0x80168f46",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80168594",
+     "bank": "bankB",
+     "addr": "0x80168f48",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801685bc",
+     "bank": "bankB",
+     "addr": "0x80168f44",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801685c0",
+     "bank": "bankB",
+     "addr": "0x80168f4a",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801685c4",
+     "bank": "bankB",
+     "addr": "0x80168f46",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801685fc",
+     "bank": "bankB",
+     "addr": "0x80168f45",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80168600",
+     "bank": "bankB",
+     "addr": "0x80168f4c",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80168604",
+     "bank": "bankB",
+     "addr": "0x80168f48",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016864c",
+     "bank": "bankB",
+     "addr": "0x80168f48",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80168658",
+     "bank": "bankB",
+     "addr": "0x80168f46",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80168670",
+     "bank": "bankB",
+     "addr": "0x80168f44",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80168684",
+     "bank": "bankB",
+     "addr": "0x80168f45",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016868c",
+     "bank": "bankB",
+     "addr": "0x80168f44",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801686a0",
+     "bank": "bankB",
+     "addr": "0x80168f44",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801686b8",
+     "bank": "bankB",
+     "addr": "0x80168f45",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801686cc",
+     "bank": "bankB",
+     "addr": "0x80168f45",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801688dc",
+     "bank": "bankB",
+     "addr": "0x80168f4f",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016890c",
+     "bank": "bankB",
+     "addr": "0x80168f4e",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80168950",
+     "bank": "bankB",
+     "addr": "0x80168f4f",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80168958",
+     "bank": "bankB",
+     "addr": "0x80168f4e",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80168ae4",
+     "bank": "bankB",
+     "addr": "0x80168f4f",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80168b14",
+     "bank": "bankB",
+     "addr": "0x80168f4e",
+     "op": "sb",
+     "source": "from memory or unknown"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_00a43b6",
+   "stores": [
+    {
+     "pc": "0x80161f94",
+     "bank": "bankB",
+     "addr": "0x801697ea",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80161fbc",
+     "bank": "bankB",
+     "addr": "0x801697eb",
+     "op": "sb",
+     "source": "constructed 0x00000007"
+    },
+    {
+     "pc": "0x80162204",
+     "bank": "bankB",
+     "addr": "0x801697e0",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016220c",
+     "bank": "bankB",
+     "addr": "0x801697e1",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162214",
+     "bank": "bankB",
+     "addr": "0x801697e2",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016221c",
+     "bank": "bankB",
+     "addr": "0x801697e4",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162224",
+     "bank": "bankB",
+     "addr": "0x801697e6",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016222c",
+     "bank": "bankB",
+     "addr": "0x801697e8",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162234",
+     "bank": "bankB",
+     "addr": "0x801697ea",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016223c",
+     "bank": "bankB",
+     "addr": "0x801697eb",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80165d20",
+     "bank": "bankB",
+     "addr": "0x801697eb",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80165d3c",
+     "bank": "bankB",
+     "addr": "0x801697ea",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80165d44",
+     "bank": "bankB",
+     "addr": "0x801697eb",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80165d5c",
+     "bank": "bankB",
+     "addr": "0x801697ea",
+     "op": "sb",
+     "source": "constructed 0x0000001e"
+    },
+    {
+     "pc": "0x80165d68",
+     "bank": "bankB",
+     "addr": "0x801697eb",
+     "op": "sb",
+     "source": "constructed 0x0000fff9"
+    },
+    {
+     "pc": "0x80168f98",
+     "bank": "bankB",
+     "addr": "0x801697e6",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80168fa8",
+     "bank": "bankB",
+     "addr": "0x801697e6",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80168fc8",
+     "bank": "bankB",
+     "addr": "0x801697e8",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80168fd8",
+     "bank": "bankB",
+     "addr": "0x801697e8",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80169014",
+     "bank": "bankB",
+     "addr": "0x801697e2",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80169050",
+     "bank": "bankB",
+     "addr": "0x801697e4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80169078",
+     "bank": "bankB",
+     "addr": "0x801697e0",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016907c",
+     "bank": "bankB",
+     "addr": "0x801697e6",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80169080",
+     "bank": "bankB",
+     "addr": "0x801697e2",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801690b8",
+     "bank": "bankB",
+     "addr": "0x801697e1",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801690bc",
+     "bank": "bankB",
+     "addr": "0x801697e8",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801690c0",
+     "bank": "bankB",
+     "addr": "0x801697e4",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80169108",
+     "bank": "bankB",
+     "addr": "0x801697e4",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80169114",
+     "bank": "bankB",
+     "addr": "0x801697e2",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016912c",
+     "bank": "bankB",
+     "addr": "0x801697e0",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80169140",
+     "bank": "bankB",
+     "addr": "0x801697e1",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80169148",
+     "bank": "bankB",
+     "addr": "0x801697e0",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016915c",
+     "bank": "bankB",
+     "addr": "0x801697e0",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80169174",
+     "bank": "bankB",
+     "addr": "0x801697e1",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80169188",
+     "bank": "bankB",
+     "addr": "0x801697e1",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801692cc",
+     "bank": "bankB",
+     "addr": "0x801697eb",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80169300",
+     "bank": "bankB",
+     "addr": "0x801697ea",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80169344",
+     "bank": "bankB",
+     "addr": "0x801697eb",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016934c",
+     "bank": "bankB",
+     "addr": "0x801697ea",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801694d4",
+     "bank": "bankB",
+     "addr": "0x801697eb",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80169500",
+     "bank": "bankB",
+     "addr": "0x801697ea",
+     "op": "sb",
+     "source": "from memory or unknown"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_00a733e",
+   "stores": [
+    {
+     "pc": "0x80162048",
+     "bank": "bankB",
+     "addr": "0x80167d61",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162050",
+     "bank": "bankB",
+     "addr": "0x80167d62",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162058",
+     "bank": "bankB",
+     "addr": "0x80167d64",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162060",
+     "bank": "bankB",
+     "addr": "0x80167d66",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162068",
+     "bank": "bankB",
+     "addr": "0x80167d68",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162070",
+     "bank": "bankB",
+     "addr": "0x80167d6a",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162084",
+     "bank": "bankB",
+     "addr": "0x80167d6b",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80166f8c",
+     "bank": "bankB",
+     "addr": "0x80167d6a",
+     "op": "sb",
+     "source": "constructed 0x0000fff9"
+    },
+    {
+     "pc": "0x801671d8",
+     "bank": "bankB",
+     "addr": "0x80167d6a",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801671f4",
+     "bank": "bankB",
+     "addr": "0x80167d6a",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167210",
+     "bank": "bankB",
+     "addr": "0x80167d6a",
+     "op": "sb",
+     "source": "constructed 0x0000fff8"
+    },
+    {
+     "pc": "0x80167228",
+     "bank": "bankB",
+     "addr": "0x80167d6b",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167244",
+     "bank": "bankB",
+     "addr": "0x80167d6b",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167260",
+     "bank": "bankB",
+     "addr": "0x80167d6b",
+     "op": "sb",
+     "source": "constructed 0x0000fff8"
+    },
+    {
+     "pc": "0x80167994",
+     "bank": "bankB",
+     "addr": "0x80167d66",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801679a4",
+     "bank": "bankB",
+     "addr": "0x80167d66",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801679c4",
+     "bank": "bankB",
+     "addr": "0x80167d68",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801679d4",
+     "bank": "bankB",
+     "addr": "0x80167d68",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167a10",
+     "bank": "bankB",
+     "addr": "0x80167d62",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167a4c",
+     "bank": "bankB",
+     "addr": "0x80167d64",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167a74",
+     "bank": "bankB",
+     "addr": "0x80167d60",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167a78",
+     "bank": "bankB",
+     "addr": "0x80167d66",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80167a7c",
+     "bank": "bankB",
+     "addr": "0x80167d62",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80167ab4",
+     "bank": "bankB",
+     "addr": "0x80167d61",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167ab8",
+     "bank": "bankB",
+     "addr": "0x80167d68",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80167abc",
+     "bank": "bankB",
+     "addr": "0x80167d64",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80167b04",
+     "bank": "bankB",
+     "addr": "0x80167d64",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167b10",
+     "bank": "bankB",
+     "addr": "0x80167d62",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167b28",
+     "bank": "bankB",
+     "addr": "0x80167d60",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167b3c",
+     "bank": "bankB",
+     "addr": "0x80167d61",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167b44",
+     "bank": "bankB",
+     "addr": "0x80167d60",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167b58",
+     "bank": "bankB",
+     "addr": "0x80167d60",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167b70",
+     "bank": "bankB",
+     "addr": "0x80167d61",
+     "op": "sb",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80167b84",
+     "bank": "bankB",
+     "addr": "0x80167d61",
+     "op": "sb",
+     "source": "from memory or unknown"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_00a9d94",
+   "stores": [
+    {
+     "pc": "0x801622d8",
+     "bank": "bankB",
+     "addr": "0x8016c3ac",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801622e0",
+     "bank": "bankB",
+     "addr": "0x80170001",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801622e0",
+     "bank": "bankC",
+     "addr": "0x80170001",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801622e4",
+     "bank": "bankB",
+     "addr": "0x8016c3ae",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801622e8",
+     "bank": "bankB",
+     "addr": "0x8016c3af",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801622ec",
+     "bank": "bankB",
+     "addr": "0x8016c3b0",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801622f0",
+     "bank": "bankB",
+     "addr": "0x8016c3b2",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801622f4",
+     "bank": "bankB",
+     "addr": "0x8016c3b4",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801622f8",
+     "bank": "bankB",
+     "addr": "0x8016c3b6",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801622fc",
+     "bank": "bankB",
+     "addr": "0x8016c3c8",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162300",
+     "bank": "bankB",
+     "addr": "0x8016c3c9",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162304",
+     "bank": "bankB",
+     "addr": "0x8016c3ca",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162308",
+     "bank": "bankB",
+     "addr": "0x8016c3cb",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016230c",
+     "bank": "bankB",
+     "addr": "0x8016c3cc",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162310",
+     "bank": "bankB",
+     "addr": "0x8016c3ce",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162314",
+     "bank": "bankB",
+     "addr": "0x8016c3d0",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162318",
+     "bank": "bankB",
+     "addr": "0x8016c3d2",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016231c",
+     "bank": "bankB",
+     "addr": "0x8016c3e4",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162320",
+     "bank": "bankB",
+     "addr": "0x8016c3e5",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162324",
+     "bank": "bankB",
+     "addr": "0x8016c3e6",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162328",
+     "bank": "bankB",
+     "addr": "0x8016c3e7",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016232c",
+     "bank": "bankB",
+     "addr": "0x8016c3e8",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162330",
+     "bank": "bankB",
+     "addr": "0x8016c3ea",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162334",
+     "bank": "bankB",
+     "addr": "0x8016c3ec",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162338",
+     "bank": "bankB",
+     "addr": "0x8016c3ee",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162488",
+     "bank": "bankB",
+     "addr": "0x8016c6c0",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80162ef0",
+     "bank": "bankB",
+     "addr": "0x8016c31e",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80163138",
+     "bank": "bankB",
+     "addr": "0x8016c31e",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016316c",
+     "bank": "bankB",
+     "addr": "0x8016c31e",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163250",
+     "bank": "bankB",
+     "addr": "0x8016c31e",
+     "op": "sh",
+     "source": "constructed 0x00000008"
+    },
+    {
+     "pc": "0x80163264",
+     "bank": "bankB",
+     "addr": "0x8016c31a",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80163280",
+     "bank": "bankB",
+     "addr": "0x8016c31c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801640bc",
+     "bank": "bankB",
+     "addr": "0x8016c31e",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801642f8",
+     "bank": "bankB",
+     "addr": "0x8016c31e",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016434c",
+     "bank": "bankB",
+     "addr": "0x8016c31e",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801645bc",
+     "bank": "bankB",
+     "addr": "0x8016c31e",
+     "op": "sh",
+     "source": "constructed 0x00000004"
+    },
+    {
+     "pc": "0x801645d0",
+     "bank": "bankB",
+     "addr": "0x8016c31a",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801645ec",
+     "bank": "bankB",
+     "addr": "0x8016c31c",
+     "op": "sh",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801696b4",
+     "bank": "bankB",
+     "addr": "0x8016c500",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x801696d0",
+     "bank": "bankB",
+     "addr": "0x8016c500",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x80169700",
+     "bank": "bankB",
+     "addr": "0x8016c500",
+     "op": "sw",
+     "source": "from memory or unknown"
+    },
+    {
+     "pc": "0x8016bff8",
+     "bank": "bankB",
+     "addr": "0x8016c2d0",
+     "op": "sb",
+     "source": "zero"
+    }
+   ],
+   "calls": []
+  },
+  {
+   "name": "ovl_00ae24a",
+   "stores": [
+    {
+     "pc": "0x801620cc",
+     "bank": "bankB",
+     "addr": "0x80166f54",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620d8",
+     "bank": "bankB",
+     "addr": "0x80166f56",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620dc",
+     "bank": "bankB",
+     "addr": "0x80166f57",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620e0",
+     "bank": "bankB",
+     "addr": "0x80166f58",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620e4",
+     "bank": "bankB",
+     "addr": "0x80166f5a",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620e8",
+     "bank": "bankB",
+     "addr": "0x80166f5c",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620ec",
+     "bank": "bankB",
+     "addr": "0x80166f5e",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620f0",
+     "bank": "bankB",
+     "addr": "0x80166f70",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620f4",
+     "bank": "bankB",
+     "addr": "0x80166f71",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620f8",
+     "bank": "bankB",
+     "addr": "0x80166f72",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x801620fc",
+     "bank": "bankB",
+     "addr": "0x80166f73",
+     "op": "sb",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162100",
+     "bank": "bankB",
+     "addr": "0x80166f74",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162104",
+     "bank": "bankB",
+     "addr": "0x80166f76",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162108",
+     "bank": "bankB",
+     "addr": "0x80166f78",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x8016210c",
+     "bank": "bankB",
+     "addr": "0x80166f7a",
+     "op": "sh",
+     "source": "zero"
+    },
+    {
+     "pc": "0x80162260",
+     "bank": "bankB",
+     "addr": "0x80162204",
+     "op": "sw",
+     "source": "constructed 0x808080ff"
+    }
+   ],
+   "calls": []
+  }
+ ]
+}

@@ -1,0 +1,2614 @@
+{
+ "answers": "where each of the 141 stage-2 opcodes sends the command pointer, and on what evidence",
+ "inputs": {
+  "function_bodies": "fixtures/decomp/ranges.json",
+  "handlers": "src/stage2/*.c",
+  "inferred_names": "fixtures/scd/inferred_names.json",
+  "opcodes": "fixtures/scd/opcodes.json",
+  "profile": "fixtures/scd/profile.json",
+  "walk_stream": "tools/walk_stream.py"
+ },
+ "milestone": "M211",
+ "opcodes": {
+  "0x00": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006db14",
+   "in_function_body": false,
+   "name": "Nop",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 0,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x01": {
+   "advances": [
+    {
+     "expression": "*(ctx + 0x144 + (s8[ctx+2] - 1) * 4)",
+     "kind": "variable",
+     "source": "tools/walk_stream.py:365",
+     "store": "0x8006db78"
+    }
+   ],
+   "control_flow": "dynamic",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006db28",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": "tools/walk_stream.py's DYNAMIC text records only the ctx[2]==0 arm, where the handler writes no pointer and returns 2; the ctx[2]!=0 arm at 0x8006db44-0x8006db7c does write ctx+0x1c, from the slot 0x18 saves. This entry records that arm rather than the note's 'no pointer write at all'.",
+   "number": 1,
+   "published": null,
+   "scheduler_effect": "unknown"
+  },
+  "0x02": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006db84",
+   "in_function_body": false,
+   "name": "CondEnd",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 2,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x03": {
+   "advances": [
+    {
+     "expression": "*(0x80114f2c) + u16[cmd+3]",
+     "kind": "variable",
+     "source": "src/stage2/FUN_8006d5dc.c:22",
+     "store": "0x8006d624"
+    }
+   ],
+   "control_flow": "dynamic",
+   "evidence": "src/stage2/FUN_8006d5dc.c:22",
+   "handler": "0x8006db98",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": "the write is in the callee FUN_8006d5dc (0x8006d624), which the handler calls at 0x8006dba8; the index is byte 3 of the command.",
+   "number": 3,
+   "published": null,
+   "scheduler_effect": "unknown"
+  },
+  "0x04": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006dbc0",
+   "in_function_body": true,
+   "name": "EventExec",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 4,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x05": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006dbf4",
+   "in_function_body": false,
+   "name": "ClearSlot",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 5,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x06": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006dc34",
+   "in_function_body": false,
+   "name": "IfElseStart",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 6,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x07": {
+   "advances": [
+    {
+     "expression": "cmd + u16[cmd+2]",
+     "kind": "variable",
+     "source": "tools/walk_stream.py:374",
+     "store": "0x8006dc90"
+    }
+   ],
+   "control_flow": "jump",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006dc74",
+   "in_function_body": false,
+   "name": "ElseStart",
+   "name_source": "opcodes.json",
+   "note": "published 4 is the command's own size; the handler's only ctx+0x1c write is the skip target computed from the u16 at byte 2 (0x8006dc84 lhu v0,2(v1) -> 0x8006dc8c addu v1,v1,v0), so this ElseStart has no constant path to walk by.",
+   "number": 7,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x08": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006dcac",
+   "in_function_body": false,
+   "name": "EndBlock",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 8,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x09": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006dce0",
+   "in_function_body": false,
+   "name": "Sleep",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 9,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x0a": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 3
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006dd28",
+   "in_function_body": false,
+   "name": "WaitCount",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 10,
+   "published": 3,
+   "scheduler_effect": "unknown"
+  },
+  "0x0b": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006dd7c",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 11,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x0c": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006dda4",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 12,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x0d": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    },
+    {
+     "expression": "cmd + s16[cmd+2] + 6",
+     "kind": "variable",
+     "source": "tools/walk_stream.py:376",
+     "store": "0x8006deb0"
+    }
+   ],
+   "control_flow": "jump",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006de20",
+   "in_function_body": false,
+   "name": "ForStart",
+   "name_source": "opcodes.json",
+   "note": "resolve() reports [6, 12] and 12 is the trap: the scan carries a3 = cmd+6 out of the fall-through arm (0x8006de50) into the loop-exit arm, where 0x8006dea4 lh t0,2(a3) -> 0x8006dea8 addu v0,a3,t0 -> 0x8006deac addiu v0,v0,6 -> 0x8006deb0 sw v0,28(t2) is one variable path. The arms are the two sides of 0x8006de30 beq v0,zero, so the second advance is a skip of s16[cmd+2]+6, never a 12.",
+   "number": 13,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x0e": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    },
+    {
+     "expression": "*(ctx + s8[ctx+2]*16 + s8[ctx+s8[ctx+2]+8]*4 + 0x20)",
+     "kind": "variable",
+     "source": "fixtures/scd/inferred_names.json:31",
+     "store": "0x8006dfc0"
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006df78",
+   "in_function_body": false,
+   "name": "LoopWhile",
+   "name_source": "inferred_names.json",
+   "note": "the counter-expiry arm advances 2 at 0x8006dfcc; while the counter is non-zero the handler re-points ctx+0x1c at the block-start slot ctx+0x20 (0x8006dfb8 lw v0,32(v0) with the store in the 0x8006dfbc j delay slot), which is a loop back to a recorded target, not a length.",
+   "number": 14,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x0f": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    },
+    {
+     "expression": "*(ctx + s8[ctx+2]*16 + (s8[ctx+s8[ctx+2]+8] + 1)*4 + 0x60)",
+     "kind": "variable",
+     "source": "src/stage2/FUN_8006dfe4.c:34",
+     "store": "0x8006e070"
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "src/stage2/FUN_8006dfe4.c:34",
+   "handler": "0x8006dfe4",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": "the constant 4 is the block body; the second write restores the block end saved at iVar6+0x60 on the arm where the condition function FUN_8006e1bc returns 0, so the M154 override of the advance scan to 4 needs this second path recorded beside it.",
+   "number": 15,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x10": {
+   "advances": [
+    {
+     "expression": "*(ctx + s8[ctx+2]*16 + s8[ctx+s8[ctx+2]+8]*4 + 0x20)",
+     "kind": "variable",
+     "source": "tools/walk_stream.py:358",
+     "store": "0x8006e0bc"
+    }
+   ],
+   "control_flow": "dynamic",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e09c",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": "a block return: the pointer comes back from the per-thread slot ctx+0x20, at an index that is itself read out of the context (s8[ctx+s8[ctx+2]+8]), so no operand of the command names it.",
+   "number": 16,
+   "published": null,
+   "scheduler_effect": "unknown"
+  },
+  "0x11": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e0d4",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 17,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x12": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    },
+    {
+     "expression": "*(ctx + s8[ctx+2]*16 + s8[ctx+s8[ctx+2]+8]*4 + 0x20)",
+     "kind": "variable",
+     "source": "src/stage2/FUN_8006e138.c:25",
+     "store": "0x8006e1a4"
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "src/stage2/FUN_8006e138.c:25",
+   "handler": "0x8006e138",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": "the constant 2 is the header advance; on the arm where FUN_8006e1bc returns non-zero the handler re-points ctx+0x1c at the block-start slot ctx+0x20 instead.",
+   "number": 18,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x13": {
+   "advances": [
+    {
+     "expression": "cmd + 4, scanned by entry + u16[entry+2]; exit entry + 2 (tag 0x15) or entry + 6 (case match)",
+     "kind": "variable",
+     "source": "tools/walk_stream.py:378",
+     "store": "0x8006e32c"
+    }
+   ],
+   "control_flow": "jump",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e270",
+   "in_function_body": false,
+   "name": "Switch",
+   "name_source": "opcodes.json",
+   "note": "resolve() reports 14, which is the linear scan chaining the tag-exit's cmd+6 (0x8006e2f8) with the 6-byte loop stride (0x8006e310) and the tag exit again (0x8006e320). A case-table scan has no single constant, and published 4 is the header, so Switch claims no constant advance at all.",
+   "number": 19,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x14": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e338",
+   "in_function_body": false,
+   "name": "SwitchCase",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 20,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x15": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e34c",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 21,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x16": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e360",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 22,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x17": {
+   "advances": [
+    {
+     "expression": "cmd + s16[cmd+4]",
+     "kind": "variable",
+     "source": "tools/walk_stream.py:381",
+     "store": "0x8006e3d0"
+    }
+   ],
+   "control_flow": "jump",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e388",
+   "in_function_body": false,
+   "name": "Goto",
+   "name_source": "opcodes.json",
+   "note": "published 6 is the command's own size; the only ctx+0x1c write is the computed target, stored in the jr ra delay slot at 0x8006e3d0 (0x8006e3a4 lh t0,4(a1) -> 0x8006e3bc addu a1,a1,t0), so Goto has no fall-through to walk by.",
+   "number": 23,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x18": {
+   "advances": [
+    {
+     "expression": "*(0x80114f2c) + u16[cmd+1]",
+     "kind": "variable",
+     "source": "tools/walk_stream.py:387",
+     "store": "0x8006e430"
+    }
+   ],
+   "control_flow": "jump",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e3d4",
+   "in_function_body": false,
+   "name": "GoSub",
+   "name_source": "opcodes.json",
+   "note": "published 2 is the command's own size; the handler also saves cmd+2 into ctx+0x144+idx*4 at 0x8006e3f0, which is the slot 0x19 and 0x01 pop, and then sets the pointer from the script table *(0x80114f2c) + u16[cmd+1].",
+   "number": 24,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x19": {
+   "advances": [
+    {
+     "expression": "*(ctx + 0x144 + (u8[ctx+2] - 1) * 4)",
+     "kind": "variable",
+     "source": "tools/walk_stream.py:359",
+     "store": "0x8006e45c"
+    }
+   ],
+   "control_flow": "dynamic",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e43c",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": "pops the slot 0x18 pushes (ctx+0x144+idx*4) and reloads ctx+0x140 from the frame at 0x8006e480.",
+   "number": 25,
+   "published": null,
+   "scheduler_effect": "unknown"
+  },
+  "0x1a": {
+   "advances": [
+    {
+     "expression": "*(ctx + s8[ctx+2]*16 + s8[ctx+s8[ctx+2]+8]*4 + 0x60)",
+     "kind": "variable",
+     "source": "tools/walk_stream.py:360",
+     "store": "0x8006e4b4"
+    }
+   ],
+   "control_flow": "dynamic",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e48c",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": "block return from the ctx+0x60 end slot that 0x0d, 0x0f and 0x1b write.",
+   "number": 26,
+   "published": null,
+   "scheduler_effect": "unknown"
+  },
+  "0x1b": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    },
+    {
+     "expression": "cmd + s16[cmd+2] + 6",
+     "kind": "variable",
+     "source": "tools/walk_stream.py:383",
+     "store": "0x8006df6c"
+    }
+   ],
+   "control_flow": "jump",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006debc",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": "same shape as 0x0d and the same trap: resolve() reports [6, 12] because the scan carries a3 = cmd+6 out of the fall-through arm (0x8006df00) into the loop-exit arm (0x8006df60 lh t0,2(a3) -> 0x8006df68 addiu v0,v0,6 -> 0x8006df6c sw v0,28(t2)). The licensed table has no entry for this number, so the name stays null.",
+   "number": 27,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x1c": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006db00",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 28,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x1d": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e4d4",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 29,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x1e": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006db14",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 30,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x1f": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006db14",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 31,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x20": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006db14",
+   "in_function_body": false,
+   "name": "NopRun",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 32,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x21": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e574",
+   "in_function_body": false,
+   "name": "CheckBitTest",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 33,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x22": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e5d0",
+   "in_function_body": false,
+   "name": "SetBit",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 34,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x23": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e68c",
+   "in_function_body": false,
+   "name": "Compare",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 35,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x24": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e730",
+   "in_function_body": false,
+   "name": "Save",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 36,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x25": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 3
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006e760",
+   "in_function_body": false,
+   "name": "Copy",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 37,
+   "published": 3,
+   "scheduler_effect": "unknown"
+  },
+  "0x26": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006e79c",
+   "in_function_body": true,
+   "name": "Calc",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 38,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x27": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006e7e4",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 39,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x28": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006eae0",
+   "in_function_body": true,
+   "name": "Rand",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 40,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x29": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006eb08",
+   "in_function_body": true,
+   "name": "CutChg",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 41,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x2a": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006eb80",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 42,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x2b": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006ee24",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 43,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x2c": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 20
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006ee90",
+   "in_function_body": false,
+   "name": "AotSet",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 44,
+   "published": 20,
+   "scheduler_effect": "unknown"
+  },
+  "0x2d": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 38
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006f448",
+   "in_function_body": true,
+   "name": "ObjModelSet",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 45,
+   "published": 38,
+   "scheduler_effect": "unknown"
+  },
+  "0x2e": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 3
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006fb48",
+   "in_function_body": false,
+   "name": "WorkSet",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 46,
+   "published": 3,
+   "scheduler_effect": "unknown"
+  },
+  "0x2f": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006fd30",
+   "in_function_body": false,
+   "name": "SetMotion",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 47,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x30": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006fd58",
+   "in_function_body": false,
+   "name": "ApplyMotion",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 48,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x31": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006fdd0",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 49,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x32": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 8
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006fe44",
+   "in_function_body": false,
+   "name": "PosSet",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 50,
+   "published": 8,
+   "scheduler_effect": "unknown"
+  },
+  "0x33": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 8
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006fe74",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 51,
+   "published": 8,
+   "scheduler_effect": "unknown"
+  },
+  "0x34": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006fea4",
+   "in_function_body": true,
+   "name": "MemberSet",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 52,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x35": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 3
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006feec",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 53,
+   "published": 3,
+   "scheduler_effect": "unknown"
+  },
+  "0x36": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 12
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80071180",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": "retracted in M226, twice over. The dispatch is `jr *(0x800b98e0 + (u16[cmd+4] >> 8)*4)` with the index bounds-checked against 5 -- at 0x800b98e0, not the 0x800c98e0 this file published, which is what `addiu v0,v0,-26400` gives if its immediate is read unsigned (it is -0x6720, so the base is 0x10000 lower). And the target is not a callback: the five entries are five arms of one dispatch, each selecting a base object before a shared tail computes three coordinates, calls FUN_80077adc and writes ctx+0x1c = cmd+12. So the advance is the constant 12 and the index selects a sub-opcode. Measured by tools/callback_table.py; the base objects the arms select *are* runtime-initialised, which is where that reading belongs.",
+   "number": 54,
+   "published": 12,
+   "scheduler_effect": "unknown"
+  },
+  "0x37": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x800712e8",
+   "in_function_body": false,
+   "name": "ScaIdSet",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 55,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x38": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 3
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80072f94",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 56,
+   "published": 3,
+   "scheduler_effect": "unknown"
+  },
+  "0x39": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 8
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x800706cc",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 57,
+   "published": 8,
+   "scheduler_effect": "unknown"
+  },
+  "0x3a": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 16
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80071340",
+   "in_function_body": true,
+   "name": "SceEsprOn",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 58,
+   "published": 16,
+   "scheduler_effect": "unknown"
+  },
+  "0x3b": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 32
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006ef68",
+   "in_function_body": false,
+   "name": "DoorAotSet",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 59,
+   "published": 32,
+   "scheduler_effect": "unknown"
+  },
+  "0x3c": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006ec58",
+   "in_function_body": false,
+   "name": "CutAuto",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 60,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x3d": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 3
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x800700d0",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 61,
+   "published": 3,
+   "scheduler_effect": "unknown"
+  },
+  "0x3e": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80070120",
+   "in_function_body": true,
+   "name": "MemberCompare",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 62,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x3f": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80071950",
+   "in_function_body": false,
+   "name": "PlcMotion",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 63,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x40": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 8
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8007199c",
+   "in_function_body": false,
+   "name": "PlcDest",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 64,
+   "published": 8,
+   "scheduler_effect": "unknown"
+  },
+  "0x41": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 10
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80071b94",
+   "in_function_body": false,
+   "name": "PlcNeck",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 65,
+   "published": 10,
+   "scheduler_effect": "unknown"
+  },
+  "0x42": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80071ca0",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 66,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x43": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80071d28",
+   "in_function_body": false,
+   "name": "PlcFlag",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 67,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x44": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 22
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80071e14",
+   "in_function_body": true,
+   "name": "SceEmSet",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 68,
+   "published": 22,
+   "scheduler_effect": "unknown"
+  },
+  "0x45": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 5
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8007337c",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 69,
+   "published": 5,
+   "scheduler_effect": "unknown"
+  },
+  "0x46": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 10
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006f32c",
+   "in_function_body": false,
+   "name": "AotReset",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 70,
+   "published": 10,
+   "scheduler_effect": "unknown"
+  },
+  "0x47": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006f3b4",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 71,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x48": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 16
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006f740",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 72,
+   "published": 16,
+   "scheduler_effect": "unknown"
+  },
+  "0x49": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 8
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006faf4",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 73,
+   "published": 8,
+   "scheduler_effect": "unknown"
+  },
+  "0x4a": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80071b04",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 74,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x4b": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 3
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006ecc0",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 75,
+   "published": 3,
+   "scheduler_effect": "unknown"
+  },
+  "0x4c": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 5
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80071618",
+   "in_function_body": true,
+   "name": "SceEsprKill",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 76,
+   "published": 5,
+   "scheduler_effect": "unknown"
+  },
+  "0x4d": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 22
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8009bd84",
+   "in_function_body": true,
+   "name": "DoorModelSet",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 77,
+   "published": 22,
+   "scheduler_effect": "unknown"
+  },
+  "0x4e": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 22
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006f040",
+   "in_function_body": true,
+   "name": "ItemAotSet",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 78,
+   "published": 22,
+   "scheduler_effect": "unknown"
+  },
+  "0x4f": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x800722cc",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 79,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x50": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80072314",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 80,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x51": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8007235c",
+   "in_function_body": true,
+   "name": "SceBgmControl",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 81,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x52": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80071744",
+   "in_function_body": true,
+   "name": "SceEsprControl",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 82,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x53": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8007241c",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 83,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x54": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 22
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8007148c",
+   "in_function_body": true,
+   "name": "SceEspr3DOn",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 84,
+   "published": 22,
+   "scheduler_effect": "unknown"
+  },
+  "0x55": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8007040c",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 85,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x56": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80070474",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 86,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x57": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 8
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x800723cc",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 87,
+   "published": 8,
+   "scheduler_effect": "unknown"
+  },
+  "0x58": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80071d9c",
+   "in_function_body": false,
+   "name": "PlcRot",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 88,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x59": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80072548",
+   "in_function_body": true,
+   "name": "XaOn",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 89,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x5a": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80072978",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 90,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x5b": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80071df0",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 91,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x5c": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 3
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80072670",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 92,
+   "published": 3,
+   "scheduler_effect": "unknown"
+  },
+  "0x5d": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80072768",
+   "in_function_body": false,
+   "name": "MizuDivSet",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 93,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x5e": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8007277c",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 94,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x5f": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x800725ac",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 95,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x60": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 14
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80072acc",
+   "in_function_body": true,
+   "name": "KageSet",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 96,
+   "published": 14,
+   "scheduler_effect": "unknown"
+  },
+  "0x61": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006edb0",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 97,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x62": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80072878",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 98,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x63": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80071b3c",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 99,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x64": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 16
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x800713e0",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 100,
+   "published": 16,
+   "scheduler_effect": "unknown"
+  },
+  "0x65": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80071670",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 101,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x66": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80071ce8",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 102,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x67": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 28
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006eef4",
+   "in_function_body": false,
+   "name": "AotSet4p",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 103,
+   "published": 28,
+   "scheduler_effect": "unknown"
+  },
+  "0x68": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 40
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8006efcc",
+   "in_function_body": false,
+   "name": "DoorAotSet4p",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 104,
+   "published": 40,
+   "scheduler_effect": "unknown"
+  },
+  "0x69": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 30
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006f1b0",
+   "in_function_body": true,
+   "name": "ItemAotSet4p",
+   "name_source": "opcodes.json",
+   "note": null,
+   "number": 105,
+   "published": 30,
+   "scheduler_effect": "unknown"
+  },
+  "0x6a": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80072c3c",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 106,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x6b": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80072d04",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 107,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x6c": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006e534",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 108,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x6d": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80072f64",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 109,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x6e": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006fc5c",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 110,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x6f": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80073018",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 111,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x70": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80073058",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 112,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x71": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80073100",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 113,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x72": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 16
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8006f8b0",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 114,
+   "published": 16,
+   "scheduler_effect": "unknown"
+  },
+  "0x73": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 8
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x800731bc",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 115,
+   "published": 8,
+   "scheduler_effect": "unknown"
+  },
+  "0x74": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x800724fc",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 116,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x75": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 22
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x8007154c",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 117,
+   "published": 22,
+   "scheduler_effect": "unknown"
+  },
+  "0x76": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 3
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80072a24",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 118,
+   "published": 3,
+   "scheduler_effect": "unknown"
+  },
+  "0x77": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 4
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x8007272c",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 119,
+   "published": 4,
+   "scheduler_effect": "unknown"
+  },
+  "0x78": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80072740",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 120,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x79": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80072754",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 121,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x7a": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 16
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80073224",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 122,
+   "published": 16,
+   "scheduler_effect": "unknown"
+  },
+  "0x7b": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 16
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x800732d8",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 123,
+   "published": 16,
+   "scheduler_effect": "unknown"
+  },
+  "0x7c": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80072d64",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 124,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x7d": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80072ddc",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 125,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x7e": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80072e9c",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 126,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x7f": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80072ef4",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 127,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x80": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x800725dc",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 128,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x81": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 3
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x800727b0",
+   "in_function_body": false,
+   "name": "StateDispatch",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 129,
+   "published": 3,
+   "scheduler_effect": "unknown"
+  },
+  "0x82": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 3
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x800716b0",
+   "in_function_body": true,
+   "name": "ReleaseByKey",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 130,
+   "published": 3,
+   "scheduler_effect": "unknown"
+  },
+  "0x83": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80073410",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 131,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x84": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 2
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80073448",
+   "in_function_body": false,
+   "name": "SndMode",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 132,
+   "published": 2,
+   "scheduler_effect": "unknown"
+  },
+  "0x85": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x800734b0",
+   "in_function_body": true,
+   "name": "SndPlay3D",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 133,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x86": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80073564",
+   "in_function_body": false,
+   "name": "SndBusy",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 134,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x87": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80073590",
+   "in_function_body": true,
+   "name": "SndStop",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 135,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x88": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 3
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x800728ec",
+   "in_function_body": true,
+   "name": "CountdownSlot",
+   "name_source": "inferred_names.json",
+   "note": null,
+   "number": 136,
+   "published": 3,
+   "scheduler_effect": "unknown"
+  },
+  "0x89": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 1
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve (bytes)",
+   "handler": "0x80073170",
+   "in_function_body": false,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 137,
+   "published": 1,
+   "scheduler_effect": "unknown"
+  },
+  "0x8a": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x800735cc",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 138,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x8b": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 6
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80073610",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 139,
+   "published": 6,
+   "scheduler_effect": "unknown"
+  },
+  "0x8c": {
+   "advances": [
+    {
+     "kind": "constant",
+     "value": 8
+    }
+   ],
+   "control_flow": "ok",
+   "evidence": "walk_stream.resolve",
+   "handler": "0x80073658",
+   "in_function_body": true,
+   "name": null,
+   "name_source": null,
+   "note": null,
+   "number": 140,
+   "published": 8,
+   "scheduler_effect": "unknown"
+  }
+ },
+ "refuses": "a folded constant as a constant, a length for the six dynamic opcodes, any scheduler claim, and any name the inputs do not give",
+ "totals": {
+  "constant_advances": 132,
+  "control_flow": {
+   "dynamic": 5,
+   "jump": 6,
+   "ok": 130
+  },
+  "in_function_body": 59,
+  "opcodes": 141,
+  "scheduler_unknown": 141,
+  "variable_advances": 14,
+  "without_function_body": 82
+ }
+}

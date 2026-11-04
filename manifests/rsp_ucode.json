@@ -1,0 +1,1555 @@
+{
+ "blob": {
+  "addr": "0x800b2700",
+  "bounded_by": [
+   "before: the CPU function ending `lw ra,0x10(sp) / jr ra / addiu sp,sp,0x18` at 0x99c74, so 0x99c80 is a function boundary and not the middle of one",
+   "after: 0x9ac80 is `nop` then `addiu sp,sp,-0x40` at 0x9ac84, the next CPU function's prologue",
+   "the blob's last word is `jr ra` at 0xffc and its delay slot is the first word outside the declared size \u2014 recorded, because that is the one place the declared 0x1000 cuts a pair"
+  ],
+  "contains_cartridge_bytes": false,
+  "entropy": 6.301,
+  "image_offset": 629888,
+  "sha256": "8ea8bc9fb5fce653fc95238dd9b5c487c99375957b1793b2786a07e8f69cf4e8",
+  "size": 4096,
+  "zero_bytes": 719
+ },
+ "citations": {
+  "dma_64bit": {
+   "page": 139,
+   "quote": "All data must first be transferred\ninto DMEM using DMA operations, which must be 64-bit aligned."
+  },
+  "dmem_only": {
+   "page": 139,
+   "quote": "The RSP software can only access DMEM."
+  },
+  "imem_dmem_4k": {
+   "page": 44,
+   "quote": "The IMEM and DMEM are\nboth 4 KB."
+  },
+  "r4000_authority": {
+   "page": 47,
+   "quote": "see the MIPS Microprocessor R4000 User\u2019s Manual"
+  },
+  "rsp_physical": {
+   "page": 47,
+   "quote": "The RSP hardware uses physical addresses."
+  },
+  "rsp_segments": {
+   "page": 47,
+   "quote": "Bits 24 through 27 of the segmented address are used to index into a 16-entry table"
+  },
+  "su_r4000": {
+   "page": 44,
+   "quote": "The SU implements a\nsubset of the R4000 instruction set."
+  },
+  "task_boot_ucode": {
+   "page": 137,
+   "quote": "the boot microcode takes over, loading the task microcode\n(and data) specified in the task list, and jumping to the beginning of the task."
+  },
+  "task_pc0": {
+   "page": 137,
+   "quote": "the R4300 sets the RSP PC to 0."
+  },
+  "vu_elements": {
+   "page": 44,
+   "quote": "The VU\nhas eight 16-bit elements."
+  }
+ },
+ "decoder": {
+  "counts": {
+   "foreign": 48,
+   "scalar": 722,
+   "unreadable": 0,
+   "vector": 254,
+   "words": 1024
+  },
+  "coverage_rule": "Every word is one of three things. `scalar`: named from the R4000/MIPS III table that p44 and p47 name for the SU \u2014 the manual does not tabulate the encoding, so each such entry is labelled `family`, not `cited`. `vector`: identified as a COP2 vector-unit instruction with its fields reported raw, its mnemonic null, and listed in `unreadable`. `unreadable`: named in no document this repository holds. Nothing is imported from another architecture's table, and no DMEM offset, SP register or command opcode acquires a name.",
+  "scalar_ops": {
+   "addiu": {
+    "cite": "su_r4000",
+    "first": 84,
+    "form_example": "addiu a1,a1,256",
+    "mnemonic": "addiu",
+    "status": "family",
+    "words": 102
+   },
+   "addu": {
+    "cite": "su_r4000",
+    "first": 196,
+    "form_example": "addu a3,a3,t0",
+    "mnemonic": "addu",
+    "status": "family",
+    "words": 13
+   },
+   "and": {
+    "cite": "su_r4000",
+    "first": 2240,
+    "form_example": "and a1,t4,t3",
+    "mnemonic": "and",
+    "status": "family",
+    "words": 1
+   },
+   "andi": {
+    "cite": "su_r4000",
+    "first": 4,
+    "form_example": "andi a1,a2,0x0001",
+    "mnemonic": "andi",
+    "status": "family",
+    "words": 14
+   },
+   "beq": {
+    "cite": "imem_dmem_4k",
+    "first": 8,
+    "form_example": "beq a1,zero,0x028",
+    "mnemonic": "beq",
+    "status": "family",
+    "words": 20
+   },
+   "bgez": {
+    "cite": "imem_dmem_4k",
+    "first": 3336,
+    "form_example": "bgez t7,0xd14",
+    "mnemonic": "bgez",
+    "status": "family",
+    "words": 1
+   },
+   "bgtz": {
+    "cite": "imem_dmem_4k",
+    "first": 32,
+    "form_example": "bgtz a1,0x018",
+    "mnemonic": "bgtz",
+    "status": "family",
+    "words": 1
+   },
+   "blez": {
+    "cite": "imem_dmem_4k",
+    "first": 3356,
+    "form_example": "blez a2,0xd48",
+    "mnemonic": "blez",
+    "status": "family",
+    "words": 1
+   },
+   "bltz": {
+    "cite": "imem_dmem_4k",
+    "first": 2660,
+    "form_example": "bltz a2,0xa7c",
+    "mnemonic": "bltz",
+    "status": "family",
+    "words": 1
+   },
+   "bne": {
+    "cite": "imem_dmem_4k",
+    "first": 176,
+    "form_example": "bne a3,zero,0x10c",
+    "mnemonic": "bne",
+    "status": "family",
+    "words": 32
+   },
+   "break": {
+    "cite": "su_r4000",
+    "first": 696,
+    "form_example": "break",
+    "mnemonic": "break",
+    "status": "family",
+    "words": 1
+   },
+   "j": {
+    "cite": "task_pc0",
+    "first": 260,
+    "form_example": "j 0x200",
+    "mnemonic": "j",
+    "status": "family",
+    "words": 6
+   },
+   "jal": {
+    "cite": "task_pc0",
+    "first": 60,
+    "form_example": "jal 0x3f0",
+    "mnemonic": "jal",
+    "status": "family",
+    "words": 43
+   },
+   "jr": {
+    "cite": "su_r4000",
+    "first": 772,
+    "form_example": "jr ra",
+    "mnemonic": "jr",
+    "status": "family",
+    "words": 17
+   },
+   "lbu": {
+    "cite": "dmem_only",
+    "first": 152,
+    "form_example": "lbu a1,60(v0)",
+    "mnemonic": "lbu",
+    "status": "family",
+    "words": 18
+   },
+   "ldv": {
+    "cite": "vu_transfer",
+    "first": 1428,
+    "form_example": "ldv v3,0(t1) [element 0, x8]",
+    "mnemonic": "ldv",
+    "status": "family",
+    "words": 39
+   },
+   "lhu": {
+    "cite": "dmem_only",
+    "first": 144,
+    "form_example": "lhu a2,44(v0)",
+    "mnemonic": "lhu",
+    "status": "family",
+    "words": 54
+   },
+   "llv": {
+    "cite": "vu_transfer",
+    "first": 2536,
+    "form_example": "llv v19,0(t3) [element 0, x4]",
+    "mnemonic": "llv",
+    "status": "family",
+    "words": 1
+   },
+   "lqv": {
+    "cite": "vu_transfer",
+    "first": 1664,
+    "form_example": "lqv v26,0(gp) [element 0, x16]",
+    "mnemonic": "lqv",
+    "status": "family",
+    "words": 19
+   },
+   "lrv": {
+    "cite": "vu_transfer",
+    "first": 2688,
+    "form_example": "lrv v5,1(a1) [element 0, x16]",
+    "mnemonic": "lrv",
+    "status": "family",
+    "words": 14
+   },
+   "lsv": {
+    "cite": "vu_transfer",
+    "first": 3416,
+    "form_example": "lsv v1,0(t3) [element 2, x2]",
+    "mnemonic": "lsv",
+    "status": "family",
+    "words": 2
+   },
+   "lw": {
+    "cite": "dmem_only",
+    "first": 44,
+    "form_example": "lw a0,48(at)",
+    "mnemonic": "lw",
+    "status": "family",
+    "words": 27
+   },
+   "mfc0": {
+    "cite": "rsp_physical",
+    "first": 0,
+    "form_example": "mfc0 a2,<sp reg 11>",
+    "mnemonic": "mfc0",
+    "status": "family",
+    "words": 11
+   },
+   "mtc0": {
+    "cite": "rsp_physical",
+    "first": 684,
+    "form_example": "mtc0 a1,<sp reg 4>",
+    "mnemonic": "mtc0",
+    "status": "family",
+    "words": 13
+   },
+   "nop": {
+    "cite": "su_r4000",
+    "first": 20,
+    "form_example": "nop",
+    "mnemonic": "nop",
+    "status": "family",
+    "words": 33
+   },
+   "or": {
+    "cite": "su_r4000",
+    "first": 52,
+    "form_example": "or a1,zero,a0",
+    "mnemonic": "or",
+    "status": "family",
+    "words": 24
+   },
+   "ori": {
+    "cite": "su_r4000",
+    "first": 56,
+    "form_example": "ori a2,zero,592",
+    "mnemonic": "ori",
+    "status": "family",
+    "words": 106
+   },
+   "sb": {
+    "cite": "dmem_only",
+    "first": 104,
+    "form_example": "sb zero,3416(zero)",
+    "mnemonic": "sb",
+    "status": "family",
+    "words": 4
+   },
+   "sdv": {
+    "cite": "vu_transfer",
+    "first": 2288,
+    "form_example": "sdv v3,0(t5) [element 0, x8]",
+    "mnemonic": "sdv",
+    "status": "family",
+    "words": 4
+   },
+   "sh": {
+    "cite": "dmem_only",
+    "first": 216,
+    "form_example": "sh a2,3418(zero)",
+    "mnemonic": "sh",
+    "status": "family",
+    "words": 2
+   },
+   "sll": {
+    "cite": "su_r4000",
+    "first": 208,
+    "form_example": "sll a3,a3,1",
+    "mnemonic": "sll",
+    "status": "family",
+    "words": 25
+   },
+   "slt": {
+    "cite": "su_r4000",
+    "first": 1980,
+    "form_example": "slt t0,t3,t5",
+    "mnemonic": "slt",
+    "status": "family",
+    "words": 8
+   },
+   "sqv": {
+    "cite": "vu_transfer",
+    "first": 1188,
+    "form_example": "sqv v3,0(at) [element 0, x16]",
+    "mnemonic": "sqv",
+    "status": "family",
+    "words": 26
+   },
+   "sra": {
+    "cite": "su_r4000",
+    "first": 1308,
+    "form_example": "sra a2,a2,16",
+    "mnemonic": "sra",
+    "status": "family",
+    "words": 6
+   },
+   "srl": {
+    "cite": "su_r4000",
+    "first": 312,
+    "form_example": "srl a1,a1,5",
+    "mnemonic": "srl",
+    "status": "family",
+    "words": 4
+   },
+   "srlv": {
+    "cite": "su_r4000",
+    "first": 2640,
+    "form_example": "srlv a1,a2,a1",
+    "mnemonic": "srlv",
+    "status": "family",
+    "words": 1
+   },
+   "ssv": {
+    "cite": "vu_transfer",
+    "first": 1800,
+    "form_example": "ssv v3,0(a1) [element 14, x2]",
+    "mnemonic": "ssv",
+    "status": "family",
+    "words": 20
+   },
+   "subu": {
+    "cite": "su_r4000",
+    "first": 212,
+    "form_example": "subu a2,a2,a3",
+    "mnemonic": "subu",
+    "status": "family",
+    "words": 5
+   },
+   "sw": {
+    "cite": "dmem_only",
+    "first": 92,
+    "form_example": "sw a0,3420(zero)",
+    "mnemonic": "sw",
+    "status": "family",
+    "words": 1
+   },
+   "xori": {
+    "cite": "su_r4000",
+    "first": 508,
+    "form_example": "xori a1,a1,0x0001",
+    "mnemonic": "xori",
+    "status": "family",
+    "words": 2
+   }
+  },
+  "unreadable": [
+   {
+    "cite": "vu_alu",
+    "first": 1152,
+    "key": "COP2 funct 0x11 (not in the cited table)",
+    "kind": "vector-unit",
+    "why": "the cited instruction table has no row for this function code, so the word is identified as a vector-unit instruction and left unnamed rather than guessed at",
+    "words": 2
+   }
+  ],
+  "vector_ops": {
+   "COP2 funct 0x11 (not in the cited table)": {
+    "cite": "vu_alu",
+    "fields": {
+     "element": 9,
+     "funct": 17,
+     "vd": 27,
+     "vs": 1,
+     "vt": 31
+    },
+    "fields_example": "cop2 e=9 vt=v31 vs=v1 vd=v3 funct=0x11 (unlisted)",
+    "first": 1152,
+    "key": "COP2 funct 0x11 (not in the cited table)",
+    "mnemonic": null,
+    "status": "unresolved",
+    "why": null,
+    "words": 2
+   },
+   "mtc2": {
+    "cite": "vu_transfer",
+    "fields_example": "mtc2 a3,v31[e byte 0]",
+    "first": 992,
+    "key": "mtc2",
+    "mnemonic": "mtc2",
+    "status": "cited-external",
+    "why": null,
+    "words": 43
+   },
+   "vadd": {
+    "cite": "vu_alu",
+    "fields": {
+     "element": 6,
+     "funct": 16,
+     "vd": 6,
+     "vs": 14,
+     "vt": 14
+    },
+    "fields_example": "vadd v28,v0,v28,e(0)",
+    "first": 1124,
+    "key": "vadd",
+    "mnemonic": "vadd",
+    "status": "cited-external",
+    "why": "add with carry",
+    "words": 37
+   },
+   "vaddc": {
+    "cite": "vu_alu",
+    "fields": {
+     "element": 8,
+     "funct": 20,
+     "vd": 1,
+     "vs": 0,
+     "vt": 1
+    },
+    "fields_example": "vaddc v2,v2,v7,e(1)",
+    "first": 1424,
+    "key": "vaddc",
+    "mnemonic": "vaddc",
+    "status": "cited-external",
+    "why": "add, writing the overflow into the carry",
+    "words": 10
+   },
+   "vand": {
+    "cite": "vu_alu",
+    "fields": {
+     "element": 11,
+     "funct": 40,
+     "vd": 18,
+     "vs": 2,
+     "vt": 20
+    },
+    "fields_example": "vand v15,v1,v20,e(0)",
+    "first": 2576,
+    "key": "vand",
+    "mnemonic": "vand",
+    "status": "cited-external",
+    "why": "bitwise and",
+    "words": 8
+   },
+   "vlt": {
+    "cite": "vu_select",
+    "fields": {
+     "element": 9,
+     "funct": 32,
+     "vd": 1,
+     "vs": 1,
+     "vt": 31
+    },
+    "fields_example": "vlt v1,v1,v31,e(1)",
+    "first": 1160,
+    "key": "vlt",
+    "mnemonic": "vlt",
+    "status": "cited-external",
+    "why": "select the lower of two vectors",
+    "words": 2
+   },
+   "vmadh": {
+    "cite": "vu_alu",
+    "fields": {
+     "element": 8,
+     "funct": 15,
+     "vd": 16,
+     "vs": 16,
+     "vt": 1
+    },
+    "fields_example": "vmadh v26,v26,v28",
+    "first": 1680,
+    "key": "vmadh",
+    "mnemonic": "vmadh",
+    "status": "cited-external",
+    "why": "vmudh, adding to the accumulator",
+    "words": 56
+   },
+   "vmadm": {
+    "cite": "vu_alu",
+    "fields": {
+     "element": 9,
+     "funct": 13,
+     "vd": 3,
+     "vs": 3,
+     "vt": 4
+    },
+    "fields_example": "vmadm v5,v1,v4,e(0)",
+    "first": 2256,
+    "key": "vmadm",
+    "mnemonic": "vmadm",
+    "status": "cited-external",
+    "why": "vmudm, adding to the accumulator",
+    "words": 2
+   },
+   "vmadn": {
+    "cite": "vu_alu",
+    "fields": {
+     "element": 0,
+     "funct": 14,
+     "vd": 26,
+     "vs": 18,
+     "vt": 3
+    },
+    "fields_example": "vmadn v4,v28,v31,e(0)",
+    "first": 1180,
+    "key": "vmadn",
+    "mnemonic": "vmadn",
+    "status": "cited-external",
+    "why": "vmudn, adding to the accumulator",
+    "words": 10
+   },
+   "vmov": {
+    "cite": "vu_single",
+    "fields": {
+     "dest_lane": 4,
+     "element": 12,
+     "opcode": 51,
+     "source_lane": 4,
+     "vd": 15,
+     "vt": 19
+    },
+    "fields_example": "vmov v8[e(5)],v19[e(4)]",
+    "first": 2692,
+    "key": "vmov",
+    "mnemonic": "vmov",
+    "status": "cited-external",
+    "why": "copy one lane of a vector register into another",
+    "words": 8
+   },
+   "vmrg": {
+    "cite": "vu_select",
+    "fields": {
+     "element": 0,
+     "funct": 39,
+     "vd": 1,
+     "vs": 1,
+     "vt": 27
+    },
+    "fields_example": "vmrg v1,v1,v3",
+    "first": 1164,
+    "key": "vmrg",
+    "mnemonic": "vmrg",
+    "status": "cited-external",
+    "why": "merge two vectors lane by lane using the flags",
+    "words": 2
+   },
+   "vmudh": {
+    "cite": "vu_alu",
+    "fields": {
+     "element": 4,
+     "funct": 7,
+     "vd": 3,
+     "vs": 8,
+     "vt": 3
+    },
+    "fields_example": "vmudh v6,v4,v3,e(0)",
+    "first": 2060,
+    "key": "vmudh",
+    "mnemonic": "vmudh",
+    "status": "cited-external",
+    "why": "multiply S0.16 x S0.16, signed clamp",
+    "words": 11
+   },
+   "vmudl": {
+    "cite": "vu_alu",
+    "fields": {
+     "element": 9,
+     "funct": 4,
+     "vd": 5,
+     "vs": 2,
+     "vt": 4
+    },
+    "fields_example": "vmudl v4,v2,v31,e(5)",
+    "first": 1172,
+    "key": "vmudl",
+    "mnemonic": "vmudl",
+    "status": "cited-external",
+    "why": "multiply U0.16 x U0.16, signed clamp",
+    "words": 3
+   },
+   "vmudm": {
+    "cite": "vu_alu",
+    "fields": {
+     "element": 10,
+     "funct": 5,
+     "vd": 26,
+     "vs": 26,
+     "vt": 19
+    },
+    "fields_example": "vmudm v23,v23,v19,e(2)",
+    "first": 2668,
+    "key": "vmudm",
+    "mnemonic": "vmudm",
+    "status": "cited-external",
+    "why": "multiply S0.16 x U0.16, signed clamp",
+    "words": 4
+   },
+   "vmudn": {
+    "cite": "vu_alu",
+    "fields": {
+     "element": 11,
+     "funct": 6,
+     "vd": 16,
+     "vs": 16,
+     "vt": 19
+    },
+    "fields_example": "vmudn v3,v1,v31,e(3)",
+    "first": 1168,
+    "key": "vmudn",
+    "mnemonic": "vmudn",
+    "status": "cited-external",
+    "why": "multiply U0.16 x S0.16, signed clamp",
+    "words": 15
+   },
+   "vmulf": {
+    "cite": "vu_alu",
+    "fields": {
+     "element": 0,
+     "funct": 0,
+     "vd": 14,
+     "vs": 14,
+     "vt": 15
+    },
+    "fields_example": "vmulf v3,v3,v25",
+    "first": 1536,
+    "key": "vmulf",
+    "mnemonic": "vmulf",
+    "status": "cited-external",
+    "why": "multiply S1.15 x S1.15, rounding, signed clamp",
+    "words": 15
+   },
+   "vsar": {
+    "cite": "vu_alu",
+    "fields": {
+     "element": 8,
+     "funct": 29,
+     "vd": 22,
+     "vs": 15,
+     "vt": 22
+    },
+    "fields_example": "vsar v2,v5,v3,e(2)",
+    "first": 2268,
+    "key": "vsar",
+    "mnemonic": "vsar",
+    "status": "cited-external",
+    "why": "read a portion of the accumulator into a vector register",
+    "words": 10
+   },
+   "vxor": {
+    "cite": "vu_alu",
+    "fields": {
+     "element": 0,
+     "funct": 44,
+     "vd": 13,
+     "vs": 13,
+     "vt": 13
+    },
+    "fields_example": "vxor v0,v0,v0",
+    "first": 40,
+    "key": "vxor",
+    "mnemonic": "vxor",
+    "status": "cited-external",
+    "why": "bitwise xor",
+    "words": 16
+   }
+  }
+ },
+ "external_sources": {
+  "licence": "CC BY-SA-4.0 (N64brew Wiki); facts restated, no text reproduced",
+  "sources": [
+   [
+    "https://n64brew.dev/wiki/Reality_Signal_Processor/CPU_Core",
+    5539
+   ]
+  ],
+  "table_defects": [
+   "the transpose group lists `0x01 swv` while the scalar group lists `0x01 lsv/ssv`: one opcode cannot be both, so one of the two rows mis-states it. No word in this program uses the transpose group, so nothing here depends on which",
+   "the computational table omits `funct 0x11`, which this program uses twice; it is left unnamed and listed rather than guessed at"
+  ],
+  "why": "The local manual tabulates no RSP encoding \u2014 it delegates the SU to the R4000 manual by name (p44, p47) and says nothing about the vector unit's function codes. M223 therefore left all 254 vector words unnamed. M224 narrowed the rule rather than the refusal: an external table may be *used as a cited source* \u2014 attributed, no text reproduced, every consequence re-measured against the cartridge \u2014 which is what this project already does for OpenBiohazard2 (MIT) and libdragon (Unlicense). See docs/THIRD_PARTY.md 4b."
+ },
+ "identity": {
+  "candidates": [
+   {
+    "against": [
+     "E2: the pair the manual gives the boot-ucode role names CPU code, not RSP code",
+     "E8: the shape this candidate predicts is absent \u2014 no computed transfer exists in the program, so there is no command dispatch to find; the third prediction (work items read through DMEM structures the CPU filled) is the only one still standing"
+    ],
+    "name": "Nintendo libaudio aspMain (the AL* / alAudioFrame ABI)",
+    "verdict": "refuted on the shape it predicts: a command list the ucode dispatches on, and this program dispatches on nothing (M224, manifests/rsp_iface.json). Not proven false \u2014 an ABI can be re-fronted \u2014 but the prediction was made and it failed",
+    "would_predict": [
+     "a task header whose microcode pointer and boot pointer both name RSP code (p137)",
+     "a command list of fixed-format 64-bit commands the ucode dispatches on",
+     "work items read through DMEM structures the CPU filled"
+    ]
+   },
+   {
+    "against": [
+     "nothing in this repository measures Factor 5 or MusyX: no string, no signature, no shape attributable to either. The cartridge's sound path is already known to be a private codec (M221/M222), which is a different claim"
+    ],
+    "name": "a Factor 5 / MusyX driver",
+    "verdict": "unresolved \u2014 no measurement here bears on it",
+    "would_predict": [
+     "a private task shape and a private command format",
+     "a streaming ring fed by the CPU rather than a per-frame command list"
+    ]
+   },
+   {
+    "against": [
+     "E7 fits and E1/E2 are consistent, but 'private' is the residual rather than a positive identification: it is what is left when the two named families fail to be forced"
+    ],
+    "name": "a cartridge-private ucode",
+    "verdict": "the reading the measurements leave standing, not a name",
+    "would_predict": [
+     "a task block only this cartridge's submit path consumes",
+     "hard-coded RDRAM addresses in the ucode's tail",
+     "no dependence on a documented command format"
+    ]
+   }
+  ],
+  "deciding_measurement": null,
+  "evidence": [
+   {
+    "id": "E0",
+    "measurement": "IMEM 0x000-0x024 is a status poll and nothing else: `mfc0 a2,<cop0 11>` / `andi a1,a2,1` / `beq a1,zero,0x028` / `andi a1,a2,0x100` / `beq a1,zero,0x028`, then a spin `mfc0 a1,<cop0 11>` / `andi a1,a1,0x100` / `bgtz a1,0x018`, and only then does the program touch anything (0x028 is the first vector instruction). 23 of the program's 24 COP0 moves are in its first 0x3d0 bytes, and 24 words are COP0 moves.",
+    "reading": "a program that begins by polling a hardware status word and issuing no work before it is reachable is ucode driven by a task, not a data table: the wait has to be for the engine that started it. Register 11 is called the RSP status register by N64 documentation this repository does not hold \u2014 the name is recorded as coming from outside this repository's authority, the number and the poll are measured, and nothing downstream depends on the name.",
+    "status": "measured; register name outside local authority"
+   },
+   {
+    "id": "E1",
+    "measurement": "the task block carries four pointer+size pairs \u2014 +0x08/+0x0c, +0x10/+0x14, +0x18/+0x1c, +0x30/+0x34 \u2014 and the +0x10/+0x14 pair names this blob (0x800b2700, 0x1000). Each value was folded out of the store that writes it, not quoted.",
+    "reading": "the block is a task header in the p137 sense: a structure the CPU fills and hands over with a pointer to the microcode and a pointer to the data to process.",
+    "status": "measured"
+   },
+   {
+    "id": "E2",
+    "measurement": "the +0x08/+0x0c pair names 0x80028a80 with size 0xd0 (= 0x80028b50-0x80028a80), and the bytes there are CPU-shaped MIPS: `lw v1,0(s0)`, `sw v0,0x14(v1)`, `jalr v0`, and a `jr ra` at 0x80028b14 whose delay slot is `addiu sp,sp,0x28`. This project's corpus has FUN_80028b1c starting 0x9c bytes later, so the 0xd0 extent straddles a function boundary.",
+    "reading": "the manual gives that pair the *boot microcode* role \u2014 RSP code the R4300 DMAs into IMEM before the task microcode (p137) \u2014 and these bytes are not RSP code. Either the pair carries something else in this cartridge, or the block is not the OSTask of p137. Recorded against both candidates rather than smoothed.",
+    "status": "measured, unresolved"
+   },
+   {
+    "id": "E3",
+    "measurement": "the declared size is 0x1000 = all of IMEM (p44), but the program is 0xf40 bytes: the corpus's own function FUN_800b3640 begins at 0x800b3640, 0xc0 bytes before the window ends, and the RSP program's last exit is 0xf34 `jr t0` (delay 0xf38, `nop` fill 0xf3c).",
+    "reading": "the size field is IMEM's capacity, not the code's length: the declared 0x1000 overruns the program by 0xc0 bytes into the next CPU function. A task that DMAs 0x1000 bytes into IMEM therefore loads the whole program plus 0xc0 bytes of CPU code that no exit reaches. The overrun is recorded, not corrected.",
+    "status": "measured"
+   },
+   {
+    "id": "E3b",
+    "measurement": "IMEM 0x02c-0x030 (`lw a0,0x30(r1)` and `lw v1,0x34(r1)`) read DMEM 0x30 and 0x34 \u2014 the same two offsets the CPU writes at 0x800a2ed0/0x800a2ed4 as the work-list pointer and its count \u2014 before the program has written anything to DMEM.",
+    "reading": "the block at 0x80143c60 is in DMEM when the program starts, which is the mechanism p137 describes (the R4300 DMAs the task header into DMEM, sets PC to 0). It also means the program assumes r1 holds zero at entry, and nothing in this repository establishes what the RSP's general registers hold when a task starts \u2014 the manual lists the boot ucode, the task header, PC and the halt status and no register state (p137). The assumption is recorded; it is not explained.",
+    "status": "measured; entry register state unresolved"
+   },
+   {
+    "id": "E4",
+    "measurement": "24 COP0 moves: registers [0, 1, 2, 3, 4, 7] are written, registers [5, 6, 7, 11] are read. Five blocks repeat one shape \u2014 write three registers carrying data, then poll a fourth, and clear register 7 with `mtc0 zero` \u2014 at 0x350, 0x384, 0x3b4 and 0x228-0x3c8.",
+    "reading": "the shape is one DMA primitive copied: a source, a destination and a length are written and a busy flag is polled. Which number is which is *not* claimed \u2014 no local document maps the SP registers \u2014 so the copy's direction stays unresolved even though the idiom is measured.",
+    "status": "measured, names unresolved"
+   },
+   {
+    "id": "E5",
+    "measurement": "106 words address DMEM by 16-bit displacement, across 42 distinct offsets from 0x000 to 0xd5c. No offset is named.",
+    "reading": "the program's whole interface with the CPU is DMEM plus DMA, and the layout it builds there is the ucode's own. Nothing on the CPU side mirrors it, so no field of it can be matched against a documented ABI from inside this repository.",
+    "status": "measured, ABI match unavailable"
+   },
+   {
+    "id": "E6",
+    "measurement": "the +0x18 pair names 0x80136b50 with size 0x800, and no other instruction in stage-2 names that address \u2014 0 references, scanned as a `lui 0x8013` + `addiu 0x6b50` pair and as a literal. Its last 0x5c0 bytes run past the image's end at 0x80136d90.",
+    "reading": "the region the ucode is handed as data is never touched by the CPU: it is either the ucode's own DMA target or its scratch, and which one is `rsp_only`.",
+    "status": "measured"
+   },
+   {
+    "id": "E7",
+    "measurement": "the program's only four `lui` constants are .",
+    "reading": "the last 0xc0 bytes build RDRAM addresses in code instead of taking them from a pointer, and 0x8016xxxx sits above this image's end. The scheme the manual describes is that the task header carries the pointer to the data to process (p137), so a hard-coded RDRAM address is a departure from it. It does not by itself name the ucode's author.",
+    "status": "measured"
+   },
+   {
+    "id": "E8",
+    "measurement": "the first `what_would_decide` item was an RSP encoding table this repository could cite. It arrived in M224 and was applied in M225: 252 of the 254 vector words now carry a cited mnemonic, and the census says the units run a 16-bit fixed-point multiply-accumulate pipeline (%d multiply, %d multiply-accumulate, %d accumulator reads) in five cited formats. The same milestone measured the call structure: no computed transfer anywhere, every `jal` direct, and no load that selects a target.",
+    "reading": "the table did not make this ucode's identity decidable, and it decided *against* the first candidate's predicted shape rather than for it: the ABI that candidate describes predicts a command list the ucode dispatches on, and this program has no dispatch of any kind. What the table bought is the arithmetic \u2014 the mixer is a fixed-point MAC pipeline \u2014 which is a description of the units, not a name for the ucode.",
+    "status": "measured"
+   }
+  ],
+  "verdict": "unresolved",
+  "what_would_decide": [
+   "ANSWERED (M224/M225): an RSP encoding table was cited, the 254 vector words are named and the COP0 registers have names and directions. It did not make the identity decidable \u2014 the jal fan-out did not read as a command switch, because there is no computed transfer at all (E8)",
+   "a CPU-side consumer of the 0x800 bytes at 0x80136b50 (E6): what the ucode is expected to write there is an ABI fingerprint",
+   "an independent copy of the same ucode from another N64 title: byte equality would settle provenance without a table"
+  ]
+ },
+ "inputs": {
+  "base": "0x80018a80",
+  "cartridge": "not needed: the blob is an unpacked member of stage-2",
+  "image": "assets/unpacked/00000_0014420_1172240.bin",
+  "manual": "docs/Nintendo_64_Programming_Manual_NU6-06-0030-001G_HQ.pdf",
+  "manual_pages": 534,
+  "reference": "DragonMinded/libdragon src/audio/rsp_mixer.S (Unlicense) was read as a coverage reference for which instruction families a real RSP audio mixer uses (scalar loads/stores, LWC2/SWC2 row transfers, COP2 ALU, COP0 clock/DMA moves). It named nothing here: no encoding, no DMEM offset and no command opcode comes from it, and it is a different, modern design \u2014 no byte of this cartridge is evidence about it or from it"
+ },
+ "program": {
+  "dmem": {
+   "above_4k": [],
+   "cop2_note": "retracted from M223: the lwc2/swc2 immediate is not a 16-bit displacement, it is a row opcode (15:11), an element (10:7) and a 7-bit offset (6:0) scaled by the row's access size, so all 125 vector transfers are DMEM accesses with a computable offset and are no longer excluded. Their absolute addresses need the base register's value, which is folded in manifests/rsp_iface.json rather than here",
+   "distinct_offsets": 42,
+   "max": "0xd5c",
+   "min": "0x0",
+   "note": "the 16-bit displacements of lw/lbu/lhu/sb/sh/sw are DMEM offsets (p139: the RSP software can only access DMEM; p44: 4 KB of it). No offset is given a name: a name would have to come from the ucode's own layout, and nothing on the CPU side records it",
+   "vector_rows": {
+    "ldv": 39,
+    "llv": 1,
+    "lqv": 19,
+    "lrv": 14,
+    "lsv": 2,
+    "sdv": 4,
+    "sqv": 26,
+    "ssv": 20
+   },
+   "vector_transfers": 125,
+   "words_with_displacement": 106
+  },
+  "entry": 0,
+  "foreign": {
+   "evidence": [
+    "the corpus declares a CPU function at 0x800b3640: src/stage2/FUN_800b3640.c",
+    "the RSP program's last exit is 0xf34 `jr t0` with its delay slot at 0xf38, followed by a `nop` fill at 0xf3c; the next word is the CPU function's body",
+    "the words from 0xf40 build a KSEG0 address (`lui v0,0x8016` + `addiu v0,v0,-0x74e0` = 0x80158b20) and load/store through it \u2014 an RSP load cannot name RDRAM (p139: the RSP software can only access DMEM), so these are not RSP instructions",
+    "the arithmetic agrees with the corpus body: FUN_800b3640 walks a 0x1228-stride table and compares +0x1224 against _DAT_8015af70 (src/stage2/FUN_800b3640.c:22-27), and the words here carry `addiu a0,a0,0x1228` and `lw v0,0x1224(a0)`"
+   ],
+   "ident": "0x800b3640",
+   "not_decoded_as": "program words: they are listed in no function, contribute to no jump target and to no DMEM statistic",
+   "offset": 3904,
+   "words": 48
+  },
+  "functions": [
+   {
+    "call_sites": 28,
+    "calls": [
+     840,
+     908,
+     924,
+     952,
+     1008,
+     1056,
+     1092,
+     1112,
+     2056,
+     2300,
+     2428,
+     2584,
+     3236,
+     3372
+    ],
+    "end": 780,
+    "ends_in_return": true,
+    "entry": 0,
+    "indirect_exits": [],
+    "instructions": 195,
+    "jumps": [
+     300,
+     512,
+     1008
+    ],
+    "returns": 1
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 880,
+    "ends_in_return": true,
+    "entry": 840,
+    "indirect_exits": [],
+    "instructions": 10,
+    "jumps": [],
+    "returns": 1
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 924,
+    "ends_in_return": true,
+    "entry": 908,
+    "indirect_exits": [],
+    "instructions": 4,
+    "jumps": [],
+    "returns": 1
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 952,
+    "ends_in_return": false,
+    "entry": 924,
+    "indirect_exits": [],
+    "instructions": 7,
+    "jumps": [],
+    "returns": 0
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 964,
+    "ends_in_return": true,
+    "entry": 952,
+    "indirect_exits": [],
+    "instructions": 3,
+    "jumps": [],
+    "returns": 1
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 1056,
+    "ends_in_return": false,
+    "entry": 1008,
+    "indirect_exits": [],
+    "instructions": 12,
+    "jumps": [],
+    "returns": 0
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 1092,
+    "ends_in_return": false,
+    "entry": 1056,
+    "indirect_exits": [],
+    "instructions": 9,
+    "jumps": [],
+    "returns": 0
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 1112,
+    "ends_in_return": false,
+    "entry": 1092,
+    "indirect_exits": [],
+    "instructions": 5,
+    "jumps": [],
+    "returns": 0
+   },
+   {
+    "call_sites": 6,
+    "calls": [
+     1948,
+     2000
+    ],
+    "end": 1820,
+    "ends_in_return": true,
+    "entry": 1112,
+    "indirect_exits": [
+     1812
+    ],
+    "instructions": 177,
+    "jumps": [],
+    "returns": 0
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 2000,
+    "ends_in_return": false,
+    "entry": 1948,
+    "indirect_exits": [],
+    "instructions": 13,
+    "jumps": [],
+    "returns": 0
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 2056,
+    "ends_in_return": false,
+    "entry": 2000,
+    "indirect_exits": [],
+    "instructions": 14,
+    "jumps": [],
+    "returns": 0
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 2172,
+    "ends_in_return": true,
+    "entry": 2056,
+    "indirect_exits": [],
+    "instructions": 29,
+    "jumps": [],
+    "returns": 1
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 2428,
+    "ends_in_return": false,
+    "entry": 2300,
+    "indirect_exits": [],
+    "instructions": 32,
+    "jumps": [],
+    "returns": 0
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 2456,
+    "ends_in_return": true,
+    "entry": 2428,
+    "indirect_exits": [],
+    "instructions": 7,
+    "jumps": [],
+    "returns": 1
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 3108,
+    "ends_in_return": true,
+    "entry": 2584,
+    "indirect_exits": [],
+    "instructions": 131,
+    "jumps": [],
+    "returns": 1
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 3244,
+    "ends_in_return": true,
+    "entry": 3236,
+    "indirect_exits": [],
+    "instructions": 2,
+    "jumps": [],
+    "returns": 1
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 3372,
+    "ends_in_return": false,
+    "entry": 3332,
+    "indirect_exits": [],
+    "instructions": 10,
+    "jumps": [],
+    "returns": 0
+   },
+   {
+    "call_sites": 5,
+    "calls": [
+     952,
+     1008,
+     3696,
+     3764
+    ],
+    "end": 3568,
+    "ends_in_return": true,
+    "entry": 3372,
+    "indirect_exits": [
+     3560
+    ],
+    "instructions": 49,
+    "jumps": [],
+    "returns": 0
+   },
+   {
+    "call_sites": 1,
+    "calls": [
+     1948
+    ],
+    "end": 3764,
+    "ends_in_return": false,
+    "entry": 3696,
+    "indirect_exits": [],
+    "instructions": 17,
+    "jumps": [],
+    "returns": 0
+   },
+   {
+    "call_sites": 0,
+    "calls": [],
+    "end": 3900,
+    "ends_in_return": true,
+    "entry": 3764,
+    "indirect_exits": [
+     3892
+    ],
+    "instructions": 34,
+    "jumps": [],
+    "returns": 0
+   }
+  ],
+  "gaps": [
+   {
+    "end": 840,
+    "start": 780,
+    "words": 15
+   },
+   {
+    "end": 908,
+    "start": 880,
+    "words": 7
+   },
+   {
+    "end": 1008,
+    "start": 964,
+    "words": 11
+   },
+   {
+    "end": 1948,
+    "start": 1820,
+    "words": 32
+   },
+   {
+    "end": 2300,
+    "start": 2172,
+    "words": 32
+   },
+   {
+    "end": 2584,
+    "start": 2456,
+    "words": 32
+   },
+   {
+    "end": 3236,
+    "start": 3108,
+    "words": 32
+   },
+   {
+    "end": 3332,
+    "start": 3244,
+    "words": 22
+   },
+   {
+    "end": 3696,
+    "start": 3568,
+    "words": 32
+   },
+   {
+    "end": 3904,
+    "start": 3900,
+    "words": 1
+   }
+  ],
+  "instructions": 976,
+  "jump_encoding": {
+   "count": 49,
+   "masked_first": "0x12c",
+   "masked_inside": 49,
+   "masked_last": "0xeb4",
+   "note": "counted over RSP words only. The one jump in the CPU tail (0xfa8 `j`, raw target 0xb3650 = 0x800b3650) is excluded and is itself a CPU jump, which corroborates where the program ends",
+   "raw_first": "0x400112c",
+   "raw_last": "0x4001eb4",
+   "raw_outside_imem": 49,
+   "raw_page_base": "0x4001000",
+   "raw_pages": 1,
+   "rule": "jal and j carry an absolute IMEM offset, not a PC-relative one: the RSP program counter is 12 bits because IMEM is 4 KB (p44), so the target is (instr_index << 2) & 0xFFF. Measured, not assumed: all 49 jump fields in the program have raw instr_index<<2 inside one 4 KB page (0x0400112c-0x04001eb4), so the page bits are constant and carry no target information; unmasked, every one of the 49 lies outside a 4 KB IMEM. Branches are the opposite: PC + 4 + (offset<<2), also truncated to IMEM."
+  },
+  "roots": [
+   0,
+   840,
+   908,
+   924,
+   952,
+   1008,
+   1056,
+   1092,
+   1112,
+   1948,
+   2000,
+   2056,
+   2300,
+   2428,
+   2584,
+   3236,
+   3332,
+   3372,
+   3696,
+   3764
+  ],
+  "rsp_words": 976,
+  "sp_registers": {
+   "moves": {
+    "mfc0 11": 2,
+    "mfc0 5": 3,
+    "mfc0 6": 3,
+    "mfc0 7": 3,
+    "mtc0 0": 3,
+    "mtc0 1": 3,
+    "mtc0 2": 2,
+    "mtc0 3": 1,
+    "mtc0 4": 1,
+    "mtc0 7": 3
+   },
+   "note": "COP0 register numbers, raw. The SP register map is in no local document, so this counts which numbers are written and which are polled and names none of them"
+  },
+  "unresolved_targets": [
+   {
+    "at": 1812,
+    "kind": "jr r30 (register indirect)",
+    "why": "the target is whatever the register holds at run time; the edge exists and its destination does not. 0xf34 `jr t0` returns through r8, which the routine at 0xe34 saves from ra in its first instruction (`or t0,zero,ra` at 0xe34), so the exit is a return through a saved link rather than an unknown call"
+   },
+   {
+    "at": 2292,
+    "kind": "jr r30 (register indirect)",
+    "why": "the target is whatever the register holds at run time; the edge exists and its destination does not. 0xf34 `jr t0` returns through r8, which the routine at 0xe34 saves from ra in its first instruction (`or t0,zero,ra` at 0xe34), so the exit is a return through a saved link rather than an unknown call"
+   },
+   {
+    "at": 3560,
+    "kind": "jr r30 (register indirect)",
+    "why": "the target is whatever the register holds at run time; the edge exists and its destination does not. 0xf34 `jr t0` returns through r8, which the routine at 0xe34 saves from ra in its first instruction (`or t0,zero,ra` at 0xe34), so the exit is a return through a saved link rather than an unknown call"
+   },
+   {
+    "at": 3892,
+    "kind": "jr r8 (register indirect)",
+    "why": "the target is whatever the register holds at run time; the edge exists and its destination does not. 0xf34 `jr t0` returns through r8, which the routine at 0xe34 saves from ra in its first instruction (`or t0,zero,ra` at 0xe34), so the exit is a return through a saved link rather than an unknown call"
+   },
+   {
+    "at": 780,
+    "kind": "words no function covers",
+    "why": "15 words from 0x30c are reached by no jal target and by no modelled fall-through; listed as uncovered rather than assigned to a neighbour"
+   },
+   {
+    "at": 880,
+    "kind": "words no function covers",
+    "why": "7 words from 0x370 are reached by no jal target and by no modelled fall-through; listed as uncovered rather than assigned to a neighbour"
+   },
+   {
+    "at": 964,
+    "kind": "words no function covers",
+    "why": "11 words from 0x3c4 are reached by no jal target and by no modelled fall-through; listed as uncovered rather than assigned to a neighbour"
+   },
+   {
+    "at": 1820,
+    "kind": "words no function covers",
+    "why": "32 words from 0x71c are reached by no jal target and by no modelled fall-through; listed as uncovered rather than assigned to a neighbour"
+   },
+   {
+    "at": 2172,
+    "kind": "words no function covers",
+    "why": "32 words from 0x87c are reached by no jal target and by no modelled fall-through; listed as uncovered rather than assigned to a neighbour"
+   },
+   {
+    "at": 2456,
+    "kind": "words no function covers",
+    "why": "32 words from 0x998 are reached by no jal target and by no modelled fall-through; listed as uncovered rather than assigned to a neighbour"
+   },
+   {
+    "at": 3108,
+    "kind": "words no function covers",
+    "why": "32 words from 0xc24 are reached by no jal target and by no modelled fall-through; listed as uncovered rather than assigned to a neighbour"
+   },
+   {
+    "at": 3244,
+    "kind": "words no function covers",
+    "why": "22 words from 0xcac are reached by no jal target and by no modelled fall-through; listed as uncovered rather than assigned to a neighbour"
+   },
+   {
+    "at": 3568,
+    "kind": "words no function covers",
+    "why": "32 words from 0xdf0 are reached by no jal target and by no modelled fall-through; listed as uncovered rather than assigned to a neighbour"
+   },
+   {
+    "at": 3900,
+    "kind": "words no function covers",
+    "why": "1 words from 0xf3c are reached by no jal target and by no modelled fall-through; listed as uncovered rather than assigned to a neighbour"
+   }
+  ],
+  "words": 1024
+ },
+ "rsp_only": [
+  {
+   "cpu_evidence": "none \u2014 measured by scanning every stage-2 instruction that touches the task's own structures",
+   "what": "the DMEM layout the ucode builds",
+   "why": "the program's only data addressing is a 16-bit DMEM displacement (106 words, 42 distinct, 0x000-0xd5c). The CPU writes no structure the ucode reads by name, so every offset is decided inside the RSP and nothing on the CPU side can be cited for it"
+  },
+  {
+   "cpu_evidence": "none \u2014 the CPU never writes a vector register",
+   "what": "what the vector unit's arithmetic computes",
+   "why": "since M224 the 254 words are *named* \u2014 252 of them from a cited table, 2 refused because it has no row for their function code \u2014 but a name is not a meaning. `vmadh v2,v1,v0` says which instruction runs, not which signal it filters, and the mixer's structure is in the accumulator's use, which no document here describes"
+  },
+  {
+   "cpu_evidence": "the task field that names it, and nothing else",
+   "what": "the meaning of the 0x800 bytes at 0x80136b50 (task+0x18)",
+   "why": "no stage-2 instruction reads or writes that address (0 references) and its tail runs past the image. Whether the ucode treats it as input or scratch is decided only by the RSP"
+  },
+  {
+   "cpu_evidence": "src/stage2/FUN_800a4d30.c writes the list base; the list's contents come from the voice path (M222), which stops at this same boundary",
+   "what": "the command format the ucode dispatches on",
+   "why": "the list the task publishes (task+0x30, from 0x80143f50) is only handed over; the ucode must DMA it into DMEM itself and what it does with the bytes is inside the RSP. The jal fan-out at the top of the program is the dispatch, but its arms are unnamed until the encodings are"
+  },
+  {
+   "cpu_evidence": "none \u2014 by construction",
+   "what": "whether the ucode is correct, or what it sounds like",
+   "why": "this tool decodes instructions. Nothing here has been executed, so no claim is made that the program runs, terminates, or mixes"
+  }
+ ],
+ "schema": "rsp-ucode/1",
+ "task": {
+  "address_rule": "A stage-2 address is folded from the instructions that write the register before the store: `lui rt,imm16` sets rt = imm16 << 16, `addiu rt,rt,imm16` / `ori rt,rt,imm16` adds the low half, and `subu` folds when both halves are known. The fold records the instructions it used and --check re-derives it; no word of stage-2 contains the literal 0x800b2700 (0 occurrences), so the fold is the only evidence for the pointer.",
+  "block": "0x80143c60",
+  "fields": [
+   {
+    "block_address": "0x80143c60",
+    "block_address_trace": [
+     "800a2e64 lui s0,0x8014"
+    ],
+    "name": "type_or_kind",
+    "offset": 0,
+    "role": "written 2 \u2014 the only word in the block that says what kind of block it is",
+    "value": 2,
+    "value_hex": "0x2",
+    "value_kind": "const",
+    "value_trace": [
+     "800a2e68 addiu v0,zero,2"
+    ],
+    "writer": "800a2e6c sw v0,15456(s0)"
+   },
+   {
+    "block_address": "0x80143c64",
+    "block_address_trace": [
+     "800a2e64 lui s0,0x8014",
+     "800a2e70 addiu s0,s0,15456"
+    ],
+    "name": "flags_or_zero",
+    "offset": 4,
+    "role": "written zero; nothing in the block reads it back on the CPU side",
+    "value": null,
+    "value_hex": null,
+    "value_kind": "unknown",
+    "value_trace": [
+     "800a2e60 beq a2,zero,0xef8"
+    ],
+    "writer": "800a2ec4 sw zero,4(s0)"
+   },
+   {
+    "block_address": "0x80143c68",
+    "block_address_trace": [
+     "800a2e64 lui s0,0x8014",
+     "800a2e70 addiu s0,s0,15456"
+    ],
+    "name": "pair_a_pointer",
+    "offset": 8,
+    "role": "a pointer whose 0xd0-byte extent is CPU-shaped MIPS, not RSP code (see evidence E2): the role is recorded, not named",
+    "value": 2147584640,
+    "value_hex": "0x80018a80",
+    "value_kind": "const",
+    "value_trace": [
+     "800a2e74 lui v1,0x8002",
+     "800a2e78 addiu v1,v1,-30080"
+    ],
+    "writer": "800a2ec8 sw v1,8(s0)"
+   },
+   {
+    "block_address": "0x80143c6c",
+    "block_address_trace": [
+     "800a2e64 lui s0,0x8014",
+     "800a2e70 addiu s0,s0,15456"
+    ],
+    "name": "pair_a_size",
+    "offset": 12,
+    "role": "the first pair's size, folded as 0x80028b50 - 0x80028a80 = 0xd0 rather than stored as a constant",
+    "value": 208,
+    "value_hex": "0xd0",
+    "value_kind": "const",
+    "value_trace": [
+     "800a2e7c lui v0,0x8002",
+     "800a2e80 addiu v0,v0,-29872",
+     "800a2e74 lui v1,0x8002",
+     "800a2e78 addiu v1,v1,-30080",
+     "800a2e84 subu v0,v0,v1"
+    ],
+    "writer": "800a2e88 sw v0,12(s0)"
+   },
+   {
+    "block_address": "0x80143c70",
+    "block_address_trace": [
+     "800a2e64 lui s0,0x8014",
+     "800a2e70 addiu s0,s0,15456"
+    ],
+    "name": "ucode_pointer",
+    "offset": 16,
+    "role": "this blob: the RSP program the task runs",
+    "value": 2148214528,
+    "value_hex": "0x800b2700",
+    "value_kind": "const",
+    "value_trace": [
+     "800a2e8c lui v0,0x800b",
+     "800a2e90 addiu v0,v0,9984"
+    ],
+    "writer": "800a2e94 sw v0,16(s0)"
+   },
+   {
+    "block_address": "0x80143c74",
+    "block_address_trace": [
+     "800a2e64 lui s0,0x8014",
+     "800a2e70 addiu s0,s0,15456"
+    ],
+    "name": "ucode_size",
+    "offset": 20,
+    "role": "the blob's size, exactly IMEM's capacity",
+    "value": 4096,
+    "value_hex": "0x1000",
+    "value_kind": "const",
+    "value_trace": [
+     "800a2e98 addiu v0,zero,4096"
+    ],
+    "writer": "800a2e9c sw v0,20(s0)"
+   },
+   {
+    "block_address": "0x80143c78",
+    "block_address_trace": [
+     "800a2e64 lui s0,0x8014",
+     "800a2e70 addiu s0,s0,15456"
+    ],
+    "name": "data_pointer",
+    "offset": 24,
+    "role": "a 0x800-byte region at 0x80136b50 that no other stage-2 instruction names (0 references measured), and whose last 0x5c0 bytes run past the image's end (0x80136d90) into memory this image does not contain",
+    "value": 2148756304,
+    "value_hex": "0x80136b50",
+    "value_kind": "const",
+    "value_trace": [
+     "800a2ea0 lui v0,0x8013",
+     "800a2ea4 addiu v0,v0,27472"
+    ],
+    "writer": "800a2ea8 sw v0,24(s0)"
+   },
+   {
+    "block_address": "0x80143c7c",
+    "block_address_trace": [
+     "800a2e64 lui s0,0x8014",
+     "800a2e70 addiu s0,s0,15456"
+    ],
+    "name": "data_size",
+    "offset": 28,
+    "role": "the region's size, 0x800",
+    "value": 2048,
+    "value_hex": "0x800",
+    "value_kind": "const",
+    "value_trace": [
+     "800a2eac addiu v0,zero,2048"
+    ],
+    "writer": "800a2ecc sw v0,28(s0)"
+   },
+   {
+    "block_address": "0x80143c90",
+    "block_address_trace": [
+     "800a2e64 lui s0,0x8014",
+     "800a2e70 addiu s0,s0,15456"
+    ],
+    "name": "list_pointer",
+    "offset": 48,
+    "role": "a value loaded from 0x80143f50, not a constant: the pointer the work list is published through",
+    "value": null,
+    "value_hex": null,
+    "value_kind": "load",
+    "value_trace": [
+     "800a2e5c lw a0,16208(v1)"
+    ],
+    "writer": "800a2ed0 sw a0,48(s0)"
+   },
+   {
+    "block_address": "0x80143c94",
+    "block_address_trace": [
+     "800a2e64 lui s0,0x8014",
+     "800a2e70 addiu s0,s0,15456"
+    ],
+    "name": "frame_count",
+    "offset": 52,
+    "role": "a halfword loaded through 0x80143f54: the count of work units in that list. Its store sits in the delay slot of the flush call at 0x800a2ed4, so the count and the flush are published in one instruction pair",
+    "value": null,
+    "value_hex": null,
+    "value_kind": "load",
+    "value_trace": [
+     "800a2e58 lhu a2,0(v0)"
+    ],
+    "writer": "800a2ed8 sw a2,52(s0)"
+   }
+  ],
+  "submitted_to": {
+   "argument": "a0 = the block address, set in the delay slot at 0x800a2ee8 (addu a0,s0,zero)",
+   "cache_flush": "between the stores and the submit, 0x800a2ed8 calls 0x8000efa0 with (list, count*0xa10): the recipe at 0x800a2eb0-0x800a2ec0 is `sll a1,a2,2 / addu a1,a1,a2 / sll a1,a1,5 / addu a1,a1,a2 / sll a1,a1,4`, i.e. 0xa10 bytes per work unit, which is the manual's requirement that the task header be written back before the RSP reads it (p47)",
+   "handler": "*(0x80143ff0) \u2014 a function pointer, installed by FUN_800b1fc0 (src/stage2/FUN_800b1fc0.c:14 `_DAT_80143ff0 = *param_1;`), so the submit path is whatever the driver installed and not a named OS entry point",
+   "instruction": "800a2ee4 ?? 0x0040f809",
+   "site": "0x800a2ee4"
+  },
+  "written_by": "src/stage2/FUN_800a2e40.c (the corpus's only reference to the block); every store is re-decoded here and its base folded"
+ },
+ "tool": "rsp_decode.py",
+ "vector_census": {
+  "by_fixed_point_format": {
+   "S0.16 x S0.16": 67,
+   "S0.16 x U0.16": 6,
+   "S1.15 x S1.15": 15,
+   "U0.16 x S0.16": 25,
+   "U0.16 x U0.16": 3
+  },
+  "by_kind": {
+   "accumulator read": 10,
+   "add": 47,
+   "bitwise": 24,
+   "lane move": 8,
+   "merge": 2,
+   "multiply": 48,
+   "multiply-accumulate": 68,
+   "select": 2
+  },
+  "by_su_vu_move": {
+   "mtc2": 43
+  },
+  "by_transfer_row": {
+   "ldv": 39,
+   "llv": 1,
+   "lqv": 19,
+   "lrv": 14,
+   "lsv": 2,
+   "sdv": 4,
+   "sqv": 26,
+   "ssv": 20
+  },
+  "named_words": 209,
+  "reading": "The arithmetic is a 16-bit fixed-point multiply-accumulate pipeline: 48 words multiply and 68 accumulate the product, in the formats the cited table names, and 10 read the accumulator back out. Saturating is not a separate instruction \u2014 the multiply opcodes clamp on extraction (cited) \u2014 so the mixer's headroom is decided by which format it picks per stage, which is exactly what the counts above report. This says what the units compute; it does not say what the mixer does with the result."
+ }
+}

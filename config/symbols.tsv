@@ -1,0 +1,50 @@
+# Evidence-backed symbol names for the RE2-64 decompilation corpus.
+#
+# Consumed by tools/make_seeds.py, which filters this file to one image's address range and
+# writes the TSV that REA_GHIDRA_SEED_FILE expects (address<TAB>kind<TAB>name). Names enter
+# Ghidra *before* auto-analysis, which is the only route that persists — session renames are
+# discarded when the program closes.
+#
+# RULE: a name here must be backed by a measurement, cited in the evidence column. A function
+# whose role is inferred rather than demonstrated stays func_XXXXXXXX. Two verification gates
+# apply: (1) the address must be a function start — a prologue `addiu sp,sp,-N`, or a proven
+# call/vector target for handlers and leaves that have no frame; (2) after decompilation the
+# body must still show the behaviour in the evidence column, or the name is demoted.
+#
+# Columns: address  kind  name  evidence
+#   kind: function (creates a function boundary) | label (name only)
+
+0x80000480	function	entrypoint	first instruction sets sp=0x803FFFF0 (config/symbol_addrs.txt)
+0x80000518	function	idle_spin	`b .` + `daddiu a0,a0,1`; executed 400k instr, 2 PCs, 0 calls (M21)
+0x80000520	function	main	jal target from ROM 0x1060; installs all four vectors (M76)
+0x80000598	function	boot_loader	walks the cart table: record -> PI DMA -> inflate (M8/M15)
+0x800006d0	function	exception_handler	E_VEC target; saves/restores the context itself (M29/M79)
+0x80000c68	function	thread_dispatcher	`jr r10` target at 0x800009bc; no jal in the handler body (M79)
+0x80001180	function	cart_record	`return index*0x10 + 0x80012150` — the table accessor (M8)
+0x80004550	function	inflate_init	allocates the 0x8000 window at state+0x4c (M9)
+0x80004594	function	inflate_free	third call of the loader chain (M16)
+0x800045dc	function	inflate	(src, dst, compressed_len) — the loader's decompressor (M16)
+0x80006d30	function	osCreateMesgQueue	queue-tail init, called with a queue address (M18)
+0x80006d60	function	osCreateThread	(thread,id,entry,arg,stack,pri) — spawns threads 7/9/1 (M18)
+0x800070c0	function	vector_installer	sole `jal 0x800070c0` caller is 0x80000564 inside main (M76)
+0x80007c20	function	pi_dma_programmer	writes PI_DRAM_ADDR then PI_CART_ADDR; 3 in-bank callers
+0x8000c870	function	pi_dma_raw	masks its argument with 0x0FFFFFFF before programming PI
+0x8000c9e0	function	osRecvMesg	blocking receive; honours OS_MESG_BLOCK (M22)
+0x8000cb60	function	osSendMesg	send; 51 call sites, none with a literal queue argument (M27)
+0x8000cc90	function	osSetEventMesg	4 instrumented calls: AI(4) SP_BREAK(9) PI(6) RDB(14) -> 0x80139f10 (M24)
+0x8000db90	function	osStartThread	start, called straight after osCreateThread (M18)
+
+0x8004d344	function	stage2_entry	boot record 0's entry at +0x348c4; creates thread 7 then starts it (M15)
+0x8004d190	function	stage2_init	thread 7 entry; sets video mode and the inflate window 0x80189a00 (M16)
+0x8004cbf4	function	overlay_inflate	inflates one record into its destination (M16)
+0x8004cc5c	function	overlay_open	slot -> cart_record -> overlay_inflate -> per-slot handler (M16)
+0x8004cca8	function	overlay_slot_reader	registry reader: lbu +0 descriptor, lw +4 entry (M19)
+0x8004cd08	function	overlay_slot_reader_b	third registry reader of the same shape (M19)
+0x8002616c	function	scene_load_caller	calls the state machine from 0x800264e0 and 0x800264f8 (M18)
+0x800271d4	function	scene_load_state	fires overlay_open(0) at 0x800273e4 — the only call site (M18)
+0x800282e8	function	thread2_entry	thread 2, spawned by thread 1 (M18)
+0x8006c0d4	function	thread1_entry	controller/eeprom thread; owns the 0x80139f10 inbox (M25)
+0x8006cb94	function	thread1_spawner	registers the four osSetEventMesg events, then creates thread 1 (M18)
+0x80088668	function	thread9_entry	blocks on 0x8012bd30, for which no mapped code sends (M25)
+0x80088910	function	thread9_spawner	osCreateThread(&DAT_8012bb00, 9, ...) + osStartThread (M18)
+0x8008af6c	function	framebuffer_set	leaf: DAT_8012bd84 = DAT_8010b6f0, no frame (M18)

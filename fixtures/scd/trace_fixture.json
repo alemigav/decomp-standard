@@ -1,0 +1,180 @@
+{
+ "format": "scd-vm-trace/1",
+ "note": "M213: the specification of the decoder in tools/scd_vm.py, small enough to check by eye. Each case is a hand-built byte record in hex, the pc to start at, optionally the block's u16[] record table (which is what resolves 0x18 and 0x03), and the trace the decoder must produce: one record per step, in order, with {pc, opcode, name, advance, successors, state}. A case that must be refused carries raises instead of trace: truncated (a command that runs off the end of the record), unknown (not a table slot) or unresolved (no advance at all). Nothing here is timing, random or machine-dependent.",
+ "cases": [
+  {
+   "name": "fall-through: three Nops; the third advances to the record's end",
+   "bytes": "00 00 00",
+   "expect": {
+    "trace": [
+     {"pc": 0, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "continue"},
+     {"pc": 1, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "continue"},
+     {"pc": 2, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "terminated"}
+    ],
+    "stop": "terminated: the record's stream ends at 0x3"
+   }
+  },
+  {
+   "name": "conditional branch, fall-through arm: 0x0d ForStart at 0 skips to 0+2+6 = 8",
+   "bytes": "0d 00 00 02 00 00 00 00 00 00",
+   "expect": {
+    "trace": [
+     {"pc": 0, "opcode": 13, "name": "ForStart", "advance": 6, "successors": [{"target": 8, "how": "cmd+2+6"}, {"target": 6, "how": "fall-through"}], "state": "continue"},
+     {"pc": 6, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "continue"},
+     {"pc": 7, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "continue"},
+     {"pc": 8, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "continue"},
+     {"pc": 9, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "terminated"}
+    ],
+    "stop": "terminated: the record's stream ends at 0xa"
+   }
+  },
+  {
+   "name": "conditional branch, taken arm: the same record decoded from its skip target 8",
+   "bytes": "0d 00 00 02 00 00 00 00 00 00",
+   "start": 8,
+   "expect": {
+    "trace": [
+     {"pc": 8, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "continue"},
+     {"pc": 9, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "terminated"}
+    ],
+    "stop": "terminated: the record's stream ends at 0xa"
+   }
+  },
+  {
+   "name": "computed jump: 0x17 Goto at 0 takes cmd+s16[4] = 6 and has no fall-through",
+   "bytes": "17 00 00 00 00 06 00",
+   "expect": {
+    "trace": [
+     {"pc": 0, "opcode": 23, "name": "Goto", "advance": null, "successors": [{"target": 6, "how": "cmd+6"}], "state": "continue"},
+     {"pc": 6, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "terminated"}
+    ],
+    "stop": "terminated: the record's stream ends at 0x7"
+   }
+  },
+  {
+   "name": "GoSub then return: 0x18 saves cmd+2 and calls record 1 at 0x0a, 0x19 pops it back",
+   "bytes": "18 01 00 17 00 00 00 00 09 00 00 19",
+   "record_table": [0, 10],
+   "expect": {
+    "trace": [
+     {"pc": 0, "opcode": 24, "name": "GoSub", "advance": null, "successors": [{"target": 10, "how": "script record 1 (+0xa)"}], "state": "continue"},
+     {"pc": 10, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "continue"},
+     {"pc": 11, "opcode": 25, "name": null, "advance": null, "successors": [{"target": 2, "how": "popped gosub frame"}], "state": "continue"},
+     {"pc": 2, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "continue"},
+     {"pc": 3, "opcode": 23, "name": "Goto", "advance": null, "successors": [{"target": 12, "how": "cmd+9"}], "state": "terminated"}
+    ],
+    "stop": "terminated: the record's stream ends at 0xc"
+   }
+  },
+  {
+   "name": "block push and pop: 0x06 saves its continuation 4, 0x10 resumes it - the loop is reported",
+   "bytes": "06 00 00 00 00 00 10",
+   "expect": {
+    "trace": [
+     {"pc": 0, "opcode": 6, "name": "IfElseStart", "advance": 4, "successors": [], "state": "continue"},
+     {"pc": 4, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "continue"},
+     {"pc": 5, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "continue"},
+     {"pc": 6, "opcode": 16, "name": null, "advance": null, "successors": [{"target": 4, "how": "popped block frame"}], "state": "continue"}
+    ],
+    "stop": "revisit: 0x4 was already decoded in this record"
+   }
+  },
+  {
+   "name": "yield: 0x01 with no GoSub slot open returns 2 to the dispatcher (FUN_8009b880.c:26)",
+   "bytes": "00 01",
+   "expect": {
+    "trace": [
+     {"pc": 0, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "continue"},
+     {"pc": 1, "opcode": 1, "name": null, "advance": null, "successors": [], "state": "yield"}
+    ],
+    "stop": "yield: walk_stream.py's DYNAMIC record: 0x01 returns 2 to the dispatcher (FUN_8009b880.c:26) with no GoSub slot open"
+   }
+  },
+  {
+   "name": "0x36 advances 12: its dispatch is over a static five-entry table and every arm shares one tail",
+   "bytes": "36 00 00 00 00 40 00 00 00 00 00 00",
+   "expect": {
+    "trace": [
+     {"pc": 0, "opcode": 54, "name": null, "advance": 12, "successors": [], "state": "terminated"}
+    ],
+    "stop": "terminated: the record's stream ends at 0xc"
+   }
+  },
+  {
+   "name": "0x36 in a record shorter than its own 12 bytes is truncated, not followed",
+   "bytes": "36 00 00 00 00 40",
+   "expect": {
+    "raises": "truncated", "offset": 0, "opcode": 54
+   }
+  },
+  {
+   "name": "a block pop with an empty stack is blocked, not advanced by a guess",
+   "bytes": "10",
+   "expect": {
+    "trace": [
+     {"pc": 0, "opcode": 16, "name": null, "advance": null, "successors": [], "state": "blocked"}
+    ],
+    "stop": "blocked: 0x10 pops a block slot and no opener pushed one"
+   }
+  },
+  {
+   "name": "a GoSub with no record table is blocked: the destination is a table this trace lacks",
+   "bytes": "18 01",
+   "expect": {
+    "trace": [
+     {"pc": 0, "opcode": 24, "name": "GoSub", "advance": null, "successors": [{"target": null, "how": "dynamic: script record 1 (base *(0x80114f2c) + u16[index])"}], "state": "blocked"}
+    ],
+    "stop": "blocked: 0x18 needs the block's record table"
+   }
+  },
+  {
+   "name": "0x03 without a record table is blocked",
+   "bytes": "03 00 00 01",
+   "expect": {
+    "trace": [
+     {"pc": 0, "opcode": 3, "name": null, "advance": null, "successors": [], "state": "blocked"}
+    ],
+    "stop": "blocked: 0x03 reads u16[1] from the block's record table, which this trace lacks"
+   }
+  },
+  {
+   "name": "0x03 with the block's record table jumps to u16[1] = 6",
+   "bytes": "03 00 00 01 00 00 00 00",
+   "record_table": [0, 6],
+   "expect": {
+    "trace": [
+     {"pc": 0, "opcode": 3, "name": null, "advance": null, "successors": [{"target": 6, "how": "script record 1 (+0x6)"}], "state": "continue"},
+     {"pc": 6, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "continue"},
+     {"pc": 7, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "terminated"}
+    ],
+    "stop": "terminated: the record's stream ends at 0x8"
+   }
+  },
+  {
+   "name": "a truncated command: 0x44 is 22 bytes, five are left, so the read is refused",
+   "bytes": "44 00 00 00 00",
+   "expect": {
+    "raises": "truncated", "offset": 0, "opcode": 68
+   }
+  },
+  {
+   "name": "an unknown opcode byte: 0x8d is not a slot of the 141-entry table",
+   "bytes": "00 8d",
+   "expect": {
+    "raises": "unknown", "offset": 1, "opcode": 141
+   }
+  },
+  {
+   "name": "the step cap: a record cut short says so instead of looking complete",
+   "bytes": "00 00 00 00",
+   "max_steps": 2,
+   "expect": {
+    "trace": [
+     {"pc": 0, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "continue"},
+     {"pc": 1, "opcode": 0, "name": "Nop", "advance": 1, "successors": [], "state": "continue"}
+    ],
+    "stop": "step cap 2"
+   }
+  }
+ ]
+}

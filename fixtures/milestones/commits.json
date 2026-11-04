@@ -1,0 +1,1669 @@
+{
+ "note": "Commit subjects that name a milestone. Seeded with gaps.json by the same command, for the same reason: a check must not read git history, because a CI clone is shallow.",
+ "commits": [
+  {
+   "sha": "f1da210",
+   "subject": "M298: osCreateThread's OSThread layout derived (23/52), and the CI queue diagnosed",
+   "milestones": [
+    298
+   ]
+  },
+  {
+   "sha": "0b1db9d",
+   "subject": "M297: libultra bracketed to the pre-PRENMI era, and osSetEventMesg byte-exact at 24 words",
+   "milestones": [
+    297
+   ]
+  },
+  {
+   "sha": "bed1a52",
+   "subject": "M296: libultra reference experiment -- osCreateMesgQueue byte-exact, OoT is a later revision",
+   "milestones": [
+    296
+   ]
+  },
+  {
+   "sha": "f6d5cf2",
+   "subject": "M295: the register is lost to a conflict in global_alloc, not a local_alloc tie-break",
+   "milestones": [
+    295
+   ]
+  },
+  {
+   "sha": "3a78860",
+   "subject": "M294: the delay-slot scan -- 718 sites, and it does not justify a local_alloc change",
+   "milestones": [
+    294
+   ]
+  },
+  {
+   "sha": "c81bf18",
+   "subject": "M293: 0x8007e590 stays at 226/229 -- toolchain ruled out, the last register is local",
+   "milestones": [
+    293
+   ]
+  },
+  {
+   "sha": "646b2f9",
+   "subject": "M292: the image splits no float address -- 0x80024558 byte-exact at 139",
+   "milestones": [
+    292
+   ]
+  },
+  {
+   "sha": "687f437",
+   "subject": "M291: the pool's sharing rule is a mode test -- 0x80024558 at 137/139, and a patch-script reproducibility fix",
+   "milestones": [
+    291
+   ]
+  },
+  {
+   "sha": "8a31830",
+   "subject": "M290: the three partials -- 0x8006e574 closes at 23/23, two stay pinned",
+   "milestones": [
+    290
+   ]
+  },
+  {
+   "sha": "8eaa384",
+   "subject": "M289: recovered functions in the index -- 14 pinned, the map shows fourteen of fourteen",
+   "milestones": [
+    289
+   ]
+  },
+  {
+   "sha": "a2b0a23",
+   "subject": "M288: regenerate the index -- 224 switch-case bodies were published as functions",
+   "milestones": [
+    288
+   ]
+  },
+  {
+   "sha": "568cbed",
+   "subject": "M287: 0x800704e0 byte-exact at 123 -- the accessor trio is complete",
+   "milestones": [
+    287
+   ]
+  },
+  {
+   "sha": "8f21442",
+   "subject": "M286: 0x8006e68c byte-exact at 41, 0x8006e574 at 17/23 -- and the index defect behind both",
+   "milestones": [
+    286
+   ]
+  },
+  {
+   "sha": "6c4f7e9",
+   "subject": "M285: 0x8006e6b8's enclosing function found (FUN_8006e68c, 41 words) and 0x8006ff48 byte-exact at 98",
+   "milestones": [
+    285
+   ]
+  },
+  {
+   "sha": "2972cf5",
+   "subject": "M284: the arm-shaped family opens -- 0x8006fc5c byte-exact at 53 words",
+   "milestones": [
+    284
+   ]
+  },
+  {
+   "sha": "5840c84",
+   "subject": "M283: re-measured under -g -- both partials untouched, case 4 unparked and still one register",
+   "milestones": [
+    283
+   ]
+  },
+  {
+   "sha": "1b32d7d",
+   "subject": "M282: the gas flag ladder -- -O0 is inert (arg[1] bug), -g is the pin",
+   "milestones": [
+    282
+   ]
+  },
+  {
+   "sha": "4ef70a7",
+   "subject": "M281: as -g is the missing assembler flag -- 0x800701d8 byte-exact at 141/141",
+   "milestones": [
+    281
+   ]
+  },
+  {
+   "sha": "2eaac3f",
+   "subject": "M280: 0x800701d8 44 cases written at 28/141 -- the residual is the compiler, not the C",
+   "milestones": [
+    280
+   ]
+  },
+  {
+   "sha": "da5a461",
+   "subject": "M279: 0x8007e590 enters the probe at 226/229 -- partial pin plus a regional assertion",
+   "milestones": [
+    279
+   ]
+  },
+  {
+   "sha": "3d0f501",
+   "subject": "M278: 0x8007e590 at 226/229 -- copy block and both table reads exact, no-default switch",
+   "milestones": [
+    278
+   ]
+  },
+  {
+   "sha": "cbf435f",
+   "subject": "M277: 0x8007e590 second pass -- every region the right size, default arm exact at 176/229",
+   "milestones": [
+    277
+   ]
+  },
+  {
+   "sha": "cfedd5e",
+   "subject": "M276: 0x800acae4 byte-exact -- the streak held at 53 words",
+   "milestones": [
+    276
+   ]
+  },
+  {
+   "sha": "6e5e89d",
+   "subject": "M275: 0x8007e590, an honest partial -- three regions exact, 113-word arm open",
+   "milestones": [
+    275
+   ]
+  },
+  {
+   "sha": "1a81338",
+   "subject": "M274: the 206-word twelve-arm machine, byte-exact",
+   "milestones": [
+    274
+   ]
+  },
+  {
+   "sha": "8606fc5",
+   "subject": "M272+M273: a 167-word function byte-exact, and a generated progress map",
+   "milestones": [
+    272,
+    273
+   ]
+  },
+  {
+   "sha": "59de68b",
+   "subject": "M271: p9 recovered byte-exact on the second attempt",
+   "milestones": [
+    271
+   ]
+  },
+  {
+   "sha": "792f3ef",
+   "subject": "M270: case 3/4 in the image's statement order -- measured, and refuted",
+   "milestones": [
+    270
+   ]
+  },
+  {
+   "sha": "abbbf02",
+   "subject": "M269: hoist + no-dedup tried together -- p8 got worse; docs brought up to date",
+   "milestones": [
+    269
+   ]
+  },
+  {
+   "sha": "72e6ac6",
+   "subject": "M268: the mixed-constant test is negative, and it withdraws two of my claims",
+   "milestones": [
+    268
+   ]
+  },
+  {
+   "sha": "c0fd307",
+   "subject": "M267: the duplicate pool entry is systematic; removing dedup is not the fix",
+   "milestones": [
+    267
+   ]
+  },
+  {
+   "sha": "aec2fd8",
+   "subject": "M266: -msplit-addresses is refuted, and case 3/4 is an unsigned conversion",
+   "milestones": [
+    266
+   ]
+  },
+  {
+   "sha": "bdc3773",
+   "subject": "M265: both patches together -- the pool lands where the image's does",
+   "milestones": [
+    265
+   ]
+  },
+  {
+   "sha": "4b680f2",
+   "subject": "M264: re-read under the r4300 cost model -- p6 is byte-exact too",
+   "milestones": [
+    264
+   ]
+  },
+  {
+   "sha": "af24d04",
+   "subject": "M263: -mcpu=r4300 -- p7 is byte-exact and the \"unreachable\" residues were a build flag",
+   "milestones": [
+    263
+   ]
+  },
+  {
+   "sha": "c77b274",
+   "subject": "M262: the last p7 hunk is unreachable from the source",
+   "milestones": [
+    262
+   ]
+  },
+  {
+   "sha": "21ac025",
+   "subject": "M261: the FP pool bug is a 64-bit-host bug, and it also disabled li.s",
+   "milestones": [
+    261
+   ]
+  },
+  {
+   "sha": "63d587b",
+   "subject": "M260: p8 recovered (116/139, case 0 exact) and two defects in our build",
+   "milestones": [
+    260
+   ]
+  },
+  {
+   "sha": "a7a9cb9",
+   "subject": "M259: the permuter's 1780 moves no words",
+   "milestones": [
+    259
+   ]
+  },
+  {
+   "sha": "14a33d2",
+   "subject": "M258: the rule that sinks that store is not in mips.c",
+   "milestones": [
+    258
+   ]
+  },
+  {
+   "sha": "3fd17c7",
+   "subject": "M257: p7 recovered (60/84, table 8/8) and cc1 cannot parse a comment",
+   "milestones": [
+    257
+   ]
+  },
+  {
+   "sha": "6f5b4f5",
+   "subject": "M256: decomp-permuter plateaued at 1900, and the fix was an operand order",
+   "milestones": [
+    256
+   ]
+  },
+  {
+   "sha": "f6c7eec",
+   "subject": "M255: p6 arms 2-4 -- the order was already right, and the region comparison was not",
+   "milestones": [
+    255
+   ]
+  },
+  {
+   "sha": "b532d04",
+   "subject": "M254: p6's arms recovered -- the delay slot matched, and the rest is a reconstruction in progress",
+   "milestones": [
+    254
+   ]
+  },
+  {
+   "sha": "ea0ca18",
+   "subject": "M253: three more dispatch heads -- bounds 5/6/7/7, four index sources, two layout facts",
+   "milestones": [
+    253
+   ]
+  },
+  {
+   "sha": "57c2389",
+   "subject": "M252: the linked switch head -- the dispatch sequence is exact, one instruction belongs to the arms",
+   "milestones": [
+    252
+   ]
+  },
+  {
+   "sha": "1b47400",
+   "subject": "M251: the four extra codegen classes -- attempted, and all four refused with a measurement",
+   "milestones": [
+    251
+   ]
+  },
+  {
+   "sha": "adee139",
+   "subject": "M250: gcc 2.8.1 -- four of four probes byte-exact, and the compiler is identified",
+   "milestones": [
+    250
+   ]
+  },
+  {
+   "sha": "e0a74fc",
+   "subject": "M249: the SDK-era assembler -- move explained, and p3's residue is not the assembler",
+   "milestones": [
+    249
+   ]
+  },
+  {
+   "sha": "dcfbb60",
+   "subject": "M248: the linked p3 comparison -- 6 of 8 words, and the residue is the assembler",
+   "milestones": [
+    248
+   ]
+  },
+  {
+   "sha": "4d4eb35",
+   "subject": "M247: gcc 2.7.2 matches -- three of four probes byte-for-byte, against IDO's one",
+   "milestones": [
+    247
+   ]
+  },
+  {
+   "sha": "ab44389",
+   "subject": "M246: the compile-probe corpus -- IDO refuted, and the SDK names the real compiler",
+   "milestones": [
+    246
+   ]
+  },
+  {
+   "sha": "459ae97",
+   "subject": "M245: both toolchains run -- IDO 5.3 and 7.1 native, and GNU as/ld for mips",
+   "milestones": [
+    245
+   ]
+  },
+  {
+   "sha": "8323b0e",
+   "subject": "M243: the splat dress rehearsal on the boot image -- map verified, assembler absent",
+   "milestones": [
+    243
+   ]
+  },
+  {
+   "sha": "95fe500",
+   "subject": "M242: match_diff.py -- name the first differing instruction, proved both ways",
+   "milestones": [
+    242
+   ]
+  },
+  {
+   "sha": "4f48acb",
+   "subject": "M241: include/tyrant.h -- the Script VM as types, generated from the registry",
+   "milestones": [
+    241
+   ]
+  },
+  {
+   "sha": "a5a76ad",
+   "subject": "M240: a verification prototype that discovers inputs and caches on content",
+   "milestones": [
+    240
+   ]
+  },
+  {
+   "sha": "df71e21",
+   "subject": "M239: the prefix is 256 after all -- M238 was wrong, and the patch it implied must not be made",
+   "milestones": [
+    238,
+    239
+   ]
+  },
+  {
+   "sha": "01d0eff",
+   "subject": "M238: the sampler record decoded, and the six frames the decoder never sees",
+   "milestones": [
+    238
+   ]
+  },
+  {
+   "sha": "71aff91",
+   "subject": "M237: the clip-61 rate exception is real in the data, not a reading error",
+   "milestones": [
+    237
+   ]
+  },
+  {
+   "sha": "d801892",
+   "subject": "M236: the per-scene voice lists are in the image, and bit 15 proves it",
+   "milestones": [
+    236
+   ]
+  },
+  {
+   "sha": "510139d",
+   "subject": "M235: loop discontinuities -- there are none, and the reason is silence",
+   "milestones": [
+    235
+   ]
+  },
+  {
+   "sha": "1d257fb",
+   "subject": "M234: the record-table families -- two script ranges, one undecoded container, and no 48",
+   "milestones": [
+    234
+   ]
+  },
+  {
+   "sha": "eef738c",
+   "subject": "M233: the sound commands -- six opcodes, one that plays nothing, and one dead operand",
+   "milestones": [
+    233
+   ]
+  },
+  {
+   "sha": "6b30ee9",
+   "subject": "M232: the audit was not testing anything -- 49 of 132 mutations were never run",
+   "milestones": [
+    232
+   ]
+  },
+  {
+   "sha": "191222f",
+   "subject": "M231: the window was never the problem -- 35 local heads, and a fold that was too narrow",
+   "milestones": [
+    231
+   ]
+  },
+  {
+   "sha": "b12fc7b",
+   "subject": "M230: what the eighty-three non-script heads dispatch on",
+   "milestones": [
+    230
+   ]
+  },
+  {
+   "sha": "fdb6ac3",
+   "subject": "M229: the last three unresolved handlers, and the rule that was missing",
+   "milestones": [
+    229
+   ]
+  },
+  {
+   "sha": "a71324b",
+   "subject": "M228: eighty-six dispatch heads, and the queue entry that has no valid extension",
+   "milestones": [
+    228
+   ]
+  },
+  {
+   "sha": "8c7bc17",
+   "subject": "M227: the extent queue, audited -- 16 extensions, 5 merges, and one that would eat a callable",
+   "milestones": [
+    227
+   ]
+  },
+  {
+   "sha": "559f01f",
+   "subject": "M226: the 0x36 table -- five entries, and an address that was 0x10000 wrong",
+   "milestones": [
+    226
+   ]
+  },
+  {
+   "sha": "167aed9",
+   "subject": "M225: the vector unit, named -- 252 of 254, and the two that stayed refused",
+   "milestones": [
+    225
+   ]
+  },
+  {
+   "sha": "3087911",
+   "subject": "M224: the interface is a frame loop, not a command list -- and the register map is cited",
+   "milestones": [
+    224
+   ]
+  },
+  {
+   "sha": "8d7f754",
+   "subject": "M223: the RSP ucode -- decoded, and deliberately not named",
+   "milestones": [
+    223
+   ]
+  },
+  {
+   "sha": "0b39324",
+   "subject": "M222: WP3b -- the voice descriptor, and my own +0x1a4 was wrong",
+   "milestones": [
+    222
+   ]
+  },
+  {
+   "sha": "6037626",
+   "subject": "M221: WP3 -- every one of the 588 voice clips, and 12 037 live comparison blocks",
+   "milestones": [
+    221
+   ]
+  },
+  {
+   "sha": "78321cb",
+   "subject": "M220: WP2 -- the macro opcodes ARE the key's class tag, and the pool walk was one record late",
+   "milestones": [
+    220
+   ]
+  },
+  {
+   "sha": "92cacd7",
+   "subject": "M219: the base correction lands, and one retraction is itself retracted",
+   "milestones": [
+    219
+   ]
+  },
+  {
+   "sha": "65ae6f6",
+   "subject": "cycle C: the refusals as a work list, and the population classified (M213b, M214)",
+   "milestones": [
+    214
+   ]
+  },
+  {
+   "sha": "d8e0be8",
+   "subject": "M213: a decoder that refuses",
+   "milestones": [
+    213
+   ]
+  },
+  {
+   "sha": "971242e",
+   "subject": "M212: the VM needs corrected extents, not new functions",
+   "milestones": [
+    212
+   ]
+  },
+  {
+   "sha": "23af940",
+   "subject": "M216: three verification tiers, and a 0.04 s anchor lint",
+   "milestones": [
+    216
+   ]
+  },
+  {
+   "sha": "d4886fb",
+   "subject": "cycle B: the opcode registry and the call graph (M211, M215)",
+   "milestones": [
+    211,
+    215
+   ]
+  },
+  {
+   "sha": "dcbe026",
+   "subject": "cycle A: measurement integrity and the byte map (M206-M210)",
+   "milestones": [
+    206,
+    210
+   ]
+  },
+  {
+   "sha": "22b6394",
+   "subject": "M205: the coverage figure was one word per function body too high",
+   "milestones": [
+    205
+   ]
+  },
+  {
+   "sha": "569bc1c",
+   "subject": "M204: there is no +28 \u2014 the record ends at +27",
+   "milestones": [
+    204
+   ]
+  },
+  {
+   "sha": "a67d51e",
+   "subject": "M203: +20 is a loop start and +24 a loop length",
+   "milestones": [
+    203
+   ]
+  },
+  {
+   "sha": "f92dddd",
+   "subject": "fix: re-seed the milestone fixture with M202",
+   "milestones": [
+    202
+   ]
+  },
+  {
+   "sha": "31ad2de",
+   "subject": "M202: the four parameters named, and cache B is a pairing",
+   "milestones": [
+    202
+   ]
+  },
+  {
+   "sha": "702ff82",
+   "subject": "fix: re-seed the milestone fixture with M201",
+   "milestones": [
+    201
+   ]
+  },
+  {
+   "sha": "907af54",
+   "subject": "M201: the 16-byte records are little-endian, and +10 is a rate field",
+   "milestones": [
+    201
+   ]
+  },
+  {
+   "sha": "e15cc1f",
+   "subject": "M200: the note and log row the gate owed",
+   "milestones": [
+    200
+   ]
+  },
+  {
+   "sha": "c9d073f",
+   "subject": "M200: the pool's classes pinned from the data, not from prose",
+   "milestones": [
+    200
+   ]
+  },
+  {
+   "sha": "8ef226c",
+   "subject": "docs: the front page and handover were describing M188, not M199",
+   "milestones": [
+    188,
+    199
+   ]
+  },
+  {
+   "sha": "5bc60cd",
+   "subject": "fix: re-seed the milestone fixture with M199",
+   "milestones": [
+    199
+   ]
+  },
+  {
+   "sha": "80969e3",
+   "subject": "M199: the voice synthesis is transcribed, and it matches the cartridge",
+   "milestones": [
+    199
+   ]
+  },
+  {
+   "sha": "178c727",
+   "subject": "fix: re-seed the milestone fixture with M198",
+   "milestones": [
+    198
+   ]
+  },
+  {
+   "sha": "0115548",
+   "subject": "M198: the voice bank decodes to audio, by running the cartridge's synthesis",
+   "milestones": [
+    198
+   ]
+  },
+  {
+   "sha": "757e221",
+   "subject": "fix: re-seed the milestone fixture with M197",
+   "milestones": [
+    197
+   ]
+  },
+  {
+   "sha": "69be5a8",
+   "subject": "M197: the ring does nothing to the bytes, and the reader reverses them",
+   "milestones": [
+    197
+   ]
+  },
+  {
+   "sha": "581b328",
+   "subject": "fix: re-seed the milestone fixture with M196",
+   "milestones": [
+    196
+   ]
+  },
+  {
+   "sha": "91ad92f",
+   "subject": "M196: the suite was recomputing, not running slowly",
+   "milestones": [
+    196
+   ]
+  },
+  {
+   "sha": "ded9c9c",
+   "subject": "M195: FUN_800b53f4 transcribed field by field, and why the decode still fails",
+   "milestones": [
+    195
+   ]
+  },
+  {
+   "sha": "94da8bd",
+   "subject": "M194: the voice decoder does not reconcile, and the 12 were my threshold",
+   "milestones": [
+    194
+   ]
+  },
+  {
+   "sha": "a1995d3",
+   "subject": "M193: u16@+4 is the block count, and the pool codec is decoded",
+   "milestones": [
+    193
+   ]
+  },
+  {
+   "sha": "c8b6fba",
+   "subject": "M192: the codec's header fields are understood, u16@+4 closed with its reason",
+   "milestones": [
+    192
+   ]
+  },
+  {
+   "sha": "484e1ea",
+   "subject": "M191: u16@+4 closed as unassignable, codebook fields confirmed, README fixed",
+   "milestones": [
+    191
+   ]
+  },
+  {
+   "sha": "7ab9cc3",
+   "subject": "M190: the 2.42% was my alignment error, and u16@+4 stays unassigned",
+   "milestones": [
+    190
+   ]
+  },
+  {
+   "sha": "7cf3042",
+   "subject": "fix: commit the count propagation M189 left staged",
+   "milestones": [
+    189
+   ]
+  },
+  {
+   "sha": "1d7778f",
+   "subject": "M189: id 1979 is a second codec, its header is 12 bytes, and the 418 is a rotation",
+   "milestones": [
+    189
+   ]
+  },
+  {
+   "sha": "f9b5efa",
+   "subject": "M188: the two holes \u2014 531 is a stale index, 11 is an unused slot",
+   "milestones": [
+    188
+   ]
+  },
+  {
+   "sha": "35cac6b",
+   "subject": "M187: the codec is identified \u2014 MusyX ADPCM, with a 16-byte prologue",
+   "milestones": [
+    187
+   ]
+  },
+  {
+   "sha": "d2b7e0d",
+   "subject": "M186: the 835 unresolved shorts are 834 zeros and one dangling reference",
+   "milestones": [
+    186
+   ]
+  },
+  {
+   "sha": "03dc6f2",
+   "subject": "M185: the sound family is framed \u2014 proj and pool are chained section tables",
+   "milestones": [
+    185
+   ]
+  },
+  {
+   "sha": "be2fba1",
+   "subject": "M184: id 1983 is framed \u2014 1192 tiled samples \u2014 and its codec is a named gap",
+   "milestones": [
+    184
+   ]
+  },
+  {
+   "sha": "7d4364f",
+   "subject": "M183: a milestone that exists only as a commit is refused",
+   "milestones": [
+    183
+   ]
+  },
+  {
+   "sha": "d5b762f",
+   "subject": "M182: nothing in the corpus reads the record header",
+   "milestones": [
+    182
+   ]
+  },
+  {
+   "sha": "4f1936b",
+   "subject": "docs: define what \"landed\" means, now that M179 has exercised it",
+   "milestones": [
+    179
+   ]
+  },
+  {
+   "sha": "9e9118c",
+   "subject": "M181: the verifier \u2014 one entry point, and admissibility is not a judgement call",
+   "milestones": [
+    181
+   ]
+  },
+  {
+   "sha": "ec72499",
+   "subject": "M180: derive the seven counts and assert them in twelve places",
+   "milestones": [
+    180
+   ]
+  },
+  {
+   "sha": "2f9e00a",
+   "subject": "M179: u16@+4 refuted three ways, and the ratchet gets its first customer",
+   "milestones": [
+    179
+   ]
+  },
+  {
+   "sha": "47ff7ac",
+   "subject": "M178: the file table is the file system \u2014 the 17.6 MB is the sound family",
+   "milestones": [
+    178
+   ]
+  },
+  {
+   "sha": "1613d43",
+   "subject": "M177: publication readiness \u2014 frontpage, licence, and a copyright audit that reads bytes",
+   "milestones": [
+    177
+   ]
+  },
+  {
+   "sha": "0a6dfa0",
+   "subject": "M176: the secret holds access, not bytes \u2014 CI fetches the cartridge",
+   "milestones": [
+    176
+   ]
+  },
+  {
+   "sha": "52d6aaa",
+   "subject": "M175: a self-hosted tier, because the ROM cannot go in a secret",
+   "milestones": [
+    175
+   ]
+  },
+  {
+   "sha": "8a59e39",
+   "subject": "M174: the first real run failed on the interpreter \u2014 pin the image, not the claim",
+   "milestones": [
+    174
+   ]
+  },
+  {
+   "sha": "19b979d",
+   "subject": "M174: the counts, measured rather than derived",
+   "milestones": [
+    174
+   ]
+  },
+  {
+   "sha": "574acf6",
+   "subject": "M174 fix-up: patch_text dropped file modes, and the counts move with the cases",
+   "milestones": [
+    174
+   ]
+  },
+  {
+   "sha": "b18bac6",
+   "subject": "M174: the runner CI that never ran, and the suite that would have gone red",
+   "milestones": [
+    174
+   ]
+  },
+  {
+   "sha": "b35356f",
+   "subject": "M173: obj+5 is not bounded below 14, and 14 is not even the bound",
+   "milestones": [
+    173
+   ]
+  },
+  {
+   "sha": "cc1673b",
+   "subject": "M172: drop a citation to a file the repo does not have",
+   "milestones": [
+    172
+   ]
+  },
+  {
+   "sha": "c26d44a",
+   "subject": "M172: consolidate for a rebuild \u2014 the format header, its C validator, and the start-here doc",
+   "milestones": [
+    172
+   ]
+  },
+  {
+   "sha": "cce6055",
+   "subject": "M171: where it stops, and why nothing in software restarts it",
+   "milestones": [
+    171
+   ]
+  },
+  {
+   "sha": "27f9d16",
+   "subject": "M170: trap(0) is break, and the exception path never returns",
+   "milestones": [
+    170
+   ]
+  },
+  {
+   "sha": "749a8cf",
+   "subject": "M169: nothing else writes the handle \u2014 and the use path traps",
+   "milestones": [
+    169
+   ]
+  },
+  {
+   "sha": "5aad0a4",
+   "subject": "M168: the handle's high byte is a global allocation counter, not a per-slot generation",
+   "milestones": [
+    168
+   ]
+  },
+  {
+   "sha": "11b7c85",
+   "subject": "M167: palettes are not shared \u2014 whole tiles are",
+   "milestones": [
+    167
+   ]
+  },
+  {
+   "sha": "27b5a4a",
+   "subject": "M166: h1 is the true height, not a stride",
+   "milestones": [
+    166
+   ]
+  },
+  {
+   "sha": "fac820a",
+   "subject": "M165: the T64 tiles decoded \u2014 no compression, palette then raw indices",
+   "milestones": [
+    165
+   ]
+  },
+  {
+   "sha": "8c7c4c3",
+   "subject": "M164: dumping a tile shows no GBI \u2014 M163's display-list claim retracted",
+   "milestones": [
+    163,
+    164
+   ]
+  },
+  {
+   "sha": "3963ae6",
+   "subject": "M163: the three calls \u2014 relocation, part filter, and a grid of display-list tiles",
+   "milestones": [
+    163
+   ]
+  },
+  {
+   "sha": "cc25dfb",
+   "subject": "M162: relational \u2014 the family is the model loaders' texture data",
+   "milestones": [
+    162
+   ]
+  },
+  {
+   "sha": "4f6d16c",
+   "subject": "M161: the display-list reading is refuted by its own test",
+   "milestones": [
+    161
+   ]
+  },
+  {
+   "sha": "f85bfb4",
+   "subject": "M160: the correlation refutes bit depth and value count; the units are records",
+   "milestones": [
+    160
+   ]
+  },
+  {
+   "sha": "78ca680",
+   "subject": "M159: the 01 41 count field decoded \u2014 16 bytes per unit, 355/355",
+   "milestones": [
+    159
+   ]
+  },
+  {
+   "sha": "0d1aa87",
+   "subject": "M158: no section table \u2014 and the room table is a resource table",
+   "milestones": [
+    158
+   ]
+  },
+  {
+   "sha": "c32cc8b",
+   "subject": "M157: the population rule applied backwards \u2014 three proven, two refuted, one on M156 itself",
+   "milestones": [
+    156,
+    157
+   ]
+  },
+  {
+   "sha": "d37594b",
+   "subject": "M156: both leads closed \u2014 the population was wrong, not the model",
+   "milestones": [
+    156
+   ]
+  },
+  {
+   "sha": "5a5d316",
+   "subject": "M155: audit the gates \u2014 three checks were vacuous, and two audit mutations were too",
+   "milestones": [
+    155
+   ]
+  },
+  {
+   "sha": "39cc903",
+   "subject": "M154: no direct starter exists; 0x0f mis-sized; a guard-order bug made the model inert",
+   "milestones": [
+    154
+   ]
+  },
+  {
+   "sha": "7816b88",
+   "subject": "M153: both leads closed \u2014 dead-only list falls from 8 to 2, stream exits vindicated",
+   "milestones": [
+    153
+   ]
+  },
+  {
+   "sha": "2b1b59b",
+   "subject": "M152: the callback theory is refuted by the code; the interpreter loop is read",
+   "milestones": [
+    152
+   ]
+  },
+  {
+   "sha": "57afd25",
+   "subject": "M151: the orphans were my own defect; GoSub stride settles; the dead-code list",
+   "milestones": [
+    151
+   ]
+  },
+  {
+   "sha": "2c3fa38",
+   "subject": "M150: model the block slots, make the CFG walk real, and flip the NOP answer",
+   "milestones": [
+    150
+   ]
+  },
+  {
+   "sha": "bd1a0cd",
+   "subject": "M149: the two-NOP question, and three more reads including a PRNG",
+   "milestones": [
+    149
+   ]
+  },
+  {
+   "sha": "ea61760",
+   "subject": "M148: a dozen opcode reads, with inferred names kept separate from licensed ones",
+   "milestones": [
+    148
+   ]
+  },
+  {
+   "sha": "7cdb33b",
+   "subject": "M147: sweep all 8091 entries and commit the opcode profile",
+   "milestones": [
+    147
+   ]
+  },
+  {
+   "sha": "54e5692",
+   "subject": "M146: the id resolves and a room script decodes out of the cartridge",
+   "milestones": [
+    146
+   ]
+  },
+  {
+   "sha": "44ecebd",
+   "subject": "M145: all 141 opcodes classified; the script base is a loaded cartridge block",
+   "milestones": [
+    145
+   ]
+  },
+  {
+   "sha": "08b4711",
+   "subject": "M144: 0x03 is a script jump; dataflow replaces the window; the walk enters the gate",
+   "milestones": [
+    144
+   ]
+  },
+  {
+   "sha": "efd6c56",
+   "subject": "M143: decode the jump family; 0x32 Poset was a window problem, not a missing length",
+   "milestones": [
+    143
+   ]
+  },
+  {
+   "sha": "75b6843",
+   "subject": "M142: import the MIT opcode table, make the walk refuse to guess, correct M141",
+   "milestones": [
+    141,
+    142
+   ]
+  },
+  {
+   "sha": "a0d1c84",
+   "subject": "M141: OpenBiohazard2 names the opcodes, and corrects M136",
+   "milestones": [
+    136,
+    141
+   ]
+  },
+  {
+   "sha": "13ed4f5",
+   "subject": "M140: enemy routine table found; room header is runtime data",
+   "milestones": [
+    140
+   ]
+  },
+  {
+   "sha": "f374208",
+   "subject": "M139: S2DEX is searchable \u2014 OCR with the OS, no installs",
+   "milestones": [
+    139
+   ]
+  },
+  {
+   "sha": "cef86a2",
+   "subject": "M138: the registry route \u2014 nine 8-byte entries, the room entry point, two confirmed structures",
+   "milestones": [
+    138
+   ]
+  },
+  {
+   "sha": "0b7e49d",
+   "subject": "M137: Phase 2 starts from a reference, and its fingerprints do not fire",
+   "milestones": [
+    137
+   ]
+  },
+  {
+   "sha": "397b523",
+   "subject": "M136: map all 141 handler lengths, and close M97's inconsistency",
+   "milestones": [
+    97,
+    136
+   ]
+  },
+  {
+   "sha": "d56d8d1",
+   "subject": "M135: correct the case count to 90 (the suite counted 90; I wrote 89)",
+   "milestones": [
+    135
+   ]
+  },
+  {
+   "sha": "e6e6753",
+   "subject": "M135: flag a note cited under the wrong milestone, and a title that disagrees with its name",
+   "milestones": [
+    135
+   ]
+  },
+  {
+   "sha": "e24ec61",
+   "subject": "M134: the registration check covers the notes themselves",
+   "milestones": [
+    134
+   ]
+  },
+  {
+   "sha": "ca82f37",
+   "subject": "M133: the marker check runs in both directions",
+   "milestones": [
+    133
+   ]
+  },
+  {
+   "sha": "f6c9f2f",
+   "subject": "M132: check_markers.py - the document anchors are now a fixture, not a habit",
+   "milestones": [
+    132
+   ]
+  },
+  {
+   "sha": "83402d0",
+   "subject": "M131: scripted edits fail loudly - tools/patch_text.py with a 6-case fixture",
+   "milestones": [
+    131
+   ]
+  },
+  {
+   "sha": "10f4dc3",
+   "subject": "M130: no ROM secret - keep the 51/54 split and state the cartridge requirement",
+   "milestones": [
+    130
+   ]
+  },
+  {
+   "sha": "2e0d02a",
+   "subject": "M130: the last three corpus checks in CI - one blocker removable, one not",
+   "milestones": [
+    130
+   ]
+  },
+  {
+   "sha": "1ee4896",
+   "subject": "M129: record the gitignore exception, size guard and clone result in the log row",
+   "milestones": [
+    129
+   ]
+  },
+  {
+   "sha": "aec0ed8",
+   "subject": "M129 addendum: the fixture cart needed a .gitignore exception, and the hygiene check needed an exemption",
+   "milestones": [
+    129
+   ]
+  },
+  {
+   "sha": "86f610b",
+   "subject": "M129: a 9 KB synthetic cartridge, so the corpus pipeline runs in CI",
+   "milestones": [
+    129
+   ]
+  },
+  {
+   "sha": "fd16164",
+   "subject": "M128: CI - the same acceptance run, locally and on a runner",
+   "milestones": [
+    128
+   ]
+  },
+  {
+   "sha": "e4146db",
+   "subject": "M127: a pre-commit hook that runs the acceptance suite",
+   "milestones": [
+    127
+   ]
+  },
+  {
+   "sha": "bb7590b",
+   "subject": "M126: pad_layout in a single acceptance suite, and a mixed-errno fixture",
+   "milestones": [
+    126
+   ]
+  },
+  {
+   "sha": "d416308",
+   "subject": "M125: the CHNL_ERR path made executable, with a fixture for the all-buttons-held case",
+   "milestones": [
+    125
+   ]
+  },
+  {
+   "sha": "4d6f46d",
+   "subject": "M124: controller layout diffed against perfect_dark's libultra - match, plus three corrections",
+   "milestones": [
+    124
+   ]
+  },
+  {
+   "sha": "2a18661",
+   "subject": "M123: path sensitivity clears the polymorphic sites; perfect_dark assessed",
+   "milestones": [
+    123
+   ]
+  },
+  {
+   "sha": "2064332",
+   "subject": "M122: the register-argument check - shape, not presence, and four calibrations",
+   "milestones": [
+    122
+   ]
+  },
+  {
+   "sha": "d37d51e",
+   "subject": "M121: reading the callee refutes the flags - 0 of 14371 call sites, and two bugs in the check",
+   "milestones": [
+    121
+   ]
+  },
+  {
+   "sha": "1f2d06a",
+   "subject": "M120: the caller-side stack-argument check - 7 sites out of 14371",
+   "milestones": [
+    120
+   ]
+  },
+  {
+   "sha": "8dbcb84",
+   "subject": "M119: stack-argument propagation resolves 89.8% and buys seven addresses",
+   "milestones": [
+    119
+   ]
+  },
+  {
+   "sha": "1252253",
+   "subject": "M118: frame slots are 98.5% resolved, and the acceptance tests are executable",
+   "milestones": [
+    118
+   ]
+  },
+  {
+   "sha": "4bebbc9",
+   "subject": "M117: Ghidra bounds replace the heuristic, and two layer-2 fabrications fall out",
+   "milestones": [
+    117
+   ]
+  },
+  {
+   "sha": "47caec3",
+   "subject": "M116: frame slots keyed to the entry sp, and spoff is not an unresolved bucket",
+   "milestones": [
+    116
+   ]
+  },
+  {
+   "sha": "f7da77e",
+   "subject": "M115: the unk bucket - measure the cause, then fix the one that dominates",
+   "milestones": [
+    115
+   ]
+  },
+  {
+   "sha": "8b65508",
+   "subject": "M114: jump-table edges - 4142 new edges and unreached finally moves",
+   "milestones": [
+    114
+   ]
+  },
+  {
+   "sha": "cc0da3e",
+   "subject": "M113: CONSTBASE - the map read is named, and only the runtime hop is withheld",
+   "milestones": [
+    113
+   ]
+  },
+  {
+   "sha": "acd1c03",
+   "subject": "M112: experiment B step 2 - summaries resolve the record chain, and the map reader stays out of reach",
+   "milestones": [
+    112
+   ]
+  },
+  {
+   "sha": "5e4659a",
+   "subject": "M111: experiment B step 1 - a provenance core that survives its own fixture (10/10)",
+   "milestones": [
+    111
+   ]
+  },
+  {
+   "sha": "cd86740",
+   "subject": "M110: three rooms, one operand - the scene-slot path is by design, and the room signal was in the data",
+   "milestones": [
+    110
+   ]
+  },
+  {
+   "sha": "2b5ba23",
+   "subject": "M109: the debugger drives memory, but ares feeds the game ff ff ff ff - no controller, so no room",
+   "milestones": [
+    109
+   ]
+  },
+  {
+   "sha": "026a174",
+   "subject": "M108 addendum: the `p` register index is decimal, ares' --setting persists into settings.bml, and an AwaitGDBClient=true hangs the machine at 0xBFC00000",
+   "milestones": [
+    108
+   ]
+  },
+  {
+   "sha": "da9c2b6",
+   "subject": "M108: the ares handshake is one leading '+' - then GDB RSP drives the whole machine",
+   "milestones": [
+    108
+   ]
+  },
+  {
+   "sha": "335ec50",
+   "subject": "M107 addendum: the ares debug server binds only with Boot/Debugger, and answers nothing to plain RSP",
+   "milestones": [
+    107
+   ]
+  },
+  {
+   "sha": "a98fa7e",
+   "subject": "M107: handover document, and the design for driving ares directly",
+   "milestones": [
+    107
+   ]
+  },
+  {
+   "sha": "3daaab0",
+   "subject": "M106: the maps never populate - the scene-slot path is a per-execution no-op",
+   "milestones": [
+    106
+   ]
+  },
+  {
+   "sha": "a6ff3e5",
+   "subject": "M105: the ctx+0x140 counter is a flag not a bound - and the first real scene-slot commands are found",
+   "milestones": [
+    105
+   ]
+  },
+  {
+   "sha": "b090beb",
+   "subject": "M104: no other rooms in hand, and the six \"desyncs\" are stream ends",
+   "milestones": [
+    104
+   ]
+  },
+  {
+   "sha": "1b890b7",
+   "subject": "M103: walked the live command stream - 174 commands, no slot command pending, and slot 31 selects nothing",
+   "milestones": [
+    103
+   ]
+  },
+  {
+   "sha": "7bc4fd2",
+   "subject": "M102: the gate PASSES - and it is vacuous, so the survival is a silent failure not a blocked gate",
+   "milestones": [
+    102
+   ]
+  },
+  {
+   "sha": "4e9a1f3",
+   "subject": "M101: the room dump arrived and it corrects the model - the loader is gated on descriptor byte 9",
+   "milestones": [
+    101
+   ]
+  },
+  {
+   "sha": "1751c89",
+   "subject": "M100: watch set (never reached), dump probe built, and the last input is a human one",
+   "milestones": [
+    100
+   ]
+  },
+  {
+   "sha": "433a8b9",
+   "subject": "M99: the stride is settled - a variable-length bytecode, and opcode 0x44 is 22 bytes",
+   "milestones": [
+    99
+   ]
+  },
+  {
+   "sha": "e8e442c",
+   "subject": "M98: the stream comes from a runtime buffer inside the room overlay - the chain is closed",
+   "milestones": [
+    98
+   ]
+  },
+  {
+   "sha": "d92f1be",
+   "subject": "M97: descriptors are script commands - no code writes bytes 0 and 3",
+   "milestones": [
+    97
+   ]
+  },
+  {
+   "sha": "c888fcc",
+   "subject": "M96: FUN_8003287c's callers and slot values, stated in full - and they share one descriptor",
+   "milestones": [
+    96
+   ]
+  },
+  {
+   "sha": "67e7335",
+   "subject": "M95: the table at 0x80113898 has three readers, and entry 68 is selected by a one-byte index",
+   "milestones": [
+    95
+   ]
+  },
+  {
+   "sha": "d1899b6",
+   "subject": "M94: enumerate FUN_8003287c's callers - one jal, no literal slot, and the byte's full range map",
+   "milestones": [
+    94
+   ]
+  },
+  {
+   "sha": "69c2392",
+   "subject": "M93: the slot condition traced, cart_record(0) is a crash path, and the dev-build signal is weak",
+   "milestones": [
+    93
+   ]
+  },
+  {
+   "sha": "6aec1c0",
+   "subject": "M92: one caller, s0 is slot<32 not slot<=16, and index 67 is a build stamp",
+   "milestones": [
+    92
+   ]
+  },
+  {
+   "sha": "45822e2",
+   "subject": "M91: the bank-C map IS read, and bank C is not compressed - two retractions",
+   "milestones": [
+    91
+   ]
+  },
+  {
+   "sha": "8d88a2b",
+   "subject": "M90: the slot-byte writers are not statically derivable, and six audit flags close",
+   "milestones": [
+    90
+   ]
+  },
+  {
+   "sha": "85377ff",
+   "subject": "M89: there is no bank-C caller \u2014 the pointer to its slot map is never read",
+   "milestones": [
+    89
+   ]
+  },
+  {
+   "sha": "18d3173",
+   "subject": "M88: the codec is stock zlib, and the scene slot byte is a runtime value",
+   "milestones": [
+    88
+   ]
+  },
+  {
+   "sha": "1bb1ce3",
+   "subject": "M87: fix the harness under a fixture, find the slot map, retire the dispatcher hypothesis",
+   "milestones": [
+    87
+   ]
+  },
+  {
+   "sha": "af5a0a5",
+   "subject": "M86: the load contract is three branches, none of which bank C takes; and the harness has two bugs",
+   "milestones": [
+    86
+   ]
+  },
+  {
+   "sha": "4c5f972",
+   "subject": "M85: the bank-C loader is a call chain, and the store-loop class could never have found it",
+   "milestones": [
+    85
+   ]
+  },
+  {
+   "sha": "94c2ecb",
+   "subject": "M84: the case tables are static, and addiu is signed - the address I hunted never existed",
+   "milestones": [
+    84
+   ]
+  },
+  {
+   "sha": "448e96b",
+   "subject": "M83: audit the pipeline, retract two M82 claims, and measure the differential properly",
+   "milestones": [
+    82,
+    83
+   ]
+  },
+  {
+   "sha": "f14e0f4",
+   "subject": "M82: the R4 container's geometry is established, its codec is not; three missed functions recovered",
+   "milestones": [
+    82
+   ]
+  },
+  {
+   "sha": "d27ad9c",
+   "subject": "M81: the code corpus - 36 images, 3267 functions, discovery closed at the member level",
+   "milestones": [
+    81
+   ]
+  },
+  {
+   "sha": "2edfb1f",
+   "subject": "S1 done: delay-slot-correct interrupt entry fixes the M78 crash",
+   "milestones": [
+    78
+   ]
+  },
+  {
+   "sha": "b6483df",
+   "subject": "the 0x8000dc88 tail is a clean epilogue - M51 hypothesis falsified",
+   "milestones": [
+    51
+   ]
+  },
+  {
+   "sha": "4e1aa63",
+   "subject": "controlled VI: vectors never installed on this path - correcting M48",
+   "milestones": [
+    48
+   ]
+  },
+  {
+   "sha": "6e5abb9",
+   "subject": "test: match runs at lag 40 are fills - R3 has no record structure, M12 retracted",
+   "milestones": [
+    12
+   ]
+  },
+  {
+   "sha": "3938dc9",
+   "subject": "notes: M3 \u2014 libultra naming refuted, and where the compute must go",
+   "milestones": [
+    3
+   ]
+  },
+  {
+   "sha": "4b6e2fa",
+   "subject": "feat: M2 \u2014 real code/data boundaries via splat",
+   "milestones": [
+    2
+   ]
+  },
+  {
+   "sha": "573b765",
+   "subject": "notes: M1 ROM identification and M2 partial \u2014 real boot code decompiles",
+   "milestones": [
+    1,
+    2
+   ]
+  }
+ ]
+}

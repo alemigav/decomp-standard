@@ -1,0 +1,172 @@
+# The same run as `sh tools/ci.sh`, on a runner.
+#
+# Measured, not estimated (M174). A runner has no cartridge — `rom/` is gitignored by design, and so is
+# everything derived from it (`assets/`, `build/`) — so `tools/acceptance.py` reports:
+#
+#   32 suites / 286 cases  PASS
+#   41 suites / 742 cases  SKIP (needs the cartridge)
+#
+# Locally, with the ROM present, the same command runs all 73 suites / 1028 cases. Those numbers are asserted
+# by `tools/acceptance.py`'s own expected counts, so this comment goes stale loudly rather than quietly.
+#
+# **The 109 skipped cases are the ones that assert facts about RE2 itself** — the corpus checks
+# (`FUN_800327ec` at 0x800327ec, the slot map at 0x800eb204), the script VM, the model container, the T64
+# texture law, the exception path, and the routine-index bounds (M173). Running them needs the cartridge's
+# **bytes**, which are cartridge content and are never committed. They run wherever the cartridge exists:
+# locally, and through the pre-commit hook on every commit. **A green run here does not vouch for them.**
+#
+# A way to close the gap was built and verified (M130): supply the ROM as a base64 secret, unpack, build the
+# images, and the boundaries come from the committed `fixtures/decomp/ranges.json`. It was deliberately not
+# adopted, because it means a copyrighted ROM living in a CI secret store. The mechanism is described in
+# docs/log/M130-corpus-checks-in-ci.md if that trade is ever worth taking. M174 re-measured the split and
+# found the workflow had never run: `synthetic-rdram walk` was labelled cartridge-free but loads the stage-2
+# image from `assets/unpacked/`, so the first push would have been red for a reason unrelated to the push.
+name: acceptance
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read          # nothing here writes to the repo
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    # Pinned, not `ubuntu-latest`: the first real run of this workflow failed at setup-python with
+    # "The version '3.9' … was not found for Ubuntu 26.04", because `latest` had moved on. The image is
+    # pinned to the Ubuntu that still carries the interpreter below.
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      # Pinned to the interpreter the suites were verified on (3.9.6, the one installed on the machine this
+      # project is developed on) rather than "3.x": every tool is plain stdlib, so a newer Python is very
+      # likely fine — but "very likely" is not what this repo calls verified. A second matrix leg, on the
+      # newest image, is one line the day someone installs that interpreter and runs the suites on it.
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.9'
+
+      - name: Report what CI can and cannot see
+        run: |
+          printf 'ROM present: %s\n' "$(test -f 'rom/Resident Evil 2 (USA) (Rev 1).z64' && echo yes || echo no)"
+
+      - name: Fixtures and repository hygiene
+        run: |
+          set -o pipefail
+          sh tools/ci.sh 2>&1 | tee ci.log
+
+      # A green run that silently skipped 11 suites is a misleading green, so the split goes in the job
+      # summary, where it is read without opening the log.
+      - name: Summarise what ran and what did not
+        if: always()
+        run: |
+          {
+            printf '### `sh tools/ci.sh`\n\n'
+            printf '```\n'
+            grep -E '^(all |cartridge|suite|ci:)|PASS|FAIL|SKIP' ci.log | tail -40 || true
+            printf '```\n\n'
+            printf 'Suites that need the cartridge report SKIP, never PASS — a green run here does not vouch\n'
+            printf 'for the 109 skipped cases. With the ROM present, run the `full` job above.\n'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  # The other tier: the same `ci.sh` where the cartridge exists, so all 73 suites / 1028 cases run. This job
+  # needs a machine that holds the ROM — nothing is uploaded, and no secret is involved. (`full-url` below
+  # reaches the same coverage on a hosted runner by fetching the cartridge instead.)
+  #
+  # Two guards exist because a self-hosted job fails in a way a hosted one cannot:
+  #
+  #   * `if: vars.SELF_HOSTED_RUNNER == 'true'` — without it this job would sit **queued** for every push
+  #     while the machine is asleep, and a push is supposed to report, not to wait. Skipped is visible;
+  #     queued is just yellow.
+  #   * the `re2-cartridge` label — the job only lands on a runner registered with that label, so a stray
+  #     runner cannot pick it up and fail on a missing cartridge.
+  #
+  # Enabling it, once, on the machine that holds the ROM:
+  #   Settings -> Actions -> Runners -> New self-hosted runner, add the label `re2-cartridge`,
+  #   give the checkout the cartridge and a built `build/elfs` (docs/handover.md, "How to rebuild"), then
+  #   gh variable set SELF_HOSTED_RUNNER --body true
+  full:
+    if: vars.SELF_HOSTED_RUNNER == 'true'
+    runs-on: [self-hosted, re2-cartridge]
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Report the interpreter the suites will run on
+        run: |
+          printf 'python3: %s\n' "$(python3 --version 2>&1)"
+          printf 'git:     %s\n' "$(git --version)"
+
+      # A self-hosted runner that lost its cartridge would run the *hosted* tier and report success — the
+      # exact green-but-empty result this tier exists to avoid. So it fails instead, with the reason.
+      # The requiring, the running and the "nothing may have been skipped" guard all live in one script, so
+      # this tier and the fetching tier below cannot drift apart.
+      - name: All suites, and fail if anything was skipped
+        run: |
+          set -o pipefail
+          sh tools/ci_full.sh 2>&1 | tee ci_full.log
+
+      - name: Summarise what ran
+        if: always()
+        run: |
+          {
+            printf '### `sh tools/ci_full.sh` — self-hosted tier\n\n'
+            printf '```\n'
+            grep -E '^(all |cartridge|ci:)|PASS|FAIL|SKIP' ci_full.log | tail -40 || true
+            printf '```\n\n'
+            printf 'This tier holds the cartridge, so all 73 suites / 1028 cases run. Nothing was uploaded:\n'
+            printf 'the ROM lives on the runner, not in a secret.\n'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  # The same full coverage without a runner to keep awake: the cartridge is fetched at run time from an
+  # owner-provided URL. A secret cannot hold the bytes — GitHub caps a secret at 48 KB and the cartridge is
+  # 89 478 489 B base64, about 1 870 secrets — so the secret holds *access*, and the bytes stay where they
+  # are until a run needs them. Nothing is committed and nothing is stored on GitHub.
+  #
+  #   gh variable set CARTRIDGE_URL --body true          # turn this tier on
+  #   gh secret set RE2_CART_URL   < url.txt             # where the cartridge lives
+  #   gh secret set RE2_CART_TOKEN < token.txt           # optional, sent as a bearer token
+  #
+  # `tools/cart_fetch.sh` verifies the download against `rom_sha256` in the committed
+  # `manifests/manifest.json` *before* unpacking, so a wrong or truncated file fails loudly instead of
+  # looking like a corrupt game.
+  full-url:
+    if: vars.CARTRIDGE_URL == 'true'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.9'
+
+      - name: Fetch, verify, unpack and build the cartridge
+        env:
+          RE2_CART_URL: ${{ secrets.RE2_CART_URL }}
+          RE2_CART_TOKEN: ${{ secrets.RE2_CART_TOKEN }}
+        run: sh tools/cart_fetch.sh
+
+      - name: All suites, and fail if anything was skipped
+        run: |
+          set -o pipefail
+          sh tools/ci_full.sh 2>&1 | tee ci_full.log
+
+      - name: Summarise what ran
+        if: always()
+        run: |
+          {
+            printf '### `sh tools/ci_full.sh` — fetched tier\n\n'
+            printf '```\n'
+            grep -E '^(all |cartridge|ci:)|PASS|FAIL|SKIP|verified' ci_full.log | tail -40 || true
+            printf '```\n\n'
+            printf 'The cartridge was fetched from `RE2_CART_URL` and verified against the committed\n'
+            printf 'sha256 before use; it is never committed and never stored on GitHub.\n'
+          } >> "$GITHUB_STEP_SUMMARY"

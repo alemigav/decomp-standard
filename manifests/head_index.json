@@ -1,0 +1,1456 @@
+{
+ "by_kind": {
+  "argument": 16,
+  "argument_pointer_field": 2,
+  "command_field": 7,
+  "constant": 3,
+  "ctx_field": 19,
+  "global": 32,
+  "local": 4,
+  "stack_field": 1,
+  "unknown": 2
+ },
+ "heads": [
+  {
+   "bound": 6,
+   "bound_at": 2147632492,
+   "handler": null,
+   "head": "0x80024558",
+   "index_register": "v1",
+   "jr": 2147632524,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x800e923c",
+    "offset": 2148438588,
+    "width": 1
+   },
+   "table": 2148231600,
+   "transform": []
+  },
+  {
+   "bound": 6,
+   "bound_at": 2147633140,
+   "handler": null,
+   "head": "0x80024784",
+   "index_register": "v1",
+   "jr": 2147633172,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x800e923c",
+    "offset": 2148438588,
+    "width": 1
+   },
+   "table": 2148231648,
+   "transform": []
+  },
+  {
+   "bound": 5,
+   "bound_at": 2147669400,
+   "handler": null,
+   "head": "0x8002d330",
+   "index_register": "v1",
+   "jr": 2147669428,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x28",
+    "offset": 40,
+    "width": 4
+   },
+   "table": 2148232896,
+   "transform": [
+    "addiu -1"
+   ]
+  },
+  {
+   "bound": 6,
+   "bound_at": 2147708884,
+   "handler": null,
+   "head": "0x80036f64",
+   "index_register": "v1",
+   "jr": 2147708912,
+   "source": {
+    "kind": "constant",
+    "note": "the constant 0x800c0000",
+    "value": 2148270080
+   },
+   "table": 2148239048,
+   "transform": []
+  },
+  {
+   "bound": 6,
+   "bound_at": 2147709456,
+   "handler": null,
+   "head": "0x800371a4",
+   "index_register": "v1",
+   "jr": 2147709484,
+   "source": {
+    "kind": "constant",
+    "note": "the constant 0x800c0000",
+    "value": 2148270080
+   },
+   "table": 2148239072,
+   "transform": []
+  },
+  {
+   "bound": 8,
+   "bound_at": 2147722728,
+   "handler": null,
+   "head": "0x8003a590",
+   "index_register": "v1",
+   "jr": 2147722756,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x800f0002",
+    "offset": 2148466690,
+    "width": 1
+   },
+   "table": 2148239128,
+   "transform": []
+  },
+  {
+   "bound": 5,
+   "bound_at": 2147731080,
+   "handler": null,
+   "head": "0x8003c61c",
+   "index_register": "v1",
+   "jr": 2147731108,
+   "source": {
+    "kind": "global",
+    "note": "a 2-byte read at 0x800f0012",
+    "offset": 2148466706,
+    "width": 2
+   },
+   "table": 2148239200,
+   "transform": []
+  },
+  {
+   "bound": 5,
+   "bound_at": 2147733124,
+   "handler": null,
+   "head": "0x8003ce08",
+   "index_register": "v1",
+   "jr": 2147733152,
+   "source": {
+    "kind": "global",
+    "note": "a 2-byte read at 0x800f0012",
+    "offset": 2148466706,
+    "width": 2
+   },
+   "table": 2148239240,
+   "transform": []
+  },
+  {
+   "bound": 5,
+   "bound_at": 2147744464,
+   "handler": null,
+   "head": "0x8003faa0",
+   "index_register": "a0",
+   "jr": 2147744496,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x800f0002",
+    "offset": 2148466690,
+    "width": 1
+   },
+   "table": 2148239272,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2147747236,
+   "handler": null,
+   "head": "0x80040584",
+   "index_register": "v1",
+   "jr": 2147747264,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x800f0002",
+    "offset": 2148466690,
+    "width": 1
+   },
+   "table": 2148239296,
+   "transform": []
+  },
+  {
+   "bound": 1,
+   "bound_at": 2147791088,
+   "handler": null,
+   "head": "0x8004b0a8",
+   "index_register": "v1",
+   "jr": 2147791112,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x800e9182",
+    "offset": 2148438402,
+    "width": 1
+   },
+   "table": 2148239944,
+   "transform": []
+  },
+  {
+   "bound": 17,
+   "bound_at": 2147794076,
+   "handler": null,
+   "head": "0x8004bbf4",
+   "index_register": "v1",
+   "jr": 2147794104,
+   "source": {
+    "kind": "local",
+    "note": "a field at +0x0 off a2, which this head's own code does not define: the enclosing function set it, so the head is inlined in a larger one and the dataflow starts before the body boundary",
+    "offset": 0,
+    "width": 1
+   },
+   "table": 2148239976,
+   "transform": [
+    "addiu -238"
+   ]
+  },
+  {
+   "bound": 5,
+   "bound_at": 2147810588,
+   "handler": null,
+   "head": "0x8004fd1c",
+   "index_register": "a2",
+   "jr": 2147810620,
+   "source": {
+    "kind": "argument",
+    "note": "the incoming argument a2, used as the index directly",
+    "register": "a2"
+   },
+   "table": 2148240336,
+   "transform": []
+  },
+  {
+   "bound": 5,
+   "bound_at": 2147813752,
+   "handler": null,
+   "head": "0x80050964",
+   "index_register": "v1",
+   "jr": 2147813780,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x4",
+    "offset": 4,
+    "width": 1
+   },
+   "table": 2148240360,
+   "transform": []
+  },
+  {
+   "bound": 8,
+   "bound_at": 2147825196,
+   "handler": null,
+   "head": "0x8005360c",
+   "index_register": "v1",
+   "jr": 2147825224,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x800e860a",
+    "offset": 2148435466,
+    "width": 1
+   },
+   "table": 2148240392,
+   "transform": [
+    "addiu -1"
+   ]
+  },
+  {
+   "bound": 12,
+   "bound_at": 2147828204,
+   "handler": null,
+   "head": "0x800540f0",
+   "index_register": "s3",
+   "jr": 2147828232,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x800e8609",
+    "offset": 2148435465,
+    "width": 1
+   },
+   "table": 2148240704,
+   "transform": []
+  },
+  {
+   "bound": 13,
+   "bound_at": 2147830392,
+   "handler": null,
+   "head": "0x8005497c",
+   "index_register": "s3",
+   "jr": 2147830420,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x800e8609",
+    "offset": 2148435465,
+    "width": 1
+   },
+   "table": 2148241144,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2147843632,
+   "handler": null,
+   "head": "0x80057e1c",
+   "index_register": "v1",
+   "jr": 2147843660,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x6",
+    "offset": 6,
+    "width": 1
+   },
+   "table": 2148241272,
+   "transform": []
+  },
+  {
+   "bound": 8,
+   "bound_at": 2147844004,
+   "handler": null,
+   "head": "0x80057f74",
+   "index_register": "v1",
+   "jr": 2147844032,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x6",
+    "offset": 6,
+    "width": 1
+   },
+   "table": 2148241304,
+   "transform": []
+  },
+  {
+   "bound": 5,
+   "bound_at": 2147845360,
+   "handler": null,
+   "head": "0x800584dc",
+   "index_register": "v1",
+   "jr": 2147845388,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x7",
+    "offset": 7,
+    "width": 1
+   },
+   "table": 2148241336,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2147846264,
+   "handler": null,
+   "head": "0x80058858",
+   "index_register": "v1",
+   "jr": 2147846292,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x7",
+    "offset": 7,
+    "width": 1
+   },
+   "table": 2148241360,
+   "transform": []
+  },
+  {
+   "bound": 8,
+   "bound_at": 2147847736,
+   "handler": null,
+   "head": "0x80058e18",
+   "index_register": "v1",
+   "jr": 2147847768,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x6",
+    "offset": 6,
+    "width": 1
+   },
+   "table": 2148241392,
+   "transform": []
+  },
+  {
+   "bound": 12,
+   "bound_at": 2147849544,
+   "handler": null,
+   "head": "0x80059530",
+   "index_register": "v1",
+   "jr": 2147849572,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x6",
+    "offset": 6,
+    "width": 1
+   },
+   "table": 2148241424,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2147850364,
+   "handler": null,
+   "head": "0x80059868",
+   "index_register": "v1",
+   "jr": 2147850392,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x6",
+    "offset": 6,
+    "width": 1
+   },
+   "table": 2148241472,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2147857668,
+   "handler": null,
+   "head": "0x8005b4d8",
+   "index_register": "v1",
+   "jr": 2147857696,
+   "source": {
+    "kind": "constant",
+    "note": "the zero register"
+   },
+   "table": 2148241552,
+   "transform": [
+    "addiu 1"
+   ]
+  },
+  {
+   "bound": 7,
+   "bound_at": 2147876228,
+   "handler": null,
+   "head": "0x8005fce0",
+   "index_register": "v1",
+   "jr": 2147876256,
+   "source": {
+    "kind": "local",
+    "note": "a field at +0x-2 off s2, which this head's own code does not define: the enclosing function set it, so the head is inlined in a larger one and the dataflow starts before the body boundary",
+    "offset": -2,
+    "width": 1
+   },
+   "table": 2148241632,
+   "transform": []
+  },
+  {
+   "bound": 6,
+   "bound_at": 2147882616,
+   "handler": null,
+   "head": "0x800615c8",
+   "index_register": "v1",
+   "jr": 2147882644,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x7",
+    "offset": 7,
+    "width": 1
+   },
+   "table": 2148241696,
+   "transform": []
+  },
+  {
+   "bound": 6,
+   "bound_at": 2147886468,
+   "handler": null,
+   "head": "0x80062554",
+   "index_register": "v1",
+   "jr": 2147886500,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x7",
+    "offset": 7,
+    "width": 1
+   },
+   "table": 2148241728,
+   "transform": []
+  },
+  {
+   "bound": 13,
+   "bound_at": 2147904212,
+   "handler": null,
+   "head": "0x800667d4",
+   "index_register": "v1",
+   "jr": 2147904240,
+   "source": {
+    "kind": "global",
+    "note": "a 2-byte read at 0x800df6b8",
+    "offset": 2148398776,
+    "width": 2
+   },
+   "table": 2148242080,
+   "transform": [
+    "andi 0xf"
+   ]
+  },
+  {
+   "bound": 14,
+   "bound_at": 2147918248,
+   "handler": null,
+   "head": "0x80069f1c",
+   "index_register": "v1",
+   "jr": 2147918276,
+   "source": {
+    "kind": "global",
+    "note": "a 2-byte read at 0x800df6b8",
+    "offset": 2148398776,
+    "width": 2
+   },
+   "table": 2148242136,
+   "transform": [
+    "andi 0xf"
+   ]
+  },
+  {
+   "bound": 6,
+   "bound_at": 2147919172,
+   "handler": null,
+   "head": "0x8006a4d0",
+   "index_register": "v1",
+   "jr": 2147919200,
+   "source": {
+    "kind": "unknown",
+    "note": "defined before this head's own code, in v0",
+    "register": "v0"
+   },
+   "table": 2148242192,
+   "transform": []
+  },
+  {
+   "bound": 16,
+   "bound_at": 2147927028,
+   "handler": null,
+   "head": "0x8006c0d4",
+   "index_register": "v1",
+   "jr": 2147927060,
+   "source": {
+    "kind": "stack_field",
+    "note": "a stack slot at +0x20 off sp",
+    "offset": 32,
+    "width": 4
+   },
+   "table": 2148242632,
+   "transform": []
+  },
+  {
+   "bound": 12,
+   "bound_at": 2147927328,
+   "handler": null,
+   "head": "0x8006c0d4",
+   "index_register": "v1",
+   "jr": 2147927356,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x8011277e",
+    "offset": 2148607870,
+    "width": 1
+   },
+   "table": 2148242696,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2147935928,
+   "handler": null,
+   "head": null,
+   "index_register": "a1",
+   "jr": 2147935960,
+   "source": {
+    "kind": "command_field",
+    "note": "u16[cmd+2]",
+    "offset": 2,
+    "width": 2
+   },
+   "table": 2148242752,
+   "transform": [
+    "andi 0xff"
+   ]
+  },
+  {
+   "bound": 12,
+   "bound_at": 2147936356,
+   "handler": null,
+   "head": "0x8006e838",
+   "index_register": "s2",
+   "jr": 2147936384,
+   "source": {
+    "kind": "argument",
+    "note": "the context pointer, used as an index"
+   },
+   "table": 2148242784,
+   "transform": []
+  },
+  {
+   "bound": 12,
+   "bound_at": 2147936680,
+   "handler": null,
+   "head": "0x8006e998",
+   "index_register": "s2",
+   "jr": 2147936708,
+   "source": {
+    "kind": "unknown",
+    "note": "defined before this head's own code, in s2",
+    "register": "s2"
+   },
+   "table": 2148242832,
+   "transform": []
+  },
+  {
+   "bound": 5,
+   "bound_at": 2147941248,
+   "handler": null,
+   "head": null,
+   "index_register": "v1",
+   "jr": 2147941276,
+   "source": {
+    "kind": "command_field",
+    "note": "u8[cmd+1]",
+    "offset": 1,
+    "width": 1
+   },
+   "table": 2148242880,
+   "transform": [
+    "addiu -1"
+   ]
+  },
+  {
+   "bound": 7,
+   "bound_at": 2147941536,
+   "handler": "0x6e",
+   "head": "0x8006fc5c",
+   "index_register": "a1",
+   "jr": 2147941564,
+   "source": {
+    "kind": "argument",
+    "note": "the incoming argument a1, used as the index directly",
+    "register": "a1"
+   },
+   "table": 2148242904,
+   "transform": []
+  },
+  {
+   "bound": 44,
+   "bound_at": 2147942216,
+   "handler": null,
+   "head": "0x8006ff48",
+   "index_register": "a1",
+   "jr": 2147942244,
+   "source": {
+    "kind": "argument",
+    "note": "the incoming argument a1, used as the index directly",
+    "register": "a1"
+   },
+   "table": 2148242936,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2147942744,
+   "handler": "0x3e",
+   "head": "0x80070120",
+   "index_register": "v1",
+   "jr": 2147942772,
+   "source": {
+    "kind": "command_field",
+    "note": "u16[cmd+2]",
+    "offset": 2,
+    "width": 2
+   },
+   "table": 2148243112,
+   "transform": [
+    "andi 0xff"
+   ]
+  },
+  {
+   "bound": 44,
+   "bound_at": 2147942872,
+   "handler": null,
+   "head": "0x800701d8",
+   "index_register": "a1",
+   "jr": 2147942900,
+   "source": {
+    "kind": "argument",
+    "note": "the incoming argument a1, used as the index directly",
+    "register": "a1"
+   },
+   "table": 2148243144,
+   "transform": []
+  },
+  {
+   "bound": 44,
+   "bound_at": 2147943648,
+   "handler": null,
+   "head": "0x800704e0",
+   "index_register": "a1",
+   "jr": 2147943680,
+   "source": {
+    "kind": "argument",
+    "note": "the incoming argument a1, used as the index directly",
+    "register": "a1"
+   },
+   "table": 2148243320,
+   "transform": []
+  },
+  {
+   "bound": 21,
+   "bound_at": 2147944616,
+   "handler": null,
+   "head": "0x80070708",
+   "index_register": "v1",
+   "jr": 2147944648,
+   "source": {
+    "kind": "local",
+    "note": "a field at +0xc off a2, which this head's own code does not define: the enclosing function set it, so the head is inlined in a larger one and the dataflow starts before the body boundary",
+    "offset": 12,
+    "width": 2
+   },
+   "table": 2148243520,
+   "transform": [
+    "addiu -20"
+   ]
+  },
+  {
+   "bound": 5,
+   "bound_at": 2147946920,
+   "handler": "0x36",
+   "head": "0x80071180",
+   "index_register": "a0",
+   "jr": 2147946948,
+   "source": {
+    "kind": "command_field",
+    "note": "u16[cmd+4]",
+    "offset": 4,
+    "width": 2
+   },
+   "table": 2148243680,
+   "transform": [
+    "srl 8"
+   ]
+  },
+  {
+   "bound": 5,
+   "bound_at": 2147948472,
+   "handler": null,
+   "head": "0x800717a0",
+   "index_register": "v1",
+   "jr": 2147948500,
+   "source": {
+    "kind": "argument",
+    "note": "the context pointer, used as an index"
+   },
+   "table": 2148243704,
+   "transform": [
+    "sra 24",
+    "sll 24"
+   ]
+  },
+  {
+   "bound": 15,
+   "bound_at": 2147949024,
+   "handler": null,
+   "head": null,
+   "index_register": "v1",
+   "jr": 2147949052,
+   "source": {
+    "kind": "command_field",
+    "note": "u8[cmd+2]",
+    "offset": 2,
+    "width": 1
+   },
+   "table": 2148243728,
+   "transform": [
+    "addiu -4"
+   ]
+  },
+  {
+   "bound": 15,
+   "bound_at": 2147949140,
+   "handler": null,
+   "head": null,
+   "index_register": "v1",
+   "jr": 2147949168,
+   "source": {
+    "kind": "argument_pointer_field",
+    "note": "a field at +0x8 off the incoming argument a0",
+    "offset": 8,
+    "width": 1
+   },
+   "table": 2148243792,
+   "transform": [
+    "addiu 16"
+   ]
+  },
+  {
+   "bound": 7,
+   "bound_at": 2147949492,
+   "handler": null,
+   "head": null,
+   "index_register": "a2",
+   "jr": 2147949536,
+   "source": {
+    "kind": "command_field",
+    "note": "u8[cmd+1]",
+    "offset": 1,
+    "width": 1
+   },
+   "table": 2148243856,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2147952640,
+   "handler": null,
+   "head": null,
+   "index_register": "v1",
+   "jr": 2147952668,
+   "source": {
+    "kind": "command_field",
+    "note": "u8[cmd+1]",
+    "offset": 1,
+    "width": 1
+   },
+   "table": 2148243888,
+   "transform": []
+  },
+  {
+   "bound": 6,
+   "bound_at": 2147960988,
+   "handler": null,
+   "head": "0x80074860",
+   "index_register": "a0",
+   "jr": 2147961020,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x800e861d",
+    "offset": 2148435485,
+    "width": 1
+   },
+   "table": 2148243920,
+   "transform": []
+  },
+  {
+   "bound": 6,
+   "bound_at": 2147973200,
+   "handler": null,
+   "head": "0x800777d8",
+   "index_register": "v1",
+   "jr": 2147973228,
+   "source": {
+    "kind": "argument",
+    "note": "the context pointer, used as an index"
+   },
+   "table": 2148244048,
+   "transform": [
+    "andi 0xff",
+    "andi 0xf",
+    "srl 24"
+   ]
+  },
+  {
+   "bound": 5,
+   "bound_at": 2147986912,
+   "handler": null,
+   "head": "0x8007adb4",
+   "index_register": "v1",
+   "jr": 2147986940,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x6",
+    "offset": 6,
+    "width": 1
+   },
+   "table": 2148244448,
+   "transform": []
+  },
+  {
+   "bound": 5,
+   "bound_at": 2147988800,
+   "handler": null,
+   "head": "0x8007b514",
+   "index_register": "v1",
+   "jr": 2147988828,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x6",
+    "offset": 6,
+    "width": 1
+   },
+   "table": 2148244472,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2148000284,
+   "handler": null,
+   "head": "0x8007e208",
+   "index_register": "v1",
+   "jr": 2148000312,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x6",
+    "offset": 6,
+    "width": 1
+   },
+   "table": 2148244544,
+   "transform": []
+  },
+  {
+   "bound": 6,
+   "bound_at": 2148000488,
+   "handler": null,
+   "head": "0x8007e2c8",
+   "index_register": "v1",
+   "jr": 2148000516,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x6",
+    "offset": 6,
+    "width": 1
+   },
+   "table": 2148244576,
+   "transform": []
+  },
+  {
+   "bound": 5,
+   "bound_at": 2148001188,
+   "handler": null,
+   "head": "0x8007e590",
+   "index_register": "v1",
+   "jr": 2148001216,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x7",
+    "offset": 7,
+    "width": 1
+   },
+   "table": 2148244600,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2148002116,
+   "handler": null,
+   "head": "0x8007e92c",
+   "index_register": "v1",
+   "jr": 2148002144,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x7",
+    "offset": 7,
+    "width": 1
+   },
+   "table": 2148244624,
+   "transform": []
+  },
+  {
+   "bound": 8,
+   "bound_at": 2148006284,
+   "handler": null,
+   "head": "0x8007f958",
+   "index_register": "v1",
+   "jr": 2148006312,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x6",
+    "offset": 6,
+    "width": 1
+   },
+   "table": 2148244656,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2148008132,
+   "handler": null,
+   "head": "0x800800b0",
+   "index_register": "v1",
+   "jr": 2148008160,
+   "source": {
+    "kind": "ctx_field",
+    "note": "a field of the context, at +0x6",
+    "offset": 6,
+    "width": 1
+   },
+   "table": 2148244688,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2148057524,
+   "handler": null,
+   "head": "0x8008c194",
+   "index_register": "v1",
+   "jr": 2148057556,
+   "source": {
+    "kind": "global",
+    "note": "a 2-byte read at 0x800e8ca8",
+    "offset": 2148437160,
+    "width": 2
+   },
+   "table": 2148245168,
+   "transform": []
+  },
+  {
+   "bound": 5,
+   "bound_at": 2148063436,
+   "handler": null,
+   "head": "0x8008d8a4",
+   "index_register": "v1",
+   "jr": 2148063464,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x8012bf9a",
+    "offset": 2148712346,
+    "width": 1
+   },
+   "table": 2148245248,
+   "transform": []
+  },
+  {
+   "bound": 5,
+   "bound_at": 2148065152,
+   "handler": null,
+   "head": "0x8008def4",
+   "index_register": "v1",
+   "jr": 2148065180,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x8012bf9c",
+    "offset": 2148712348,
+    "width": 1
+   },
+   "table": 2148245272,
+   "transform": []
+  },
+  {
+   "bound": 12,
+   "bound_at": 2148065248,
+   "handler": null,
+   "head": "0x8008dfa4",
+   "index_register": "v1",
+   "jr": 2148065276,
+   "source": {
+    "kind": "local",
+    "note": "a field at +0x1818 off v1, which this head's own code does not define: the enclosing function set it, so the head is inlined in a larger one and the dataflow starts before the body boundary",
+    "offset": 6168,
+    "width": 1
+   },
+   "table": 2148245296,
+   "transform": [
+    "addiu -35"
+   ]
+  },
+  {
+   "bound": 12,
+   "bound_at": 2148066020,
+   "handler": null,
+   "head": "0x8008e278",
+   "index_register": "a0",
+   "jr": 2148066052,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x8012bf9c",
+    "offset": 2148712348,
+    "width": 1
+   },
+   "table": 2148245352,
+   "transform": []
+  },
+  {
+   "bound": 14,
+   "bound_at": 2148069616,
+   "handler": null,
+   "head": "0x8008f0a8",
+   "index_register": "v1",
+   "jr": 2148069648,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x8012bf9c",
+    "offset": 2148712348,
+    "width": 1
+   },
+   "table": 2148245400,
+   "transform": []
+  },
+  {
+   "bound": 19,
+   "bound_at": 2148070552,
+   "handler": null,
+   "head": "0x8008f458",
+   "index_register": "v1",
+   "jr": 2148070584,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x8012bf9a",
+    "offset": 2148712346,
+    "width": 1
+   },
+   "table": 2148245472,
+   "transform": []
+  },
+  {
+   "bound": 5,
+   "bound_at": 2148075312,
+   "handler": null,
+   "head": "0x80090704",
+   "index_register": "v1",
+   "jr": 2148075344,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x8012bf9a",
+    "offset": 2148712346,
+    "width": 1
+   },
+   "table": 2148245552,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2148079448,
+   "handler": null,
+   "head": "0x80091738",
+   "index_register": "a0",
+   "jr": 2148079484,
+   "source": {
+    "kind": "argument",
+    "note": "the context pointer, used as an index"
+   },
+   "table": 2148245576,
+   "transform": []
+  },
+  {
+   "bound": 20,
+   "bound_at": 2148080240,
+   "handler": null,
+   "head": "0x80091a70",
+   "index_register": "a0",
+   "jr": 2148080268,
+   "source": {
+    "kind": "argument",
+    "note": "the context pointer, used as an index"
+   },
+   "table": 2148245608,
+   "transform": []
+  },
+  {
+   "bound": 5,
+   "bound_at": 2148082932,
+   "handler": null,
+   "head": "0x800924bc",
+   "index_register": "v1",
+   "jr": 2148082960,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x8012f522",
+    "offset": 2148726050,
+    "width": 1
+   },
+   "table": 2148245688,
+   "transform": []
+  },
+  {
+   "bound": 6,
+   "bound_at": 2148084308,
+   "handler": null,
+   "head": "0x80092a18",
+   "index_register": "v1",
+   "jr": 2148084336,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x8012bf9a",
+    "offset": 2148712346,
+    "width": 1
+   },
+   "table": 2148245712,
+   "transform": []
+  },
+  {
+   "bound": 21,
+   "bound_at": 2148093400,
+   "handler": null,
+   "head": "0x80094dbc",
+   "index_register": "v1",
+   "jr": 2148093428,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x8012bf9a",
+    "offset": 2148712346,
+    "width": 1
+   },
+   "table": 2148245760,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2148095572,
+   "handler": null,
+   "head": "0x8009562c",
+   "index_register": "v1",
+   "jr": 2148095600,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x8012bf9a",
+    "offset": 2148712346,
+    "width": 1
+   },
+   "table": 2148245848,
+   "transform": []
+  },
+  {
+   "bound": 7,
+   "bound_at": 2148112976,
+   "handler": null,
+   "head": "0x800996b4",
+   "index_register": "v1",
+   "jr": 2148113004,
+   "source": {
+    "kind": "global",
+    "note": "a 1-byte read at 0x80131780",
+    "offset": 2148734848,
+    "width": 1
+   },
+   "table": 2148246448,
+   "transform": [
+    "addiu -1"
+   ]
+  },
+  {
+   "bound": 11,
+   "bound_at": 2148126764,
+   "handler": null,
+   "head": "0x8009d018",
+   "index_register": "v1",
+   "jr": 2148126796,
+   "source": {
+    "kind": "global",
+    "note": "a 2-byte read at 0x8013272e",
+    "offset": 2148738862,
+    "width": 2
+   },
+   "table": 2148246616,
+   "transform": []
+  },
+  {
+   "bound": 12,
+   "bound_at": 2148128904,
+   "handler": null,
+   "head": "0x8009d878",
+   "index_register": "v1",
+   "jr": 2148128936,
+   "source": {
+    "kind": "global",
+    "note": "a 2-byte read at 0x8013272e",
+    "offset": 2148738862,
+    "width": 2
+   },
+   "table": 2148246664,
+   "transform": []
+  },
+  {
+   "bound": 15,
+   "bound_at": 2148130404,
+   "handler": null,
+   "head": "0x8009de50",
+   "index_register": "v1",
+   "jr": 2148130436,
+   "source": {
+    "kind": "global",
+    "note": "a 2-byte read at 0x8013272e",
+    "offset": 2148738862,
+    "width": 2
+   },
+   "table": 2148246712,
+   "transform": []
+  },
+  {
+   "bound": 5,
+   "bound_at": 2148136488,
+   "handler": null,
+   "head": "0x8009f60c",
+   "index_register": "v1",
+   "jr": 2148136520,
+   "source": {
+    "kind": "global",
+    "note": "a 4-byte read at 0x801344c4",
+    "offset": 2148746436,
+    "width": 4
+   },
+   "table": 2148246912,
+   "transform": []
+  },
+  {
+   "bound": 6,
+   "bound_at": 2148170676,
+   "handler": null,
+   "head": "0x800a7b64",
+   "index_register": "v1",
+   "jr": 2148170704,
+   "source": {
+    "kind": "argument",
+    "note": "the incoming argument a2, used as the index directly",
+    "register": "a2"
+   },
+   "table": 2148247424,
+   "transform": [
+    "addiu -250",
+    "andi 0xff"
+   ]
+  },
+  {
+   "bound": 6,
+   "bound_at": 2148171384,
+   "handler": null,
+   "head": "0x800a7e30",
+   "index_register": "v1",
+   "jr": 2148171412,
+   "source": {
+    "kind": "argument",
+    "note": "the incoming argument a2, used as the index directly",
+    "register": "a2"
+   },
+   "table": 2148247448,
+   "transform": [
+    "addiu -250",
+    "andi 0xff"
+   ]
+  },
+  {
+   "bound": 6,
+   "bound_at": 2148190640,
+   "handler": null,
+   "head": "0x800ac9a8",
+   "index_register": "v1",
+   "jr": 2148190668,
+   "source": {
+    "kind": "argument",
+    "note": "the context pointer, used as an index"
+   },
+   "table": 2148247648,
+   "transform": [
+    "addiu -128",
+    "andi 0xff"
+   ]
+  },
+  {
+   "bound": 6,
+   "bound_at": 2148190748,
+   "handler": null,
+   "head": "0x800aca08",
+   "index_register": "v1",
+   "jr": 2148190780,
+   "source": {
+    "kind": "argument",
+    "note": "the incoming argument a1, used as the index directly",
+    "register": "a1"
+   },
+   "table": 2148247672,
+   "transform": [
+    "addiu -128",
+    "andi 0xff"
+   ]
+  },
+  {
+   "bound": 6,
+   "bound_at": 2148191008,
+   "handler": null,
+   "head": "0x800acae4",
+   "index_register": "v1",
+   "jr": 2148191040,
+   "source": {
+    "kind": "argument",
+    "note": "the incoming argument a1, used as the index directly",
+    "register": "a1"
+   },
+   "table": 2148247696,
+   "transform": [
+    "addiu -128",
+    "andi 0xff"
+   ]
+  },
+  {
+   "bound": 5,
+   "bound_at": 2148204776,
+   "handler": null,
+   "head": "0x800affdc",
+   "index_register": "v1",
+   "jr": 2148204804,
+   "source": {
+    "kind": "argument",
+    "note": "the incoming argument a2, used as the index directly",
+    "register": "a2"
+   },
+   "table": 2148247728,
+   "transform": [
+    "andi 0xff"
+   ]
+  },
+  {
+   "bound": 114,
+   "bound_at": 2148206172,
+   "handler": null,
+   "head": "0x800b03cc",
+   "index_register": "v1",
+   "jr": 2148206200,
+   "source": {
+    "kind": "global",
+    "note": "a 4-byte read at 0x80158a70",
+    "offset": 2148895344,
+    "width": 4
+   },
+   "table": 2148247752,
+   "transform": [
+    "andi 0x7f"
+   ]
+  },
+  {
+   "bound": 17,
+   "bound_at": 2147795608,
+   "handler": null,
+   "head": "0x8004c21c",
+   "index_register": "v1",
+   "jr": 2147795628,
+   "source": {
+    "kind": "argument_pointer_field",
+    "note": "a field at +0x0 off the incoming argument a2",
+    "offset": 0,
+    "width": 1
+   },
+   "table": 2148577980,
+   "transform": [
+    "addiu -238"
+   ]
+  }
+ ],
+ "inputs": {
+  "heads": "manifests/dispatch_heads.json (M228)",
+  "image": "assets/unpacked/00000_0014420_1172240.bin",
+  "rule": "the `sltiu` bounding the index, then up to 10 backwards steps through shift/mask/add and one load; the source is classified only when the chain bottoms out on something this image names, and `unknown`/`local` otherwise",
+  "window": "the head's corpus body where one covers the dispatch, else at most 0x100 bytes behind it \u2014 a bounded window, and the artefact reports what the bound cost"
+ },
+ "non_script_heads": {
+  "by_kind": {
+   "argument": 15,
+   "argument_pointer_field": 2,
+   "command_field": 5,
+   "constant": 3,
+   "ctx_field": 19,
+   "global": 32,
+   "local": 4,
+   "stack_field": 1,
+   "unknown": 2
+  },
+  "count": 83
+ },
+ "not_claimed": [
+  "what each arm does: this is the index, not the meaning",
+  "the `local`/`unknown` heads: their index bottoms out on a base the trace cannot resolve, and the count is published rather than the gap filled in",
+  "that a `command_field` index is a script opcode: an opcode sub-field and a data byte read through the same pointer look identical here"
+ ],
+ "reading": "7 heads dispatch on a byte or word of the **command stream** (`u8[cmd+k]` / `u16[cmd+k]`) and 19 on a **field of the context**; 16 take an **argument** as the index directly, which is what a C-level switch compiled to a table looks like; 32 read a **global**; and 6 are `local`/`unknown`, where the bounded trace refuses rather than guesses.",
+ "schema": "head-index/1",
+ "script_heads": {
+  "by_kind": {
+   "argument": 1,
+   "command_field": 2
+  },
+  "count": 3
+ },
+ "tool": "head_index.py"
+}

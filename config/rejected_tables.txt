@@ -1,0 +1,13 @@
+# Jump tables whose entries are NOT standalone function entries. Consumed by
+# tools/find_jump_tables.py. Each line is `table_address  image  reason`, and the reason must be a
+# measurement, so a future session can overturn it by re-measuring.
+#
+# THRESHOLD (table-level): any single table whose entries produce an in_v1 function is rejected —
+# one is enough, because an entry that cannot be understood alone is not a function entry.
+#
+# A case block that reads a register nothing it sets decompiles with `undefined4 in_vN`. That is
+# a fragment of the dispatcher's body, not a function: seeding it creates a function that cannot be
+# understood alone. Rejecting the whole table is the conservative reading — the code is still in the
+# image and still reachable, it just is not a function entry.
+
+0x800b90e0  stage2  7 of 7 entries decompile with in_v1 (dispatcher 0x8005fd8c, table declared 7)

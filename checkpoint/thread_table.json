@@ -1,0 +1,30 @@
+{
+ "0": {
+  "pc": "0xdeadbeef",
+  "slices": 1,
+  "stack": "0x803ff000",
+  "state": "done",
+  "waiting_on": null
+ },
+ "1": {
+  "pc": "0x8000c9e0",
+  "slices": 1,
+  "stack": "0x00000000",
+  "state": "blocked",
+  "waiting_on": "0x8012bcf8"
+ },
+ "7": {
+  "pc": "0xdeadbeef",
+  "slices": 3,
+  "stack": "0x00000000",
+  "state": "done",
+  "waiting_on": null
+ },
+ "9": {
+  "pc": "0x8000c9e0",
+  "slices": 1,
+  "stack": "0x00000000",
+  "state": "blocked",
+  "waiting_on": "0x8012bd30"
+ }
+}

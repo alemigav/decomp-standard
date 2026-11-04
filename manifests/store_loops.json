@@ -1,0 +1,53 @@
+{
+ "tool": "find_store_loops.py",
+ "min_run": 8,
+ "images": [
+  {
+   "name": "stage2",
+   "base": "0x80018a80",
+   "runs": [
+    {
+     "store_at": "0x8007a770",
+     "table_base": "0x800e1530",
+     "entry_count": 27,
+     "stride": 4,
+     "stored_value": "0x80079470",
+     "distinct_values": 1,
+     "examples": [
+      "0x80079470"
+     ],
+     "op": "sw"
+    },
+    {
+     "store_at": "0x800324d0",
+     "table_base": "0x800e15f0",
+     "entry_count": 34,
+     "stride": 4,
+     "stored_value": null,
+     "distinct_values": 5,
+     "examples": [
+      "0x80161cf0",
+      "0x80162c1c",
+      "0x80163264",
+      "0x80164608"
+     ],
+     "op": "sw"
+    },
+    {
+     "store_at": "0x8003265c",
+     "table_base": "0x800e1770",
+     "entry_count": 30,
+     "stride": 4,
+     "stored_value": null,
+     "distinct_values": 3,
+     "examples": [
+      "0x8016e880",
+      "0x80171198",
+      "0x80171224"
+     ],
+     "op": "sw"
+    }
+   ]
+  }
+ ]
+}

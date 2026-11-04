@@ -1,0 +1,2553 @@
+{
+ "tool": "find_jump_tables.py",
+ "images": [
+  {
+   "name": "boot",
+   "base": "0x80000480",
+   "tables": [
+    {
+     "dispatcher": "0x80001710",
+     "table": "0x80011658",
+     "note": "table outside this image"
+    },
+    {
+     "dispatcher": "0x80002458",
+     "table": "0x800116b8",
+     "note": "table outside this image"
+    },
+    {
+     "dispatcher": "0x80003204",
+     "table": "0x80011790",
+     "note": "table outside this image"
+    },
+    {
+     "dispatcher": "0x80004db0",
+     "table": "0x80011910",
+     "note": "table outside this image"
+    }
+   ],
+   "targets": 0
+  },
+  {
+   "name": "stage2",
+   "base": "0x80018a80",
+   "tables": [
+    {
+     "dispatcher": "0x80024578",
+     "table": "0x800b69b0",
+     "declared_cases": 6,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80024800",
+     "table": "0x800b69e0",
+     "declared_cases": 6,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8002d5a0",
+     "table": "0x800b6ec0",
+     "declared_cases": 5,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80036fdc",
+     "table": "0x800b86c8",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80037218",
+     "table": "0x800b86e0",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8003a5f0",
+     "table": "0x800b8718",
+     "declared_cases": 8,
+     "entries": 8,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8003c690",
+     "table": "0x800b8760",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8003ce8c",
+     "table": "0x800b8788",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8003fadc",
+     "table": "0x800b87a8",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x800405ac",
+     "table": "0x800b87c0",
+     "declared_cases": 7,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8004b0f4",
+     "table": "0x800b8a48",
+     "declared_cases": 1,
+     "entries": 1,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8004bca8",
+     "table": "0x800b8a68",
+     "declared_cases": 17,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8004fd28",
+     "table": "0x800b8bd0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80050980",
+     "table": "0x800b8be8",
+     "declared_cases": 5,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80053634",
+     "table": "0x800b8c08",
+     "declared_cases": 8,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x800541f4",
+     "table": "0x800b8d40",
+     "declared_cases": 12,
+     "entries": 12,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80054a80",
+     "table": "0x800b8ef8",
+     "declared_cases": 13,
+     "entries": 13,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80057e38",
+     "table": "0x800b8f78",
+     "declared_cases": 7,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80057fac",
+     "table": "0x800b8f98",
+     "declared_cases": 8,
+     "entries": 8,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x800584f8",
+     "table": "0x800b8fb8",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80058880",
+     "table": "0x800b8fd0",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80058e44",
+     "table": "0x800b8ff0",
+     "declared_cases": 8,
+     "entries": 8,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80059550",
+     "table": "0x800b9010",
+     "declared_cases": 12,
+     "entries": 12,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80059884",
+     "table": "0x800b9040",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8005b50c",
+     "table": "0x800b9090",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8005fd8c",
+     "table": "0x800b90e0",
+     "entries": 0,
+     "declared_cases": 7,
+     "stop": "rejected: 7 of 7 entries decompile with in_v1 (dispatcher 0x8005fd8c, "
+    },
+    {
+     "dispatcher": "0x80061680",
+     "table": "0x800b9120",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80062590",
+     "table": "0x800b9140",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80066adc",
+     "table": "0x800b92a0",
+     "declared_cases": 13,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8006a1b0",
+     "table": "0x800b92d8",
+     "declared_cases": 14,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8006a550",
+     "table": "0x800b9310",
+     "declared_cases": 6,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8006c400",
+     "table": "0x800b94c8",
+     "declared_cases": 16,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8006c528",
+     "table": "0x800b9508",
+     "declared_cases": 12,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8006e6c8",
+     "table": "0x800b9540",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8006e86c",
+     "table": "0x800b9560",
+     "declared_cases": 12,
+     "entries": 12,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8006e9b0",
+     "table": "0x800b9590",
+     "declared_cases": 12,
+     "entries": 12,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8006fb88",
+     "table": "0x800b95c0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8006fca8",
+     "table": "0x800b95d8",
+     "declared_cases": 7,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8006ff50",
+     "table": "0x800b95f8",
+     "declared_cases": 44,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80070164",
+     "table": "0x800b96a8",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x800701e4",
+     "table": "0x800b96c8",
+     "declared_cases": 44,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x800704ec",
+     "table": "0x800b9778",
+     "declared_cases": 44,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x800708b4",
+     "table": "0x800b9840",
+     "declared_cases": 21,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x800711b0",
+     "table": "0x800b98e0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x800717c4",
+     "table": "0x800b98f8",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x800719ec",
+     "table": "0x800b9910",
+     "declared_cases": 15,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80071a60",
+     "table": "0x800b9950",
+     "declared_cases": 15,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80071bcc",
+     "table": "0x800b9990",
+     "declared_cases": 7,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80072808",
+     "table": "0x800b99b0",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x800748a8",
+     "table": "0x800b99d0",
+     "declared_cases": 6,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80077858",
+     "table": "0x800b9a50",
+     "declared_cases": 6,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8007ade8",
+     "table": "0x800b9be0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8007b548",
+     "table": "0x800b9bf8",
+     "declared_cases": 5,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8007e224",
+     "table": "0x800b9c40",
+     "declared_cases": 7,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8007e2f0",
+     "table": "0x800b9c60",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8007e5ac",
+     "table": "0x800b9c78",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8007e94c",
+     "table": "0x800b9c90",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8007f994",
+     "table": "0x800b9cb0",
+     "declared_cases": 8,
+     "entries": 8,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x800800cc",
+     "table": "0x800b9cd0",
+     "declared_cases": 7,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8008c1c0",
+     "table": "0x800b9eb0",
+     "declared_cases": 7,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8008d8d4",
+     "table": "0x800b9f00",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8008df88",
+     "table": "0x800b9f18",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8008dfe8",
+     "table": "0x800b9f30",
+     "declared_cases": 12,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8008e2f0",
+     "table": "0x800b9f68",
+     "declared_cases": 12,
+     "entries": 12,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8008f0fc",
+     "table": "0x800b9f98",
+     "declared_cases": 14,
+     "entries": 14,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8008f4a4",
+     "table": "0x800b9fe0",
+     "declared_cases": 19,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8009073c",
+     "table": "0x800ba030",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80091768",
+     "table": "0x800ba048",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80091a78",
+     "table": "0x800ba068",
+     "declared_cases": 20,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x800924fc",
+     "table": "0x800ba0b8",
+     "declared_cases": 5,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80092a5c",
+     "table": "0x800ba0d0",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80094de0",
+     "table": "0x800ba100",
+     "declared_cases": 21,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8009565c",
+     "table": "0x800ba158",
+     "declared_cases": 7,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80099a58",
+     "table": "0x800ba3b0",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8009d038",
+     "table": "0x800ba458",
+     "declared_cases": 11,
+     "entries": 11,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8009d894",
+     "table": "0x800ba488",
+     "declared_cases": 12,
+     "entries": 12,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8009de70",
+     "table": "0x800ba4b8",
+     "declared_cases": 15,
+     "entries": 15,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8009f634",
+     "table": "0x800ba580",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x800a7bbc",
+     "table": "0x800ba780",
+     "declared_cases": 6,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x800a7e80",
+     "table": "0x800ba798",
+     "declared_cases": 6,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x800ac9b8",
+     "table": "0x800ba860",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x800aca28",
+     "table": "0x800ba878",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x800acb2c",
+     "table": "0x800ba890",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x800b00f0",
+     "table": "0x800ba8b0",
+     "declared_cases": 5,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x800b0664",
+     "table": "0x800ba8c8",
+     "declared_cases": 114,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    }
+   ],
+   "targets": 345
+  },
+  {
+   "name": "ovl_007688e",
+   "base": "0x8015b030",
+   "tables": [
+    {
+     "dispatcher": "0x8015b870",
+     "table": "0x80160420",
+     "declared_cases": 8,
+     "entries": 8,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8015ded8",
+     "table": "0x80160470",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801602d0",
+     "table": "0x801604a0",
+     "declared_cases": 5,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    }
+   ],
+   "targets": 15
+  },
+  {
+   "name": "ovl_0078c0e",
+   "base": "0x8017b410",
+   "tables": [
+    {
+     "dispatcher": "0x8017d2c0",
+     "table": "0x80180208",
+     "declared_cases": 21,
+     "entries": 21,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8017e368",
+     "table": "0x80180260",
+     "declared_cases": 21,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8017ff3c",
+     "table": "0x801803b8",
+     "declared_cases": 12,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    }
+   ],
+   "targets": 21
+  },
+  {
+   "name": "ovl_007af7a",
+   "base": "0x8017b410",
+   "tables": [
+    {
+     "dispatcher": "0x8017bd2c",
+     "table": "0x8017dde0",
+     "declared_cases": 5,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    }
+   ],
+   "targets": 0
+  },
+  {
+   "name": "ovl_007c552",
+   "base": "0x8016e880",
+   "tables": [
+    {
+     "dispatcher": "0x8016edec",
+     "table": "0x80171780",
+     "declared_cases": 19,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    }
+   ],
+   "targets": 0
+  },
+  {
+   "name": "ovl_007e132",
+   "base": "0x8017b410",
+   "tables": [
+    {
+     "dispatcher": "0x8017e234",
+     "table": "0x8017e378",
+     "declared_cases": 16,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    }
+   ],
+   "targets": 0
+  },
+  {
+   "name": "ovl_007fc12",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x80163f90",
+     "table": "0x8016dd18",
+     "declared_cases": 10,
+     "entries": 10,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164ba8",
+     "table": "0x8016dd68",
+     "declared_cases": 9,
+     "entries": 9,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801650cc",
+     "table": "0x8016dd90",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801654a0",
+     "table": "0x8016ddb0",
+     "declared_cases": 9,
+     "entries": 9,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165a94",
+     "table": "0x8016dde0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80168808",
+     "table": "0x8016de00",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016a364",
+     "table": "0x8016de28",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016aae0",
+     "table": "0x8016de48",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016b684",
+     "table": "0x8016de68",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016b89c",
+     "table": "0x8016de80",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016bc64",
+     "table": "0x8016de98",
+     "declared_cases": 12,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8016c1b0",
+     "table": "0x8016ded8",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016c734",
+     "table": "0x8016df00",
+     "declared_cases": 9,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8016cbc0",
+     "table": "0x8016df28",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016cf18",
+     "table": "0x8016df48",
+     "declared_cases": 9,
+     "entries": 9,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016d9b4",
+     "table": "0x8016df78",
+     "declared_cases": 5,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    }
+   ],
+   "targets": 90
+  },
+  {
+   "name": "ovl_0087352",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x8016236c",
+     "table": "0x80166400",
+     "declared_cases": 15,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x801627ec",
+     "table": "0x80166440",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80163208",
+     "table": "0x80166458",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016376c",
+     "table": "0x80166478",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80163b90",
+     "table": "0x80166490",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801640b0",
+     "table": "0x801664a8",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164538",
+     "table": "0x801664c0",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164c28",
+     "table": "0x801664d8",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164ef4",
+     "table": "0x801664f0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165870",
+     "table": "0x80166508",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801662f8",
+     "table": "0x80166520",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    }
+   ],
+   "targets": 58
+  },
+  {
+   "name": "ovl_008900e",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x801623a4",
+     "table": "0x801686d0",
+     "declared_cases": 7,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80162c84",
+     "table": "0x801686f0",
+     "declared_cases": 19,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80162e18",
+     "table": "0x80168740",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80163164",
+     "table": "0x80168760",
+     "declared_cases": 5,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80164458",
+     "table": "0x80168788",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164c08",
+     "table": "0x801687a0",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164e18",
+     "table": "0x801687b8",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801651ac",
+     "table": "0x801687d8",
+     "declared_cases": 7,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x801654fc",
+     "table": "0x80168800",
+     "declared_cases": 8,
+     "entries": 8,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165a40",
+     "table": "0x80168840",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80166454",
+     "table": "0x80168860",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80166ba0",
+     "table": "0x80168878",
+     "declared_cases": 19,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80167054",
+     "table": "0x801688c8",
+     "declared_cases": 8,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8016778c",
+     "table": "0x801688e8",
+     "declared_cases": 8,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80167864",
+     "table": "0x80168908",
+     "declared_cases": 6,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80167c98",
+     "table": "0x80168920",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80168010",
+     "table": "0x80168938",
+     "declared_cases": 6,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    }
+   ],
+   "targets": 51
+  },
+  {
+   "name": "ovl_008bef8",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x80162e1c",
+     "table": "0x80165ef0",
+     "declared_cases": 6,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80163254",
+     "table": "0x80165f08",
+     "declared_cases": 8,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80163780",
+     "table": "0x80165f28",
+     "declared_cases": 6,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80164090",
+     "table": "0x80165f40",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164a3c",
+     "table": "0x80165f58",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164ba8",
+     "table": "0x80165f70",
+     "declared_cases": 7,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80165388",
+     "table": "0x80166028",
+     "declared_cases": 19,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    }
+   ],
+   "targets": 10
+  },
+  {
+   "name": "ovl_008e046",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x801623a4",
+     "table": "0x80166f60",
+     "declared_cases": 7,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80162c84",
+     "table": "0x80166f80",
+     "declared_cases": 19,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80162e18",
+     "table": "0x80166fd0",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80163164",
+     "table": "0x80166ff0",
+     "declared_cases": 5,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x801643cc",
+     "table": "0x80167018",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164b88",
+     "table": "0x80167030",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164d7c",
+     "table": "0x80167050",
+     "declared_cases": 8,
+     "entries": 8,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801652c0",
+     "table": "0x80167090",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801659dc",
+     "table": "0x801670a8",
+     "declared_cases": 19,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80165e5c",
+     "table": "0x801670f8",
+     "declared_cases": 8,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x801667d4",
+     "table": "0x80167118",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80166b04",
+     "table": "0x80167130",
+     "declared_cases": 6,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    }
+   ],
+   "targets": 38
+  },
+  {
+   "name": "ovl_0090698",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x80161fe4",
+     "table": "0x80167bd0",
+     "declared_cases": 12,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x801628bc",
+     "table": "0x80167c10",
+     "declared_cases": 9,
+     "entries": 9,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80163290",
+     "table": "0x80167c38",
+     "declared_cases": 9,
+     "entries": 9,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80163d9c",
+     "table": "0x80167c60",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801667d4",
+     "table": "0x80167c80",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    }
+   ],
+   "targets": 30
+  },
+  {
+   "name": "ovl_0093192",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x80161eb8",
+     "table": "0x80162cf0",
+     "declared_cases": 6,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    }
+   ],
+   "targets": 0
+  },
+  {
+   "name": "ovl_0093aba",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x80162904",
+     "table": "0x80165398",
+     "declared_cases": 12,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80162fb4",
+     "table": "0x801653d0",
+     "declared_cases": 15,
+     "entries": 15,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80163f00",
+     "table": "0x80165410",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164174",
+     "table": "0x80165428",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801650e0",
+     "table": "0x80165440",
+     "declared_cases": 11,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    }
+   ],
+   "targets": 26
+  },
+  {
+   "name": "ovl_0095446",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x801638b4",
+     "table": "0x80167e70",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165e5c",
+     "table": "0x80167e88",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016629c",
+     "table": "0x80167ea0",
+     "declared_cases": 10,
+     "entries": 10,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80166f1c",
+     "table": "0x80167ed8",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016798c",
+     "table": "0x80167ef0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    }
+   ],
+   "targets": 33
+  },
+  {
+   "name": "ovl_0097e42",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x801630fc",
+     "table": "0x801637c8",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016364c",
+     "table": "0x801637e0",
+     "declared_cases": 19,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    }
+   ],
+   "targets": 5
+  },
+  {
+   "name": "ovl_0098ee0",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x801623ec",
+     "table": "0x80166070",
+     "declared_cases": 19,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8016479c",
+     "table": "0x801660c0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801648ac",
+     "table": "0x801660d8",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801649b0",
+     "table": "0x801660f0",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164aec",
+     "table": "0x80166108",
+     "declared_cases": 18,
+     "entries": 18,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164edc",
+     "table": "0x80166150",
+     "declared_cases": 12,
+     "entries": 12,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801656f0",
+     "table": "0x80166180",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165b60",
+     "table": "0x801661a0",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165d78",
+     "table": "0x801661b8",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165ee4",
+     "table": "0x801661d0",
+     "declared_cases": 7,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    }
+   ],
+   "targets": 64
+  },
+  {
+   "name": "ovl_009aed0",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x801626ec",
+     "table": "0x80165ff0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164804",
+     "table": "0x80166020",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801649a8",
+     "table": "0x80166038",
+     "declared_cases": 19,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80164e54",
+     "table": "0x80166088",
+     "declared_cases": 10,
+     "entries": 10,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801659f4",
+     "table": "0x801660b0",
+     "declared_cases": 12,
+     "entries": 12,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165e08",
+     "table": "0x801660e0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    }
+   ],
+   "targets": 38
+  },
+  {
+   "name": "ovl_009d3ba",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x80162ea0",
+     "table": "0x80162fd0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    }
+   ],
+   "targets": 5
+  },
+  {
+   "name": "ovl_00a0344",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x80162518",
+     "table": "0x80163cf0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80162b24",
+     "table": "0x80163d08",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    }
+   ],
+   "targets": 11
+  },
+  {
+   "name": "ovl_00a1414",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x801637e0",
+     "table": "0x80168d88",
+     "declared_cases": 12,
+     "entries": 12,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016439c",
+     "table": "0x80168db8",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801647e4",
+     "table": "0x80168dd0",
+     "declared_cases": 8,
+     "entries": 8,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165048",
+     "table": "0x80168df0",
+     "declared_cases": 10,
+     "entries": 10,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165944",
+     "table": "0x80168e18",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165bfc",
+     "table": "0x80168e30",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165e00",
+     "table": "0x80168e48",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80167ff4",
+     "table": "0x80168e68",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    }
+   ],
+   "targets": 59
+  },
+  {
+   "name": "ovl_00a43b6",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x8016379c",
+     "table": "0x80169690",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165050",
+     "table": "0x801696b0",
+     "declared_cases": 9,
+     "entries": 9,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165730",
+     "table": "0x801696d8",
+     "declared_cases": 11,
+     "entries": 11,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801669dc",
+     "table": "0x80169708",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80168b18",
+     "table": "0x80169720",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    }
+   ],
+   "targets": 37
+  },
+  {
+   "name": "ovl_00a733e",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x80162470",
+     "table": "0x80167c90",
+     "declared_cases": 13,
+     "entries": 13,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80163e08",
+     "table": "0x80167cc8",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165ebc",
+     "table": "0x80167ce0",
+     "declared_cases": 12,
+     "entries": 12,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    }
+   ],
+   "targets": 31
+  },
+  {
+   "name": "ovl_00a9d94",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x801626f4",
+     "table": "0x8016c150",
+     "declared_cases": 10,
+     "entries": 10,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801632f8",
+     "table": "0x8016c178",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801648d8",
+     "table": "0x8016c198",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165b60",
+     "table": "0x8016c1b0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165c38",
+     "table": "0x8016c1c8",
+     "declared_cases": 6,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80166318",
+     "table": "0x8016c1e0",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80166dd4",
+     "table": "0x8016c200",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80169c34",
+     "table": "0x8016c228",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016a43c",
+     "table": "0x8016c248",
+     "declared_cases": 7,
+     "entries": 7,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016ad34",
+     "table": "0x8016c268",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    }
+   ],
+   "targets": 57
+  },
+  {
+   "name": "ovl_00ae24a",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x80162ce4",
+     "table": "0x80166e30",
+     "declared_cases": 15,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x8016478c",
+     "table": "0x80166e70",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165968",
+     "table": "0x80166e88",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165f00",
+     "table": "0x80166ea0",
+     "declared_cases": 8,
+     "entries": 8,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80166530",
+     "table": "0x80166ec0",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    }
+   ],
+   "targets": 25
+  },
+  {
+   "name": "ovl_00b08a2",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x80162618",
+     "table": "0x80166f40",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016287c",
+     "table": "0x80166f58",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80162ea4",
+     "table": "0x80166f70",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801637b8",
+     "table": "0x80166f88",
+     "declared_cases": 10,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80163ad4",
+     "table": "0x80166fb0",
+     "declared_cases": 10,
+     "entries": 0,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": [
+      "entries not monotone"
+     ]
+    },
+    {
+     "dispatcher": "0x80164114",
+     "table": "0x80166fd8",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164420",
+     "table": "0x80166ff0",
+     "declared_cases": 11,
+     "entries": 11,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164c6c",
+     "table": "0x80167020",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80164e54",
+     "table": "0x80167038",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016526c",
+     "table": "0x80167050",
+     "declared_cases": 8,
+     "entries": 8,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80165db8",
+     "table": "0x80167070",
+     "declared_cases": 6,
+     "entries": 6,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x80166018",
+     "table": "0x80167088",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x8016627c",
+     "table": "0x801670a0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    }
+   ],
+   "targets": 68
+  },
+  {
+   "name": "ovl_00b2d7a",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x80162410",
+     "table": "0x801625a0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    }
+   ],
+   "targets": 5
+  },
+  {
+   "name": "ovl_00b321e",
+   "base": "0x80161cf0",
+   "tables": [
+    {
+     "dispatcher": "0x80162e6c",
+     "table": "0x801665f0",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    },
+    {
+     "dispatcher": "0x801659b8",
+     "table": "0x80166608",
+     "declared_cases": 5,
+     "entries": 5,
+     "entries_with_prologue": 0,
+     "stop": null,
+     "rejected": []
+    }
+   ],
+   "targets": 10
+  }
+ ]
+}

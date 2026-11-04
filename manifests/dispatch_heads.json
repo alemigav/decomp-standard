@@ -1,0 +1,2687 @@
+{
+ "census": {
+  "bounds": [
+   1,
+   5,
+   6,
+   7,
+   8,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   19,
+   20,
+   21,
+   44,
+   114
+  ],
+  "heads": 86,
+  "heads_that_are_corpus_starts": 80,
+  "heads_that_are_handlers": 3,
+  "heads_with_jal_callers": 37,
+  "largest": 114,
+  "tables": 86,
+  "tables_outside_the_image": [
+   "0x8010b2bc"
+  ]
+ },
+ "entries": [
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 3,
+   "head_body": {
+    "end": 2147632531,
+    "start": 2147632472
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147634756,
+    2147636244
+   ],
+   "jr_sites": [
+    2147632524
+   ],
+   "table": 2148231600,
+   "targets": [
+    2147632532,
+    2147633008,
+    2147633008,
+    2147632640,
+    2147632640,
+    2147633008
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 4,
+   "head_body": {
+    "end": 2147633179,
+    "start": 2147633028
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147634980,
+    2147637000
+   ],
+   "jr_sites": [
+    2147633172
+   ],
+   "table": 2148231648,
+   "targets": [
+    2147633552,
+    2147634480,
+    2147633180,
+    2147633552,
+    2147633180,
+    2147633636
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 3,
+   "head_body": {
+    "end": 2147669775,
+    "start": 2147668784
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147670632,
+    2147685260
+   ],
+   "jr_sites": [
+    2147669428
+   ],
+   "table": 2148232896,
+   "targets": [
+    2147669436,
+    2147669444,
+    2147669444,
+    2147669452,
+    2147669452
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 6,
+   "head_body": {
+    "end": 2147708919,
+    "start": 2147708772
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147708912
+   ],
+   "table": 2148239048,
+   "targets": [
+    2147708920,
+    2147708968,
+    2147709020,
+    2147709068,
+    2147709120,
+    2147709188
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 6,
+   "head_body": {
+    "end": 2147709491,
+    "start": 2147709348
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147709484
+   ],
+   "table": 2148239072,
+   "targets": [
+    2147709492,
+    2147709508,
+    2147709524,
+    2147709540,
+    2147709556,
+    2147709592
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 8,
+   "distinct_targets": 8,
+   "head_body": {
+    "end": 2147722763,
+    "start": 2147722640
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147722756
+   ],
+   "table": 2148239128,
+   "targets": [
+    2147722764,
+    2147723648,
+    2147723660,
+    2147723672,
+    2147723688,
+    2147723720,
+    2147723748,
+    2147723776
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2147731115,
+    "start": 2147730972
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147731108
+   ],
+   "table": 2148239200,
+   "targets": [
+    2147731116,
+    2147731496,
+    2147731516,
+    2147731536,
+    2147731556
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2147733159,
+    "start": 2147733000
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147733152
+   ],
+   "table": 2148239240,
+   "targets": [
+    2147733160,
+    2147733476,
+    2147733580,
+    2147733636,
+    2147733724
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2147744503,
+    "start": 2147744416
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147744496
+   ],
+   "table": 2148239272,
+   "targets": [
+    2147744504,
+    2147745088,
+    2147745496,
+    2147745744,
+    2147746192
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 4,
+   "head_body": {
+    "end": 2147747731,
+    "start": 2147747204
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147747264
+   ],
+   "table": 2148239296,
+   "targets": [
+    2147747272,
+    2147747328,
+    2147747688,
+    2147747328,
+    2147747688,
+    2147747688,
+    2147747556
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 1,
+   "distinct_targets": 1,
+   "head_body": {
+    "end": 2147791119,
+    "start": 2147791016
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147790828
+   ],
+   "jr_sites": [
+    2147791112
+   ],
+   "table": 2148239944,
+   "targets": [
+    2147791120
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 17,
+   "distinct_targets": 12,
+   "head_body": {
+    "end": 2147794795,
+    "start": 2147793908
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147792632
+   ],
+   "jr_sites": [
+    2147794104
+   ],
+   "table": 2148239976,
+   "targets": [
+    2147794200,
+    2147794244,
+    2147794284,
+    2147794376,
+    2147794376,
+    2147794376,
+    2147794376,
+    2147794652,
+    2147794376,
+    2147794368,
+    2147794328,
+    2147794140,
+    2147794120,
+    2147794376,
+    2147794164,
+    2147794112,
+    2147794124
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2147810627,
+    "start": 2147810588
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147810492
+   ],
+   "jr_sites": [
+    2147810620
+   ],
+   "table": 2148240336,
+   "targets": [
+    2147810628,
+    2147810644,
+    2147810720,
+    2147810804,
+    2147810896
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2147814939,
+    "start": 2147813732
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147811188
+   ],
+   "jr_sites": [
+    2147813780
+   ],
+   "table": 2148240360,
+   "targets": [
+    2147814924,
+    2147813788,
+    2147813884,
+    2147814640,
+    2147814776
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 8,
+   "distinct_targets": 8,
+   "head_body": {
+    "end": 2147825231,
+    "start": 2147825164
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147827980,
+    2147830168
+   ],
+   "jr_sites": [
+    2147825224
+   ],
+   "table": 2148240392,
+   "targets": [
+    2147825232,
+    2147825328,
+    2147825408,
+    2147825464,
+    2147825244,
+    2147825340,
+    2147825420,
+    2147825476
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 12,
+   "distinct_targets": 12,
+   "head_body": {
+    "end": 2147828239,
+    "start": 2147827952
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147823520
+   ],
+   "jr_sites": [
+    2147828232
+   ],
+   "table": 2148240704,
+   "targets": [
+    2147828240,
+    2147828372,
+    2147828472,
+    2147828720,
+    2147828876,
+    2147828992,
+    2147829236,
+    2147829324,
+    2147829684,
+    2147829776,
+    2147829900,
+    2147829964
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 13,
+   "distinct_targets": 13,
+   "head_body": {
+    "end": 2147830427,
+    "start": 2147830140
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147823536
+   ],
+   "jr_sites": [
+    2147830420
+   ],
+   "table": 2148241144,
+   "targets": [
+    2147830428,
+    2147830632,
+    2147830692,
+    2147830776,
+    2147830848,
+    2147830940,
+    2147831032,
+    2147831112,
+    2147831236,
+    2147831308,
+    2147831392,
+    2147831512,
+    2147831528
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": {
+    "end": 2147843947,
+    "start": 2147843612
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147843660
+   ],
+   "table": 2148241272,
+   "targets": [
+    2147843668,
+    2147843724,
+    2147843736,
+    2147843932,
+    2147843816,
+    2147843836,
+    2147843872
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 8,
+   "distinct_targets": 8,
+   "head_body": {
+    "end": 2147844039,
+    "start": 2147843956
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147844032
+   ],
+   "table": 2148241304,
+   "targets": [
+    2147844040,
+    2147844112,
+    2147844200,
+    2147844292,
+    2147844564,
+    2147844672,
+    2147844848,
+    2147844888
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2147845395,
+    "start": 2147845340
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147845388
+   ],
+   "table": 2148241336,
+   "targets": [
+    2147845396,
+    2147845504,
+    2147845620,
+    2147845640,
+    2147846044
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": {
+    "end": 2147846299,
+    "start": 2147846232
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147846292
+   ],
+   "table": 2148241360,
+   "targets": [
+    2147846300,
+    2147846332,
+    2147846416,
+    2147846564,
+    2147847004,
+    2147847144,
+    2147847284
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 8,
+   "distinct_targets": 8,
+   "head_body": {
+    "end": 2147847775,
+    "start": 2147847704
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147847768
+   ],
+   "table": 2148241392,
+   "targets": [
+    2147847776,
+    2147847820,
+    2147847992,
+    2147848012,
+    2147848032,
+    2147848052,
+    2147848256,
+    2147848300
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 12,
+   "distinct_targets": 12,
+   "head_body": {
+    "end": 2147849579,
+    "start": 2147849520
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147849572
+   ],
+   "table": 2148241424,
+   "targets": [
+    2147849580,
+    2147849672,
+    2147849752,
+    2147849788,
+    2147849860,
+    2147849896,
+    2147849976,
+    2147850012,
+    2147850140,
+    2147850216,
+    2147850240,
+    2147850288
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": {
+    "end": 2147850399,
+    "start": 2147850344
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147850392
+   ],
+   "table": 2148241472,
+   "targets": [
+    2147850400,
+    2147850492,
+    2147850656,
+    2147850784,
+    2147850860,
+    2147850884,
+    2147850932
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": {
+    "end": 2147857703,
+    "start": 2147857624
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147855932,
+    2147856216,
+    2147856500
+   ],
+   "jr_sites": [
+    2147857696
+   ],
+   "table": 2148241552,
+   "targets": [
+    2147857704,
+    2147857764,
+    2147857820,
+    2147857860,
+    2147857900,
+    2147857952,
+    2147858008
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": {
+    "end": 2147879035,
+    "start": 2147876064
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147834852
+   ],
+   "jr_sites": [
+    2147876256
+   ],
+   "table": 2148241632,
+   "targets": [
+    2147876264,
+    2147876596,
+    2147877708,
+    2147877888,
+    2147878092,
+    2147878168,
+    2147878756
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 6,
+   "head_body": {
+    "end": 2147882651,
+    "start": 2147882440
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147882644
+   ],
+   "table": 2148241696,
+   "targets": [
+    2147882652,
+    2147882780,
+    2147882896,
+    2147883612,
+    2147883652,
+    2147883800
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 6,
+   "head_body": {
+    "end": 2147886507,
+    "start": 2147886420
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147886500
+   ],
+   "table": 2148241728,
+   "targets": [
+    2147886508,
+    2147886716,
+    2147886772,
+    2147887072,
+    2147887112,
+    2147887260
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 13,
+   "distinct_targets": 11,
+   "head_body": {
+    "end": 2147904575,
+    "start": 2147903444
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147802376,
+    2147804408,
+    2147804732,
+    2147805284,
+    2147805704,
+    2148002636,
+    2148047320,
+    2148116464
+   ],
+   "jr_sites": [
+    2147904240
+   ],
+   "table": 2148242080,
+   "targets": [
+    2147904248,
+    2147904268,
+    2147904304,
+    2147904328,
+    2147904352,
+    2147904376,
+    2147904400,
+    2147904248,
+    2147904248,
+    2147904424,
+    2147904444,
+    2147904464,
+    2147904484
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 14,
+   "distinct_targets": 13,
+   "head_body": {
+    "end": 2147918891,
+    "start": 2147917596
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147720796,
+    2147724088,
+    2147724748,
+    2147725700,
+    2147726352,
+    2147727116,
+    2147727380,
+    2147727828,
+    2147734324,
+    2147735248,
+    2147735580,
+    2147736916,
+    2147738484,
+    2147739900,
+    2147740392,
+    2147747848,
+    2147804460,
+    2147804676,
+    2147805340,
+    2147805628,
+    2147814224,
+    2147846620,
+    2147862752,
+    2147876564,
+    2147877044,
+    2148002508,
+    2148046972,
+    2148117004
+   ],
+   "jr_sites": [
+    2147918276
+   ],
+   "table": 2148242136,
+   "targets": [
+    2147918624,
+    2147918284,
+    2147918316,
+    2147918348,
+    2147918380,
+    2147918412,
+    2147918444,
+    2147918476,
+    2147918508,
+    2147918624,
+    2147918824,
+    2147918540,
+    2147918568,
+    2147918596
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 6,
+   "head_body": {
+    "end": 2147919559,
+    "start": 2147919056
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147919200
+   ],
+   "table": 2148242192,
+   "targets": [
+    2147919208,
+    2147919236,
+    2147919444,
+    2147919264,
+    2147919292,
+    2147919320
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 16,
+   "distinct_targets": 10,
+   "head_body": {
+    "end": 2147927363,
+    "start": 2147926228
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147927060
+   ],
+   "table": 2148242632,
+   "targets": [
+    2147927068,
+    2147927204,
+    2147927560,
+    2147927996,
+    2147928780,
+    2147927148,
+    2147927176,
+    2147927004,
+    2147928800,
+    2147927004,
+    2147927004,
+    2147927004,
+    2147927004,
+    2147927004,
+    2147927004,
+    2147927100
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 12,
+   "distinct_targets": 7,
+   "head_body": {
+    "end": 2147927363,
+    "start": 2147926228
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147927356
+   ],
+   "table": 2148242696,
+   "targets": [
+    2147927364,
+    2147927380,
+    2147927392,
+    2147927404,
+    2147927448,
+    2147927548,
+    2147927548,
+    2147927548,
+    2147927548,
+    2147927548,
+    2147927548,
+    2147927424
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": null,
+   "head_is_corpus_start": false,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147935960
+   ],
+   "table": 2148242752,
+   "targets": [
+    2147935968,
+    2147935980,
+    2147935988,
+    2147936000,
+    2147936008,
+    2147936020,
+    2147936032
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 12,
+   "distinct_targets": 12,
+   "head_body": {
+    "end": 2147936391,
+    "start": 2147936312
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147936204,
+    2147936288,
+    2147943492,
+    2147943608
+   ],
+   "jr_sites": [
+    2147936384
+   ],
+   "table": 2148242784,
+   "targets": [
+    2147936392,
+    2147936408,
+    2147936424,
+    2147936444,
+    2147936500,
+    2147936556,
+    2147936572,
+    2147936588,
+    2147936604,
+    2147936620,
+    2147936636,
+    2147936648
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 12,
+   "distinct_targets": 12,
+   "head_body": {
+    "end": 2147936715,
+    "start": 2147936664
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147936708
+   ],
+   "table": 2148242832,
+   "targets": [
+    2147936716,
+    2147936724,
+    2147936732,
+    2147936756,
+    2147936816,
+    2147936876,
+    2147936884,
+    2147936892,
+    2147936900,
+    2147936912,
+    2147936924,
+    2147936932
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": null,
+   "head_is_corpus_start": false,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147941276
+   ],
+   "table": 2148242880,
+   "targets": [
+    2147941284,
+    2147941316,
+    2147941348,
+    2147941392,
+    2147941436
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": {
+    "end": 2147941679,
+    "start": 2147941468
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": "0x6e",
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147941564
+   ],
+   "table": 2148242904,
+   "targets": [
+    2147941588,
+    2147941612,
+    2147941572,
+    2147941580,
+    2147941624,
+    2147941632,
+    2147941640
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 44,
+   "distinct_targets": 44,
+   "head_body": {
+    "end": 2147942607,
+    "start": 2147942216
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147942084,
+    2147942176
+   ],
+   "jr_sites": [
+    2147942244
+   ],
+   "table": 2148242936,
+   "targets": [
+    2147942260,
+    2147942252,
+    2147942268,
+    2147942276,
+    2147942284,
+    2147942292,
+    2147942300,
+    2147942308,
+    2147942316,
+    2147942324,
+    2147942332,
+    2147942340,
+    2147942348,
+    2147942356,
+    2147942364,
+    2147942372,
+    2147942380,
+    2147942388,
+    2147942396,
+    2147942404,
+    2147942412,
+    2147942420,
+    2147942428,
+    2147942436,
+    2147942444,
+    2147942452,
+    2147942460,
+    2147942468,
+    2147942476,
+    2147942484,
+    2147942492,
+    2147942500,
+    2147942508,
+    2147942516,
+    2147942524,
+    2147942532,
+    2147942540,
+    2147942548,
+    2147942556,
+    2147942564,
+    2147942572,
+    2147942580,
+    2147942588,
+    2147942596
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": {
+    "end": 2147942779,
+    "start": 2147942688
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": "0x3e",
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147942772
+   ],
+   "table": 2148243112,
+   "targets": [
+    2147942780,
+    2147942792,
+    2147942800,
+    2147942812,
+    2147942820,
+    2147942832,
+    2147942844
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 44,
+   "distinct_targets": 44,
+   "head_body": {
+    "end": 2147943435,
+    "start": 2147942872
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147942644,
+    2147942728
+   ],
+   "jr_sites": [
+    2147942900
+   ],
+   "table": 2148243144,
+   "targets": [
+    2147942920,
+    2147942908,
+    2147942932,
+    2147942944,
+    2147942956,
+    2147942968,
+    2147942980,
+    2147942992,
+    2147943004,
+    2147943016,
+    2147943028,
+    2147943040,
+    2147943052,
+    2147943064,
+    2147943076,
+    2147943088,
+    2147943100,
+    2147943112,
+    2147943124,
+    2147943136,
+    2147943148,
+    2147943160,
+    2147943172,
+    2147943184,
+    2147943196,
+    2147943208,
+    2147943220,
+    2147943232,
+    2147943244,
+    2147943256,
+    2147943268,
+    2147943280,
+    2147943292,
+    2147943304,
+    2147943316,
+    2147943328,
+    2147943340,
+    2147943352,
+    2147943364,
+    2147943376,
+    2147943388,
+    2147943400,
+    2147943412,
+    2147943424
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 44,
+   "distinct_targets": 44,
+   "head_body": {
+    "end": 2147944139,
+    "start": 2147943648
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147943476,
+    2147943568
+   ],
+   "jr_sites": [
+    2147943680
+   ],
+   "table": 2148243320,
+   "targets": [
+    2147943696,
+    2147943688,
+    2147943704,
+    2147943728,
+    2147943744,
+    2147943760,
+    2147943776,
+    2147943792,
+    2147943800,
+    2147943816,
+    2147943832,
+    2147943840,
+    2147943848,
+    2147943856,
+    2147943864,
+    2147943872,
+    2147943880,
+    2147943888,
+    2147943896,
+    2147943904,
+    2147943912,
+    2147943920,
+    2147943928,
+    2147943936,
+    2147943944,
+    2147943952,
+    2147943960,
+    2147943968,
+    2147943984,
+    2147943992,
+    2147944000,
+    2147944008,
+    2147944024,
+    2147944032,
+    2147944040,
+    2147944048,
+    2147944056,
+    2147944064,
+    2147944072,
+    2147944080,
+    2147944088,
+    2147944096,
+    2147944104,
+    2147944112
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 21,
+   "distinct_targets": 8,
+   "head_body": {
+    "end": 2147946871,
+    "start": 2147944200
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147897156
+   ],
+   "jr_sites": [
+    2147944648
+   ],
+   "table": 2148243520,
+   "targets": [
+    2147945056,
+    2147944868,
+    2147945244,
+    2147944480,
+    2147945620,
+    2147945432,
+    2147944480,
+    2147944480,
+    2147944480,
+    2147944656,
+    2147944480,
+    2147944480,
+    2147944480,
+    2147944480,
+    2147944480,
+    2147946136,
+    2147944480,
+    2147944480,
+    2147946136,
+    2147946136,
+    2147946136
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2147946955,
+    "start": 2147946880
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": "0x36",
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147946948
+   ],
+   "table": 2148243680,
+   "targets": [
+    2147946956,
+    2147946972,
+    2147947004,
+    2147947036,
+    2147947084
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2147948507,
+    "start": 2147948448
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147947376,
+    2147947536,
+    2147947708,
+    2147947900,
+    2147948084,
+    2147948248,
+    2147948388
+   ],
+   "jr_sites": [
+    2147948500
+   ],
+   "table": 2148243704,
+   "targets": [
+    2147948508,
+    2147948520,
+    2147948552,
+    2147948584,
+    2147948632
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 15,
+   "distinct_targets": 6,
+   "head_body": null,
+   "head_is_corpus_start": false,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147949052
+   ],
+   "table": 2148243728,
+   "targets": [
+    2147949060,
+    2147949076,
+    2147949252,
+    2147949092,
+    2147949108,
+    2147949124,
+    2147949252,
+    2147949252,
+    2147949252,
+    2147949252,
+    2147949252,
+    2147949252,
+    2147949252,
+    2147949252,
+    2147949060
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 15,
+   "distinct_targets": 6,
+   "head_body": null,
+   "head_is_corpus_start": false,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147949168
+   ],
+   "table": 2148243792,
+   "targets": [
+    2147949176,
+    2147949188,
+    2147949252,
+    2147949200,
+    2147949212,
+    2147949224,
+    2147949252,
+    2147949252,
+    2147949252,
+    2147949252,
+    2147949252,
+    2147949252,
+    2147949252,
+    2147949252,
+    2147949176
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 6,
+   "head_body": null,
+   "head_is_corpus_start": false,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147949536
+   ],
+   "table": 2148243856,
+   "targets": [
+    2147949544,
+    2147949608,
+    2147949560,
+    2147949576,
+    2147949592,
+    2147949608,
+    2147949624
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": null,
+   "head_is_corpus_start": false,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147952668
+   ],
+   "table": 2148243888,
+   "targets": [
+    2147952676,
+    2147952688,
+    2147952696,
+    2147952708,
+    2147952716,
+    2147952728,
+    2147952740
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 6,
+   "head_body": {
+    "end": 2147961027,
+    "start": 2147960928
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147961020
+   ],
+   "table": 2148243920,
+   "targets": [
+    2147961744,
+    2147961028,
+    2147961152,
+    2147961724,
+    2147961392,
+    2147961536
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 6,
+   "head_body": {
+    "end": 2147973759,
+    "start": 2147973080
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147951524,
+    2148126212,
+    2148126828,
+    2148128968,
+    2148130468
+   ],
+   "jr_sites": [
+    2147973228
+   ],
+   "table": 2148244048,
+   "targets": [
+    2147973552,
+    2147973236,
+    2147973308,
+    2147973392,
+    2147973460,
+    2147973512
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2147986947,
+    "start": 2147986868
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147986940
+   ],
+   "table": 2148244448,
+   "targets": [
+    2147986948,
+    2147987232,
+    2147988168,
+    2147988184,
+    2147988724
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 4,
+   "head_body": {
+    "end": 2147990015,
+    "start": 2147988756
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2147988828
+   ],
+   "table": 2148244472,
+   "targets": [
+    2147988836,
+    2147989072,
+    2147989968,
+    2147989984,
+    2147989984
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": {
+    "end": 2148000447,
+    "start": 2148000264
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148000312
+   ],
+   "table": 2148244544,
+   "targets": [
+    2148000320,
+    2148000344,
+    2148000356,
+    2148000432,
+    2148000368,
+    2148000388,
+    2148000424
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 6,
+   "head_body": {
+    "end": 2148000523,
+    "start": 2148000456
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148000516
+   ],
+   "table": 2148244576,
+   "targets": [
+    2148000524,
+    2148000552,
+    2148000640,
+    2148000712,
+    2148000840,
+    2148000948
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2148001223,
+    "start": 2148001168
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148001216
+   ],
+   "table": 2148244600,
+   "targets": [
+    2148001224,
+    2148001308,
+    2148001428,
+    2148001448,
+    2148001900
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": {
+    "end": 2148002151,
+    "start": 2148002092
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148002144
+   ],
+   "table": 2148244624,
+   "targets": [
+    2148002152,
+    2148002188,
+    2148002264,
+    2148002448,
+    2148002696,
+    2148002836,
+    2148002912
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 8,
+   "distinct_targets": 8,
+   "head_body": {
+    "end": 2148006319,
+    "start": 2148006232
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2148004148,
+    2148004300,
+    2148004452,
+    2148004604,
+    2148004756,
+    2148004908,
+    2148005060,
+    2148005212,
+    2148005364,
+    2148005516,
+    2148005668
+   ],
+   "jr_sites": [
+    2148006312
+   ],
+   "table": 2148244656,
+   "targets": [
+    2148006320,
+    2148006484,
+    2148006512,
+    2148006596,
+    2148006656,
+    2148006668,
+    2148006716,
+    2148006752
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": {
+    "end": 2148008295,
+    "start": 2148008112
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148008160
+   ],
+   "table": 2148244688,
+   "targets": [
+    2148008168,
+    2148008192,
+    2148008204,
+    2148008280,
+    2148008216,
+    2148008236,
+    2148008272
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": {
+    "end": 2148057563,
+    "start": 2148057492
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147897096
+   ],
+   "jr_sites": [
+    2148057556
+   ],
+   "table": 2148245168,
+   "targets": [
+    2148057608,
+    2148057564,
+    2148057572,
+    2148057580,
+    2148057588,
+    2148057596,
+    2148057604
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2148063471,
+    "start": 2148063396
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148063464
+   ],
+   "table": 2148245248,
+   "targets": [
+    2148063472,
+    2148064256,
+    2148064628,
+    2148064840,
+    2148064896
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2148065187,
+    "start": 2148065012
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2148064824
+   ],
+   "jr_sites": [
+    2148065180
+   ],
+   "table": 2148245272,
+   "targets": [
+    2148065188,
+    2148065664,
+    2148065708,
+    2148065772,
+    2148065812
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 12,
+   "distinct_targets": 10,
+   "head_body": {
+    "end": 2148065663,
+    "start": 2148065188
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148065276
+   ],
+   "table": 2148245296,
+   "targets": [
+    2148065284,
+    2148065576,
+    2148065576,
+    2148065332,
+    2148065576,
+    2148065360,
+    2148065388,
+    2148065416,
+    2148065440,
+    2148065468,
+    2148065492,
+    2148065520
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 12,
+   "distinct_targets": 12,
+   "head_body": {
+    "end": 2148066059,
+    "start": 2148065912
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2148064792
+   ],
+   "jr_sites": [
+    2148066052
+   ],
+   "table": 2148245352,
+   "targets": [
+    2148066060,
+    2148066624,
+    2148066808,
+    2148067072,
+    2148067180,
+    2148067444,
+    2148067704,
+    2148068000,
+    2148068340,
+    2148068752,
+    2148069020,
+    2148069368
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 14,
+   "distinct_targets": 14,
+   "head_body": {
+    "end": 2148069655,
+    "start": 2148069544
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2148064808
+   ],
+   "jr_sites": [
+    2148069648
+   ],
+   "table": 2148245400,
+   "targets": [
+    2148069656,
+    2148069776,
+    2148069788,
+    2148069884,
+    2148069944,
+    2148069968,
+    2148070032,
+    2148070092,
+    2148070176,
+    2148070188,
+    2148070260,
+    2148070320,
+    2148070344,
+    2148070428
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 19,
+   "distinct_targets": 15,
+   "head_body": {
+    "end": 2148070591,
+    "start": 2148070488
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148070584
+   ],
+   "table": 2148245472,
+   "targets": [
+    2148070592,
+    2148071652,
+    2148071752,
+    2148071880,
+    2148072232,
+    2148072232,
+    2148072612,
+    2148072680,
+    2148072748,
+    2148072748,
+    2148072804,
+    2148073448,
+    2148073584,
+    2148073776,
+    2148074276,
+    2148074424,
+    2148074424,
+    2148074580,
+    2148074580
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2148075351,
+    "start": 2148075268
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148075344
+   ],
+   "table": 2148245552,
+   "targets": [
+    2148075352,
+    2148075560,
+    2148075652,
+    2148075744,
+    2148076172
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": {
+    "end": 2148079491,
+    "start": 2148079416
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2148057652,
+    2148075400,
+    2148077828,
+    2148081388
+   ],
+   "jr_sites": [
+    2148079484
+   ],
+   "table": 2148245576,
+   "targets": [
+    2148079492,
+    2148079604,
+    2148079640,
+    2148079672,
+    2148079772,
+    2148080040,
+    2148080184
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 20,
+   "distinct_targets": 18,
+   "head_body": {
+    "end": 2148080691,
+    "start": 2148080240
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2148077848,
+    2148079000,
+    2148081900
+   ],
+   "jr_sites": [
+    2148080268
+   ],
+   "table": 2148245608,
+   "targets": [
+    2148080276,
+    2148080528,
+    2148080296,
+    2148080320,
+    2148080356,
+    2148080376,
+    2148080420,
+    2148080440,
+    2148080468,
+    2148080536,
+    2148080432,
+    2148080548,
+    2148080576,
+    2148080312,
+    2148080560,
+    2148080560,
+    2148080588,
+    2148080648,
+    2148080312,
+    2148080668
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 4,
+   "head_body": {
+    "end": 2148082967,
+    "start": 2148082876
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148082960
+   ],
+   "table": 2148245688,
+   "targets": [
+    2148082968,
+    2148082992,
+    2148082976,
+    2148082984,
+    2148082992
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 6,
+   "head_body": {
+    "end": 2148084343,
+    "start": 2148084248
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148084336
+   ],
+   "table": 2148245712,
+   "targets": [
+    2148084344,
+    2148084892,
+    2148085280,
+    2148085756,
+    2148086216,
+    2148086236
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 21,
+   "distinct_targets": 8,
+   "head_body": {
+    "end": 2148093435,
+    "start": 2148093372
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148093428
+   ],
+   "table": 2148245760,
+   "targets": [
+    2148093436,
+    2148093476,
+    2148093732,
+    2148093920,
+    2148094464,
+    2148094464,
+    2148094464,
+    2148094464,
+    2148094464,
+    2148094464,
+    2148094464,
+    2148094464,
+    2148094464,
+    2148094464,
+    2148094464,
+    2148094464,
+    2148094464,
+    2148094464,
+    2148094412,
+    2148094432,
+    2148094480
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2148095607,
+    "start": 2148095532
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148095600
+   ],
+   "table": 2148245848,
+   "targets": [
+    2148095608,
+    2148096104,
+    2148096244,
+    2148096244,
+    2148096392,
+    2148096392,
+    2148096572
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 7,
+   "distinct_targets": 7,
+   "head_body": {
+    "end": 2148113011,
+    "start": 2148112052
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148113004
+   ],
+   "table": 2148246448,
+   "targets": [
+    2148113012,
+    2148113228,
+    2148113708,
+    2148113964,
+    2148114016,
+    2148114076,
+    2148114132
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 11,
+   "distinct_targets": 11,
+   "head_body": {
+    "end": 2148126803,
+    "start": 2148126744
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148126796
+   ],
+   "table": 2148246616,
+   "targets": [
+    2148126804,
+    2148126884,
+    2148127176,
+    2148127484,
+    2148127808,
+    2148128092,
+    2148128520,
+    2148128628,
+    2148128684,
+    2148128740,
+    2148128808
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 12,
+   "distinct_targets": 12,
+   "head_body": {
+    "end": 2148128943,
+    "start": 2148128888
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148128936
+   ],
+   "table": 2148246664,
+   "targets": [
+    2148128944,
+    2148129024,
+    2148129144,
+    2148129340,
+    2148129496,
+    2148129616,
+    2148129772,
+    2148130020,
+    2148130128,
+    2148130184,
+    2148130240,
+    2148130308
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 15,
+   "distinct_targets": 15,
+   "head_body": {
+    "end": 2148130443,
+    "start": 2148130384
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [],
+   "jr_sites": [
+    2148130436
+   ],
+   "table": 2148246712,
+   "targets": [
+    2148130444,
+    2148130524,
+    2148130644,
+    2148130764,
+    2148130884,
+    2148131052,
+    2148131132,
+    2148131252,
+    2148131372,
+    2148131620,
+    2148131860,
+    2148131968,
+    2148132024,
+    2148132080,
+    2148132148
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 5,
+   "head_body": {
+    "end": 2148136527,
+    "start": 2148136460
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147928652
+   ],
+   "jr_sites": [
+    2148136520
+   ],
+   "table": 2148246912,
+   "targets": [
+    2148136528,
+    2148136552,
+    2148136664,
+    2148136740,
+    2148136856
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 6,
+   "head_body": {
+    "end": 2148171311,
+    "start": 2148170596
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2148137740,
+    2148137784,
+    2148144252,
+    2148144300,
+    2148212848,
+    2148212972,
+    2148213004
+   ],
+   "jr_sites": [
+    2148170704
+   ],
+   "table": 2148247424,
+   "targets": [
+    2148170996,
+    2148171004,
+    2148170852,
+    2148171012,
+    2148171020,
+    2148170712
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 6,
+   "head_body": {
+    "end": 2148171975,
+    "start": 2148171312
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2148213120
+   ],
+   "jr_sites": [
+    2148171412
+   ],
+   "table": 2148247448,
+   "targets": [
+    2148171688,
+    2148171696,
+    2148171552,
+    2148171704,
+    2148171712,
+    2148171420
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 6,
+   "head_body": {
+    "end": 2148190675,
+    "start": 2148190632
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2148208948,
+    2148209092,
+    2148209236,
+    2148209380,
+    2148209524,
+    2148209668,
+    2148209812,
+    2148209956,
+    2148210100
+   ],
+   "jr_sites": [
+    2148190668
+   ],
+   "table": 2148247648,
+   "targets": [
+    2148190676,
+    2148190684,
+    2148190692,
+    2148190700,
+    2148190708,
+    2148190716
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 6,
+   "head_body": {
+    "end": 2148190787,
+    "start": 2148190728
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2148204564,
+    2148204696,
+    2148205204,
+    2148205296
+   ],
+   "jr_sites": [
+    2148190780
+   ],
+   "table": 2148247672,
+   "targets": [
+    2148190788,
+    2148190796,
+    2148190804,
+    2148190812,
+    2148190820,
+    2148190828
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 6,
+   "distinct_targets": 6,
+   "head_body": {
+    "end": 2148191047,
+    "start": 2148190948
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2148205036,
+    2148210372
+   ],
+   "jr_sites": [
+    2148191040
+   ],
+   "table": 2148247696,
+   "targets": [
+    2148191048,
+    2148191056,
+    2148191064,
+    2148191072,
+    2148191080,
+    2148191088
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 5,
+   "distinct_targets": 4,
+   "head_body": {
+    "end": 2148205139,
+    "start": 2148204508
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2148210316
+   ],
+   "jr_sites": [
+    2148204804
+   ],
+   "table": 2148247728,
+   "targets": [
+    2148204812,
+    2148204836,
+    2148204860,
+    2148204892,
+    2148204812
+   ]
+  },
+  {
+   "all_targets_in_image": true,
+   "bound": 114,
+   "distinct_targets": 61,
+   "head_body": {
+    "end": 2148210779,
+    "start": 2148205516
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2148166752
+   ],
+   "jr_sites": [
+    2148206200
+   ],
+   "table": 2148247752,
+   "targets": [
+    2148206496,
+    2148206208,
+    2148206256,
+    2148206328,
+    2148206400,
+    2148206412,
+    2148206432,
+    2148206520,
+    2148206540,
+    2148206560,
+    2148206728,
+    2148206828,
+    2148206932,
+    2148207112,
+    2148207328,
+    2148207440,
+    2148207456,
+    2148207476,
+    2148207496,
+    2148207516,
+    2148207596,
+    2148210488,
+    2148210488,
+    2148207624,
+    2148207644,
+    2148207664,
+    2148207864,
+    2148207992,
+    2148208188,
+    2148208208,
+    2148208288,
+    2148208388,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148208408,
+    2148208456,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148208472,
+    2148208532,
+    2148208552,
+    2148208596,
+    2148208624,
+    2148208652,
+    2148208676,
+    2148208696,
+    2148208768,
+    2148208816,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148208872,
+    2148209016,
+    2148209160,
+    2148209304,
+    2148209448,
+    2148209592,
+    2148209736,
+    2148209880,
+    2148210024,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210168,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210240,
+    2148210256,
+    2148210272,
+    2148210288,
+    2148210304,
+    2148210332,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210488,
+    2148210444,
+    2148210460
+   ]
+  },
+  {
+   "all_targets_in_image": false,
+   "bound": 17,
+   "distinct_targets": 8,
+   "head_body": {
+    "end": 2147796127,
+    "start": 2147795484
+   },
+   "head_is_corpus_start": true,
+   "head_is_handler": null,
+   "head_jal_sites": [
+    2147793400,
+    2147793528,
+    2148120544,
+    2148120580,
+    2148120604
+   ],
+   "jr_sites": [
+    2147795628
+   ],
+   "table": 2148577980,
+   "targets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    33554432,
+    2149059792,
+    50331648,
+    2148905008,
+    67108864,
+    2149037072,
+    167772160,
+    2149037072
+   ]
+  }
+ ],
+ "inputs": {
+  "base": "0x80018a80",
+  "image": "assets/unpacked/00000_0014420_1172240.bin",
+  "ranges": "fixtures/decomp/ranges.json (to say whether a head is a corpus function start)",
+  "registry": "fixtures/scd/registry.json (to say whether a head is a Script VM handler)",
+  "shape": "`jr` whose preceding 12 instructions hold a `sltiu` bound and a `lui`+`addiu` table address; the `jr` must not be a return through ra/fp. The window is complete-shape required, not a forward scan"
+ },
+ "not_claimed": [
+  "what any head dispatches on beyond the index expression the shape fixes: the arms' semantics is each handler's own question, and the Script VM's were answered in M226 for one of them",
+  "that every `sltiu`+`lui`+`jr` in the image is a dispatch: the shape is a necessary condition, and a head whose arms are data rather than code would look the same",
+  "the BSS table's contents: 0x8010b2bc is zero in this image and its arms are supplied at run time"
+ ],
+ "reading": "a fifth of this image's functions dispatch through a static table this way: 86 heads, 86 tables, bounds from 1 to 114. 3 heads are Script VM handlers and 37 are called by a `jal`, so a head is a function boundary whether or not it runs a frame setup \u2014 which is what the extent queue's 'nearest frame setup behind' rule cannot see. 1 table(s) are not in this image at all.",
+ "schema": "dispatch-heads/1",
+ "tool": "dispatch_heads.py"
+}

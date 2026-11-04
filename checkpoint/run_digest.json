@@ -1,0 +1,12 @@
+{
+ "digest": "80436211b50d1229a2a1ef001e1d8ac2f0ec4d28ea404881aa36786abebde223",
+ "files": [
+  "cpu_registers.json",
+  "execution_trace.json",
+  "fpu_registers.json",
+  "memory_regions.json",
+  "message_queues.json",
+  "thread_table.json",
+  "unresolved_instructions.json"
+ ]
+}

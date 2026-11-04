@@ -1,0 +1,427 @@
+{
+ "address": {
+  "address": 2148243680,
+  "address_if_read_unsigned": 2148309216,
+  "difference": 65536,
+  "immediate_as_encoded": 39136,
+  "immediate_signed": -26400,
+  "instructions": [
+   "lui v0,0x800c",
+   "addiu v0,v0,-26400"
+  ],
+  "upper": 2148270080,
+  "why": "`addiu` sign-extends, so the encoded 0x98e0 is the signed -26400 and the address is 0x800b98e0. Reading the immediate as unsigned instead gives 0x800c98e0, 0x10000 higher -- and that is the address every document since M211 published."
+ },
+ "classification": {
+  "reading": "the five pointers are code in this image, each an arm of one dispatch reached only from this handler, and each selects a base object before the same tail runs and writes the same advance. So a table entry is a variant of one command, not a host callback: 0x36 is a command whose index selects a sub-opcode. M211's 'a callback pointer, not a command address' is retracted.",
+  "verdict": "sub-opcode family",
+  "what_is_runtime_initialised": "the base objects the arms select -- the words at 0x800e13e8, 0x800e13ec and 0x800e18f8 are zero in this image. That is where the 'filled at runtime' reading belongs, not on the table"
+ },
+ "dispatch": {
+  "bound": "`sltiu v0,a0,5` then `beq v0,zero,0x80071278`: idx < 5 or the dispatch is skipped",
+  "bound_instruction": 2147946920,
+  "dispatch": "`lw v0,0(v1)` then `jr v0` through the table entry",
+  "handler": 2147946880,
+  "head": [
+   {
+    "at": 2147946880,
+    "text": "addiu sp,sp,-48",
+    "word": 666763216
+   },
+   {
+    "at": 2147946884,
+    "text": "sw s1,36(sp)",
+    "word": 2947612708
+   },
+   {
+    "at": 2147946888,
+    "text": "addu s1,a0,zero",
+    "word": 8423457
+   },
+   {
+    "at": 2147946892,
+    "text": "sw ra,40(sp)",
+    "word": 2948530216
+   },
+   {
+    "at": 2147946896,
+    "text": "sw s0,32(sp)",
+    "word": 2947547168
+   },
+   {
+    "at": 2147946900,
+    "text": "lw s0,28(s1)",
+    "word": 2385510428
+   },
+   {
+    "at": 2147946904,
+    "text": "lh a1,4(s0)",
+    "word": 2248474628
+   },
+   {
+    "at": 2147946908,
+    "text": "lbu a3,1(s0)",
+    "word": 2449932289
+   },
+   {
+    "at": 2147946912,
+    "text": "lh a2,2(s0)",
+    "word": 2248540162
+   },
+   {
+    "at": 2147946916,
+    "text": "srl a0,a1,8",
+    "word": 336386
+   },
+   {
+    "at": 2147946920,
+    "text": "sltiu v0,a0,5",
+    "word": 746717189
+   },
+   {
+    "at": 2147946924,
+    "text": "beq v0,zero,0x80071278",
+    "word": 272629810
+   },
+   {
+    "at": 2147946928,
+    "text": "lui v0,0x800c",
+    "word": 1006796812
+   },
+   {
+    "at": 2147946932,
+    "text": "addiu v0,v0,-26400",
+    "word": 608344288
+   },
+   {
+    "at": 2147946936,
+    "text": "sll v1,a0,2",
+    "word": 268416
+   },
+   {
+    "at": 2147946940,
+    "text": "addu v1,v1,v0",
+    "word": 6428705
+   },
+   {
+    "at": 2147946944,
+    "text": "lw v0,0(v1)",
+    "word": 2355232768
+   },
+   {
+    "at": 2147946948,
+    "text": "jr v0",
+    "word": 4194312
+   },
+   {
+    "at": 2147946952,
+    "text": "nop",
+    "word": 0
+   }
+  ],
+  "index_instruction": 2147946916,
+  "index_rule": "idx = u16[cmd+4] >> 8, from `lhu a1,4(s0)` then `srl a0,a1,8`"
+ },
+ "id_and_coordinates": {
+  "callee": "FUN_80077adc(id, &coords) at 0x800712c0",
+  "coordinate_rule": "base + s16[cmd+6], base + s16[cmd+8], base + s16[cmd+10]",
+  "id_rule": "u8[cmd+1] << 24 | (u16[cmd+2] >> 8) << 16 | (u16[cmd+2] & 0xff)",
+  "note": "the callee splits the id into three indices and looks each up in a per-bank table (&DAT_80119ea8 / &DAT_80119ecc); whether that is a sound trigger is *inferred*, not measured here, and is recorded as an inference"
+ },
+ "inputs": {
+  "base": "0x80018a80",
+  "decoder": "tools/rsp_decode.py (shared); its branch/jump targets are recomputed for a 32-bit address space here, because that decoder masks them to a 12-bit IMEM for the RSP",
+  "image": "assets/unpacked/00000_0014420_1172240.bin",
+  "opcode": "0x36"
+ },
+ "schema": "callback-table/1",
+ "table": {
+  "address": 2148243680,
+  "all_bounded": true,
+  "all_in_image": true,
+  "entries": [
+   {
+    "arm_head": [
+     "addu a0,zero,zero",
+     "addu a1,a0,zero",
+     "j 0x80071284",
+     "addu v1,a0,zero"
+    ],
+    "bounded_by": [
+     2147946956,
+     2147946971
+    ],
+    "in_image": true,
+    "index": 0,
+    "is_a_range_start": true,
+    "pointer": 2147946956,
+    "selects": "the zero base: all three offsets start from 0"
+   },
+   {
+    "arm_head": [
+     "lui v1,0x0001",
+     "ori v1,v1,-32768",
+     "lui v0,0x800c",
+     "addiu v0,v0,30384",
+     "addu v0,v0,v1",
+     "lw v1,7480(v0)",
+     "j 0x80071278",
+     "nop"
+    ],
+    "bounded_by": [
+     2147946972,
+     2147947003
+    ],
+    "in_image": true,
+    "index": 1,
+    "is_a_range_start": true,
+    "pointer": 2147946972,
+    "selects": "a pointer loaded from 0x800e13e8; the tail reads +0x28/+0x2c/+0x30 through it"
+   },
+   {
+    "arm_head": [
+     "lui v1,0x0001",
+     "ori v1,v1,-32768",
+     "lui v0,0x800c",
+     "addiu v0,v0,30384",
+     "addu v0,v0,v1",
+     "lw v1,7484(v0)",
+     "j 0x80071278",
+     "nop"
+    ],
+    "bounded_by": [
+     2147947004,
+     2147947035
+    ],
+    "in_image": true,
+    "index": 2,
+    "is_a_range_start": true,
+    "pointer": 2147947004,
+    "selects": "a pointer loaded from 0x800e13ec; the tail reads +0x28/+0x2c/+0x30 through it"
+   },
+   {
+    "arm_head": [
+     "lui a0,0x0001",
+     "ori a0,a0,-32768",
+     "lui v1,0x800c",
+     "addiu v1,v1,30384",
+     "andi v0,a1,0x00ff",
+     "addiu v0,v0,2",
+     "sll v0,v0,2",
+     "addu v0,v0,v1",
+     "addu v0,v0,a0",
+     "lw v1,7480(v0)",
+     "j 0x80071278",
+     "nop"
+    ],
+    "bounded_by": [
+     2147947036,
+     2147947083
+    ],
+    "in_image": true,
+    "index": 3,
+    "is_a_range_start": true,
+    "pointer": 2147947036,
+    "selects": "a pointer loaded from 0x800e13f0 + 4 * lo; the tail reads +0x28/+0x2c/+0x30 through it"
+   },
+   {
+    "arm_head": [
+     "andi v0,a1,0x00ff",
+     "sll v1,v0,3",
+     "subu v1,v1,v0",
+     "sll v1,v1,2",
+     "subu v1,v1,v0",
+     "sll v1,v1,2",
+     "addu v1,v1,v0",
+     "sll v1,v1,3",
+     "lui v0,0x800e",
+     "addiu v0,v0,6392",
+     "addu v1,v1,v0"
+    ],
+    "bounded_by": [
+     2147947084,
+     2147947239
+    ],
+    "in_image": true,
+    "index": 4,
+    "is_a_range_start": true,
+    "pointer": 2147947084,
+    "selects": "a row at 0x800e18f8 + 872 * lo, dereferenced by the tail"
+   }
+  ],
+  "entry_count": 5
+ },
+ "tail": {
+  "advance": 12,
+  "advance_instruction": {
+   "at": 2147947208,
+   "text": "addiu v0,s0,12",
+   "word": 637665292
+  },
+  "listing": [
+   {
+    "at": 2147947128,
+    "text": "lw a0,40(v1)",
+    "word": 2355363880
+   },
+   {
+    "at": 2147947132,
+    "text": "lw a1,44(v1)",
+    "word": 2355429420
+   },
+   {
+    "at": 2147947136,
+    "text": "lw v1,48(v1)",
+    "word": 2355298352
+   },
+   {
+    "at": 2147947140,
+    "text": "lh v0,6(s0)",
+    "word": 2248278022
+   },
+   {
+    "at": 2147947144,
+    "text": "addu v0,v0,a0",
+    "word": 4460577
+   },
+   {
+    "at": 2147947148,
+    "text": "sw v0,16(sp)",
+    "word": 2946629648
+   },
+   {
+    "at": 2147947152,
+    "text": "lh v0,8(s0)",
+    "word": 2248278024
+   },
+   {
+    "at": 2147947156,
+    "text": "andi a0,a2,0x00ff",
+    "word": 818151679
+   },
+   {
+    "at": 2147947160,
+    "text": "addu v0,v0,a1",
+    "word": 4526113
+   },
+   {
+    "at": 2147947164,
+    "text": "sw v0,20(sp)",
+    "word": 2946629652
+   },
+   {
+    "at": 2147947168,
+    "text": "lh v0,10(s0)",
+    "word": 2248278026
+   },
+   {
+    "at": 2147947172,
+    "text": "addiu a1,sp,16",
+    "word": 665124880
+   },
+   {
+    "at": 2147947176,
+    "text": "addu v0,v0,v1",
+    "word": 4395041
+   },
+   {
+    "at": 2147947180,
+    "text": "sll v1,a3,24",
+    "word": 466432
+   },
+   {
+    "at": 2147947184,
+    "text": "sw v0,24(sp)",
+    "word": 2946629656
+   },
+   {
+    "at": 2147947188,
+    "text": "srl v0,a2,8",
+    "word": 397826
+   },
+   {
+    "at": 2147947192,
+    "text": "sll v0,v0,16",
+    "word": 136192
+   },
+   {
+    "at": 2147947196,
+    "text": "or v1,v1,v0",
+    "word": 6428709
+   },
+   {
+    "at": 2147947200,
+    "text": "jal 0x80077adc",
+    "word": 201449143
+   },
+   {
+    "at": 2147947204,
+    "text": "or a0,v1,a0",
+    "word": 6561829
+   },
+   {
+    "at": 2147947208,
+    "text": "addiu v0,s0,12",
+    "word": 637665292
+   },
+   {
+    "at": 2147947212,
+    "text": "sw v0,28(s1)",
+    "word": 2921463836
+   },
+   {
+    "at": 2147947216,
+    "text": "lw ra,40(sp)",
+    "word": 2411659304
+   },
+   {
+    "at": 2147947220,
+    "text": "lw s1,36(sp)",
+    "word": 2410741796
+   },
+   {
+    "at": 2147947224,
+    "text": "lw s0,32(sp)",
+    "word": 2410676256
+   },
+   {
+    "at": 2147947228,
+    "text": "addiu v0,zero,1",
+    "word": 604110849
+   },
+   {
+    "at": 2147947232,
+    "text": "jr ra",
+    "word": 65011720
+   },
+   {
+    "at": 2147947236,
+    "text": "addiu sp,sp,48",
+    "word": 666697776
+   }
+  ],
+  "note": "every arm reaches this tail and it is the only writer of the command pointer, so the advance is 12 on all five arms -- which is what the registry could not see while the store sat outside the handler's bounded body, and why 0x36 was refused as dynamic",
+  "store_instruction": {
+   "at": 2147947212,
+   "text": "sw v0,28(s1)",
+   "word": 2921463836
+  }
+ },
+ "the_wrong_address": {
+  "correct": 2148243680,
+  "published": 2148309216,
+  "published_since": "M211 (tools/opcode_registry.py, tools/walk_stream.py, tools/vm_refusals.py)",
+  "what_is_at_the_published_address": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "why_it_looked_empty": "0x800c98e0 holds 8 zero words in this image, which is why 'the table is empty, so it must be filled at runtime' was a coherent but wrong explanation for a table that is static, five entries, and 0x10000 lower"
+ },
+ "tool": "callback_table.py"
+}

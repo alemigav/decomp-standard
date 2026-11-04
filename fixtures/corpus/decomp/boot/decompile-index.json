@@ -1,0 +1,43 @@
+{
+ "functions": [
+  {
+   "address": "0x80000480",
+   "body": {
+    "available": true,
+    "ranges": [
+     {
+      "start": "0x80000480",
+      "end": "0x8000049c"
+     }
+    ],
+    "non_contiguous": false
+   }
+  },
+  {
+   "address": "0x800004a0",
+   "body": {
+    "available": true,
+    "ranges": [
+     {
+      "start": "0x800004a0",
+      "end": "0x800004ac"
+     }
+    ],
+    "non_contiguous": false
+   }
+  },
+  {
+   "address": "0x800004b0",
+   "body": {
+    "available": true,
+    "ranges": [
+     {
+      "start": "0x800004b0",
+      "end": "0x800004bc"
+     }
+    ],
+    "non_contiguous": false
+   }
+  }
+ ]
+}

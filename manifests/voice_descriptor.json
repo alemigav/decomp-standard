@@ -1,0 +1,1446 @@
+{
+ "clip_trace": {
+  "hops_not_traced": [
+   "+0x198/+0x1210 (the PCM buffer address) is a runtime allocation or one of the two static buffers at 0x8015af88; no cartridge byte decides it, so the trace stops at its size.",
+   "the rate hop: the descriptor takes the caller's argument, and the record's own rate halfword is read by nothing (see unresolved). The values agree for this clip; the hop is not traced."
+  ],
+  "index": 0,
+  "record": {
+   "bank_file": 1979,
+   "bytes": 80424,
+   "header_bytes": 12
+  },
+  "values": [
+   {
+    "field": "+0x11a0 blocks_remaining",
+    "from": "cartridge:MORT+4",
+    "value": 2598,
+    "via": "arith: src @ src/stage2/FUN_800b4a04.c:25: *(undefined2 *)(param_1 + 0x11a0) = *(undefined2 *)(param_1 + 0x1a4);"
+   },
+   {
+    "field": "+0x11a2 header_blocks_echo",
+    "from": "trace:+0x11a0 blocks_remaining",
+    "value": 2598,
+    "via": "arith: src @ src/stage2/FUN_800b4a04.c:26: *(short *)(param_1 + 0x11a2) = (short)*(undefined4 *)(param_1 + 0x1a4);"
+   },
+   {
+    "field": "+0x11a4 record_words_remaining",
+    "from": "cartridge:MORT+8",
+    "value": 20106,
+    "via": "arith: src & 0xffffff @ src/stage2/FUN_800b4a04.c:27: *(uint *)(param_1 + 0x11a4) = *(uint *)(param_1 + 0x1a8) & 0xffffff;"
+   },
+   {
+    "field": "record bytes",
+    "from": "cartridge:record_len",
+    "value": 80424,
+    "via": "arith: src @ src/stage2/FUN_800b4a04.c:49: iVar1 = *(uint *)(param_1 + 0x11a4) << 2;"
+   },
+   {
+    "field": "bytes implied by the declared words",
+    "from": "trace:+0x11a4 record_words_remaining",
+    "value": 80424,
+    "via": "arith: src * 4 @ src/stage2/FUN_800b4a04.c:49: iVar1 = *(uint *)(param_1 + 0x11a4) << 2;"
+   },
+   {
+    "field": "+0x11c8 bit_cursor",
+    "from": "cartridge:header_bytes",
+    "value": 96,
+    "via": "arith: src * 8 @ src/stage2/FUN_800b4a04.c:24: *(undefined4 *)(param_1 + 0x11c8) = 0x60;"
+   },
+   {
+    "field": "chunk count",
+    "from": "trace:record bytes",
+    "value": 79,
+    "via": "arith: (src + 0x3ff) // 0x400 @ src/stage2/FUN_800b4a04.c:30: *(int *)(param_1 + 0x11d0) = iVar1 + 0x400;"
+   },
+   {
+    "field": "words left when the tail chunk is issued",
+    "from": "trace:+0x11a4 record_words_remaining",
+    "value": 138,
+    "via": "arith: src - 0x100 * 78 @ src/stage2/FUN_800b4a04.c:35: *(uint *)(param_1 + 0x11a4) = *(uint *)(param_1 + 0x11a4) - 0x100;"
+   },
+   {
+    "field": "tail chunk bytes",
+    "from": "trace:words left when the tail chunk is issued",
+    "value": 552,
+    "via": "arith: src * 4 @ src/stage2/FUN_800b4a04.c:49: iVar1 = *(uint *)(param_1 + 0x11a4) << 2;"
+   },
+   {
+    "field": "+0x1208 rate",
+    "from": "cartridge:MORT+6",
+    "value": 16000,
+    "via": "arith: src @ src/stage2/FUN_800b3704.c:36: *(int *)(iVar3 + -0x7fea62d8) = param_2;"
+   },
+   {
+    "field": "+0x1214 pcm_capacity_alloc",
+    "from": "trace:+0x1208 rate",
+    "value": 4320,
+    "via": "arith: ((src << 3) // 0x1e + 0x9f) // 0xa0 * 0xa0 @ src/stage2/FUN_800b3704.c:42: *(uint *)(iVar3 + -0x7fea62cc) = (((uint)(param_2 << 3) / 0x1e + 0x9f) / 0xa0) * 0xa0;"
+   },
+   {
+    "field": "+0x19c pcm_units",
+    "from": "trace:+0x1214 pcm_capacity_alloc",
+    "value": 4320,
+    "via": "arith: src @ src/stage2/FUN_800b4930.c:16: *(undefined4 *)(param_1 + 0x19c) = param_4;"
+   },
+   {
+    "field": "buffer allocation bytes",
+    "from": "trace:+0x1214 pcm_capacity_alloc",
+    "value": 8648,
+    "via": "arith: (src + 4) * 2 @ src/stage2/FUN_800a9420.c:12: return (param_1 + 4) * 2;"
+   },
+   {
+    "field": "+0x11d8 units_written (whole clip)",
+    "from": "trace:+0x11a0 blocks_remaining",
+    "value": 415680,
+    "via": "arith: src * 160 @ src/stage2/FUN_800b4a04.c:75: *(int *)(param_1 + 0x11d8) = *(int *)(param_1 + 0x11d8) + 0xa0;"
+   }
+  ]
+ },
+ "descriptor": {
+  "base": "0x80158b20",
+  "command": {
+   "argument_block": [
+    {
+     "confidence": "established",
+     "evidence": "instruction 0x800a930c stores rate|0x400000 to the block's first word",
+     "meaning": "the rate OR'd with 0x00400000; the low half becomes the pitch word",
+     "name": "flags_and_rate",
+     "offset": 0,
+     "reader": [
+      "src/stage2/FUN_800a54ec.c:65: if ((*(uint *)(param_2 + 4) & 0xf0000000) != 0x80000000) {"
+     ],
+     "width": 4,
+     "writer": [
+      "src/stage2/FUN_800a924c.c:40: local_48 = param_4 | 0x400000;"
+     ]
+    },
+    {
+     "confidence": "established",
+     "evidence": "instruction 0x800a9310",
+     "meaning": "the PCM buffer address (the slot's +0x1210)",
+     "name": "buffer",
+     "offset": 4,
+     "reader": [
+      "src/stage2/FUN_800a54ec.c:41: *(undefined4 *)(iVar1 + 0x2c) = *(undefined4 *)(param_2 + 4);"
+     ],
+     "width": 4,
+     "writer": [
+      "src/stage2/FUN_800a924c.c:44: local_44 = param_2;"
+     ]
+    },
+    {
+     "confidence": "established",
+     "evidence": "instruction 0x800a9314",
+     "meaning": "a starting position, zero for the voice path",
+     "name": "position",
+     "offset": 8,
+     "reader": [
+      "src/stage2/FUN_800a54ec.c:42: dVar5 = (double)*(int *)(param_2 + 8);"
+     ],
+     "width": 4,
+     "writer": [
+      "src/stage2/FUN_800a924c.c:41: local_40 = 0;"
+     ]
+    },
+    {
+     "confidence": "established",
+     "evidence": "instruction 0x800a9318",
+     "meaning": "the capacity in 16-bit units (the slot's +0x1214)",
+     "name": "length_a",
+     "offset": 12,
+     "reader": [
+      "src/stage2/FUN_800a54ec.c:50: *(undefined4 *)(iVar1 + 0x30) = *(undefined4 *)(param_2 + 0xc);"
+     ],
+     "width": 4,
+     "writer": [
+      "src/stage2/FUN_800a924c.c:45: local_3c = param_3;"
+     ]
+    },
+    {
+     "confidence": "established",
+     "evidence": "instruction 0x800a931c",
+     "meaning": "zero for the voice path; this is the byte the MORT voice always hands 0",
+     "name": "length_b",
+     "offset": 16,
+     "reader": [
+      "src/stage2/FUN_800a54ec.c:51: *(undefined4 *)(iVar1 + 0x34) = *(undefined4 *)(param_2 + 0x10);"
+     ],
+     "width": 4,
+     "writer": [
+      "src/stage2/FUN_800a924c.c:42: local_38 = 0;"
+     ]
+    },
+    {
+     "confidence": "established",
+     "evidence": "instruction 0x800a9320",
+     "meaning": "the same capacity again, which is why the derived loop length is zero",
+     "name": "length_c",
+     "offset": 20,
+     "reader": [
+      "src/stage2/FUN_800a54ec.c:52: *(undefined4 *)(iVar1 + 0x38) = *(undefined4 *)(param_2 + 0x14);"
+     ],
+     "width": 4,
+     "writer": [
+      "src/stage2/FUN_800a924c.c:46: local_34 = param_3;"
+     ]
+    },
+    {
+     "confidence": "established",
+     "evidence": "instruction 0x800a9328",
+     "meaning": "the buffer's record mode; 0 for the voice path, which is what tells the consumer that the buffer holds plain 16-bit samples",
+     "name": "mode",
+     "offset": 24,
+     "reader": [
+      "src/stage2/FUN_800a54ec.c:53: *(undefined1 *)(iVar1 + 0x5d) = *(undefined1 *)(param_2 + 0x18);"
+     ],
+     "width": 1,
+     "writer": [
+      "src/stage2/FUN_800a924c.c:43: local_30 = 0;"
+     ]
+    }
+   ],
+   "engine_voice": {
+    "base": "0x80143f0c",
+    "fields": [
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a5520 (sb)",
+      "meaning": "set by the engine when the record is armed by its start call (FUN_800a597c writes 1) and tested by the per-frame builder; 0 here means the frame is skipped",
+      "name": "active",
+      "offset": 0,
+      "reader": [
+       "src/stage2/FUN_800a4560.c:35: if (*(char *)(iVar5 + _DAT_80143f0c) != '\\0') {"
+      ],
+      "width": 1,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:22: *puVar4 = 0;"
+      ]
+     },
+     {
+      "confidence": "writer only",
+      "evidence": "instruction 0x800a5528 (sb)",
+      "meaning": "set to 1 on every start beside the zeroing of the word above; no reader found",
+      "name": "start_flag_b",
+      "offset": 1,
+      "reader": [],
+      "width": 1,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:24: puVar4[1] = 1;"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a5524 (sh)",
+      "meaning": "zeroed, then bit 0 is set unless the buffer address in the command starts with 0x8; the per-frame builder branches on it to choose which command layout it writes",
+      "name": "voice_flags",
+      "offset": 2,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:103: if ((*(ushort *)(param_1 + 2) & 1) == 0) {"
+      ],
+      "width": 2,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:23: *(undefined2 *)(puVar4 + 2) = 0;",
+       "src/stage2/FUN_800a54ec.c:67: *(ushort *)(iVar1 + 2) = *(ushort *)(iVar1 + 2) | 1;"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a5518 (sh)",
+      "meaning": "the resampling ratio in 12-bit fixed point: (rate / _DAT_80147fa4) * 4096, clamped to 0.5 (0x2000). At 16 kHz against a 32 kHz output this is 0x800",
+      "name": "pitch_word",
+      "offset": 4,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:272: puVar7[0x11] = *(ushort *)(param_1 + 4);"
+      ],
+      "width": 2,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:21: *(undefined2 *)(puVar4 + 4) = 0x1000;",
+       "src/stage2/FUN_800a5a00.c:15: *(ushort *)(param_1 * 0x68 + _DAT_80143f0c + 4) = param_2;"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a55cc (sdc1)",
+      "meaning": "the voice's playback position carried as a double, so the fractional part survives between frames: the builder subtracts the integer part and keeps the remainder times 65536",
+      "name": "position_double",
+      "offset": 8,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:45: FUN_800a6258(*(undefined8 *)(param_1 + 8));"
+      ],
+      "width": 8,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:46: *(double *)(iVar1 + 8) = dVar5;"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a55d8 (sw)",
+      "meaning": "the integer part of that position, rewritten from it every frame by FUN_800a485c before the command list is built",
+      "name": "position_integer",
+      "offset": 16,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:113: *(uint *)(puVar7 + 0x18) = *(int *)(param_1 + 0x2c) + (local_44 & 0xfffc) * 2;"
+      ],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:49: *(undefined4 *)(iVar1 + 0x10) = uVar2;",
+       "src/stage2/FUN_800a485c.c:31: *(uint *)(pcVar2 + 0x10) = (int)(dVar4 - 2147483648.0) | 0x80000000;"
+      ]
+     },
+     {
+      "confidence": "writer only",
+      "evidence": "instruction 0x800a55d4 (sw)",
+      "meaning": "last frame's integer position; FUN_800a485c copies +0x10 into it before advancing, so the pair is the one-frame stride the builder measures",
+      "name": "position_previous",
+      "offset": 20,
+      "reader": [],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:48: *(undefined4 *)(iVar1 + 0x14) = uVar2;",
+       "src/stage2/FUN_800a485c.c:26: *(undefined4 *)(pcVar2 + 0x14) = *(undefined4 *)(pcVar2 + 0x10);"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a552c (sh)",
+      "meaning": "the four running gains at stride 2 (0x18, 0x1a, 0x1c, 0x1e - one field of four): every frame the builder scales the matching target by the float at +0x4c, writes the result back here, and carries the difference to the old value as a per-frame step in the command list. So the descriptor holds current and target gains, and the CPU computes both",
+      "name": "gain_current",
+      "offset": 24,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:243: *(int *)puVar7 = (int)*(short *)(param_1 + 0x18) << 0x10;"
+      ],
+      "width": 2,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:25: *(undefined2 *)(puVar4 + 0x18) = 0;",
+       "src/stage2/FUN_800a3bf4.c:248: (short)(int)((float)(int)*(short *)(param_1 + 0x40) * *(float *)(param_1 + 0x4c));"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a55a8 (sw)",
+      "meaning": "the sample buffer from the command: for a MORT voice, the PCM the synthesis filled",
+      "name": "pcm_base",
+      "offset": 44,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:119: *(uint *)(puVar7 + 0x12) = *(int *)(param_1 + 0x2c) + (local_48 & 0xfffc) * 2;"
+      ],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:41: *(undefined4 *)(iVar1 + 0x2c) = *(undefined4 *)(param_2 + 4);"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a55e0 (sw)",
+      "meaning": "the first of the three length words the command carries; for a MORT voice it is the same capacity as +0x38, which is why the +0x3c loop length comes out zero",
+      "name": "buffer_end",
+      "offset": 48,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:61: if (local_48 + iVar10 < *(uint *)(param_1 + 0x30)) goto LAB_800a3dfc;"
+      ],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:50: *(undefined4 *)(iVar1 + 0x30) = *(undefined4 *)(param_2 + 0xc);"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a55e8 (sw)",
+      "meaning": "the command's second length word; the MORT voice hands 0 here",
+      "name": "loop_start",
+      "offset": 52,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:57: uVar8 = *(int *)(param_1 + 0x34) + uVar2;"
+      ],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:51: *(undefined4 *)(iVar1 + 0x34) = *(undefined4 *)(param_2 + 0x10);"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a55f0 (sw)",
+      "meaning": "the command's third length word; the MORT voice hands the capacity, the same value as +0x30",
+      "name": "loop_end",
+      "offset": 56,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:56: uVar2 = *(uint *)(param_1 + 0x38);"
+      ],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:52: *(undefined4 *)(iVar1 + 0x38) = *(undefined4 *)(param_2 + 0x14);"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a560c (sw)",
+      "meaning": "buffer_end - (loop_start + loop_end), zeroed when it falls below 10: a derived word, not an input, and 0 for every MORT voice because +0x30 and +0x38 agree",
+      "name": "loop_length",
+      "offset": 60,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:58: if ((uVar2 == 0) ||"
+      ],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:59: uVar3 = *(int *)(iVar1 + 0x30) - (*(int *)(iVar1 + 0x34) + *(int *)(iVar1 + 0x38));",
+       "src/stage2/FUN_800a54ec.c:62: *(undefined4 *)(iVar1 + 0x3c) = 0;"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a553c (sh)",
+      "meaning": "one of four s16 TARGET gains at stride 2 (0x40, 0x42, 0x44, 0x46). The CPU computes each one itself, through two float tables: a packed word is split into a table index and an 8.8 fraction and interpolated, then stored as gain*32767. Which output channel each of the four feeds is not stated by any MIPS instruction - it is one of the unobservable entries this map lists rather than guesses",
+      "name": "gain_target_0",
+      "offset": 64,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:249: iVar3 = (int)((float)(int)*(short *)(param_1 + 0x40) * *(float *)(param_1 + 0x4c)) * 0x10000 -"
+      ],
+      "width": 2,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:29: *(undefined2 *)(puVar4 + 0x40) = 0;",
+       "src/stage2/FUN_800a5a60.c:18: FUN_800a5da0(iVar1 + 0x42,iVar1 + 0x40,param_2,param_3,param_4,iVar1 + 0x44,param_5,iVar1 + 0x46);"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a5540 (sh)",
+      "meaning": "the second target gain (see +0x40)",
+      "name": "gain_target_1",
+      "offset": 66,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:255: iVar3 = (int)((float)(int)*(short *)(param_1 + 0x42) * *(float *)(param_1 + 0x4c)) * 0x10000 -"
+      ],
+      "width": 2,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:30: *(undefined2 *)(puVar4 + 0x42) = 0;",
+       "src/stage2/FUN_800a5a60.c:18: FUN_800a5da0(iVar1 + 0x42,iVar1 + 0x40,param_2,param_3,param_4,iVar1 + 0x44,param_5,iVar1 + 0x46);"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a5544 (sh)",
+      "meaning": "the third target gain (see +0x40)",
+      "name": "gain_target_2",
+      "offset": 68,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:261: iVar3 = (int)((float)(int)*(short *)(param_1 + 0x44) * *(float *)(param_1 + 0x4c)) * 0x10000 -"
+      ],
+      "width": 2,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:31: *(undefined2 *)(puVar4 + 0x44) = 0;",
+       "src/stage2/FUN_800a5da0.c:32: *param_6 = (short)(int)(fVar3 * ((1.0 - fVar2) * *(float *)(&DAT_80136304 + (param_5 >> 0x16) * 4)"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a554c (sh)",
+      "meaning": "the fourth target gain (see +0x40)",
+      "name": "gain_target_3",
+      "offset": 70,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:265: fVar14 = (float)(int)*(short *)(param_1 + 0x46) * *(float *)(param_1 + 0x4c);"
+      ],
+      "width": 2,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:32: *(undefined2 *)(puVar4 + 0x46) = 0;",
+       "src/stage2/FUN_800a5a60.c:18: FUN_800a5da0(iVar1 + 0x42,iVar1 + 0x40,param_2,param_3,param_4,iVar1 + 0x44,param_5,iVar1 + 0x46);"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a55f8 (sb)",
+      "meaning": "copied from the command's +0x18 byte, and it decides how the per-frame builder walks the buffer: 0 means stride-2 16-bit units at base + (position & ~3)*2, 3 means 0x28-byte blocks at base + 0x100, any other value falls through to the shared tail. The MORT voice always hands 0, so the PCM the codec writes is read back as plain 16-bit samples",
+      "name": "record_mode",
+      "offset": 93,
+      "reader": [
+       "src/stage2/FUN_800a3bf4.c:104: if (param_1[0x5d] == '\\0') {"
+      ],
+      "width": 1,
+      "writer": [
+       "src/stage2/FUN_800a54ec.c:53: *(undefined1 *)(iVar1 + 0x5d) = *(undefined1 *)(param_2 + 0x18);"
+      ]
+     }
+    ],
+    "stride": 104,
+    "stride_evidence": [
+     "src/stage2/FUN_800a54ec.c:20: puVar4 = (undefined1 *)(_DAT_80143f0c + (param_1 & 0xffff) * 0x68);"
+    ]
+   },
+   "handle": {
+    "base": "0x801481e0",
+    "fields": [
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a92f4 (sb)",
+      "meaning": "set to 1 by the start call and cleared by FUN_800a942c before it releases the handle",
+      "name": "started",
+      "offset": 0,
+      "reader": [
+       "src/stage2/FUN_800a942c.c:14: if ((&DAT_801481e0)[param_1 * 0x18] == '\\x01') {"
+      ],
+      "width": 1,
+      "writer": [
+       "src/stage2/FUN_800a924c.c:38: (&DAT_801481e0)[iVar2] = 1;"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a92ec (sw)",
+      "meaning": "the routine the engine calls when it wants more PCM; the voice path passes FUN_800b4478, which advances the slot's +0x11d4 and returns nothing",
+      "name": "refill_callback",
+      "offset": 4,
+      "reader": [
+       "src/stage2/FUN_800b4478.c:14: FUN_800b4d30(param_5 + -0x7fea74e0,param_2 + param_4);"
+      ],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a924c.c:37: *(undefined4 *)(&DAT_801481e4 + iVar2) = param_9;"
+      ]
+     },
+     {
+      "confidence": "writer only",
+      "evidence": "instruction 0x800a92d8 (sw)",
+      "meaning": "the PCM buffer handed over, i.e. the slot's +0x1210; the engine passes it to the refill callback, whose calling side is not in the corpus",
+      "name": "buffer",
+      "offset": 8,
+      "reader": [],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a924c.c:34: *(undefined4 *)(&DAT_801481e8 + iVar2) = param_2;"
+      ]
+     },
+     {
+      "confidence": "writer only",
+      "evidence": "instruction 0x800a92dc (sw)",
+      "meaning": "its capacity in 16-bit units, i.e. the slot's +0x1214, beside the buffer above",
+      "name": "length",
+      "offset": 12,
+      "reader": [],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a924c.c:35: *(undefined4 *)(&DAT_801481ec + iVar2) = param_3;"
+      ]
+     },
+     {
+      "confidence": "writer only",
+      "evidence": "instruction 0x800a92e8 (sw)",
+      "meaning": "zeroed on every start; no reader found",
+      "name": "zero",
+      "offset": 16,
+      "reader": [],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a924c.c:36: *(undefined4 *)(&DAT_801481f0 + iVar2) = 0;"
+      ]
+     },
+     {
+      "confidence": "established",
+      "evidence": "instruction 0x800a9300 (sw)",
+      "meaning": "which of the two slots this handle belongs to: it is passed to the refill callback as its fifth argument and multiplied by 0x1228 there, which is the link back from the engine to the descriptor",
+      "name": "voice_slot",
+      "offset": 20,
+      "reader": [
+       "src/stage2/FUN_800b4478.c:13: param_5 = param_5 * 0x1228;"
+      ],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a924c.c:39: *(undefined4 *)(&DAT_801481f4 + iVar2) = param_10;"
+      ]
+     }
+    ],
+    "stride": 24,
+    "stride_evidence": [
+     "src/stage2/FUN_800a924c.c:33: iVar2 = iVar1 * 0x18;"
+    ]
+   },
+   "name": "engine_handoff",
+   "task": {
+    "base": "0x80143c60",
+    "evidence": [
+     "src/stage2/FUN_800a2e40.c:29: (*_DAT_80143ff0)(&DAT_80143c60);"
+    ],
+    "fields": [
+     {
+      "confidence": "writer only",
+      "evidence": "cited statement",
+      "meaning": "the block's first word, written 2; the value is the only thing in the block that says what kind of task this is",
+      "name": "task_type",
+      "offset": 0,
+      "reader": [],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a2e40.c:18: _DAT_80143c60 = 2;"
+      ]
+     },
+     {
+      "confidence": "writer only",
+      "evidence": "cited statement",
+      "meaning": "a pointer into the stage-2 member (0x800b2700) with a size word of 0x1000 beside it at +0x14. The corpus has no body between 0x800b2694 and 0x800b3640, so most of that range is outside it - but the range's last 0xc0 bytes run into FUN_800b3640, which is why the pair is recorded as it stands and its meaning left to unresolved",
+      "name": "blob_pointer",
+      "offset": 16,
+      "reader": [],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a2e40.c:20: _DAT_80143c70 = &DAT_800b2700;",
+       "src/stage2/FUN_800a2e40.c:21: _DAT_80143c74 = 0x1000;"
+      ]
+     },
+     {
+      "confidence": "writer only",
+      "evidence": "cited statement",
+      "meaning": "the per-frame command list base (0x80143f50), written back after a cache flush of frames*0xa10 bytes: this is what the task hands over",
+      "name": "command_list",
+      "offset": 48,
+      "reader": [],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a2e40.c:26: _DAT_80143c90 = _DAT_80143f50;",
+       "src/stage2/FUN_800a2e40.c:28: func_0x8000efa0(_DAT_80143f50,uVar1 * 0xa10);"
+      ]
+     },
+     {
+      "confidence": "writer only",
+      "evidence": "cited statement",
+      "meaning": "how many 0xa10-byte frames that list holds, i.e. how many AI buffers are being handed over in one task",
+      "name": "frame_count",
+      "offset": 52,
+      "reader": [],
+      "width": 4,
+      "writer": [
+       "src/stage2/FUN_800a2e40.c:27: _DAT_80143c94 = uVar1;"
+      ]
+     }
+    ],
+    "list_base": "0x80143f50",
+    "program_blob": "0x800b2700"
+   },
+   "what": "FUN_800a924c's arguments, and the two records they land in. This is the CPU's last statement about the voice before the microcode takes it."
+  },
+  "end": "0x8015af70",
+  "end_evidence": [
+   "src/stage2/FUN_800b3640.c:27: *(int *)(param_1 * 0x1228 + -0x7fea62bc) = _DAT_8015af70;",
+   "src/stage2/FUN_800b3704.c:27: iVar3 = iVar3 + 0x1228;"
+  ],
+  "fields": [
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b63d4 (sh)",
+    "meaning": "the long-term predictor's period in samples: initialised to 40, and re-latched from the incoming value only while it lies in 40..120 (a value outside is ignored, not clamped)",
+    "name": "predictor_period",
+    "offset": 358,
+    "reader": [
+     "src/stage2/FUN_800b63b4.c:20: iVar6 = (int)(short)param_1[0xb3];"
+    ],
+    "width": 2,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:13: *(undefined2 *)(param_1 + 0x166) = 0x28;",
+     "src/stage2/FUN_800b63b4.c:24: param_1[0xb3] = (short)iVar6;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "cited statement",
+    "meaning": "two 16-byte banks of eight dequantised coefficients; the reader selects one per call with +0x188, so 0x168 and 0x178 are one field with an index, not two",
+    "name": "coefficient_banks",
+    "offset": 360,
+    "reader": [
+     "src/stage2/FUN_800b4dc0.c:18: puVar4 = (undefined2 *)(param_1 + *(short *)(param_1 + 0x188) * 0x10 + 0x168);"
+    ],
+    "width": 32,
+    "writer": [
+     "src/stage2/FUN_800b4dc0.c:18: puVar4 = (undefined2 *)(param_1 + *(short *)(param_1 + 0x188) * 0x10 + 0x168);"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "cited statement",
+    "meaning": "which of the two coefficient banks the next block reads; flipped after the mix, not before",
+    "name": "bank_select",
+    "offset": 392,
+    "reader": [
+     "src/stage2/FUN_800b4dc0.c:18: puVar4 = (undefined2 *)(param_1 + *(short *)(param_1 + 0x188) * 0x10 + 0x168);"
+    ],
+    "width": 2,
+    "writer": [
+     "src/stage2/FUN_800b4dc0.c:34: *(ushort *)(param_1 + 0x188) = *(ushort *)(param_1 + 0x188) ^ 1;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "cited statement",
+    "meaning": "one of the bit reader's two run-length cursors: decremented per code and reloaded when it reaches zero, at which point the other cursor is loaded (0x800b53f4's field map, M198)",
+    "name": "reader_cursor_a",
+    "offset": 394,
+    "reader": [
+     "src/stage2/FUN_800b53f4.c:72: if (*(short *)(param_1 + 0x18a) == 0) {"
+    ],
+    "width": 2,
+    "writer": [
+     "src/stage2/FUN_800b53f4.c:94: *(ushort *)(param_1 + 0x18a) = uVar5;",
+     "src/stage2/FUN_800b53f4.c:591: *(short *)(param_1 + 0x18a) = *(short *)(param_1 + 0x18a) + -1;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "cited statement",
+    "meaning": "the bit reader's second run-length cursor; same reload rule as +0x18a",
+    "name": "reader_cursor_b",
+    "offset": 396,
+    "reader": [
+     "src/stage2/FUN_800b53f4.c:73: if (*(short *)(param_1 + 0x18c) == 0) {"
+    ],
+    "width": 2,
+    "writer": [
+     "src/stage2/FUN_800b53f4.c:114: *(ushort *)(param_1 + 0x18c) = uVar5;",
+     "src/stage2/FUN_800b53f4.c:612: *(short *)(param_1 + 0x18c) = *(short *)(param_1 + 0x18c) + -1;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b4990 (sw)",
+    "meaning": "the transfer routine the reader calls to fill the ring; FUN_800b44f4, which hands the bytes to FUN_800b4818 and posts the queue message",
+    "name": "dma_callback",
+    "offset": 400,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:54: (**(code **)(param_1 + 400))"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:18: *(int *)(param_1 + 400) = param_5;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b497c (sw)",
+    "meaning": "the record's address in the cartridge: the bank base (0x8015af78) plus the per-clip offset's low 24 bits, computed by the caller",
+    "name": "source_rom",
+    "offset": 404,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:55: (*(int *)(param_1 + 0x194) + *(uint *)(param_1 + 0x11d0),"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:14: *(int *)(param_1 + 0x194) = param_2;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b4980 (sw)",
+    "meaning": "the PCM destination: 4320 16-bit samples for 16 kHz, either a heap block sized by FUN_800a9420 or one of the two static buffers at 0x8015af88",
+    "name": "pcm_buffer",
+    "offset": 408,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:70: FUN_800b53f4(param_1,*(int *)(param_1 + 0x198) +"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:15: *(undefined4 *)(param_1 + 0x198) = param_3;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b4984 (sw)",
+    "meaning": "that buffer's capacity in 16-bit units, and simultaneously the ring-of-PCM length the engine voice is told: the synthesis wraps at it and the engine drains against it",
+    "name": "pcm_units",
+    "offset": 412,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:71: (*(uint *)(param_1 + 0x11d8) % *(uint *)(param_1 + 0x19c) >> 2) * 8);"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:16: *(undefined4 *)(param_1 + 0x19c) = param_4;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b49c4 (sh)",
+    "meaning": "blocks the record still declares, seeded from the header's +4 halfword and decremented per synthesised block; zero stops synthesis unless the stream is still fetching",
+    "name": "blocks_remaining",
+    "offset": 4512,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:63: if ((((*(char *)(param_1 + 0x11dd) != '\\x01') && (*(short *)(param_1 + 0x11a0) == 0)) ||",
+     "src/stage2/func_800b3b9c.c:43: *(float *)(iVar3 + 0x1220) = ((float)*(ushort *)(iVar3 + 0x11a0) * 160.0) / fVar5;"
+    ],
+    "width": 2,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:29: *(undefined2 *)(param_1 + 0x11a0) = 0;",
+     "src/stage2/FUN_800b4a04.c:25: *(undefined2 *)(param_1 + 0x11a0) = *(undefined2 *)(param_1 + 0x1a4);",
+     "src/stage2/FUN_800b4a04.c:73: *(short *)(param_1 + 0x11a0) = sVar3;"
+    ]
+   },
+   {
+    "confidence": "writer only",
+    "evidence": "instruction 0x800b49bc (sh)",
+    "meaning": "written from the same header halfword as +0x11a0, in the same few instructions, and read by nothing in the corpus: kept here as an unexplained write rather than explained away",
+    "name": "header_blocks_echo",
+    "offset": 4514,
+    "reader": [],
+    "width": 2,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:27: *(undefined2 *)(param_1 + 0x11a2) = 0;",
+     "src/stage2/FUN_800b4a04.c:26: *(short *)(param_1 + 0x11a2) = (short)*(undefined4 *)(param_1 + 0x1a4);"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b49c0 (sw)",
+    "meaning": "the record's declared length in WORDS, from the header's +8 word masked to 24 bits: decremented by 0x100 per 0x400-byte chunk, and below 0x101 it becomes the tail chunk's size in words times four",
+    "name": "record_words_remaining",
+    "offset": 4516,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:49: iVar1 = *(uint *)(param_1 + 0x11a4) << 2;"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:28: *(undefined4 *)(param_1 + 0x11a4) = 0;",
+     "src/stage2/FUN_800b4a04.c:27: *(uint *)(param_1 + 0x11a4) = *(uint *)(param_1 + 0x1a8) & 0xffffff;",
+     "src/stage2/FUN_800b4a04.c:35: *(uint *)(param_1 + 0x11a4) = *(uint *)(param_1 + 0x11a4) - 0x100;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b4988 (sw)",
+    "meaning": "the PCM still owed to the engine once the last block is written: set to the capacity, reduced by what the engine pulls, and reaching zero it makes the stream state 4",
+    "name": "drain_budget",
+    "offset": 4520,
+    "reader": [
+     "src/stage2/FUN_800b4d30.c:17: iVar2 = *(int *)(param_1 + 0x11a8) - param_2;"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:17: *(undefined4 *)(param_1 + 0x11a8) = 0;",
+     "src/stage2/FUN_800b4a04.c:77: *(undefined4 *)(param_1 + 0x11a8) = *(undefined4 *)(param_1 + 0x19c);",
+     "src/stage2/FUN_800b4d30.c:18: if ((0 < *(int *)(param_1 + 0x11a8)) && (*(int *)(param_1 + 0x11a8) = iVar2, iVar2 < 1)) {"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b4968 (addiu)",
+    "meaning": "the OSMesgQueue the reader blocks on while a chunk is in flight; osCreateMesgQueue is given 0x11ac as the queue and 0x11c4 as the message array, so the 24-byte object ends exactly where the message begins",
+    "name": "dma_queue",
+    "offset": 4524,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:20: iVar1 = osRecvMesg(param_1 + 0x11ac,0,0);"
+    ],
+    "width": 24,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:19: osCreateMesgQueue(param_1 + 0x11ac,param_1 + 0x11c4,1);"
+    ]
+   },
+   {
+    "confidence": "writer only",
+    "evidence": "instruction 0x800b496c (addiu)",
+    "meaning": "the one-message array beside that queue: the transfer routine posts to it and the reader only ever asks whether a message arrived, never what it says, so no instruction reads the value itself",
+    "name": "dma_message",
+    "offset": 4548,
+    "reader": [],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:19: osCreateMesgQueue(param_1 + 0x11ac,param_1 + 0x11c4,1);"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b49c8 (sw)",
+    "meaning": "the codec's bit position inside the ring, in bits; seeded to 96 so the reader starts after the 12-byte header, and advanced by the synthesis",
+    "name": "bit_cursor",
+    "offset": 4552,
+    "reader": [
+     "src/stage2/FUN_800b53f4.c:67: uVar14 = *(uint *)(param_1 + 0x11c8);"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:30: *(undefined4 *)(param_1 + 0x11c8) = 0;",
+     "src/stage2/FUN_800b4a04.c:24: *(undefined4 *)(param_1 + 0x11c8) = 0x60;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b49d0 (sw)",
+    "meaning": "the bit cursor rounded down to a 4-byte boundary; the reader's low-water mark, which decides whether another chunk may land in the ring",
+    "name": "ring_consumed",
+    "offset": 4556,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:42: ((uint)(*(int *)(param_1 + 0x11d0) - *(int *)(param_1 + 0x11cc)) < 0xc01)) {"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:32: *(undefined4 *)(param_1 + 0x11cc) = 0;",
+     "src/stage2/FUN_800b4a04.c:74: *(uint *)(param_1 + 0x11cc) = *(uint *)(param_1 + 0x11c8) >> 3 & 0xfffffffc;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b49cc (sw)",
+    "meaning": "bytes fetched from the record so far; it is also the ring window, because the destination is (rom_offset & 0xff8) + 0x1a0, and it is what the tail-chunk test keys off",
+    "name": "rom_offset",
+    "offset": 4560,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:43: if (*(int *)(param_1 + 0x11d0) == 0) {"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:31: *(undefined4 *)(param_1 + 0x11d0) = 0;",
+     "src/stage2/FUN_800b4a04.c:30: *(int *)(param_1 + 0x11d0) = iVar1 + 0x400;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b49d8 (sw)",
+    "meaning": "PCM units the engine has pulled; the engine's refill callback advances it, so it is the engine's read position, not a count of work done",
+    "name": "units_delivered",
+    "offset": 4564,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:60: if ((uint)(*(int *)(param_1 + 0x11d8) - *(int *)(param_1 + 0x11d4)) <"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:34: *(undefined4 *)(param_1 + 0x11d4) = 0;",
+     "src/stage2/FUN_800b4d30.c:26: *(uint *)(param_1 + 0x11d4) = *(int *)(param_1 + 0x11d4) + uVar1;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b49d4 (sw)",
+    "meaning": "PCM units synthesised, +160 per block with no bound other than the pass budget; the difference from +0x11d4 is what the engine still has to chew",
+    "name": "units_written",
+    "offset": 4568,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:71: (*(uint *)(param_1 + 0x11d8) % *(uint *)(param_1 + 0x19c) >> 2) * 8);"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:33: *(undefined4 *)(param_1 + 0x11d8) = 0;",
+     "src/stage2/FUN_800b4a04.c:75: *(int *)(param_1 + 0x11d8) = *(int *)(param_1 + 0x11d8) + 0xa0;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b49b8 (sb)",
+    "meaning": "set when a transfer is issued and cleared when its message arrives; while it is set the reader skips issuing another",
+    "name": "dma_in_flight",
+    "offset": 4572,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:19: if (*(char *)(param_1 + 0x11dc) != '\\0') {"
+    ],
+    "width": 1,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:26: *(undefined1 *)(param_1 + 0x11dc) = 0;",
+     "src/stage2/FUN_800b4a04.c:53: *(undefined1 *)(param_1 + 0x11dc) = 1;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b49b0 (sb)",
+    "meaning": "the reader's phase: 0 idle, 1 armed (a source and a callback exist), 2 primed (the engine voice is live and the PCM has been consumed once), 3 draining, 4 done. Only 3 accepts pulls from the callback (FUN_800b4d30.c:16), so a chunk is never handed over before its PCM exists",
+    "name": "stream_state",
+    "offset": 4573,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:41: if (((*(byte *)(param_1 + 0x11dd) - 1 < 2) || (*(byte *)(param_1 + 0x11dd) == 3)) &&"
+    ],
+    "width": 1,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:24: *(undefined1 *)(param_1 + 0x11dd) = 1;",
+     "src/stage2/FUN_800b4a04.c:102: *(undefined1 *)(param_1 + 0x11dd) = 2;",
+     "src/stage2/FUN_800b4d90.c:13: *(undefined1 *)(param_1 + 0x11dd) = 3;",
+     "src/stage2/FUN_800b4d30.c:19: *(undefined1 *)(param_1 + 0x11dd) = 4;",
+     "src/stage2/FUN_800b4dac.c:12: *(undefined1 *)(param_1 + 0x11dd) = 4;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b49dc (sb)",
+    "meaning": "how many 160-sample blocks this pass may synthesise; FUN_800b4a04 copies it into a local and decrements that, so the field itself stays 2 for the stream's life",
+    "name": "pass_budget",
+    "offset": 4574,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:18: uVar5 = (uint)*(byte *)(param_1 + 0x11de);"
+    ],
+    "width": 1,
+    "writer": [
+     "src/stage2/FUN_800b4930.c:35: *(undefined1 *)(param_1 + 0x11de) = 2;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b393c (sb)",
+    "meaning": "the slot's own state, and the only thing the allocator scans for: 0 free, 1 started and waiting for the engine, 2 playing, 3 finishing. Written 1 by the starter and 2 by the frame thread when the stream reaches 2",
+    "name": "slot_state",
+    "offset": 4608,
+    "reader": [
+     "src/stage2/FUN_800b3704.c:25: if (*(char *)(iVar3 + 0x1200) == '\\0') break;"
+    ],
+    "width": 1,
+    "writer": [
+     "src/stage2/FUN_800b3704.c:62: (&DAT_80159d20)[iVar3] = 1;",
+     "src/stage2/func_800b3b9c.c:45: *(undefined1 *)(iVar3 + 0x1200) = 2;",
+     "src/stage2/FUN_800b40c4.c:29: *(undefined1 *)(iVar3 + 0x1200) = 0;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b3824 (sb)",
+    "meaning": "the first of four parameters the caller passes straight through to the engine voice start; not interpreted anywhere on the MIPS side",
+    "name": "param_a",
+    "offset": 4609,
+    "reader": [
+     "src/stage2/func_800b3b9c.c:49: *(undefined1 *)(iVar3 + 0x1201),*(undefined1 *)(iVar3 + 0x1202),"
+    ],
+    "width": 1,
+    "writer": [
+     "src/stage2/FUN_800b3704.c:37: *(undefined1 *)(iVar3 + -0x7fea62df) = param_4;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b3828 (sb)",
+    "meaning": "the second passed-through parameter; live-updatable through func_800b3a68",
+    "name": "param_b",
+    "offset": 4610,
+    "reader": [
+     "src/stage2/func_800b3b9c.c:49: *(undefined1 *)(iVar3 + 0x1201),*(undefined1 *)(iVar3 + 0x1202),"
+    ],
+    "width": 1,
+    "writer": [
+     "src/stage2/FUN_800b3704.c:38: *(undefined1 *)(iVar3 + -0x7fea62de) = param_5;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b382c (sb)",
+    "meaning": "the third passed-through parameter",
+    "name": "param_c",
+    "offset": 4611,
+    "reader": [
+     "src/stage2/func_800b3b9c.c:50: *(undefined1 *)(iVar3 + 0x1203),*(undefined1 *)(iVar3 + 0x1219),"
+    ],
+    "width": 1,
+    "writer": [
+     "src/stage2/FUN_800b3704.c:39: *(undefined1 *)(iVar3 + -0x7fea62dd) = param_6;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b3830 (sb)",
+    "meaning": "the fourth passed-through parameter: a different byte, same forward-only role",
+    "name": "param_d",
+    "offset": 4633,
+    "reader": [
+     "src/stage2/func_800b3b9c.c:50: *(undefined1 *)(iVar3 + 0x1203),*(undefined1 *)(iVar3 + 0x1219),"
+    ],
+    "width": 1,
+    "writer": [
+     "src/stage2/FUN_800b3704.c:40: *(undefined1 *)(iVar3 + -0x7fea62c7) = param_7;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b380c (sb)",
+    "meaning": "the first argument the engine voice start receives; it selects which of the engine's handles is allocated (FUN_800aedc0's search key), so it decides what kind of voice this is",
+    "name": "engine_key",
+    "offset": 4612,
+    "reader": [
+     "src/stage2/func_800b3b9c.c:47: iVar2 = FUN_800a924c(*(undefined1 *)(iVar3 + 0x1204),*(undefined4 *)(iVar3 + 0x1210),"
+    ],
+    "width": 1,
+    "writer": [
+     "src/stage2/FUN_800b3704.c:35: *(undefined1 *)(iVar3 + -0x7fea62dc) = param_3;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b3810 (sw)",
+    "meaning": "the sample rate the engine voice is tuned to: it becomes the pitch word by way of /_DAT_80147fa4*4096, and the block rate by way of 160 samples per block. The caller supplies it (16000 by default, 8000 when the bank's flag byte is zero); nothing reads the record's own rate halfword - see unresolved",
+    "name": "rate",
+    "offset": 4616,
+    "reader": [
+     "src/stage2/func_800b3b9c.c:36: iVar2 = *(int *)(iVar3 + 0x1208);"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b3704.c:36: *(int *)(iVar3 + -0x7fea62d8) = param_2;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b3934 (sw)",
+    "meaning": "the engine voice handle FUN_800a924c returned, or -1 while none is live; it is what the stop path passes to FUN_800a942c and what the release path tests before freeing the buffer",
+    "name": "engine_handle",
+    "offset": 4620,
+    "reader": [
+     "src/stage2/func_800b3b9c.c:66: FUN_800a942c(*(undefined4 *)(iVar3 + 0x120c));"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b3704.c:61: *(undefined4 *)(iVar3 + -0x7fea62d4) = 0xffffffff;",
+     "src/stage2/func_800b3b9c.c:52: *(int *)(iVar3 + 0x120c) = iVar2;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b38a4 (sw)",
+    "meaning": "the same pointer as +0x198, kept separately for the engine handoff and for the release path: on a freed slot the engine is handed +0x1210, not +0x198",
+    "name": "pcm_buffer_alloc",
+    "offset": 4624,
+    "reader": [
+     "src/stage2/func_800b3b9c.c:47: iVar2 = FUN_800a924c(*(undefined1 *)(iVar3 + 0x1204),*(undefined4 *)(iVar3 + 0x1210),"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b3704.c:46: *(undefined4 *)(iVar3 + -0x7fea62d0) = uVar1;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b3858 (sw)",
+    "meaning": "the same capacity as +0x19c: (((rate<<3)/30 + 0x9f)/0xa0)*0xa0, which is 4320 samples at 16 kHz - 27 blocks' worth, a fixed lookahead and not the clip's own length",
+    "name": "pcm_capacity_alloc",
+    "offset": 4628,
+    "reader": [
+     "src/stage2/func_800b3b9c.c:48: *(undefined4 *)(iVar3 + 0x1214),*(undefined4 *)(iVar3 + 0x1208),"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b3704.c:42: *(uint *)(iVar3 + -0x7fea62cc) = (((uint)(param_2 << 3) / 0x1e + 0x9f) / 0xa0) * 0xa0;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "cited statement",
+    "meaning": "set to 4 when the stream reports done and decremented by the frame thread; the slot is released when it reaches 0, which is how a finished voice survives its own final drain",
+    "name": "stop_countdown",
+    "offset": 4632,
+    "reader": [
+     "src/stage2/func_800b3b9c.c:64: if (*(char *)(iVar3 + 0x1218) == '\\0') goto LAB_800b3d3c;"
+    ],
+    "width": 1,
+    "writer": [
+     "src/stage2/func_800b3b9c.c:31: *(undefined1 *)(iVar3 + 0x1218) = 4;",
+     "src/stage2/func_800b3b9c.c:69: *(char *)(iVar3 + 0x1218) = *(char *)(iVar3 + 0x1218) + -1;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "cited statement",
+    "meaning": "PCM units the engine's callback has actually taken, accumulated by the callback itself and zeroed when the voice starts; FUN_800b3ddc divides it by the rate to build the progress the caller sees",
+    "name": "pcm_units_delivered",
+    "offset": 4636,
+    "reader": [
+     "src/stage2/FUN_800b3ddc.c:34: fVar5 = (float)*(int *)(iVar2 + -0x7fea62c4);"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b4478.c:15: *(int *)(param_5 + -0x7fea62c4) = *(int *)(param_5 + -0x7fea62c4) + param_2 + param_4;",
+     "src/stage2/func_800b3b9c.c:44: *(undefined4 *)(iVar3 + 0x121c) = 0;"
+    ]
+   },
+   {
+    "confidence": "writer only",
+    "evidence": "cited statement",
+    "meaning": "a float duration the frame thread computes once: (blocks_remaining * 160) / rate. It is written, never read in the corpus",
+    "name": "declared_seconds",
+    "offset": 4640,
+    "reader": [],
+    "width": 4,
+    "writer": [
+     "src/stage2/func_800b3b9c.c:43: *(float *)(iVar3 + 0x1220) = ((float)*(ushort *)(iVar3 + 0x11a0) * 160.0) / fVar5;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "cited statement",
+    "meaning": "the caller's handle: FUN_800b3640 assigns a fresh id on every start and the control functions find a slot by scanning two entries for it",
+    "name": "voice_id",
+    "offset": 4644,
+    "reader": [
+     "src/stage2/FUN_800b3ddc.c:23: if ((*(char *)(iVar2 + 0x1200) != '\\0') && (*(int *)(iVar2 + 0x1224) == param_1))"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b3640.c:27: *(int *)(param_1 * 0x1228 + -0x7fea62bc) = _DAT_8015af70;"
+    ]
+   }
+  ],
+  "name": "voice_slot",
+  "slots": 2,
+  "starters": [
+   "FUN_800b3704",
+   "FUN_800b4930",
+   "FUN_800b4a04",
+   "FUN_800b53f4",
+   "func_800b3b9c",
+   "FUN_800b40c4"
+  ],
+  "stride": 4648,
+  "stride_evidence": [
+   "src/stage2/func_800b3b9c.c:72: iVar3 = iVar3 + 0x1228;",
+   "src/stage2/FUN_800b3704.c:27: iVar3 = iVar3 + 0x1228;"
+  ]
+ },
+ "inputs": {
+  "cartridge": {
+   "bytes": 67108864,
+   "path": "rom/Resident Evil 2 (USA) (Rev 1).z64",
+   "sha256": "71f3f779613bf1f0e2050bfa600425385d2c257a647d2e40f63be1a7986e9aac"
+  },
+  "sources": [
+   {
+    "path": "src/stage2/FUN_800a2e40.c",
+    "sha256": "a9d55a5aded69f6f421b5e4bbfe36518da46c68e31d080fefa83349149bd9c5b"
+   },
+   {
+    "path": "src/stage2/FUN_800a3bf4.c",
+    "sha256": "67bc619920c08261f3280998f5b4f07e5c2d148299709ce132ded72b3ee48684"
+   },
+   {
+    "path": "src/stage2/FUN_800a4560.c",
+    "sha256": "62c383bab6e28fd8cb4618996fbb7e93952222f6d6efe15e2f815bc6e025d5e8"
+   },
+   {
+    "path": "src/stage2/FUN_800a485c.c",
+    "sha256": "416cc8f0d829ce0a78e9d8ce80ca48785abcfc5c120c4e0cd6cfdf986e83827e"
+   },
+   {
+    "path": "src/stage2/FUN_800a54ec.c",
+    "sha256": "6cf8f678d0dab162d55cedccb6988202f1d8d0630f95da05900b325c5e78d28a"
+   },
+   {
+    "path": "src/stage2/FUN_800a5a00.c",
+    "sha256": "da81728cbdcef75fd091751461e044d1622cbb941e8d4203051d07f6e554d715"
+   },
+   {
+    "path": "src/stage2/FUN_800a5a60.c",
+    "sha256": "989035112d2cfc7dfff2a23b969f60de6ccbfbd02e2d29a5df5d4a9cbb7770ee"
+   },
+   {
+    "path": "src/stage2/FUN_800a5da0.c",
+    "sha256": "f4efcd22b6cdf076919a9b8c116d50588aa485daf77254fc259408be1065363f"
+   },
+   {
+    "path": "src/stage2/FUN_800a924c.c",
+    "sha256": "337559fc33b2ac837a28071833b009803f0a52cd14cbba845208620a54273317"
+   },
+   {
+    "path": "src/stage2/FUN_800a9420.c",
+    "sha256": "41bd6b90ba00ba4f900db064aae82ff0c6a9b2b6b5d8ef061324b99e405a9b63"
+   },
+   {
+    "path": "src/stage2/FUN_800a942c.c",
+    "sha256": "6dd471a631cc8a145439be7f885201b64427b634fe5a021d7dd85375ee146cec"
+   },
+   {
+    "path": "src/stage2/FUN_800b3640.c",
+    "sha256": "28b5eb7319bda6d282a27918235dea6fd862826ca8de02db7947c1490eaacf2b"
+   },
+   {
+    "path": "src/stage2/FUN_800b3704.c",
+    "sha256": "9d0567c503ee1e9e59666cde6ea05d3baf82e17f634a98a27c98bcbdca4c3e0c"
+   },
+   {
+    "path": "src/stage2/FUN_800b3ddc.c",
+    "sha256": "3faf22963374784ba47e856f08c7cc2009e1cd7bdeef127e6bf8dc544123732c"
+   },
+   {
+    "path": "src/stage2/FUN_800b40c4.c",
+    "sha256": "5c516d921991b8204ae30328c70bc388d416bb105b32d3fba8a43430c8ad6e57"
+   },
+   {
+    "path": "src/stage2/FUN_800b4478.c",
+    "sha256": "384564e4ef286c636ec330981d830817f39d58cde8fa1643b7447de8d785364d"
+   },
+   {
+    "path": "src/stage2/FUN_800b4930.c",
+    "sha256": "152c0ad6436564fa2f342bdd2e8085fc759a7aced05f1f041df6c4da7f045322"
+   },
+   {
+    "path": "src/stage2/FUN_800b4a04.c",
+    "sha256": "a12a3eb9fdaf47910c597c999bca0bba685c68e5cac307347c81a390fea1ccfe"
+   },
+   {
+    "path": "src/stage2/FUN_800b4d30.c",
+    "sha256": "d7d252bda7c02218533bbab9c128fd55a4cba036a344cc324462391defee76b3"
+   },
+   {
+    "path": "src/stage2/FUN_800b4d90.c",
+    "sha256": "5c50d2da0d659a1e5e805aaccb4a0353563d6e5244c53649094dc7bc54f380d0"
+   },
+   {
+    "path": "src/stage2/FUN_800b4dac.c",
+    "sha256": "0baae808daf44f3ffa0034cb56a27c105e6cd33a96aae2c8086ec032e5a5a4c4"
+   },
+   {
+    "path": "src/stage2/FUN_800b4dc0.c",
+    "sha256": "2c7b80a82077f4d90a96e46d3c118d50cca714cb8eb6f97064d3b9a2153d64ed"
+   },
+   {
+    "path": "src/stage2/FUN_800b53f4.c",
+    "sha256": "e18a24ce0a9d66482da93e9caefd89e1cf18ffb5b4d30d875cfe25040105fb8c"
+   },
+   {
+    "path": "src/stage2/FUN_800b63b4.c",
+    "sha256": "07fde107ec0519cd728189ae81d2a98b8083115218e143032d5424053bf4f472"
+   },
+   {
+    "path": "src/stage2/func_800b3b9c.c",
+    "sha256": "361b52bf40752e146b8918ab4efad123f6237cc2b4e204c3d9105184224b15ff"
+   }
+  ],
+  "stage2_member": {
+   "base": "0x80018a80",
+   "bytes": 1172240,
+   "file_offset": 82976,
+   "sha256": "daabf1d4dac248cf697ab7ed60aa1a6e0a555a26a56a154747fbd46b234c6673",
+   "stored": "zlib, CMF 0x68"
+  },
+  "voice_bank": {
+   "bytes": 8560916,
+   "file_offset": 3379178,
+   "records": 588
+  }
+ },
+ "ring": {
+  "chunk": 1024,
+  "chunking": {
+   "evidence": [
+    "src/stage2/FUN_800b4a04.c:42: ((uint)(*(int *)(param_1 + 0x11d0) - *(int *)(param_1 + 0x11cc)) < 0xc01)) {",
+    "src/stage2/FUN_800b4a04.c:49: iVar1 = *(uint *)(param_1 + 0x11a4) << 2;"
+   ],
+   "fetch_when": "stream_state in {1,2,3} and (rom_offset - ring_consumed) < 0xc01, so at most three chunks are ever outstanding in a 4 KiB ring",
+   "rule": "the fetch destination is ring + (rom_offset & 0xff8); the byte count is 0x400, except that once descriptor+0x11a4 (words still declared) falls below 0x101 it becomes 0x11a4<<2, i.e. the record's own tail"
+  },
+  "contents": "the record's bytes, exactly as the cartridge holds them, refilled 0x400 at a time through the DMA callback at descriptor+0x190",
+  "correction": "+0x1a4 and +0x1a8 are not stream state, though they sit where stream state would expect to be: the ring spans 0x1a0..0x119f, so those two reads are ring bytes 4..11, and they happen exactly once, while rom_offset is still 0 and the first chunk is the record's header. Every actual stream field is at 0x11a0 and above.",
+  "fetch_window_mask": 4088,
+  "layout": [
+   {
+    "confidence": "byte map only",
+    "evidence": "the DMA destination arithmetic, not a field read",
+    "meaning": "the record's first halfword, 'MO'; never read by the codec, which starts at +0x60",
+    "name": "magic",
+    "offset": 416,
+    "reader": [],
+    "width": 2,
+    "writer": [
+     "src/stage2/FUN_800b4a04.c:56: param_1 + (*(uint *)(param_1 + 0x11d0) & 0xff8) + 0x1a0,iVar1,param_1 + 0x11ac);"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b4a50 (lhu r4,420(r16)) reads ring+4",
+    "meaning": "the MORT header's block count, and the only thing the reader takes out of the ring: read as a halfword into descriptor+0x11a0 when rom_offset is still 0",
+    "name": "header_blocks",
+    "offset": 420,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:25: *(undefined2 *)(param_1 + 0x11a0) = *(undefined2 *)(param_1 + 0x1a4);"
+    ],
+    "width": 2,
+    "writer": [
+     "src/stage2/FUN_800b4a04.c:30: *(int *)(param_1 + 0x11d0) = iVar1 + 0x400;"
+    ]
+   },
+   {
+    "confidence": "unread",
+    "evidence": "absence, established by scanning every image for the immediate",
+    "meaning": "the MORT header's sample rate; NO instruction in any unpacked image reads this halfword (every immediate 0x1a6/0x1a7 in the corpus belongs to a stack frame), so the descriptor's rate cannot be traced through it - see unresolved",
+    "name": "header_rate",
+    "offset": 422,
+    "reader": [],
+    "width": 2,
+    "writer": [
+     "src/stage2/FUN_800b4a04.c:30: *(int *)(param_1 + 0x11d0) = iVar1 + 0x400;"
+    ]
+   },
+   {
+    "confidence": "established",
+    "evidence": "instruction 0x800b4a58 (lw r3,424(r16)) reads ring+8",
+    "meaning": "the record's length in 32-bit words, masked to 24 bits into descriptor+0x11a4 and from there into 4-byte tail-chunk arithmetic",
+    "name": "header_words",
+    "offset": 424,
+    "reader": [
+     "src/stage2/FUN_800b4a04.c:27: *(uint *)(param_1 + 0x11a4) = *(uint *)(param_1 + 0x1a8) & 0xffffff;"
+    ],
+    "width": 4,
+    "writer": [
+     "src/stage2/FUN_800b4a04.c:30: *(int *)(param_1 + 0x11d0) = iVar1 + 0x400;"
+    ]
+   }
+  ],
+  "offset": 416,
+  "overlap": {
+   "claim": "the ring and the post-ring state do not overlap: 0x1a0 + 0x1000 == 0x11a0",
+   "evidence": [
+    "src/stage2/FUN_800b53f4.c:71: uVar4 = *(uint *)(((int)uVar14 >> 3 & 0xffcU) + iVar6) >> (uVar14 & 0x1f);",
+    "src/stage2/FUN_800b4930.c:29: *(undefined2 *)(param_1 + 0x11a0) = 0;"
+   ]
+  },
+  "read_window_mask": 4092,
+  "size": 4096
+ },
+ "rsp_only": [
+  {
+   "name": "command_record_semantics",
+   "what": "what the microcode does with the 0x50-byte per-voice command record, and what each of its words means",
+   "why_unobservable": "FUN_800a3bf4 writes one record per active voice per frame into the list at 0x80143f50, and no MIPS instruction in the corpus ever reads that list back: its only consumer is the RSP program, so every field's meaning is a property of microcode that is not in the corpus."
+  },
+  {
+   "name": "gain_application",
+   "what": "how the four target gains at engine+0x40..0x46 are applied per sample, and which output channel each of the four feeds",
+   "why_unobservable": "the CPU only computes the target gains and the per-frame ramp step (FUN_800a3bf4 divides the difference by 6 and shifts); applying that ramp per sample, and choosing a channel, is the mixer's job and leaves no MIPS trace."
+  },
+  {
+   "name": "resampling",
+   "what": "how the pitch word at engine+0x04 becomes an interpolated sample stream",
+   "why_unobservable": "the CPU computes the ratio as (rate/_DAT_80147fa4)*4096 and stops there; the filter, its taps and its rounding live in the ucode, which is not disassembled anywhere in this repository."
+  },
+  {
+   "name": "loop_choice",
+   "what": "whether the mixer honours buffer_end (+0x30) or loop_end (+0x38) when they differ, and what a non-zero loop_length (+0x3c) would sound like",
+   "why_unobservable": "the MORT voice sets +0x30 == +0x38 == the capacity and +0x3c == 0, so the distinction is unobservable from the CPU side by construction - the two candidate readings agree on every voice this path starts."
+  },
+  {
+   "name": "output_frames",
+   "what": "how the 0x800-byte output buffer at 0x80136b50 is filled and how the AI receives it",
+   "why_unobservable": "the task block names that buffer and its size, and no MIPS instruction in the corpus writes or reads it; the mixer fills it and the handover to the audio interface is outside the corpus."
+  },
+  {
+   "name": "microcode_identity",
+   "what": "what the 0x1000 bytes the task block points at (0x800b2700) actually are",
+   "why_unobservable": "the corpus has no MIPS body between 0x800b2694 and 0x800b3640 and no RSP disassembly exists anywhere in this repository, so the bytes are locatable and their behaviour is not - and the declared 0x1000-byte range overruns into FUN_800b3640, so even the extent is a claim this map does not make."
+  }
+ ],
+ "schema": "voice-descriptor/1",
+ "tool": "voice_descriptor.py",
+ "unresolved": [
+  {
+   "question": "Does the descriptor's rate come from the MORT header's rate halfword at ring+6?",
+   "why": "no instruction reads ring+6 (scanned by immediate across every unpacked image), and FUN_800b3704 receives the rate as an argument, defaulting to 16000 or 8000 on the bank table's flag byte. For clip 0 the record declares 16000 and the default is 16000, so the numbers agree without a traced hop.",
+   "would_settle_it": "the caller of FUN_800b3704 for clip 0, and what writes the bank table's flag byte at _DAT_8015af7c."
+  },
+  {
+   "question": "What reads descriptor+0x11a2?",
+   "why": "it is written twice from the header's block count (+4) and read by nothing in the corpus.",
+   "would_settle_it": "a reader in code outside the corpus, or a demonstration that the write is dead."
+  },
+  {
+   "question": "What is _DAT_80147fa4, the divisor in the pitch word?",
+   "why": "the pitch word is (rate / _DAT_80147fa4) * 4096, so every resampling claim needs this number, and it is RAM: written by FUN_800a80c8 from its argument, with no trace in the corpus to the caller that supplies the audio interface's frequency.",
+   "would_settle_it": "the caller of FUN_800a80c8 and the AI frequency it installs."
+  },
+  {
+   "question": "What advances the playback position at engine+0x10 for a MORT voice?",
+   "why": "FUN_800a54ec writes +0x08/+0x10/+0x14 from the command, and for this path every one of them is zero; FUN_800a485c then rewrites +0x10 from +0x08's integer part each frame, which stays zero, and FUN_800a3bf4 reads +0x08 to size its per-frame step. No MIPS instruction in the corpus writes a non-zero position to this record, so either the position is irrelevant because the refill callback delivers PCM by the slot's own +0x11d4 counter, or something outside the corpus writes it.",
+   "would_settle_it": "a watchpoint on engine+0x10 during a clip, or code outside the corpus that stores to it."
+  },
+  {
+   "question": "What is the 0x800b2700 / 0x1000 pointer-size pair in the audio task block?",
+   "why": "the corpus has no body between 0x800b2694 and 0x800b3640, so the pair looks like a hole in the stage-2 image - but a 0x1000-byte range from 0x800b2700 ends at 0x800b3700 and thus overruns FUN_800b3640 by 0xc0 bytes, so it cannot be a plain extent of that image.",
+   "would_settle_it": "the routine that consumes the task block, or a dump of the block at run time."
+  },
+  {
+   "question": "What is the boot pointer the task block at +0x08 receives?",
+   "why": "FUN_800a2e40 assigns the symbol Ghidra renders as `entry` to it, which is the image's own entry point (src/stage2/func_80018a80.c:11) and cannot be an RSP boot address; the decompiler has lost which variable that was.",
+   "would_settle_it": "the linker symbol at that store, or a read of the value in a memory dump."
+  }
+ ]
+}

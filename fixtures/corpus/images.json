@@ -1,0 +1,13 @@
+{
+ "cart_sha256": "2dd0ffebe9f149839c99d5722f6cd10a1d0fac9b37448271c26c7828b325eac6",
+ "cart_unchanged": true,
+ "images": [
+  {
+   "name": "boot",
+   "role": "boot",
+   "base": 2147484800,
+   "size": 64,
+   "source": "ROM 0x1000"
+  }
+ ]
+}

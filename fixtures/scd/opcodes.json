@@ -1,0 +1,288 @@
+{
+ "attribution": {
+  "source": "OpenBiohazard2/OpenBiohazard2",
+  "url": "https://github.com/OpenBiohazard2/OpenBiohazard2",
+  "license": "MIT",
+  "files": [
+   "fileio/rdt_scd.go"
+  ],
+  "method": "opcode number and field list transcribed from the ScriptInstrX structs; size is the sum of the declared fields, because Go's encoding/binary adds no padding. These are the *PlayStation* command sizes; the N64 port's own advance is measured separately and takes precedence.",
+  "note": "0x26 carries two variants in the source (Calc and Calc2) \u2014 same opcode number, two sizes."
+ },
+ "opcodes": {
+  "0x04": [
+   {
+    "name": "EventExec",
+    "size": 4
+   }
+  ],
+  "0x06": [
+   {
+    "name": "IfElseStart",
+    "size": 4
+   }
+  ],
+  "0x07": [
+   {
+    "name": "ElseStart",
+    "size": 4
+   }
+  ],
+  "0x09": [
+   {
+    "name": "Sleep",
+    "size": 4
+   }
+  ],
+  "0x0d": [
+   {
+    "name": "ForStart",
+    "size": 6
+   }
+  ],
+  "0x13": [
+   {
+    "name": "Switch",
+    "size": 4
+   }
+  ],
+  "0x14": [
+   {
+    "name": "SwitchCase",
+    "size": 6
+   }
+  ],
+  "0x17": [
+   {
+    "name": "Goto",
+    "size": 6
+   }
+  ],
+  "0x18": [
+   {
+    "name": "GoSub",
+    "size": 2
+   }
+  ],
+  "0x21": [
+   {
+    "name": "CheckBitTest",
+    "size": 4
+   }
+  ],
+  "0x22": [
+   {
+    "name": "SetBit",
+    "size": 4
+   }
+  ],
+  "0x23": [
+   {
+    "name": "Compare",
+    "size": 6
+   }
+  ],
+  "0x24": [
+   {
+    "name": "Save",
+    "size": 4
+   }
+  ],
+  "0x25": [
+   {
+    "name": "Copy",
+    "size": 3
+   }
+  ],
+  "0x26": [
+   {
+    "name": "Calc",
+    "size": 5
+   },
+   {
+    "name": "Calc2",
+    "size": 4
+   }
+  ],
+  "0x29": [
+   {
+    "name": "CutChg",
+    "size": 2
+   }
+  ],
+  "0x2c": [
+   {
+    "name": "AotSet",
+    "size": 20
+   }
+  ],
+  "0x2d": [
+   {
+    "name": "ObjModelSet",
+    "size": 38
+   }
+  ],
+  "0x2e": [
+   {
+    "name": "WorkSet",
+    "size": 3
+   }
+  ],
+  "0x32": [
+   {
+    "name": "PosSet",
+    "size": 8
+   }
+  ],
+  "0x34": [
+   {
+    "name": "MemberSet",
+    "size": 4
+   }
+  ],
+  "0x37": [
+   {
+    "name": "ScaIdSet",
+    "size": 4
+   }
+  ],
+  "0x3a": [
+   {
+    "name": "SceEsprOn",
+    "size": 16
+   }
+  ],
+  "0x3b": [
+   {
+    "name": "DoorAotSet",
+    "size": 32
+   }
+  ],
+  "0x3c": [
+   {
+    "name": "CutAuto",
+    "size": 2
+   }
+  ],
+  "0x3e": [
+   {
+    "name": "MemberCompare",
+    "size": 6
+   }
+  ],
+  "0x3f": [
+   {
+    "name": "PlcMotion",
+    "size": 4
+   }
+  ],
+  "0x40": [
+   {
+    "name": "PlcDest",
+    "size": 8
+   }
+  ],
+  "0x41": [
+   {
+    "name": "PlcNeck",
+    "size": 10
+   }
+  ],
+  "0x43": [
+   {
+    "name": "PlcFlag",
+    "size": 4
+   }
+  ],
+  "0x44": [
+   {
+    "name": "SceEmSet",
+    "size": 22
+   }
+  ],
+  "0x46": [
+   {
+    "name": "AotReset",
+    "size": 10
+   }
+  ],
+  "0x4c": [
+   {
+    "name": "SceEsprKill",
+    "size": 5
+   }
+  ],
+  "0x4d": [
+   {
+    "name": "DoorModelSet",
+    "size": 22
+   }
+  ],
+  "0x4e": [
+   {
+    "name": "ItemAotSet",
+    "size": 22
+   }
+  ],
+  "0x51": [
+   {
+    "name": "SceBgmControl",
+    "size": 6
+   }
+  ],
+  "0x52": [
+   {
+    "name": "SceEsprControl",
+    "size": 6
+   }
+  ],
+  "0x54": [
+   {
+    "name": "SceEspr3DOn",
+    "size": 22
+   }
+  ],
+  "0x58": [
+   {
+    "name": "PlcRot",
+    "size": 4
+   }
+  ],
+  "0x59": [
+   {
+    "name": "XaOn",
+    "size": 4
+   }
+  ],
+  "0x5d": [
+   {
+    "name": "MizuDivSet",
+    "size": 2
+   }
+  ],
+  "0x60": [
+   {
+    "name": "KageSet",
+    "size": 14
+   }
+  ],
+  "0x67": [
+   {
+    "name": "AotSet4p",
+    "size": 28
+   }
+  ],
+  "0x68": [
+   {
+    "name": "DoorAotSet4p",
+    "size": 40
+   }
+  ],
+  "0x69": [
+   {
+    "name": "ItemAotSet4p",
+    "size": 30
+   }
+  ]
+ }
+}

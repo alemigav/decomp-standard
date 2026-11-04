@@ -1,0 +1,49 @@
+# splat config for ONE image: the boot image (ROM 0x1000, 69952 B, vram 0x80000480).
+#
+# A dress rehearsal of the matching pipeline's left half: segregate the image, disassemble it, emit a symbol
+# map and a linker script, and check that the segmentation tiles the image exactly -- before any function is
+# decompiled or any assembler exists. `tools/splat_boot.py` materialises this template into build/splat/boot/
+# (splat resolves every path relative to the config file, measured) and then verifies the result.
+#
+# The options are splat's own `create_config` set for this cartridge, trimmed to the boot image. Dropping
+# `compiler`, `extensions_path` or `header_encoding` makes splat exit 2 with no message, which is why they are
+# here verbatim rather than as a hand-picked minimum.
+name: re2-64 boot image
+options:
+  basename: boot
+  target_path: ../../../rom/Resident Evil 2 (USA) (Rev 1).z64
+  base_path: .
+  platform: n64
+  compiler: IDO
+  elf_path: boot.elf
+  ld_script_path: boot.ld
+  asm_path: asm
+  ld_dependencies: True
+  o_as_suffix: True
+  use_legacy_include_asm: False
+  mips_abi_float_regs: o32
+  find_file_boundaries: True
+  header_encoding: ASCII
+  rodata_string_guesser_level: 2
+  data_string_guesser_level: 2
+  symbol_addrs_path: [symbol_addrs.txt]
+segments:
+  # splat's own analysis puts a 104-byte hand-written entry stub at 0x1000 and code after it; kept as splat
+  # found them, so the rehearsal tests its boundaries rather than mine.
+  - name: entry
+    type: code
+    start: 0x1000
+    vram: 0x80000480
+    subsegments:
+      - [0x1000, hasm]
+  - name: main
+    type: code
+    start: 0x1068
+    vram: 0x800004E8
+    follows_vram: entry
+    subsegments:
+      - [0x1068, asm]
+  # bounds the image: without a following segment splat runs to the end of the cartridge
+  - type: bin
+    start: 0x12140
+    follows_vram: main

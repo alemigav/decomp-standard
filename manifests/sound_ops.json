@@ -1,0 +1,235 @@
+{
+ "commands": [
+  {
+   "advance": 6,
+   "bytes": 115,
+   "calls": [
+    {
+     "at": "0x800723a4",
+     "target": "0x800777d8"
+    }
+   ],
+   "carved_as": "function_body",
+   "closure": [
+    "0x800777d8",
+    "0x80079344",
+    "0x80079260",
+    "0x80078c48",
+    "0x800a21a8",
+    "0x800a1f40",
+    "0x800a8bc8",
+    "0x800a1f84",
+    "0x800a1fc8",
+    "0x80079418",
+    "0x800790a4",
+    "0x80078fc0",
+    "0x80079194",
+    "0x80078ee4",
+    "0x800a2218"
+   ],
+   "extent": [
+    "0x8007235c",
+    "0x800723cb"
+   ],
+   "handler": "0x8007235c",
+   "name": "SceBgmControl",
+   "opcode": "0x51",
+   "operands": [
+    {
+     "load": "lbu",
+     "offset": 1
+    },
+    {
+     "load": "lbu",
+     "offset": 2
+    },
+    {
+     "load": "lbu",
+     "offset": 3
+    },
+    {
+     "load": "lbu",
+     "offset": 4
+    },
+    {
+     "load": "lbu",
+     "offset": 5
+    }
+   ],
+   "published_advance": 6,
+   "shift_ladder": [
+    28,
+    24,
+    16,
+    8
+   ]
+  },
+  {
+   "advance": 4,
+   "bytes": 103,
+   "calls": [
+    {
+     "at": "0x80072564",
+     "target": "0x80004a6c"
+    }
+   ],
+   "carved_as": "function_body",
+   "closure": [
+    "0x80004a6c"
+   ],
+   "extent": [
+    "0x80072548",
+    "0x800725ab"
+   ],
+   "handler": "0x80072548",
+   "name": "XaOn",
+   "opcode": "0x59",
+   "operands": [
+    {
+     "load": "lbu",
+     "offset": 1
+    },
+    {
+     "load": "lhu",
+     "offset": 2
+    }
+   ],
+   "outside_image": {
+    "a0_dead_on_entry": true,
+    "a1_dead_on_entry": false,
+    "calls": [
+     {
+      "at": "0x80004b40",
+      "target": "0x800b3704"
+     }
+    ],
+    "extent": [
+     "0x80004a6c",
+     "0x80004b5b"
+    ],
+    "image": "boot",
+    "reaches_voice_start": true,
+    "target": "0x80004a6c"
+   },
+   "published_advance": 4
+  },
+  {
+   "advance": 1,
+   "bytes": 59,
+   "calls": [],
+   "carved_as": "fragment",
+   "closure": [],
+   "extent": [
+    "0x80073410",
+    "0x80073447"
+   ],
+   "handler": "0x80073410",
+   "name": null,
+   "opcode": "0x83",
+   "operands": [],
+   "published_advance": 1
+  },
+  {
+   "advance": 2,
+   "bytes": 107,
+   "calls": [],
+   "carved_as": "fragment",
+   "closure": [],
+   "extent": [
+    "0x80073448",
+    "0x800734af"
+   ],
+   "handler": "0x80073448",
+   "name": "SndMode",
+   "opcode": "0x84",
+   "operands": [
+    {
+     "load": "lbu",
+     "offset": 1
+    }
+   ],
+   "published_advance": 2
+  },
+  {
+   "advance": 6,
+   "bytes": 183,
+   "calls": [
+    {
+     "at": "0x8007354c",
+     "target": "0x8006ab40"
+    }
+   ],
+   "carved_as": "function_body",
+   "closure": [
+    "0x8006ab40"
+   ],
+   "extent": [
+    "0x800734b0",
+    "0x80073563"
+   ],
+   "handler": "0x800734b0",
+   "name": "SndPlay3D",
+   "opcode": "0x85",
+   "operands": [
+    {
+     "load": "lbu",
+     "offset": 1
+    },
+    {
+     "load": "lbu",
+     "offset": 2
+    },
+    {
+     "load": "lhu",
+     "offset": 4
+    },
+    {
+     "load": "lbu",
+     "offset": 3
+    }
+   ],
+   "published_advance": 6
+  },
+  {
+   "advance": 1,
+   "bytes": 47,
+   "calls": [],
+   "carved_as": "fragment",
+   "closure": [],
+   "extent": [
+    "0x80073564",
+    "0x8007358f"
+   ],
+   "handler": "0x80073564",
+   "name": "SndBusy",
+   "opcode": "0x86",
+   "operands": [],
+   "published_advance": 1
+  }
+ ],
+ "contiguous_run": {
+  "contiguous": true,
+  "handlers": [
+   "0x80073410",
+   "0x80073448",
+   "0x800734b0",
+   "0x80073564"
+  ]
+ },
+ "inputs": {
+  "boot": "build/elfs/boot.elf (PT_LOAD segments; boot is ROM 0x1000, not an unpacked member)",
+  "region": "manifests/handler_region.json (M212/M229 extents)",
+  "registry": "fixtures/scd/registry.json (M142 names, M143-M145 advances)",
+  "rule": "the command pointer is tracked from `lw rt,0x1c(ctx)` through `addu/or rd,rs,zero` moves and dropped at any instruction that rewrites the register; operands are `lb/lh/lw` off that register, and the advance is the `addiu` that feeds the `sw rt,0x1c(ctx)` store",
+  "stage2": "assets/unpacked/00000_0014420_1172240.bin"
+ },
+ "not_claimed": [
+  "that 0x59's u16 indexes a per-room table: the base at DAT_8011a718 is written at run time (FUN_800762b0 from a two-way table indexed by DAT_800e8ca8, and FUN_8017b530 with the literal 0x80115440) and is zero in this image",
+  "what a voice id means, or which clip a given id selects",
+  "that 0x85's zone mask corresponds to rooms: it selects records in the list at *(0x800df92c+0x20), which is the scene region list, and the correspondence is not established here",
+  "the semantics of 0x83, 0x84 and 0x86 beyond the words they write: they are fragments inside a larger body, so no decompiled C of their own exists to read"
+ ],
+ "reading": "six commands touch the sound subsystem's state and only **two** call into it: `0x51` into the BGM decoder (`0x800777d8`, a 40-bit `[4-bit channel][4-bit opcode][24-bit operand]` assembled from five bytes) and `0x59` into the boot helper `0x80004a6c`, which indexes a runtime-filled `u16` table and starts a voice at `0x800b3704`. `0x85`, named `SndPlay3D`, **plays nothing**: its only callee is a zone-visibility test that makes no call at all. `0x83`/`0x84`/`0x86` write state words and call nothing.",
+ "schema": "sound-ops/1",
+ "tool": "sound_ops.py"
+}

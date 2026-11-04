@@ -1,0 +1,258 @@
+{
+ "note": "The 36 executable images: load address, extent and ROM origin. Layout metadata only - no cartridge bytes. Derived from the cartridge header and the overlay table, the same facts `src/INDEX.md` publishes; `tools/export_src.py --images build/elfs/images.json` writes the build-side copy, and `tools/counts.py` asserts the totals in these rows.",
+ "cart_sha256": "71f3f779613bf1f0e2050bfa600425385d2c257a647d2e40f63be1a7986e9aac",
+ "images": [
+  {
+   "name": "boot",
+   "role": "boot",
+   "base": 2147484800,
+   "size": 69952,
+   "source": "ROM 0x01000"
+  },
+  {
+   "name": "stage2",
+   "role": "stage2",
+   "base": 2147584640,
+   "size": 1172240,
+   "source": "assets/unpacked/00000_0014420_1172240.bin"
+  },
+  {
+   "name": "ovl_0072610",
+   "role": "ovl",
+   "base": 2149037072,
+   "size": 49312,
+   "source": "assets/unpacked/00001_0072610_49312.bin"
+  },
+  {
+   "name": "ovl_007688e",
+   "role": "ovl",
+   "base": 2148905008,
+   "size": 27840,
+   "source": "assets/unpacked/00002_007688e_27840.bin"
+  },
+  {
+   "name": "ovl_0078c0e",
+   "role": "ovl",
+   "base": 2149037072,
+   "size": 58848,
+   "source": "assets/unpacked/00003_0078c0e_58848.bin"
+  },
+  {
+   "name": "ovl_007af7a",
+   "role": "ovl",
+   "base": 2149037072,
+   "size": 20992,
+   "source": "assets/unpacked/00004_007af7a_20992.bin"
+  },
+  {
+   "name": "ovl_007c552",
+   "role": "ovl",
+   "base": 2148984960,
+   "size": 15104,
+   "source": "assets/unpacked/00005_007c552_15104.bin"
+  },
+  {
+   "name": "ovl_007e132",
+   "role": "ovl",
+   "base": 2149037072,
+   "size": 13568,
+   "source": "assets/unpacked/00006_007e132_13568.bin"
+  },
+  {
+   "name": "ovl_007fc12",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 52112,
+   "source": "assets/unpacked/00007_007fc12_52112.bin"
+  },
+  {
+   "name": "ovl_008505e",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 21216,
+   "source": "assets/unpacked/00008_008505e_21216.bin"
+  },
+  {
+   "name": "ovl_0087352",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 18960,
+   "source": "assets/unpacked/00009_0087352_18960.bin"
+  },
+  {
+   "name": "ovl_008900e",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 28800,
+   "source": "assets/unpacked/00010_008900e_28800.bin"
+  },
+  {
+   "name": "ovl_008bef8",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 18048,
+   "source": "assets/unpacked/00011_008bef8_18048.bin"
+  },
+  {
+   "name": "ovl_008e046",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 22624,
+   "source": "assets/unpacked/00012_008e046_22624.bin"
+  },
+  {
+   "name": "ovl_0090698",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 25440,
+   "source": "assets/unpacked/00013_0090698_25440.bin"
+  },
+  {
+   "name": "ovl_0093192",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 4256,
+   "source": "assets/unpacked/00014_0093192_4256.bin"
+  },
+  {
+   "name": "ovl_0093aba",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 14432,
+   "source": "assets/unpacked/00015_0093aba_14432.bin"
+  },
+  {
+   "name": "ovl_0095446",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 26096,
+   "source": "assets/unpacked/00016_0095446_26096.bin"
+  },
+  {
+   "name": "ovl_0097e42",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 7728,
+   "source": "assets/unpacked/00017_0097e42_7728.bin"
+  },
+  {
+   "name": "ovl_0098ee0",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 19504,
+   "source": "assets/unpacked/00018_0098ee0_19504.bin"
+  },
+  {
+   "name": "ovl_009aed0",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 18880,
+   "source": "assets/unpacked/00019_009aed0_18880.bin"
+  },
+  {
+   "name": "ovl_009d282",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 464,
+   "source": "assets/unpacked/00020_009d282_464.bin"
+  },
+  {
+   "name": "ovl_009d3ba",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 5200,
+   "source": "assets/unpacked/00021_009d3ba_5200.bin"
+  },
+  {
+   "name": "ovl_009dd02",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 22288,
+   "source": "assets/unpacked/00022_009dd02_22288.bin"
+  },
+  {
+   "name": "ovl_00a0344",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 8736,
+   "source": "assets/unpacked/00023_00a0344_8736.bin"
+  },
+  {
+   "name": "ovl_00a1414",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 29584,
+   "source": "assets/unpacked/00024_00a1414_29584.bin"
+  },
+  {
+   "name": "ovl_00a43b6",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 31728,
+   "source": "assets/unpacked/00025_00a43b6_31728.bin"
+  },
+  {
+   "name": "ovl_00a733e",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 25408,
+   "source": "assets/unpacked/00026_00a733e_25408.bin"
+  },
+  {
+   "name": "ovl_00a9d94",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 43488,
+   "source": "assets/unpacked/00027_00a9d94_43488.bin"
+  },
+  {
+   "name": "ovl_00ae24a",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 22560,
+   "source": "assets/unpacked/00028_00ae24a_22560.bin"
+  },
+  {
+   "name": "ovl_00b08a2",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 22416,
+   "source": "assets/unpacked/00029_00b08a2_22416.bin"
+  },
+  {
+   "name": "ovl_00b2d7a",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 3632,
+   "source": "assets/unpacked/00030_00b2d7a_3632.bin"
+  },
+  {
+   "name": "ovl_00b321e",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 19536,
+   "source": "assets/unpacked/00031_00b321e_19536.bin"
+  },
+  {
+   "name": "ovl_00b5346",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 5088,
+   "source": "assets/unpacked/00032_00b5346_5088.bin"
+  },
+  {
+   "name": "ovl_00b5e64",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 672,
+   "source": "assets/unpacked/00033_00b5e64_672.bin"
+  },
+  {
+   "name": "ovl_00b6040",
+   "role": "ovl",
+   "base": 2148932848,
+   "size": 880,
+   "source": "assets/unpacked/00034_00b6040_880.bin"
+  }
+ ]
+}

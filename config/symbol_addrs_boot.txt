@@ -1,0 +1,2 @@
+// boot image symbols; the entry point is the only one this project has pinned (M146/M3)
+entrypoint = 0x80000480; // type:func

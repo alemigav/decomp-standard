@@ -1,0 +1,17 @@
+{
+ "0x8012bcf8": {
+  "capacity": 8,
+  "count": 0,
+  "waiters": 1
+ },
+ "0x8012bd30": {
+  "capacity": 10,
+  "count": 0,
+  "waiters": 1
+ },
+ "0x80139f10": {
+  "capacity": 20,
+  "count": 20,
+  "waiters": 0
+ }
+}
