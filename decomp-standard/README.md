@@ -164,3 +164,11 @@ Q12).
 
 It is small, it fixes a measured defect, it touches no abstraction, and it is the cheapest demonstration that
 this standard's requirements are worth more than the defects they describe.
+
+---
+
+## Licence
+
+This document set is licensed under [CC BY 4.0](../LICENSE) — share and adapt freely, including commercially,
+with attribution, a link to the licence, and an indication of any changes. The licence covers this documentation
+only, not the reference implementation it describes.
